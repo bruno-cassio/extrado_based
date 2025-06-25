@@ -1,0 +1,87 @@
+Listagem de caminhos de pasta
+O número de série do volume é C621-B556
+C:.
+¦   .env
+¦   db.sqlite3
+¦   estrutura.txt
+¦   manage.py
+¦   
++---extrato_app
+    ¦   asgi.py
+    ¦   config_utils.py
+    ¦   settings.py
+    ¦   urls.py
+    ¦   views.py
+    ¦   wsgi.py
+    ¦   __init__.py
+    ¦   
+    +---CoreData
+    ¦   ¦   .env
+    ¦   ¦   .env exemple
+    ¦   ¦   archt.png
+    ¦   ¦   batch_runner.py
+    ¦   ¦   config.json
+    ¦   ¦   consolidador.py
+    ¦   ¦   CoreMain.py
+    ¦   ¦   data_handler.py
+    ¦   ¦   dba.py
+    ¦   ¦   ds4.py
+    ¦   ¦   grande_conn.py
+    ¦   ¦   intermediate.md
+    ¦   ¦   trat_rec.py
+    ¦   ¦   
+    ¦   +---Handlers
+    ¦   ¦   ¦   AllianzHandler.py
+    ¦   ¦   ¦   AxaHandler.py
+    ¦   ¦   ¦   BradescoHandler.py
+    ¦   ¦   ¦   BradescoSaudeHandler.py
+    ¦   ¦   ¦   ChubbHandler.py
+    ¦   ¦   ¦   EzzeHandler.py
+    ¦   ¦   ¦   HDIHandler.py
+    ¦   ¦   ¦   JuntoHandler.py
+    ¦   ¦   ¦   MapfreHandler.py
+    ¦   ¦   ¦   PortoHandler.py
+    ¦   ¦   ¦   SompoHandler.py
+    ¦   ¦   ¦   SuhaiHandler.py
+    ¦   ¦   ¦   TokioHandler.py
+    ¦   ¦   ¦   YelumHandler.py
+    ¦   ¦   ¦   ZurichHandler.py
+    ¦   ¦   ¦   
+    ¦   ¦   +---__pycache__
+    ¦   ¦           AllianzHandler.cpython-313.pyc
+    ¦   ¦           AxaHandler.cpython-313.pyc
+    ¦   ¦           BradescoHandler.cpython-313.pyc
+    ¦   ¦           BradescoSaudeHandler.cpython-313.pyc
+    ¦   ¦           ChubbHandler.cpython-313.pyc
+    ¦   ¦           EzzeHandler.cpython-313.pyc
+    ¦   ¦           HDIHandler.cpython-313.pyc
+    ¦   ¦           JuntoHandler.cpython-313.pyc
+    ¦   ¦           MapfreHandler.cpython-313.pyc
+    ¦   ¦           PortoHandler.cpython-313.pyc
+    ¦   ¦           SompoHandler.cpython-313.pyc
+    ¦   ¦           SuhaiHandler.cpython-313.pyc
+    ¦   ¦           TokioHandler.cpython-313.pyc
+    ¦   ¦           YellumHandler.cpython-313.pyc
+    ¦   ¦           YelumHandler.cpython-313.pyc
+    ¦   ¦           ZurichHandler.cpython-313.pyc
+    ¦   ¦           
+    ¦   +---__pycache__
+    ¦           batch_runner.cpython-313.pyc
+    ¦           consolidador.cpython-313.pyc
+    ¦           CoreMain.cpython-313.pyc
+    ¦           data_handler.cpython-313.pyc
+    ¦           dba.cpython-313.pyc
+    ¦           ds4.cpython-313.pyc
+    ¦           grande_conn.cpython-313.pyc
+    ¦           trat_rec.cpython-313.pyc
+    ¦           
+    +---templates
+    ¦       index.html
+    ¦       
+    +---__pycache__
+            settings.cpython-313.pyc
+            urls.cpython-313.pyc
+            views.cpython-313.pyc
+            wsgi.cpython-313.pyc
+            __init__.cpython-313.pyc
+            
