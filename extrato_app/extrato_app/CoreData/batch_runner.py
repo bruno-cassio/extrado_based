@@ -195,9 +195,10 @@ class BatchRunner:
                         SELECT 
                             id_seguradora_quiver::int4,
                             nome_unidade,
-                            SUM(premio_rec)::float8 AS total_premio_rec,
-                            SUM(valor_cv)::float8 AS total_cv,
-                            SUM(valor_vi)::float8 AS total_vi
+                            COALESCE(SUM(premio_rec), 0)::float8 AS total_premio_rec,
+                            COALESCE(SUM(valor_cv), 0)::float8 AS total_cv,
+                            COALESCE(SUM(valor_vi), 0)::float8 AS total_vi,
+                            COALESCE(SUM(valor_as), 0)::float8 AS total_as
                         FROM 
                             {tabela}
                         WHERE 
@@ -217,7 +218,8 @@ class BatchRunner:
                                 "nome_unidade": row[1],
                                 "total_premio_rec": float(row[2]),
                                 "total_cv": float(row[3]),
-                                "total_vi": float(row[4])
+                                "total_vi": float(row[4]),
+                                "total_as": float(row[5])
                             })
 
                     except Exception as e:

@@ -596,3 +596,1101 @@ LINE 3:                             id_seguradora_quiver::int4,
 2025-06-25 16:48:28,191 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 19.33 segundos
 2025-06-25 16:50:18,080 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-06-25 17:15:36,608 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
+2025-06-25 17:34:37,474 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 10:37:07,477 - django.request - WARNING - Not Found: /favicon.ico
+2025-06-30 10:37:26,838 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:37:26,839 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:37:26,839 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 10:37:29,859 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:32,879 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:35,864 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:39,007 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:41,969 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:44,927 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:47,956 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:50,923 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:53,870 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:56,975 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:37:59,907 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:02,889 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:05,865 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:08,854 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:11,858 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:14,661 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:38:14,850 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 10:38:15,135 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 10:38:15,197 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 48.36 segundos
+2025-06-30 10:38:38,023 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:38:38,024 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-06-30 10:38:38,024 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 10:38:41,055 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:44,060 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:47,063 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:50,144 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:53,053 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:56,088 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:38:59,177 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:02,125 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:05,137 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:08,142 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:11,103 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:14,060 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:17,046 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:20,037 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:23,038 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:24,836 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:39:25,299 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 10:39:25,299 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 10:39:26,054 - django.request - WARNING - Not Found: /media/finished_Bradesco_Bradesco Saude_012025.txt
+2025-06-30 10:39:26,423 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:39:26,445 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 10:39:26,466 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 10:39:26,530 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 48.51 segundos
+2025-06-30 10:40:20,225 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:40:20,226 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-06-30 10:40:20,226 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 10:40:23,297 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:26,278 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:29,282 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:32,369 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:35,372 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:38,339 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:41,341 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:44,308 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:47,363 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:50,308 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:53,284 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:56,269 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:40:59,267 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:41:02,308 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:41:05,270 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:41:06,768 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:41:07,230 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 10:41:07,231 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 10:41:08,258 - django.request - WARNING - Not Found: /media/finished_Bradesco_Porto_012025.txt
+2025-06-30 10:41:10,473 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:41:10,551 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 10:41:10,668 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 50.44 segundos
+2025-06-30 10:44:20,952 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:44:20,952 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-06-30 10:44:20,953 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 10:44:23,899 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:44:23,966 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 10:44:23,967 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 10:44:24,261 - django.request - WARNING - Not Found: /media/finished_Mapfre_Porto_012025.txt
+2025-06-30 10:44:24,770 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:44:24,830 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 10:44:24,932 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.98 segundos
+2025-06-30 10:48:42,457 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:48:42,458 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:48:42,458 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 10:48:43,579 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:48:43,593 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 10:48:43,615 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 10:48:43,653 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.20 segundos
+2025-06-30 10:48:51,832 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:48:51,832 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:48:51,833 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 10:48:52,887 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:48:52,899 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 10:48:52,921 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 10:48:52,983 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.15 segundos
+2025-06-30 10:52:28,864 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:52:28,865 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:52:28,865 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 10:52:30,225 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:52:30,294 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 10:52:30,342 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.48 segundos
+2025-06-30 10:56:32,255 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:56:32,256 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:56:32,257 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 10:56:36,327 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 10:56:38,372 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 10:56:40,349 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:56:40,406 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 10:56:40,442 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 10:56:40,497 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 8.24 segundos
+2025-06-30 10:57:37,438 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 10:57:37,438 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 10:57:37,439 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 10:57:40,530 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:44,343 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:47,296 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:50,286 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:53,363 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:56,364 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:57:59,325 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:02,292 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:05,348 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:08,321 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:11,346 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:14,291 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:17,326 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:20,290 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:23,332 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:26,316 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:29,297 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:32,299 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:35,294 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:38,333 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:41,301 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 10:58:45,213 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 10:58:45,297 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 10:58:45,361 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 67.92 segundos
+2025-06-30 11:01:25,163 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:01:25,164 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:01:25,164 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 11:01:28,306 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:31,291 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:34,298 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:37,294 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:40,304 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:43,294 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:46,283 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:49,292 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:52,286 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:55,300 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:01:58,295 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:02:01,351 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:02:04,346 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:02:04,468 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:02:04,652 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 11:02:04,770 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 39.61 segundos
+2025-06-30 11:02:44,064 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:02:44,065 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:02:44,066 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 11:02:47,122 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:02:47,189 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 11:02:47,282 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.22 segundos
+2025-06-30 11:03:32,723 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:03:32,724 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:03:32,724 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 11:03:33,862 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:03:33,870 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:03:33,937 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 11:03:33,998 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.27 segundos
+2025-06-30 11:10:02,018 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:10:02,019 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:10:02,020 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 11:10:05,406 - django.request - WARNING - Not Found: /media/finished_Axa_012025.txt
+2025-06-30 11:10:06,707 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:10:06,717 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:10:06,737 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 11:10:06,774 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.75 segundos
+2025-06-30 11:14:35,320 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:14:35,321 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:14:35,321 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 11:14:38,341 - django.request - WARNING - Not Found: /media/finished_Zurich_012025.txt
+2025-06-30 11:14:39,250 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:14:39,318 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 11:14:39,403 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.08 segundos
+2025-06-30 11:15:45,338 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:15:45,339 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:15:45,340 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 11:15:46,966 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:15:47,055 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 11:15:47,115 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.78 segundos
+2025-06-30 11:17:10,776 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:17:10,776 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:17:10,777 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 11:17:14,307 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 11:17:17,384 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 11:17:20,433 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 11:17:23,301 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 11:17:23,777 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 11:17:23,790 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 11:17:23,790 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 13.01 segundos
+2025-06-30 11:17:26,313 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 11:18:14,241 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:18:14,241 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:18:14,242 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 11:18:16,828 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 11:18:16,828 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 11:18:16,828 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.59 segundos
+2025-06-30 11:18:17,308 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 11:18:34,589 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:18:34,590 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:18:34,590 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 11:18:36,785 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:18:36,790 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:18:36,846 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 11:18:36,899 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.31 segundos
+2025-06-30 11:18:47,564 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:18:47,565 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:18:47,565 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:18:48,417 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:18:48,543 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:18:48,627 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.06 segundos
+2025-06-30 11:20:44,907 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:20:44,908 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:20:44,908 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 11:20:47,941 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 11:20:54,898 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 11:20:54,898 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 11:20:54,898 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 9.99 segundos
+2025-06-30 11:26:20,853 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:26:20,853 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:26:20,854 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 11:26:22,148 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:26:22,215 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 11:26:22,262 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.41 segundos
+2025-06-30 11:31:00,644 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:31:00,645 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:31:00,645 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:31:01,463 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:31:01,591 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:31:01,668 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.02 segundos
+2025-06-30 11:32:02,690 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:32:02,691 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:32:02,691 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 11:32:03,943 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:32:03,960 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:32:04,069 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 11:32:04,124 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.43 segundos
+2025-06-30 11:35:59,160 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:35:59,160 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:35:59,161 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 11:36:00,345 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:36:00,439 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 11:36:00,516 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.36 segundos
+2025-06-30 11:40:00,801 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:40:00,801 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:40:00,802 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 11:40:08,019 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:40:08,078 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:40:08,146 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 11:40:08,223 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 7.42 segundos
+2025-06-30 11:40:44,776 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:40:44,776 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:40:44,777 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 11:40:48,120 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 11:40:51,910 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:40:51,980 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:40:52,055 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 11:40:52,125 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 7.35 segundos
+2025-06-30 11:42:00,090 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:42:00,091 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:42:00,091 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 11:42:03,119 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:06,115 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:09,121 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:12,103 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:15,110 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:18,117 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:21,110 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:24,124 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:27,133 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:30,121 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:33,110 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:36,113 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:39,211 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:42,115 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:45,105 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 11:42:45,926 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:42:46,060 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 11:42:46,197 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 46.11 segundos
+2025-06-30 11:43:16,776 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:43:16,777 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:43:16,777 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 11:43:17,802 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:43:17,808 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:43:17,834 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 11:43:17,881 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.10 segundos
+2025-06-30 11:43:32,454 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:43:32,455 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:43:32,455 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 11:43:35,492 - django.request - WARNING - Not Found: /media/finished_Zurich_012025.txt
+2025-06-30 11:43:36,476 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:43:36,556 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 11:43:36,644 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.19 segundos
+2025-06-30 11:44:12,412 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:44:12,413 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:44:12,413 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 11:44:14,602 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:44:14,608 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:44:14,651 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 11:44:14,699 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.29 segundos
+2025-06-30 11:44:36,952 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:44:36,952 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 11:44:36,953 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:44:37,802 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:44:37,862 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:44:37,946 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.99 segundos
+2025-06-30 11:46:03,904 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:46:03,904 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 5 CIAs e competência 01-2025
+2025-06-30 11:46:03,905 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 11:46:07,339 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:10,366 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:13,345 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:16,341 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:19,400 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:22,375 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:25,331 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:28,367 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:31,375 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:34,334 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:37,341 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:40,787 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:43,367 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:46,397 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:49,346 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:52,373 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:55,353 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:46:58,400 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:47:01,414 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:47:04,342 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:47:12,520 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:47:12,606 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 11:47:12,607 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 11:47:15,709 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:47:15,771 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 11:47:15,771 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 11:48:01,329 - django.request - WARNING - Not Found: /media/finished_Bradesco_Ezze_Junto Seguradora_Mapfre_Porto_012025.txt
+2025-06-30 11:48:02,532 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:48:03,001 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 11:48:03,002 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 11:48:05,411 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 11:48:05,412 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:48:06,172 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:48:06,228 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:48:06,365 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 122.46 segundos
+2025-06-30 11:49:18,778 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:49:18,778 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-06-30 11:49:18,779 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 11:49:22,378 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:25,338 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:28,387 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:31,346 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:34,347 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:37,342 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:40,368 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:43,362 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:46,351 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:49,356 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:52,387 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:55,402 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:49:58,396 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:01,372 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:04,402 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:07,349 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:10,362 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:13,409 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:16,366 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:19,377 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:50:24,125 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:50:24,213 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 11:50:24,214 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 11:50:27,159 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:50:27,212 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 11:50:27,213 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 11:51:01,402 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:51:12,691 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:51:13,172 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 11:51:13,173 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 11:51:15,592 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 11:51:15,592 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:51:16,372 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:51:16,483 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:51:16,484 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 11:51:17,506 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:51:17,525 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:51:17,556 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 11:51:17,557 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 11:51:18,757 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:51:18,830 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 11:51:18,831 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 11:51:26,996 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:51:27,063 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:51:27,098 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 11:51:27,098 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 11:52:01,352 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 11:52:09,229 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:09,419 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 11:52:09,419 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 11:52:10,442 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:10,451 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:52:10,489 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 11:52:10,490 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 11:52:14,136 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:14,227 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 11:52:14,228 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 11:52:18,862 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:18,875 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:52:18,935 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 11:52:18,935 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 11:52:20,358 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:20,445 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 11:52:20,446 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 11:52:32,953 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 11:52:32,953 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 11:52:35,245 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:52:35,251 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:52:35,297 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 11:52:35,594 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 196.82 segundos
+2025-06-30 11:57:21,471 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 11:57:21,471 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-06-30 11:57:21,472 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 11:58:28,473 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:58:28,572 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 11:58:28,572 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 11:58:31,721 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:58:31,788 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 11:58:31,789 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 11:59:18,383 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:59:18,852 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 11:59:18,852 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 11:59:21,890 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 11:59:21,891 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 11:59:22,589 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:59:22,713 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 11:59:22,713 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 11:59:23,788 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:59:23,810 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:59:23,871 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 11:59:23,871 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 11:59:24,992 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:59:25,103 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 11:59:25,103 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 11:59:33,281 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 11:59:33,336 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 11:59:33,411 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 11:59:33,411 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 12:00:18,579 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:18,759 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 12:00:18,759 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 12:00:19,774 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:19,781 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:00:19,806 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 12:00:19,806 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 12:00:23,613 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:23,736 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 12:00:23,736 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 12:00:28,064 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:28,075 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:00:28,118 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 12:00:28,118 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 12:00:29,462 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:29,536 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 12:00:29,537 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 12:00:42,285 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 12:00:42,286 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 12:00:44,168 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:00:44,176 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:00:44,228 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 12:00:44,521 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 203.05 segundos
+2025-06-30 12:16:44,396 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 12:16:44,397 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-06-30 12:16:44,397 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 12:17:51,033 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:17:51,088 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 12:17:51,088 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 12:17:54,326 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:17:54,392 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 12:17:54,392 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 12:18:39,617 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:18:40,118 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 12:18:40,119 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 12:18:42,595 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 12:18:42,596 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 12:18:43,364 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:18:43,477 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 12:18:43,478 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 12:18:44,469 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:18:44,481 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:18:44,509 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 12:18:44,509 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 12:18:45,870 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:18:45,945 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 12:18:45,945 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 12:18:54,287 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:18:54,341 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:18:54,387 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 12:18:54,387 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 12:19:37,528 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:19:37,723 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 12:19:37,724 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 12:19:38,741 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:19:38,747 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:19:38,773 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 12:19:38,774 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 12:19:42,436 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:19:42,562 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 12:19:42,563 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 12:19:46,850 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:19:46,866 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:19:46,914 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 12:19:46,915 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 12:19:48,287 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:19:48,361 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 12:19:48,362 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 12:20:00,788 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 12:20:00,788 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 12:20:02,945 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:20:02,951 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:20:02,995 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 12:20:03,501 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 199.10 segundos
+2025-06-30 12:24:45,803 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 12:24:45,803 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-06-30 12:24:45,804 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 12:24:48,839 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:24:51,844 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:24:54,814 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:24:57,892 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:00,912 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:03,958 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:06,912 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:09,910 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:12,962 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:15,892 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:18,842 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:21,865 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:24,847 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:27,871 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:30,811 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:31,906 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:25:32,400 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 12:25:32,401 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 12:25:33,470 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:25:33,483 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:25:33,503 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 12:25:33,503 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 12:25:33,842 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:34,734 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:25:34,814 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 12:25:34,814 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 12:25:36,863 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:40,276 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:42,861 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:43,405 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:25:43,477 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:25:43,538 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 12:25:43,539 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 12:25:45,843 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:48,847 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:51,840 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:54,858 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:25:57,895 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:00,849 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:03,848 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:06,931 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:09,856 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:12,879 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:15,824 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:18,845 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:21,857 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:24,839 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:27,840 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:30,872 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:33,846 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:37,360 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:40,472 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:43,385 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:46,419 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:49,436 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:51,742 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:26:51,834 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 12:26:51,834 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 12:26:52,372 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:55,385 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:26:58,355 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:01,363 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:04,362 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:07,369 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:10,363 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:13,370 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:16,364 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:19,372 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:22,375 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:25,379 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:28,356 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:31,600 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:34,354 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:27:34,624 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:34,749 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 12:27:34,749 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 12:27:37,795 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:37,850 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 12:27:37,850 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 12:27:39,040 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:39,047 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:27:39,073 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 12:27:39,073 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 12:27:43,473 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:43,488 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:27:43,511 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 12:27:43,513 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 12:27:47,521 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:47,587 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 12:27:47,588 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 12:27:49,176 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:27:49,255 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 12:27:49,256 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 12:28:01,391 - django.request - WARNING - Not Found: /media/finished_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-06-30 12:28:02,251 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 12:28:02,251 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 12:28:04,741 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 12:28:04,742 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 12:28:07,107 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:28:07,115 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:28:07,160 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 12:28:07,161 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 12:28:07,923 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:28:08,034 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 12:28:08,350 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 202.55 segundos
+2025-06-30 12:30:10,897 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 12:30:41,530 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 12:30:48,226 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 12:30:48,227 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 12:30:48,228 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 12:30:51,267 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:30:54,273 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:30:57,252 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:00,404 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:03,424 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:06,322 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:09,374 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:12,357 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:15,356 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:18,339 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:21,309 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:24,322 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:27,257 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:30,241 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:33,241 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:35,959 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:31:36,242 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 12:31:36,462 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 12:31:36,520 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 48.29 segundos
+2025-06-30 12:32:57,064 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 12:32:57,065 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-06-30 12:32:57,065 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 12:33:00,135 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:03,110 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:06,155 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:09,185 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:12,217 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:15,150 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:18,201 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:21,200 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:24,150 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:27,201 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:30,166 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:33,102 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:36,088 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:39,406 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:42,365 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:43,313 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:33:43,830 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 12:33:43,830 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 12:33:45,366 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:48,412 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:51,354 - django.request - WARNING - Not Found: /media/finished_Allianz_Bradesco_012025.txt
+2025-06-30 12:33:52,348 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:33:52,408 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:33:52,445 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 12:33:52,563 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 55.50 segundos
+2025-06-30 12:38:58,070 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 12:38:58,070 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 12:38:58,071 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 12:38:59,101 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 12:38:59,125 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 12:38:59,162 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 12:38:59,222 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.15 segundos
+2025-06-30 13:30:12,110 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:30:12,111 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:30:12,112 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 13:30:58,108 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:30:58,606 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 13:30:58,658 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 46.55 segundos
+2025-06-30 13:31:23,696 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:31:23,697 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:31:23,697 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 13:31:26,730 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 13:32:08,847 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:32:09,380 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 13:32:09,448 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 45.75 segundos
+2025-06-30 13:32:29,545 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:32:29,545 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:32:29,546 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 13:32:32,580 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 13:32:35,720 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 13:32:37,909 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:32:37,987 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 13:32:38,027 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 13:32:38,092 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 8.55 segundos
+2025-06-30 13:37:58,266 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:37:58,266 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:37:58,267 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 13:37:59,602 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:37:59,729 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 13:37:59,808 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.54 segundos
+2025-06-30 13:38:33,999 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:38:34,000 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:38:34,001 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 13:38:35,158 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:38:35,262 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 13:38:35,321 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.32 segundos
+2025-06-30 13:40:23,669 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:40:23,669 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:40:23,670 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 13:40:30,715 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:40:30,785 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_allianz (cia: Allianz): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 13:40:30,865 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 13:40:30,935 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 7.27 segundos
+2025-06-30 13:40:37,383 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:40:37,383 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:40:37,384 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 13:40:40,394 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:43,429 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:46,415 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:49,414 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:52,397 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:55,635 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:40:58,404 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:01,397 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:04,407 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:07,431 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:10,394 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:13,416 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:16,416 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:19,423 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:22,414 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:25,667 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:28,432 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:31,412 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 13:41:32,776 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:41:32,886 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 13:41:32,950 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 55.57 segundos
+2025-06-30 13:41:57,299 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:41:57,300 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:41:57,300 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 13:42:00,324 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:03,328 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:06,308 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:09,313 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:12,322 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:15,312 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:18,332 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:21,317 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:24,328 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:27,319 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:30,309 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:33,315 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:36,310 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 13:42:37,593 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:42:37,764 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 13:42:37,876 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 40.58 segundos
+2025-06-30 13:43:06,160 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:43:06,161 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:43:06,161 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 13:43:09,093 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:43:09,175 - django.request - WARNING - Not Found: /media/finished_Porto_012025.txt
+2025-06-30 13:43:09,210 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 13:43:09,302 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.14 segundos
+2025-06-30 13:43:33,084 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:43:33,084 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:43:33,085 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 13:43:34,144 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:43:34,149 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_yelum (cia: Yelum): ERRO:  coluna "valor_as" não existe
+LINE 8:                             SUM(valor_as)::float8 AS total_a...
+                                        ^
+HINT:  Perhaps you meant to reference the column "cont_prod_yelum.valor_cv" or the column "cont_prod_yelum.valor_vi".
+
+2025-06-30 13:43:34,196 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 13:43:34,245 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.16 segundos
+2025-06-30 13:44:56,840 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:44:56,841 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:44:56,841 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 13:44:59,887 - django.request - WARNING - Not Found: /media/finished_Axa_012025.txt
+2025-06-30 13:45:00,469 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:45:00,487 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 13:45:00,531 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 13:45:00,587 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.75 segundos
+2025-06-30 13:46:17,380 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:46:17,381 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:46:17,382 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 13:46:20,401 - django.request - WARNING - Not Found: /media/finished_Zurich_012025.txt
+2025-06-30 13:46:21,228 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:46:21,234 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_zurich (cia: Zurich): ERRO:  coluna "valor_as" não existe
+LINE 8:                             SUM(valor_as)::float8 AS total_a...
+                                        ^
+HINT:  Perhaps you meant to reference the column "cont_prod_zurich.valor_cv" or the column "cont_prod_zurich.valor_vi".
+
+2025-06-30 13:46:21,277 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 13:46:21,324 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.94 segundos
+2025-06-30 13:46:40,701 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:46:40,703 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:46:40,704 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 13:46:42,154 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:46:42,159 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_chubb (cia: Chubb): ERRO:  função sum(character varying) não existe
+LINE 8:                             SUM(valor_as)::float8 AS total_a...
+                                    ^
+HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados. Você precisa adicionar conversões de tipo explícitas.
+
+2025-06-30 13:46:42,203 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 13:46:42,247 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.54 segundos
+2025-06-30 13:46:54,546 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:46:54,547 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:46:54,548 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 13:46:57,566 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 13:47:00,680 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 13:47:03,582 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 13:47:05,332 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 13:47:05,332 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 13:47:05,333 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.79 segundos
+2025-06-30 13:47:06,561 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 13:48:10,638 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:48:10,638 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:48:10,639 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 13:48:13,663 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 13:48:21,175 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 13:48:21,176 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 13:48:21,176 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.54 segundos
+2025-06-30 13:48:50,089 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:48:50,089 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:48:50,090 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 13:48:53,113 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 13:49:00,782 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 13:49:00,783 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 13:49:00,783 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.69 segundos
+2025-06-30 13:49:36,297 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:49:36,298 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:49:36,298 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 13:49:38,334 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 13:49:38,335 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 13:49:38,335 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.04 segundos
+2025-06-30 13:49:39,318 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 13:49:45,281 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:49:45,282 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:49:45,282 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 13:49:47,266 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:49:47,275 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_sompo (cia: Sompo): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 13:49:47,343 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 13:49:47,394 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.11 segundos
+2025-06-30 13:50:01,255 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:50:01,256 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:50:01,257 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 13:50:02,083 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:50:02,088 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_mapfre (cia: Mapfre): ERRO:  coluna "valor_as" não existe
+LINE 8:                             SUM(valor_as)::float8 AS total_a...
+                                        ^
+HINT:  Perhaps you meant to reference the column "cont_prod_mapfre.valor_cv" or the column "cont_prod_mapfre.valor_vi".
+
+2025-06-30 13:50:02,133 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 13:50:02,178 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.92 segundos
+2025-06-30 13:57:05,957 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 13:57:05,958 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 13:57:05,959 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 13:57:08,974 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:11,996 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:14,991 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:18,041 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:21,000 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:24,059 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:27,016 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:29,992 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:33,025 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:36,007 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:38,984 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:41,976 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:44,973 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 13:57:46,807 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 13:57:47,171 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 13:57:47,245 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 41.29 segundos
+2025-06-30 14:02:29,414 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:02:29,415 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:02:29,415 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:03:16,269 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:03:16,814 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 14:03:16,901 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 47.49 segundos
+2025-06-30 14:03:39,476 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:03:39,477 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:03:39,477 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:04:26,841 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:04:27,602 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 14:04:27,697 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 48.22 segundos
+2025-06-30 14:05:29,876 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:05:29,877 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:05:29,877 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:05:32,921 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:35,924 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:38,997 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:42,033 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:45,019 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:48,033 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:51,050 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:54,068 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:57,000 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:05:59,996 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:02,982 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:05,934 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:08,933 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:11,905 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:14,902 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:06:15,635 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:06:15,985 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 14:06:16,046 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 46.17 segundos
+2025-06-30 14:13:13,498 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:13:13,499 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:13:13,499 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:14:00,550 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:14:00,623 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 14:14:00,690 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 47.19 segundos
+2025-06-30 14:14:58,579 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:14:58,580 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:14:58,580 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:15:01,623 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:04,623 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:07,627 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:10,710 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:13,643 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:16,678 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:19,738 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:22,745 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:25,676 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:28,659 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:31,655 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:34,625 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:37,620 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:40,637 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:43,624 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:15:45,038 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:15:45,109 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 14:15:45,177 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 46.60 segundos
+2025-06-30 14:25:16,364 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:25:16,365 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:25:16,366 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 14:25:17,332 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:25:17,345 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 14:25:17,368 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 14:25:17,415 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.05 segundos
+2025-06-30 14:39:28,674 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:39:57,864 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:40:11,915 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:40:11,916 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:40:11,917 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 14:40:13,724 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:40:13,771 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 14:40:13,838 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.92 segundos
+2025-06-30 14:47:21,722 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:48:20,452 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:49:23,886 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:49:23,888 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:49:23,888 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 14:49:25,650 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:49:25,656 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_bdc_saude (cia: Bradesco Saude): float() argument must be a string or a real number, not 'NoneType'
+2025-06-30 14:49:25,682 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 14:49:25,739 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.85 segundos
+2025-06-30 14:52:26,776 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:52:29,378 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:53:12,571 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:53:31,719 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:53:39,449 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:53:56,468 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:54:01,372 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 14:54:07,793 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:54:07,794 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:54:07,794 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 14:54:09,736 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:54:09,783 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 14:54:09,856 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.06 segundos
+2025-06-30 14:55:42,926 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:55:42,927 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:55:42,927 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-06-30 14:55:44,002 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 14:55:44,160 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-06-30 14:55:44,229 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.30 segundos
+2025-06-30 14:59:34,413 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 14:59:34,414 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 14:59:34,414 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-06-30 14:59:37,438 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:40,427 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:43,468 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:46,469 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:49,519 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:52,503 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:55,491 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 14:59:58,544 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:01,544 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:04,493 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:07,553 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:10,454 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:13,448 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:16,521 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:19,440 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-06-30 15:00:19,876 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 15:00:19,948 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-06-30 15:00:20,009 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 45.60 segundos
+2025-06-30 15:05:44,317 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 15:05:54,443 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 15:06:01,178 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 15:06:10,198 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-06-30 15:08:04,503 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 15:08:04,505 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 15:08:04,506 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Suhai - 01-2025
+2025-06-30 15:08:06,408 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 15:08:06,462 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Suhai com sucesso
+2025-06-30 15:08:06,528 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.02 segundos
+2025-06-30 15:37:32,888 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 15:37:32,889 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 15:37:32,890 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-06-30 15:37:35,904 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 15:37:39,079 - django.request - WARNING - Not Found: /media/finished_Allianz_012025.txt
+2025-06-30 15:37:41,170 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 15:37:41,268 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Allianz com sucesso
+2025-06-30 15:37:41,358 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 8.47 segundos
+2025-06-30 15:45:17,188 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 15:45:17,189 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 15:45:17,189 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 01-2025
+2025-06-30 15:45:20,218 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:23,212 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:26,280 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:29,236 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:32,236 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:35,273 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:38,201 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:41,222 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:44,203 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:47,217 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:50,207 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:53,215 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:56,250 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:45:59,261 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:02,233 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:05,266 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:08,757 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:11,256 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:14,257 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:17,205 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:20,255 - django.request - WARNING - Not Found: /media/finished_Junto Seguradora_012025.txt
+2025-06-30 15:46:22,118 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 15:46:22,199 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com sucesso
+2025-06-30 15:46:22,261 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 65.07 segundos
+2025-06-30 15:52:50,429 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 15:52:50,429 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 15:52:50,430 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-06-30 15:52:53,494 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:52:56,456 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:52:59,447 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:02,446 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:05,446 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:08,451 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:11,455 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:14,463 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:17,451 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:20,459 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:23,459 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:26,444 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:29,444 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:32,458 - django.request - WARNING - Not Found: /media/finished_Hdi_012025.txt
+2025-06-30 15:53:34,063 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 15:53:34,212 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-06-30 15:53:34,304 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 43.87 segundos
+2025-06-30 16:02:19,432 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:02:19,433 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:02:19,434 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-06-30 16:02:22,501 - django.request - WARNING - Not Found: /media/finished_Porto_012025.txt
+2025-06-30 16:02:22,964 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 16:02:23,127 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
+2025-06-30 16:02:23,231 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.80 segundos
+2025-06-30 16:12:15,647 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
