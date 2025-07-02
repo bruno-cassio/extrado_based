@@ -3238,3 +3238,38 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-02 17:21:49,970 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
 2025-07-02 17:21:49,992 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
 2025-07-02 17:21:49,993 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-07-02 17:22:41,660 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:23:21,708 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-02 17:23:21,708 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-02 17:23:21,709 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-07-02 17:23:21,710 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-02 17:23:21,713 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-02 17:23:21,721 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
+2025-07-02 17:23:21,721 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-07-02 17:23:23,757 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:25,793 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:27,762 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:29,746 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:31,753 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:33,828 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:35,831 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:37,795 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:39,757 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:41,878 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:43,829 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:45,829 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:47,828 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:49,808 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:51,898 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:53,844 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:55,763 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:57,863 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:23:59,741 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:01,744 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:03,737 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:05,734 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:07,732 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:09,731 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-02 17:24:10,996 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-07-02 17:24:11,070 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-07-02 17:24:11,144 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 49.44 segundos
