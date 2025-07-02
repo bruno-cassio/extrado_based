@@ -17,6 +17,7 @@ from django.core.cache import cache
 from io import BytesIO
 from django.http import HttpResponse
 from django.http import FileResponse, Http404
+from django.http import JsonResponse
 
 arquivos_em_memoria = {} 
 
@@ -27,6 +28,24 @@ def index(request):
     return render(request, 'index.html', {
         'cias_opt': cias_list
     })
+
+def limpar_arquivos(request):
+    if request.method == "POST":
+        unique_id = request.GET.get('id')
+        if not unique_id:
+            return JsonResponse({'erro': 'ID inválido'}, status=400)
+
+        txt_path = os.path.join('media', f'finished_{unique_id}.txt')
+        xlsx_path = os.path.join('media', f'resumo_{unique_id}.xlsx')
+
+        for path in [txt_path, xlsx_path]:
+            try:
+                if os.path.exists(path):
+                    os.remove(path)
+            except Exception as e:
+                return JsonResponse({'erro': str(e)}, status=500)
+
+        return JsonResponse({'status': 'ok'})
 
 def iniciar_extracao(request):
     if request.method == 'POST':
@@ -52,10 +71,8 @@ def iniciar_extracao(request):
 
                 output.seek(0)
 
-                # salva na memória
                 arquivos_em_memoria[unique_id] = output.read()
 
-                # grava o flag para notificar o frontend
                 flag_path = os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt')
                 with open(flag_path, 'w') as f:
                     f.write('ok')
@@ -64,7 +81,6 @@ def iniciar_extracao(request):
 
             except Exception as e:
                 print(f"❌ Erro no batch: {str(e)}")
-
 
         thread = threading.Thread(target=run_batch)
         thread.start()

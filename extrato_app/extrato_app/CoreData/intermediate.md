@@ -29,3 +29,7 @@ Construção das bases de referencias origens de Arquivos de Leitura corresponde
         CV * 1% PremioREC
         VI * 1% PremioREC
 
+
+
+--> Criar validação a respeito de corretoras não mapeadas
+   -- tabela de logs de cada execução de batch runner ? 

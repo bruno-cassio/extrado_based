@@ -26,6 +26,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('iniciar-extracao/', views.iniciar_extracao, name='iniciar_extracao'),
     path('baixar_resumo', views.baixar_resumo, name='baixar_resumo'),
+    path('limpar_arquivos', views.limpar_arquivos, name='limpar_arquivos'),
 
 ]
 

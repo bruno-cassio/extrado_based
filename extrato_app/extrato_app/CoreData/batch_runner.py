@@ -55,6 +55,52 @@ class BatchRunner:
             logger.error(f"Erro na validação da competência: {str(e)}")
             raise ValueError("Formato de competência inválido. Use MM-AAAA (ex: 05-2024)") from e
 
+    def verificar_geracao_anterior(self, cias: list, competencia: str) -> list:
+        """
+        Verifica se já existem registros para a CIA e competência na tabela mapeada.
+        Retorna uma lista com CIAs que já foram processadas.
+        """
+        logger.info(f"Verificando se já existe geração para as CIAs na competência {competencia}")
+
+        load_dotenv()
+        tabela_list = os.getenv("input_history_tables", "").split(",")
+        cia_list = os.getenv("cia_corresp", "").split(",")
+
+        mapeamento = dict(zip([cia.strip() for cia in cia_list], [tabela.strip() for tabela in tabela_list]))
+
+        conn = DatabaseManager.get_connection()
+        if not conn:
+            logger.error("Conexão com o banco de dados indisponível")
+            return []
+
+        cias_existentes = []
+
+        try:
+            with conn.cursor() as cursor:
+                for cia in cias:
+                    tabela = mapeamento.get(cia)
+                    if not tabela:
+                        logger.warning(f"CIA '{cia}' não encontrada no mapeamento. Pulando verificação.")
+                        continue
+
+                    query = f"SELECT 1 FROM {tabela} WHERE competencia = %s LIMIT 1;"
+                    
+                    logger.info(f"Executando query: SELECT 1 FROM {tabela} WHERE competencia = '{competencia}' LIMIT 1;")
+
+                    cursor.execute(query, (competencia,))
+                    if cursor.fetchone():
+                        logger.warning(f" Já foi gerado Conta Virtual para {cia} na competência {competencia}")
+                        cias_existentes.append(cia)
+
+            return cias_existentes
+
+        except Exception as e:
+            logger.error(f"Erro ao verificar geração anterior: {str(e)}\n{traceback.format_exc()}")
+            return []
+
+        finally:
+            DatabaseManager.return_connection(conn)
+
     def executar_combinações(self, cias: list, competencia_str: str) -> dict:
         """
         Executa o processamento para as combinações de CIA e competência
@@ -68,11 +114,25 @@ class BatchRunner:
         """
         start_time = time.time()
         logger.info(f"Iniciando processamento para {len(cias)} CIAs e competência {competencia_str}")
+        logger.info(f"CIAs selecionadas: {cias}")
 
         try:
             mes, ano = self.validar_competencia(competencia_str)
             competencia_formatada = f"{mes:02d}-{ano}"
 
+            cias_ja_processadas = self.verificar_geracao_anterior(cias, competencia_formatada)
+
+            if set(cias_ja_processadas) == set(cias):
+                logger.info(" Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.")
+                return {
+                    'status': 'encerrado',
+                    'mensagem': 'Já existem registros para todas as CIAs na competência informada.'
+                }
+
+            cias = [cia for cia in cias if cia not in cias_ja_processadas]
+            logger.info(f" CIAs que ainda serão processadas: {cias}")
+            
+            
             resultados = {}
             df_resumos = []
 

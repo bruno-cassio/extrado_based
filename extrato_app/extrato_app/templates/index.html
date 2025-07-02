@@ -495,9 +495,10 @@
             margin-top: 0.5rem;
         }
     </style>
+
+
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="header-content">
             <a href="/">
@@ -509,7 +510,6 @@
     </header>
 
     
-    <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
         <div class="form-card">
             <h2>
@@ -578,21 +578,18 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>© 2025 Grupo GC - Todos os direitos reservados</p>
         </div>
     </footer>
 
-    <!-- Área de notificação -->
     <div id="notification" class="notification">
         <i id="notification-icon"></i>
         <span id="notification-message"></span>
     </div>
     
     <script>
-        // Elementos DOM
         const ciaItems = document.querySelectorAll('.cia-item');
         const selectedCount = document.getElementById('selected-count');
         const ciasSelectedInput = document.getElementById('cias-selected');
@@ -600,18 +597,13 @@
         const deselectAllBtn = document.getElementById('deselect-all');
         const competenciaInput = document.querySelector('input[name="mes"]');
         
-        // Estado das seleções
         let selectedCias = [];
         
-        // Função para atualizar as seleções
         function updateSelections() {
-            // Atualizar contagem
             selectedCount.textContent = selectedCias.length;
             
-            // Atualizar input oculto com as CIAs selecionadas
             ciasSelectedInput.value = JSON.stringify(selectedCias);
             
-            // Atualizar classes CSS
             ciaItems.forEach(item => {
                 const ciaName = item.dataset.cia;
                 if (selectedCias.includes(ciaName)) {
@@ -622,7 +614,6 @@
             });
         }
         
-        // Adicionar eventos de clique aos itens de CIA
         ciaItems.forEach(item => {
             item.addEventListener('click', () => {
                 const ciaName = item.dataset.cia;
@@ -638,19 +629,16 @@
             });
         });
         
-        // Selecionar todas as CIAs
         selectAllBtn.addEventListener('click', () => {
             selectedCias = Array.from(ciaItems).map(item => item.dataset.cia);
             updateSelections();
         });
         
-        // Desmarcar todas as CIAs
         deselectAllBtn.addEventListener('click', () => {
             selectedCias = [];
             updateSelections();
         });
         
-        // Formatar input de competência
         competenciaInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             
@@ -661,17 +649,30 @@
             e.target.value = value;
         });
         
-        // Função para mostrar notificação
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.startsWith(name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        
         function showNotification(message, type) {
             const notification = document.getElementById('notification');
             const icon = document.getElementById('notification-icon');
             const messageEl = document.getElementById('notification-message');
             
-            // Reset classes
             notification.className = 'notification';
             icon.className = '';
             
-            // Configurar baseado no tipo
             if (type === 'success') {
                 notification.classList.add('success');
                 icon.classList.add('bi', 'bi-check-circle-fill');
@@ -689,7 +690,6 @@
             messageEl.textContent = message;
             notification.classList.add('show');
             
-            // Auto-ocultar para tipos que não são loading
             if (type !== 'loading') {
                 setTimeout(() => {
                     notification.classList.remove('show');
@@ -712,21 +712,26 @@
                             link.remove();
 
                             showNotification('✅ Extração concluída! Download iniciado.', 'success');
+
+                            setTimeout(() => {
+                                fetch(`/limpar_arquivos?id=${uniqueId}`, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRFToken': getCookie('csrftoken')
+                                    }
+                                });
+                            }, 5000);
                         }
                     })
                     .catch(() => {
-                     
                     });
             }, 3000);
         }
 
-        
-        
-                
         async function submitForm(event) {
             event.preventDefault();
             
-            // Validação
             if (selectedCias.length === 0) {
                 showNotification('Por favor, selecione pelo menos uma seguradora!', 'error');
                 return;
@@ -737,7 +742,6 @@
                 return;
             }
             
-            // Mostrar notificação de carregamento
             showNotification('Iniciando extração, aguarde...', 'loading');
             
             try {
@@ -766,16 +770,9 @@
         }
 
         
-        // Adicionar evento de envio ao formulário
         document.querySelector('form').addEventListener('submit', submitForm);
         
-        // Inicializar contagem
         updateSelections();
-
-
-
-
-
 
 
     </script>
