@@ -1694,3 +1694,89 @@ HINT:  Perhaps you meant to reference the column "cont_prod_mapfre.valor_cv" or 
 2025-06-30 16:02:23,127 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Porto com sucesso
 2025-06-30 16:02:23,231 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.80 segundos
 2025-06-30 16:12:15,647 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-06-30 16:12:31,480 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:12:31,481 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:12:31,482 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 01-2025
+2025-06-30 16:12:33,835 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 16:12:33,918 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com sucesso
+2025-06-30 16:12:34,016 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.53 segundos
+2025-06-30 16:30:48,984 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:30:48,985 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:30:48,985 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 16:30:49,265 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com falha
+2025-06-30 16:30:49,266 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 16:30:49,266 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.28 segundos
+2025-06-30 16:30:51,999 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 16:31:19,857 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:31:19,858 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:31:19,858 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 16:31:23,004 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 16:31:24,288 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 16:31:24,395 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 16:31:24,476 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.62 segundos
+2025-06-30 16:33:27,259 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:33:27,259 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:33:27,260 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-06-30 16:33:30,338 - django.request - WARNING - Not Found: /media/finished_Axa_012025.txt
+2025-06-30 16:33:31,728 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 16:33:31,862 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com sucesso
+2025-06-30 16:33:31,966 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.71 segundos
+2025-06-30 16:57:47,092 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 16:57:47,092 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 16:57:47,093 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 01-2025
+2025-06-30 16:57:50,111 - django.request - WARNING - Not Found: /media/finished_Zurich_012025.txt
+2025-06-30 16:57:50,901 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 16:57:50,965 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com sucesso
+2025-06-30 16:57:51,055 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.96 segundos
+2025-06-30 17:03:32,085 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:03:32,086 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 17:03:32,086 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 17:03:33,622 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 17:03:33,630 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_chubb (cia: Chubb): ERRO:  função sum(character varying) não existe
+LINE 8:                             COALESCE(SUM(valor_as), 0)::floa...
+                                             ^
+HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados. Você precisa adicionar conversões de tipo explícitas.
+
+2025-06-30 17:03:33,683 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 17:03:33,726 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.64 segundos
+2025-06-30 17:10:21,653 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:10:21,654 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 17:10:21,654 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Chubb - 01-2025
+2025-06-30 17:10:23,152 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 17:10:23,224 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Chubb com sucesso
+2025-06-30 17:10:23,281 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.63 segundos
+2025-06-30 17:15:32,042 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:15:32,043 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 17:15:32,044 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-06-30 17:15:35,065 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 17:15:38,112 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 17:15:41,142 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 17:15:44,072 - django.request - WARNING - Not Found: /media/finished_Tokio_012025.txt
+2025-06-30 17:15:44,719 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-06-30 17:15:44,720 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 17:15:44,720 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 12.68 segundos
+2025-06-30 17:15:47,066 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 17:16:14,166 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:16:14,167 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 17:16:14,167 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-06-30 17:16:16,609 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-06-30 17:16:16,609 - extrato_app.CoreData.batch_runner - WARNING - Nenhum resumo individual foi gerado.
+2025-06-30 17:16:16,610 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.44 segundos
+2025-06-30 17:16:17,199 - django.request - WARNING - Not Found: /baixar_resumo
+2025-06-30 17:18:13,913 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:18:13,913 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-06-30 17:18:13,913 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 17:18:15,990 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 17:18:16,086 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 17:18:16,161 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.25 segundos
+2025-06-30 17:19:32,786 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-06-30 17:19:32,787 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-06-30 17:19:32,787 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Sompo - 01-2025
+2025-06-30 17:19:35,805 - django.request - WARNING - Not Found: /media/finished_Mapfre_Sompo_012025.txt
+2025-06-30 17:19:38,480 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 17:19:38,558 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Sompo com sucesso
+2025-06-30 17:19:38,558 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Mapfre - 01-2025
+2025-06-30 17:19:38,798 - django.request - WARNING - Not Found: /media/finished_Mapfre_Sompo_012025.txt
+2025-06-30 17:19:39,377 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-06-30 17:19:39,505 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Mapfre com sucesso
+2025-06-30 17:19:39,596 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.81 segundos
