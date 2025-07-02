@@ -31,5 +31,7 @@ Construção das bases de referencias origens de Arquivos de Leitura corresponde
 
 
 
---> Criar validação a respeito de corretoras não mapeadas
+--> Criar validação a respeito de corretoras não mapeadas no inicio do processo
    -- tabela de logs de cada execução de batch runner ? 
+   -- emissão relatório de inconsistencias, consolidando corretoras nao mapeadas e cias sem relatório / valor caixa; 
+    --- já existe a função que valida se as  corretoras selecionadas possuem conta virtual gerada, a partir dai alimentar o relatório de inconsistencia. 

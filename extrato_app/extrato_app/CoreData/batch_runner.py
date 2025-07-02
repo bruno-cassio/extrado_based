@@ -112,6 +112,10 @@ class BatchRunner:
         Returns:
             Dicionário com resultados do processamento
         """
+        logs_sucesso = []
+        logs_pulados = []
+
+        
         start_time = time.time()
         logger.info(f"Iniciando processamento para {len(cias)} CIAs e competência {competencia_str}")
         logger.info(f"CIAs selecionadas: {cias}")
@@ -121,6 +125,10 @@ class BatchRunner:
             competencia_formatada = f"{mes:02d}-{ano}"
 
             cias_ja_processadas = self.verificar_geracao_anterior(cias, competencia_formatada)
+
+            for cia in cias_ja_processadas:
+                logs_pulados.append(f"[PULADO] {cia} - Conta Virtual já gerada para {competencia_formatada}")
+
 
             if set(cias_ja_processadas) == set(cias):
                 logger.info(" Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.")
@@ -154,6 +162,14 @@ class BatchRunner:
                         'success': success,
                         'data': processed_data
                     }
+
+
+                    if success:
+                        logs_sucesso.append(f"[SUCESSO] {cia} - Conta Virtual gerada para {competencia_formatada}")
+                    else:
+                        logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada}")
+
+
 
                     # Gera resumo individual SOMENTE SE sucesso
                     if success:
@@ -189,8 +205,8 @@ class BatchRunner:
                     with open(file_path, 'wb') as f:
                         f.write(output.read())
 
-                    with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
-                        f.write('ready')
+                    # with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
+                    #     f.write('ready')
 
                     resultados['resumo'] = 'ok'
                 else:
@@ -206,6 +222,26 @@ class BatchRunner:
             elapsed_time = time.time() - start_time
             logger.info(f"Processamento concluído em {elapsed_time:.2f} segundos")
 
+            
+            try:
+                log_txt = "\n".join(logs_pulados + logs_sucesso)
+                log_filename = f"inconsistencias_{unique_id}.txt"
+                log_path = os.path.join(settings.MEDIA_ROOT, log_filename)
+
+                os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+                with open(log_path, 'w', encoding='utf-8') as f:
+                    f.write(log_txt)
+
+                resultados['log_execucao'] = log_filename
+
+                # with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
+                #     f.write('ready')
+
+
+            except Exception as e:
+                logger.error(f"Erro ao salvar log de inconsistências: {str(e)}")
+                resultados['log_execucao_error'] = str(e)
+                        
             return {
                 'status': 'completed',
                 'execution_time': elapsed_time,
