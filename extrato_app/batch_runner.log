@@ -3281,3 +3281,68 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-02 17:30:19,534 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-07-02 17:30:20,328 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-07-03 09:54:51,158 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-03 10:05:14,908 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-03 10:06:16,909 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-03 10:06:16,913 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-03 10:06:16,915 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-07-03 10:06:16,917 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-03 10:06:16,920 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-03 10:06:16,952 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-03 10:06:16,963 - extrato_app.CoreData.batch_runner - INFO -  Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.
+2025-07-03 10:06:18,934 - django.request - WARNING - Not Found: /baixar_resumo
+2025-07-03 10:07:12,444 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-03 10:07:48,540 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-03 10:07:48,544 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-03 10:07:48,545 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-07-03 10:07:48,545 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-03 10:07:48,547 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-03 10:07:48,562 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
+2025-07-03 10:07:48,563 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-07-03 10:07:50,663 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:07:52,566 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:07:54,579 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:07:56,572 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:07:58,567 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:00,580 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:02,643 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:04,719 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:06,595 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:08,577 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:10,658 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:12,613 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:14,609 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:16,562 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:18,576 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:20,561 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:22,604 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:24,559 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:08:26,325 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
+2025-07-03 10:08:26,441 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-07-03 10:08:26,507 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 37.96 segundos
+2025-07-03 10:08:26,569 - django.request - WARNING - Not Found: /media/finished_Bradesco_012025.txt
+2025-07-03 10:16:30,850 - django.security.DisallowedHost - ERROR - Invalid HTTP_HOST header: '192.168.0.178:8000'. You may need to add '192.168.0.178' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.0.178:8000'. You may need to add '192.168.0.178' to ALLOWED_HOSTS.
+2025-07-03 10:16:31,105 - django.request - WARNING - Bad Request: /
+2025-07-03 10:16:31,237 - django.security.DisallowedHost - ERROR - Invalid HTTP_HOST header: '192.168.0.178:8000'. You may need to add '192.168.0.178' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.0.178:8000'. You may need to add '192.168.0.178' to ALLOWED_HOSTS.
+2025-07-03 10:16:31,266 - django.request - WARNING - Bad Request: /favicon.ico
+2025-07-03 10:16:55,925 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
+2025-07-03 10:19:27,589 - django.request - WARNING - Not Found: /favicon.ico

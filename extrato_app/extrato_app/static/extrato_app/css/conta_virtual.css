@@ -476,7 +476,7 @@
         margin-top: 0.5rem;
     }
 
-    #download-popup {
+#download-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -487,6 +487,10 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+}
+
+#download-popup.popup-hidden {
+  display: none !important;
 }
 
 .popup-content {
@@ -506,10 +510,6 @@
   height: 30px;
   margin: 0 auto 10px;
   animation: spin 1s linear infinite;
-}
-
-.popup-hidden {
-  display: none;
 }
 
 @keyframes spin {
