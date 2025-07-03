@@ -258,19 +258,24 @@ class BatchRunner:
             }
 
     def consulta_resumo_final(self, cias: list, competencia: str) -> dict:
-        
-        """Consulta o resumo final dos dados processados"""
+        """
+        Consulta o resumo final dos dados processados.
+        Agora também inclui CIAs que já têm Conta Virtual gerada previamente.
+        """
 
-
-        logger.info(f"Gerando resumo final para {len(cias)} CIAs na competência {competencia}")
-        
+        logger.info(f"Iniciando geração de resumo final para competência {competencia}")
 
         load_dotenv()
         tabela_list = os.getenv("input_history_tables", "").split(",")
         cia_list = os.getenv("cia_corresp", "").split(",")
 
-        mapeamento = dict(zip([cia.strip() for cia in cia_list],
-                            [tabela.strip() for tabela in tabela_list]))
+        mapeamento = dict(zip([cia.strip() for cia in cia_list], [tabela.strip() for tabela in tabela_list]))
+
+        cias_existentes = self.verificar_geracao_anterior(cias, competencia)
+
+        todas_cias = list(set(cias + cias_existentes))
+
+        logger.info(f"Consultando resumo para {len(todas_cias)} CIAs (solicitadas + geradas anteriormente)")
 
         conn = DatabaseManager.get_connection()
         if not conn:
@@ -281,7 +286,7 @@ class BatchRunner:
 
         try:
             with conn.cursor() as cursor:
-                for cia in cias:
+                for cia in todas_cias:
                     tabela = mapeamento.get(cia)
                     if not tabela:
                         logger.warning(f"Cia '{cia}' não encontrada no mapeamento, pulando...")
@@ -326,12 +331,13 @@ class BatchRunner:
             output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                 df.to_excel(writer, index=False, sheet_name='ResumoFinal')
-            
+
             output.seek(0)
             return output
 
         except Exception as e:
             logger.error(f"Erro na consulta final: {str(e)}")
             return {"error": str(e)}
+
         finally:
             DatabaseManager.return_connection(conn)

@@ -140,11 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-
-
-
-
-
     async function submitForm(event) {
         event.preventDefault();
 
@@ -198,4 +193,3 @@ function hideDownloadPopup() {
     const popup = document.getElementById('download-popup');
     popup.classList.add('popup-hidden');
 }
-

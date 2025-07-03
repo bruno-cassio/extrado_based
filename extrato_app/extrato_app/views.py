@@ -59,28 +59,35 @@ def iniciar_extracao(request):
         def run_batch():
             try:
                 runner = BatchRunner()
+
                 resultados = runner.executar_combinações(cias_selected, competencia)
 
-                resumo = resultados.get('resumo')
-                df = pd.DataFrame(resumo) if not isinstance(resumo, pd.DataFrame) else resumo
+                resumo_bytes = runner.consulta_resumo_final(cias_selected, competencia)
 
-                output = BytesIO()
-                output = BytesIO()
-                with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                    df.to_excel(writer, index=False, sheet_name='ResumoFinal')
+                if isinstance(resumo_bytes, BytesIO):
+                    resumo_bytes.seek(0)
+                    file_path = os.path.join(settings.MEDIA_ROOT, f'resumo_{unique_id}.xlsx')
+                    os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
 
-                output.seek(0)
+                    with open(file_path, 'wb') as f:
+                        f.write(resumo_bytes.read())
 
-                arquivos_em_memoria[unique_id] = output.read()
+                    resumo_bytes.seek(0)
+                    arquivos_em_memoria[unique_id] = resumo_bytes.read()
 
-                flag_path = os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt')
-                with open(flag_path, 'w') as f:
-                    f.write('ok')
+                    flag_path = os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt')
+                    with open(flag_path, 'w') as f:
+                        f.write('ok')
 
-                print("✅ Processo finalizado com arquivo em memória para download")
+                    print("✅ Resumo salvo em disco e memória.")
+
+                else:
+                    print("❌ Falha ao gerar resumo final:", resumo_bytes.get("error", "Erro desconhecido"))
 
             except Exception as e:
                 print(f"❌ Erro no batch: {str(e)}")
+
+
 
         thread = threading.Thread(target=run_batch)
         thread.start()
