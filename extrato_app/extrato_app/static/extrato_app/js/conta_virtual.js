@@ -180,8 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(async (res) => {
                     if (res.ok) {
                         clearInterval(verificarArquivos);
+                        hideDownloadPopup();
 
-                        // Baixar XLSX
                         const link = document.createElement('a');
                         link.href = `/baixar_resumo?id=${uniqueId}`;
                         link.download = `resumo_${uniqueId}.xlsx`;
@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         link.click();
                         link.remove();
 
-                        // Baixar TXT (aguarda HEAD OK)
                         setTimeout(() => {
                             fetch(`/media/inconsistencias_${uniqueId}.txt`, { method: 'HEAD' })
                                 .then(r => {
@@ -208,7 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         showNotification('✅ Extração concluída! Download iniciado.', 'success');
 
-                        // Limpar arquivos
                         setTimeout(() => {
                             fetch(`/limpar_arquivos?id=${uniqueId}`, {
                                 method: 'POST',
@@ -258,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.status === 'success') {
                 showNotification(data.message, 'success');
+                showDownloadPopup();
                 iniciarDownloadQuandoArquivosEstiveremProntos(data.id);
             } else {
                 showNotification(data.message, 'error');
@@ -271,3 +270,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('form').addEventListener('submit', submitForm);
     updateSelections();
 });
+
+function showDownloadPopup() {
+    const popup = document.getElementById('download-popup');
+    popup.classList.remove('popup-hidden');
+}
+
+function hideDownloadPopup() {
+    const popup = document.getElementById('download-popup');
+    popup.classList.add('popup-hidden');
+}
+

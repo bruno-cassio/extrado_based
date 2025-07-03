@@ -3273,3 +3273,10 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-02 17:24:10,996 - extrato_app.CoreData.batch_runner - INFO - Gerando resumo final para 1 CIAs na competência 01-2025
 2025-07-02 17:24:11,070 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
 2025-07-02 17:24:11,144 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 49.44 segundos
+2025-07-02 17:29:49,435 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:29:55,527 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:30:18,955 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:30:19,184 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:30:19,335 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:30:19,534 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-02 17:30:20,328 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
