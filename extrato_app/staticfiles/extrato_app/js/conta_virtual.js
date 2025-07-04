@@ -92,18 +92,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function iniciarDownloadQuandoPronto(uniqueId) {
-        const intervalo = setInterval(() => {
-            fetch(`/media/finished_${uniqueId}.txt`)
-                .then(response => {
-                    if (response.ok) {
-                        clearInterval(intervalo);
+    function iniciarDownloadQuandoArquivosEstiveremProntos(uniqueId) {
+        const verificarArquivos = setInterval(() => {
+            fetch(`/media/finished_${uniqueId}.txt`, { method: 'HEAD' })
+                .then(async (res) => {
+                    if (res.ok) {
+                        clearInterval(verificarArquivos);
+                        hideDownloadPopup();
+
                         const link = document.createElement('a');
                         link.href = `/baixar_resumo?id=${uniqueId}`;
                         link.download = `resumo_${uniqueId}.xlsx`;
                         document.body.appendChild(link);
                         link.click();
                         link.remove();
+
+                        setTimeout(() => {
+                            fetch(`/media/inconsistencias_${uniqueId}.txt`, { method: 'HEAD' })
+                                .then(r => {
+                                    if (r.ok) {
+                                        const txtLink = document.createElement('a');
+                                        txtLink.href = `/media/inconsistencias_${uniqueId}.txt`;
+                                        txtLink.download = `inconsistencias_${uniqueId}.txt`;
+                                        document.body.appendChild(txtLink);
+                                        txtLink.click();
+                                        txtLink.remove();
+                                    } else {
+                                        console.warn("Arquivo .txt não encontrado ainda.");
+                                    }
+                                });
+                        }, 1000);
 
                         showNotification('✅ Extração concluída! Download iniciado.', 'success');
 
@@ -118,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 5000);
                     }
                 })
-                .catch(() => {});
-        }, 3000);
+                .catch(err => console.error('Erro ao verificar arquivos:', err));
+        }, 2000);
     }
 
     async function submitForm(event) {
@@ -151,7 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.status === 'success') {
                 showNotification(data.message, 'success');
-                iniciarDownloadQuandoPronto(data.id);
+                showDownloadPopup();
+                iniciarDownloadQuandoArquivosEstiveremProntos(data.id);
             } else {
                 showNotification(data.message, 'error');
             }
@@ -164,3 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('form').addEventListener('submit', submitForm);
     updateSelections();
 });
+
+function showDownloadPopup() {
+    const popup = document.getElementById('download-popup');
+    popup.classList.remove('popup-hidden');
+}
+
+function hideDownloadPopup() {
+    const popup = document.getElementById('download-popup');
+    popup.classList.add('popup-hidden');
+}
