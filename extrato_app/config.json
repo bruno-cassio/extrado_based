@@ -1,6 +1,6 @@
 {
-  "cia_corresp": "Bradesco Saude",
+  "cia_corresp": "Bradesco",
   "competencia": "01-2025",
   "ref_nom": "Razão Social Corretor",
-  "input_history_tables": "cont_prod_bradesco_saude"
+  "input_history_tables": "cont_prod_bradesco"
 }
