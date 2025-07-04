@@ -5154,3 +5154,89 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-04 15:20:54,910 - extrato_app.CoreData.batch_runner - ERROR - Erro ao consultar tabela cont_prod_axa (cia: Axa): ERRO:  transação atual foi interrompida, comandos ignorados até o fim do bloco de transação
 
 2025-07-04 15:20:56,873 - django.request - WARNING - Not Found: /media/inconsistencias_Allianz_Axa_Bradesco_Bradesco Saude_Chubb_Ezze_Hdi_Junto Seguradora_Mapfre_Porto_Sompo_Suhai_Tokio_Yelum_Zurich_012025.txt
+2025-07-04 15:26:00,976 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-04 15:26:00,978 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-04 15:26:00,978 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-07-04 15:26:00,978 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:26:00,981 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:26:00,986 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:26:00,986 - extrato_app.CoreData.batch_runner - INFO -  Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.
+2025-07-04 15:26:00,987 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:26:00,989 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:26:00,992 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:26:00,995 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:26:00,996 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:26:04,093 - django.request - WARNING - Not Found: /media/inconsistencias_Bradesco_012025.txt
+2025-07-04 15:27:28,935 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-04 15:27:28,935 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-04 15:27:28,935 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-07-04 15:27:28,936 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:28,939 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:28,941 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:28,942 - extrato_app.CoreData.batch_runner - INFO -  Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.
+2025-07-04 15:27:28,942 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:27:28,945 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:28,947 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:28,949 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:28,951 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:27:31,966 - django.request - WARNING - Not Found: /media/inconsistencias_Bradesco_012025.txt
+2025-07-04 15:27:37,072 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-04 15:27:37,073 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-07-04 15:27:37,073 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude']
+2025-07-04 15:27:37,074 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:37,077 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:37,080 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:37,080 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:37,084 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:27:37,085 - extrato_app.CoreData.batch_runner - INFO -  Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.
+2025-07-04 15:27:37,086 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:27:37,087 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:37,088 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:37,090 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:37,090 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:37,091 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:27:37,092 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 2 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:27:40,184 - django.request - WARNING - Not Found: /media/inconsistencias_Bradesco_Bradesco Saude_012025.txt
+2025-07-04 15:27:55,206 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-04 15:27:55,207 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-07-04 15:27:55,207 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco Saude', 'Bradesco']
+2025-07-04 15:27:55,208 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:55,211 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:55,214 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:55,215 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:55,216 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco Saude']
+2025-07-04 15:27:55,217 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-07-04 15:27:56,970 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:27:56,972 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:56,973 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:56,976 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:27:56,977 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:27:57,022 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-07-04 15:27:57,097 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.89 segundos
+2025-07-04 15:27:57,100 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:27:57,102 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:27:57,106 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:57,108 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:27:57,108 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:27:57,109 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-04 15:27:57,111 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 2 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:27:58,454 - django.request - WARNING - Not Found: /media/inconsistencias_Bradesco_Bradesco Saude_012025.txt
+2025-07-04 15:28:20,707 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-04 15:28:20,707 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-07-04 15:28:20,708 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco Saude']
+2025-07-04 15:28:20,708 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:28:20,711 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:28:20,716 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco Saude']
+2025-07-04 15:28:20,716 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco Saude - 01-2025
+2025-07-04 15:28:21,666 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:28:21,667 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:28:21,668 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:28:21,670 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:28:21,671 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-07-04 15:28:21,724 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco Saude com sucesso
+2025-07-04 15:28:21,779 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.07 segundos
+2025-07-04 15:28:21,780 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-04 15:28:21,782 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-04 15:28:21,786 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-04 15:28:21,789 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-04 15:28:21,790 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
