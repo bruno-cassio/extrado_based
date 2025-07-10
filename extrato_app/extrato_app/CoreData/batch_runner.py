@@ -127,15 +127,40 @@ class BatchRunner:
             cias_ja_processadas = self.verificar_geracao_anterior(cias, competencia_formatada)
 
             for cia in cias_ja_processadas:
-                logs_pulados.append(f"[PULADO] {cia} - Conta Virtual já gerada para {competencia_formatada}")
+                logs_pulados.append(f"[EXISTENTE] {cia} - Conta Virtual já gerada para {competencia_formatada}")
 
 
             if set(cias_ja_processadas) == set(cias):
-                logger.info(" Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.")
-                return {
-                    'status': 'encerrado',
-                    'mensagem': 'Já existem registros para todas as CIAs na competência informada.'
-                }
+                logger.info("Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.")
+                
+                try:
+                    log_txt = "\n".join(logs_pulados)
+
+                    safe_competencia = competencia_formatada.replace("-", "")
+                    unique_id = f"conta_virtual_{safe_competencia}"
+                    log_filename = f"{unique_id}.txt"
+
+
+                    log_path = os.path.join(settings.MEDIA_ROOT, log_filename)
+
+                    os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+                    with open(log_path, 'w', encoding='utf-8') as f:
+                        f.write(log_txt)
+
+                    logger.info(f"Log de execuções puladas salvo em: {log_filename}")
+                    return {
+                        'status': 'encerrado',
+                        'mensagem': 'Já existem registros para todas as CIAs na competência informada.',
+                        'log_execucao': log_filename
+                    }
+
+                except Exception as e:
+                    logger.error(f"Erro ao salvar log de execuções puladas: {str(e)}")
+                    return {
+                        'status': 'encerrado',
+                        'mensagem': 'Todas as CIAs já tinham conta gerada, mas houve erro ao salvar o log.',
+                        'log_execucao_error': str(e)
+                    }
 
             cias = [cia for cia in cias if cia not in cias_ja_processadas]
             logger.info(f" CIAs que ainda serão processadas: {cias}")
@@ -163,13 +188,10 @@ class BatchRunner:
                         'data': processed_data
                     }
 
-
                     if success:
                         logs_sucesso.append(f"[SUCESSO] {cia} - Conta Virtual gerada para {competencia_formatada}")
                     else:
                         logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada}")
-
-
 
                     # Gera resumo individual SOMENTE SE sucesso
                     if success:
@@ -198,8 +220,11 @@ class BatchRunner:
                         df_final.to_excel(writer, index=False, sheet_name='ResumoFinal')
 
                     output.seek(0)
-                    unique_id = "_".join(sorted(cias)) + "_" + competencia_formatada.replace("-", "")
-                    file_path = os.path.join(settings.MEDIA_ROOT, f'resumo_{unique_id}.xlsx')
+
+                    safe_competencia = competencia_formatada.replace("-", "")
+                    unique_id = f"conta_virtual_{safe_competencia}"
+                    file_path = os.path.join(settings.MEDIA_ROOT, f'{unique_id}.xlsx')
+
                     os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
 
                     with open(file_path, 'wb') as f:
@@ -225,7 +250,7 @@ class BatchRunner:
             
             try:
                 log_txt = "\n".join(logs_pulados + logs_sucesso)
-                log_filename = f"inconsistencias_{unique_id}.txt"
+                log_filename = f"conta_virtual_{unique_id}.txt"
                 log_path = os.path.join(settings.MEDIA_ROOT, log_filename)
 
                 os.makedirs(settings.MEDIA_ROOT, exist_ok=True)

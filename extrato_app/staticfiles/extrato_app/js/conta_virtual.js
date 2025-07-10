@@ -108,12 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         link.remove();
 
                         setTimeout(() => {
-                            fetch(`/media/inconsistencias_${uniqueId}.txt`, { method: 'HEAD' })
+                            fetch(`/media/conta_virtual_${uniqueId}.txt`, { method: 'HEAD' })
                                 .then(r => {
                                     if (r.ok) {
                                         const txtLink = document.createElement('a');
-                                        txtLink.href = `/media/inconsistencias_${uniqueId}.txt`;
-                                        txtLink.download = `inconsistencias_${uniqueId}.txt`;
+                                        txtLink.href = `/media/conta_virtual_${uniqueId}.txt`;
+                                        txtLink.download = `conta_virtual_${uniqueId}.txt`;
                                         document.body.appendChild(txtLink);
                                         txtLink.click();
                                         txtLink.remove();

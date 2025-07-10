@@ -55,7 +55,10 @@ def iniciar_extracao(request):
         if not cias_selected or not competencia:
             return JsonResponse({'status': 'error', 'message': 'Selecione pelo menos uma CIA e informe a competência'})
 
-        unique_id = "_".join(sorted(cias_selected)) + "_" + competencia.replace("-", "")
+
+
+        competencia_id = competencia.replace("-", "")
+        unique_id = f"conta_virtual_{competencia_id}" 
         def run_batch():
             try:
                 runner = BatchRunner()
@@ -106,12 +109,9 @@ def baixar_resumo(request):
     if not unique_id:
         raise Http404("ID não especificado.")
 
-    file_path = os.path.join(
-        settings.MEDIA_ROOT,
-        f'resumo_{unique_id}.xlsx'
-    )
+    file_path = os.path.join(settings.MEDIA_ROOT, f"resumo_{unique_id}.xlsx")
 
     if os.path.exists(file_path):
-        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f'resumo_{unique_id}.xlsx')
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"resumo_{unique_id}.xlsx")
     else:
         raise Http404("Arquivo não encontrado.")
