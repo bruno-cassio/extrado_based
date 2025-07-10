@@ -108,12 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         link.remove();
 
                         setTimeout(() => {
-                            fetch(`/media/conta_virtual_${uniqueId}.txt`, { method: 'HEAD' })
+                            const txtFilename = `${uniqueId}.txt`;
+                            fetch(`/media/${txtFilename}`, { method: 'HEAD' })
                                 .then(r => {
                                     if (r.ok) {
                                         const txtLink = document.createElement('a');
-                                        txtLink.href = `/media/conta_virtual_${uniqueId}.txt`;
-                                        txtLink.download = `conta_virtual_${uniqueId}.txt`;
+                                        txtLink.href = `/media/${txtFilename}`;
+                                        txtLink.download = txtFilename;
                                         document.body.appendChild(txtLink);
                                         txtLink.click();
                                         txtLink.remove();

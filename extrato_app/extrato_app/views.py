@@ -31,21 +31,17 @@ def index(request):
 
 def limpar_arquivos(request):
     if request.method == "POST":
-        unique_id = request.GET.get('id')
-        if not unique_id:
-            return JsonResponse({'erro': 'ID inválido'}, status=400)
-
-        txt_path = os.path.join('media', f'finished_{unique_id}.txt')
-        xlsx_path = os.path.join('media', f'resumo_{unique_id}.xlsx')
-
-        for path in [txt_path, xlsx_path]:
-            try:
-                if os.path.exists(path):
-                    os.remove(path)
-            except Exception as e:
-                return JsonResponse({'erro': str(e)}, status=500)
-
-        return JsonResponse({'status': 'ok'})
+        media_dir = settings.MEDIA_ROOT
+        try:
+            for file_name in os.listdir(media_dir):
+                file_path = os.path.join(media_dir, file_name)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+            return JsonResponse({'status': 'ok'})
+        except Exception as e:
+            return JsonResponse({'erro': str(e)}, status=500)
+    else:
+        return JsonResponse({'erro': 'Método não permitido'}, status=405)
 
 def iniciar_extracao(request):
     if request.method == 'POST':
