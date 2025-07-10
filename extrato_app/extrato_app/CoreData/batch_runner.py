@@ -250,7 +250,7 @@ class BatchRunner:
             
             try:
                 log_txt = "\n".join(logs_pulados + logs_sucesso)
-                log_filename = f"conta_virtual_{unique_id}.txt"
+                log_filename = f"{unique_id}.txt"
                 log_path = os.path.join(settings.MEDIA_ROOT, log_filename)
 
                 os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
