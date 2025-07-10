@@ -5812,3 +5812,6 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-10 17:21:37,225 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
 2025-07-10 17:21:39,223 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
 2025-07-10 17:21:41,212 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-07-10 17:21:43,206 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-07-10 17:21:45,207 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-07-10 17:21:47,233 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
