@@ -108,13 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         link.remove();
 
                         setTimeout(() => {
-                            const txtFilename = `${uniqueId}.txt`;
-                            fetch(`/media/${txtFilename}`, { method: 'HEAD' })
+                            fetch(`/media/${uniqueId}.txt`, { method: 'HEAD' })
                                 .then(r => {
                                     if (r.ok) {
                                         const txtLink = document.createElement('a');
-                                        txtLink.href = `/media/${txtFilename}`;
-                                        txtLink.download = txtFilename;
+                                        txtLink.href = `/media/${uniqueId}.txt`;
+                                        txtLink.download = `${uniqueId}.txt`;
                                         document.body.appendChild(txtLink);
                                         txtLink.click();
                                         txtLink.remove();
@@ -154,14 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        showNotification('Processando, aguarde...', 'loading');
+        showNotification('Iniciando extração, aguarde...', 'loading');
+        showDownloadPopup();
 
         try {
-            const formData = new FormData();
-            formData.append("cias_selected", JSON.stringify(selectedCias));
-            formData.append("mes", competenciaInput.value);
-
-            const response = await fetch("/iniciar_extracao/", {
+            const formData = new FormData(event.target);
+            const response = await fetch(window.djangoURL, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -172,33 +169,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (data.status === 'success') {
-                showNotification('✅ Extração concluída! Baixando arquivos...', 'success');
-
-                const xlsxFilename = data.xlsx_url.split('/').pop();
-                const xlsxLink = document.createElement('a');
-                xlsxLink.href = data.xlsx_url;
-                xlsxLink.download = xlsxFilename;
-                document.body.appendChild(xlsxLink);
-                xlsxLink.click();
-                xlsxLink.remove();
-
-                const txtFilename = data.txt_url.split('/').pop();
-                const txtLink = document.createElement('a');
-                txtLink.href = data.txt_url;
-                txtLink.download = txtFilename;
-                document.body.appendChild(txtLink);
-                txtLink.click();
-                txtLink.remove();
-
+                showNotification(data.message, 'success');
+                showDownloadPopup();
+                iniciarDownloadQuandoArquivosEstiveremProntos(data.id);
             } else {
-                showNotification(data.message || 'Erro durante a extração.', 'error');
+                showNotification(data.message, 'error');
             }
         } catch (error) {
-            console.error(error);
             showNotification('Erro ao conectar com o servidor', 'error');
+            console.error('Erro:', error);
         }
     }
-
 
     document.querySelector('form').addEventListener('submit', submitForm);
     updateSelections();

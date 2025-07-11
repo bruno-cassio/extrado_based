@@ -97,7 +97,7 @@
 
     header {
         background: var(--primary);
-        padding: 1.5rem 0;
+        padding: 1.25rem 0;
         text-align: center;
         position: relative;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -113,7 +113,7 @@
     }
     
     header img {
-        max-height: 65px;
+        max-height: 75px;
         height: auto;
         object-fit: contain;
         transition: transform 0.3s ease;

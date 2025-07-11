@@ -1414,3 +1414,26 @@
 2025-07-11 16:09:08,204 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
 2025-07-11 16:09:08,206 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
 2025-07-11 16:09:08,212 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-07-11 16:21:06,084 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:21:06,377 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-11 16:21:08,559 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:21:08,787 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-11 16:22:55,866 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:22:56,896 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:23:40,441 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:23:46,983 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:23:47,825 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:23:47,978 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-11 16:23:48,748 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:23:48,934 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-11 16:26:08,494 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
+2025-07-11 16:26:13,554 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:26:14,721 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:26:40,797 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:26:41,112 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-11 16:26:41,983 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:31:09,431 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:31:10,954 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:31:11,563 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:33:56,847 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 16:37:02,519 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
