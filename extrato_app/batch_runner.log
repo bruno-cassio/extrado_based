@@ -1994,3 +1994,5 @@ HINT:  Nenhuma função corresponde com o nome e os tipos de argumentos informados
 2025-07-11 17:20:47,992 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
 2025-07-11 17:20:47,993 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
 2025-07-11 17:20:47,995 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 12 CIAs (solicitadas + geradas anteriormente)
+2025-07-11 17:25:51,299 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-11 17:25:51,970 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
