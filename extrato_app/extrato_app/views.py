@@ -51,51 +51,41 @@ def iniciar_extracao(request):
         if not cias_selected or not competencia:
             return JsonResponse({'status': 'error', 'message': 'Selecione pelo menos uma CIA e informe a competência'})
 
-
-
         competencia_id = competencia.replace("-", "")
-        unique_id = f"conta_virtual_{competencia_id}" 
-        def run_batch():
-            try:
-                runner = BatchRunner()
+        unique_id = f"conta_virtual_{competencia_id}"
 
-                resultados = runner.executar_combinações(cias_selected, competencia)
+        try:
+            runner = BatchRunner()
+            resultados = runner.executar_combinações(cias_selected, competencia)
 
-                resumo_bytes = runner.consulta_resumo_final(cias_selected, competencia)
+            if resultados.get("status") not in ["completed", "success"]:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Erro durante o processamento',
+                    'detalhes': resultados
+                })
 
-                if isinstance(resumo_bytes, BytesIO):
-                    resumo_bytes.seek(0)
-                    file_path = os.path.join(settings.MEDIA_ROOT, f'resumo_{unique_id}.xlsx')
-                    os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+            xlsx_filename = f"{unique_id}.xlsx"
+            txt_filename = f"{unique_id}.txt"
+            xlsx_path = os.path.join(settings.MEDIA_ROOT, xlsx_filename)
+            txt_path = os.path.join(settings.MEDIA_ROOT, txt_filename)
 
-                    with open(file_path, 'wb') as f:
-                        f.write(resumo_bytes.read())
+            if not os.path.exists(xlsx_path) or not os.path.exists(txt_path):
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Arquivos de saída não encontrados.'
+                })
 
-                    resumo_bytes.seek(0)
-                    arquivos_em_memoria[unique_id] = resumo_bytes.read()
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Processamento finalizado com sucesso!',
+                'id': unique_id,
+                'xlsx_url': f"/media/{xlsx_filename}",
+                'txt_url': f"/media/{txt_filename}"
+            })
 
-                    flag_path = os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt')
-                    with open(flag_path, 'w') as f:
-                        f.write('ok')
-
-                    print("✅ Resumo salvo em disco e memória.")
-
-                else:
-                    print("❌ Falha ao gerar resumo final:", resumo_bytes.get("error", "Erro desconhecido"))
-
-            except Exception as e:
-                print(f"❌ Erro no batch: {str(e)}")
-
-
-
-        thread = threading.Thread(target=run_batch)
-        thread.start()
-
-        return JsonResponse({
-            'status': 'success',
-            'message': 'Extração iniciada em segundo plano! Você será notificado quando concluir.',
-            'id': unique_id
-        })
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
 
     return JsonResponse({'status': 'error', 'message': 'Método não permitido'}, status=405)
 
@@ -105,9 +95,9 @@ def baixar_resumo(request):
     if not unique_id:
         raise Http404("ID não especificado.")
 
-    file_path = os.path.join(settings.MEDIA_ROOT, f"resumo_{unique_id}.xlsx")
+    file_path = os.path.join(settings.MEDIA_ROOT, f"{unique_id}.xlsx")
 
     if os.path.exists(file_path):
-        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"resumo_{unique_id}.xlsx")
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"{unique_id}.xlsx")
     else:
         raise Http404("Arquivo não encontrado.")

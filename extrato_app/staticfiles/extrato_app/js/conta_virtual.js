@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const link = document.createElement('a');
                         link.href = `/baixar_resumo?id=${uniqueId}`;
-                        link.download = `resumo_${uniqueId}.xlsx`;
+                        link.download = `${uniqueId}.xlsx`;
                         document.body.appendChild(link);
                         link.click();
                         link.remove();
@@ -154,11 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        showNotification('Iniciando extração, aguarde...', 'loading');
+        showNotification('Processando, aguarde...', 'loading');
 
         try {
-            const formData = new FormData(event.target);
-            const response = await fetch(window.djangoURL, {
+            const formData = new FormData();
+            formData.append("cias_selected", JSON.stringify(selectedCias));
+            formData.append("mes", competenciaInput.value);
+
+            const response = await fetch("/iniciar_extracao/", {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -169,17 +172,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (data.status === 'success') {
-                showNotification(data.message, 'success');
-                showDownloadPopup();
-                iniciarDownloadQuandoArquivosEstiveremProntos(data.id);
+                showNotification('✅ Extração concluída! Baixando arquivos...', 'success');
+
+                const xlsxFilename = data.xlsx_url.split('/').pop();
+                const xlsxLink = document.createElement('a');
+                xlsxLink.href = data.xlsx_url;
+                xlsxLink.download = xlsxFilename;
+                document.body.appendChild(xlsxLink);
+                xlsxLink.click();
+                xlsxLink.remove();
+
+                const txtFilename = data.txt_url.split('/').pop();
+                const txtLink = document.createElement('a');
+                txtLink.href = data.txt_url;
+                txtLink.download = txtFilename;
+                document.body.appendChild(txtLink);
+                txtLink.click();
+                txtLink.remove();
+
             } else {
-                showNotification(data.message, 'error');
+                showNotification(data.message || 'Erro durante a extração.', 'error');
             }
         } catch (error) {
+            console.error(error);
             showNotification('Erro ao conectar com o servidor', 'error');
-            console.error('Erro:', error);
         }
     }
+
 
     document.querySelector('form').addEventListener('submit', submitForm);
     updateSelections();

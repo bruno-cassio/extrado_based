@@ -131,36 +131,51 @@ class BatchRunner:
 
 
             if set(cias_ja_processadas) == set(cias):
-                logger.info("Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Encerrando execução.")
-                
-                try:
-                    log_txt = "\n".join(logs_pulados)
+                logger.info("Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.")
 
+                try:
+                    resumo_bytes = self.consulta_resumo_final(cias_ja_processadas, competencia_formatada)
                     safe_competencia = competencia_formatada.replace("-", "")
                     unique_id = f"conta_virtual_{safe_competencia}"
+                    resumo_filename = f"{unique_id}.xlsx"
+                    resumo_path = os.path.join(settings.MEDIA_ROOT, resumo_filename)
+
+                    if isinstance(resumo_bytes, BytesIO):
+                        os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+                        with open(resumo_path, 'wb') as f:
+                            f.write(resumo_bytes.read())
+                        resumo_status = 'ok'
+                    else:
+                        resumo_status = 'erro'
+
+                    log_txt = "\n".join(logs_pulados)
                     log_filename = f"{unique_id}.txt"
-
-
                     log_path = os.path.join(settings.MEDIA_ROOT, log_filename)
 
                     os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
                     with open(log_path, 'w', encoding='utf-8') as f:
                         f.write(log_txt)
 
-                    logger.info(f"Log de execuções puladas salvo em: {log_filename}")
+                    with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
+                        f.write('ready')
+
                     return {
-                        'status': 'encerrado',
-                        'mensagem': 'Já existem registros para todas as CIAs na competência informada.',
-                        'log_execucao': log_filename
+                        'status': 'success',
+                        'id': unique_id, 
+                        'mensagem': 'Todas as CIAs já tinham conta gerada. Resumo final gerado mesmo assim.',
+                        'log_execucao': log_filename,
+                        'resumo': resumo_status
                     }
 
                 except Exception as e:
-                    logger.error(f"Erro ao salvar log de execuções puladas: {str(e)}")
+                    logger.error(f"Erro ao salvar log e resumo para CIAs já geradas: {str(e)}")
                     return {
-                        'status': 'encerrado',
-                        'mensagem': 'Todas as CIAs já tinham conta gerada, mas houve erro ao salvar o log.',
+                        'status': 'success',
+                        'id': unique_id,
+                        'mensagem': 'Todas as CIAs já tinham conta gerada, mas houve erro ao salvar log ou resumo.',
                         'log_execucao_error': str(e)
                     }
+
 
             cias = [cia for cia in cias if cia not in cias_ja_processadas]
             logger.info(f" CIAs que ainda serão processadas: {cias}")
@@ -194,13 +209,13 @@ class BatchRunner:
                         logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada}")
 
                     # Gera resumo individual SOMENTE SE sucesso
-                    if success:
-                        resumo_bytes = self.consulta_resumo_final([cia], competencia_formatada)
-                        if isinstance(resumo_bytes, BytesIO):
-                            resumo_bytes.seek(0)
-                            df_cia = pd.read_excel(resumo_bytes)
-                            df_cia['cia'] = cia
-                            df_resumos.append(df_cia)
+                    # if success:
+                    #     resumo_bytes = self.consulta_resumo_final([cia], competencia_formatada)
+                    #     if isinstance(resumo_bytes, BytesIO):
+                    #         resumo_bytes.seek(0)
+                    #         df_cia = pd.read_excel(resumo_bytes)
+                    #         df_cia['cia'] = cia
+                    #         df_resumos.append(df_cia)
 
                     logger.info(f"Processamento concluído para {cia} com {'sucesso' if success else 'falha'}")
 
@@ -213,34 +228,25 @@ class BatchRunner:
                     }
 
             try:
-                if df_resumos:
-                    df_final = pd.concat(df_resumos, ignore_index=True)
-                    output = BytesIO()
-                    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                        df_final.to_excel(writer, index=False, sheet_name='ResumoFinal')
+                # Chamar resumo para todas as cias do processo (mesmo que algumas tenham sido puladas)
+                resumo_bytes = self.consulta_resumo_final(cias + cias_ja_processadas, competencia_formatada)
+                safe_competencia = competencia_formatada.replace("-", "")
+                unique_id = f"conta_virtual_{safe_competencia}"
+                file_path = os.path.join(settings.MEDIA_ROOT, f'{unique_id}.xlsx')
 
-                    output.seek(0)
-
-                    safe_competencia = competencia_formatada.replace("-", "")
-                    unique_id = f"conta_virtual_{safe_competencia}"
-                    file_path = os.path.join(settings.MEDIA_ROOT, f'{unique_id}.xlsx')
-
+                if isinstance(resumo_bytes, BytesIO):
                     os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
-
                     with open(file_path, 'wb') as f:
-                        f.write(output.read())
-
-                    # with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
-                    #     f.write('ready')
-
+                        f.write(resumo_bytes.read())
                     resultados['resumo'] = 'ok'
                 else:
-                    logger.warning("Nenhum resumo individual foi gerado.")
+                    logger.warning("Resumo retornado está vazio ou inválido.")
                     resultados['resumo'] = 'vazio'
 
             except Exception as e:
                 logger.error(f"Erro ao gerar resumo final concatenado: {str(e)}")
                 resultados['resumo_error'] = str(e)
+
 
             os.environ["CIAS_OPT"] = self.cia_originais
 
@@ -259,8 +265,8 @@ class BatchRunner:
 
                 resultados['log_execucao'] = log_filename
 
-                # with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
-                #     f.write('ready')
+                with open(os.path.join(settings.MEDIA_ROOT, f'finished_{unique_id}.txt'), 'w') as f:
+                    f.write('ready')
 
 
             except Exception as e:

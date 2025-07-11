@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const link = document.createElement('a');
                         link.href = `/baixar_resumo?id=${uniqueId}`;
-                        link.download = `resumo_${uniqueId}.xlsx`;
+                        link.download = `${uniqueId}.xlsx`;
                         document.body.appendChild(link);
                         link.click();
                         link.remove();
@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         showNotification('Iniciando extração, aguarde...', 'loading');
+        showDownloadPopup();
 
         try {
             const formData = new FormData(event.target);
