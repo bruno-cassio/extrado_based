@@ -1,6 +1,6 @@
 {
-  "cia_corresp": "Ezze",
+  "cia_corresp": "Hdi",
   "competencia": "01-2025",
-  "ref_nom": "nm_corretor",
-  "input_history_tables": "cont_prod_ezze"
+  "ref_nom": "descrição corretor coligado",
+  "input_history_tables": "cont_prod_hdi"
 }
