@@ -112,6 +112,16 @@ class EzzeHandler:
         df.loc[mask_auto, 'valor_cv'] = df.loc[mask_auto, 'premio_rec'] * 0.04
         df.loc[mask_auto, 'valor_vi'] = df.loc[mask_auto, 'premio_rec'] * 0.01
 
+
+        df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
+
+
+        # df = df[df['cd_apolice'].notna()]
+        print('====================================================================== VALIDAÇÃO DENTRO DE EZZE HANDLER ======================================================================')
+        print(df.head())
+        print('====================================================================== VALIDAÇÃO DENTRO DE EZZE HANDLER ======================================================================')
+
+
         user = getpass.getuser()
         downloads_path = os.path.join("C:\\Users", user, "Downloads")
         output_file = os.path.join(downloads_path, f"resultado_{file_name}.xlsx")

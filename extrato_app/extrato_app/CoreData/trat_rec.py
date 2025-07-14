@@ -347,6 +347,14 @@ class TratamentoRecalculo:
         if cia in self.process_dispatcher:
             self.process_dispatcher[cia](df, file_name, premio_exec, fator_melchiori, premio_db)
 
+            if cia == 'Ezze':
+                print('validação ezze')
+                print(df.columns)
+                df = df.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
+                print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
+
+                print('============================================================================= validação acima erro de agora =============================================================================')
+
             print('dispatched bitch:', cia)
             print(f"Processado para cia: {cia}")
         else:

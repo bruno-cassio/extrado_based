@@ -208,15 +208,6 @@ class BatchRunner:
                     else:
                         logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada}")
 
-                    # Gera resumo individual SOMENTE SE sucesso
-                    # if success:
-                    #     resumo_bytes = self.consulta_resumo_final([cia], competencia_formatada)
-                    #     if isinstance(resumo_bytes, BytesIO):
-                    #         resumo_bytes.seek(0)
-                    #         df_cia = pd.read_excel(resumo_bytes)
-                    #         df_cia['cia'] = cia
-                    #         df_resumos.append(df_cia)
-
                     logger.info(f"Processamento concluído para {cia} com {'sucesso' if success else 'falha'}")
 
                 except Exception as e:

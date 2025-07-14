@@ -77,7 +77,6 @@ from extrato_app.CoreData.ds4 import parse_meses_opt, escolher_cia_e_atualizar_c
 from pathlib import Path
 import pandas as pd
 
-
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
 ROOT_NUMS = os.getenv("ROOT_NUMS", "")
@@ -130,14 +129,12 @@ class DataImporter:
         self.data_handler = DataHandler()
         self.consolidador = Consolidador()
 
-
-
-
     def import_data_to_db(self, processed_data: Dict[str, Any], id_cia: str) -> bool:
 
         print('Iniciando importação principal...')
         overall_success = True
         
+
         for table_name, data in processed_data.items():
             print(f"📊 Importando {table_name}...")
             conn = DatabaseManager.get_connection()
@@ -158,7 +155,6 @@ class DataImporter:
                 DatabaseManager.return_connection(conn)
         
         return overall_success
-
 
     def execute_pipeline(self) -> Tuple[bool, Optional[Dict[str, Any]]]:
         
@@ -195,11 +191,9 @@ class DataImporter:
 
         return overall_success, processed_data
 
-
 def main(cia_manual: Optional[str] = None, competencia_manual: Optional[str] = None):
     importer = DataImporter(cia_manual, competencia_manual)
     return importer.execute_pipeline()
-
 
 if __name__ == "__main__":
     main()

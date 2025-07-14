@@ -236,6 +236,9 @@ class DataHandler:
             if cia_escolhida == 'Yelum':
                 print('NEITHEr')
                 self.tratamento_recalculo.process_recalculo(df, cias_corresp,table_name,premio_exec,fator_melchiori)
+            elif cia_escolhida == 'Ezze':
+                print('*********************************************************************************** cia é Ezze ***********************************************************************************')
+                self.tratamento_recalculo.process_recalculo(df, cias_corresp, table_name, premio_exec, fator_melchiori)
             else:
                 self.tratamento_recalculo.process_recalculo(df, cias_corresp, latest_file, table_name, premio_exec=premio_exec, fator_melchiori=float(fator_melchiori), premio_db=premio_db)
 
@@ -251,7 +254,11 @@ class DataHandler:
 
         for table_name, data in file_dfs.items():
             print(f"\n📤 Processando tabela: {table_name}")
-            
+
+
+
+
+
             if isinstance(data, dict) and 'df' in data:
                 df = data['df']
             elif isinstance(data, pd.DataFrame):
@@ -260,7 +267,17 @@ class DataHandler:
                 print(f"⚠️ Dados inválidos para a tabela {table_name}: tipo {type(data)}")
                 continue
 
+            if id_cia == '556':
+                print('=================================== validação inicial para EZZE em TREAT ZERO ===================================')
+                print(df.columns)
+                df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
+                
+            
             print(df.head())
+
+            df = df.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
+            print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
+
 
             df['id_seguradora_quiver'] = id_cia
             df.columns = [col.lower() for col in df.columns]
@@ -281,6 +298,18 @@ class DataHandler:
                 'ordered_cols': [col for col in db_columns if col in df_filtered.columns],
                 'ordered_cols_escaped': [f'"{col}"' for col in db_columns if col in df_filtered.columns]
             }
+
+            # if id_cia == '556':
+            #     print('======================================================= EZZE =======================================================')
+            #     df_filtered = df_filtered.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
+            #     print(df_filtered[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
+            #     print('******************************************************* TENTATIVA DE TRATAMENTO SOBRE EZZE *******************************************************')
+
+
+
+            #     print('======================================================= EZZE =======================================================')
+                # df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
+                # print('******************************************************* TENTATIVA DE TRATAMENTO SOBRE EZZE *******************************************************')
 
         # downloads_dir = str(Path.home() / "Downloads")
         # for table_name, data in processed_dfs.items():
@@ -325,6 +354,7 @@ class DataHandler:
         for table_name, data in processed_data.items():
             try:
                 df = data['df'].copy()
+                df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
                 print("========================= validação pre export. =========================")
                 print(df.head())
 
