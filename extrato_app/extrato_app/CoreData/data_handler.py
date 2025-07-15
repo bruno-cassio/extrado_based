@@ -169,18 +169,20 @@ class DataHandler:
             print('Primeiras linhas do DataFrame:', df.head())
             
             df = self.dba.add_id_unidade_from_database(df, cia_escolhida)
+            print('check de tempo de execução')
             df.columns = [self.padronizar_nomes(c) for c in df.columns]
             df['origem_arquivo'] = latest_file
-            downloads_dir = str(Path.home() / "Downloads")
-            output_file = os.path.join(downloads_dir, f"{table_name}_SAVED_DF.xlsx")
-            try:
-                df.to_excel(output_file, index=False)
-                print(f"✅ DataFrame salvo em: {output_file}")
-            except Exception as e:
-                print(f"❌ Erro ao salvar o DataFrame: {e}")
+            # downloads_dir = str(Path.home() / "Downloads")
+            # output_file = os.path.join(downloads_dir, f"{table_name}_SAVED_DF.xlsx")
+            # print('ESSE ABRE ANTES DA DEMORA? ')
+            # try:
+            #     df.to_excel(output_file, index=False)
+            #     print(f"✅ DataFrame salvo em: {output_file}")
+            # except Exception as e:
+            #     print(f"❌ Erro ao salvar o DataFrame: {e}")
 
-            print('============================================ checagem das colunas para EZZE ============================================')
-            print(df.columns)
+            print('save ignorado')
+
             premio_db = Decimal(str(self.consolidador.cons_caixa_declarado()))
 
             if cia_escolhida == "Junto Seguradora" and df.shape[1] > 1:
@@ -276,7 +278,7 @@ class DataHandler:
             print(df.head())
 
             df = df.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
-            print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
+            # print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
 
 
             df['id_seguradora_quiver'] = id_cia
@@ -354,7 +356,7 @@ class DataHandler:
         for table_name, data in processed_data.items():
             try:
                 df = data['df'].copy()
-                df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
+                # df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
                 print("========================= validação pre export. =========================")
                 print(df.head())
 

@@ -76,6 +76,7 @@ import json
 from extrato_app.CoreData.ds4 import parse_meses_opt, escolher_cia_e_atualizar_config, obter_mes_ano
 from pathlib import Path
 import pandas as pd
+import time
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
@@ -157,7 +158,7 @@ class DataImporter:
         return overall_success
 
     def execute_pipeline(self) -> Tuple[bool, Optional[Dict[str, Any]]]:
-        
+        start = time.perf_counter()
         print(f"📂 Acessando pasta: {self.root_path}")
         file_dfs = self.data_handler.process_files(self.root_path)
         if not file_dfs:
@@ -188,6 +189,12 @@ class DataImporter:
                 print("\n⚠️ Importação concluída com erros")
             if not export_success:
                 print("\n⚠️ Exportação para Excel concluída com erros")
+
+
+
+        end = time.perf_counter()
+        print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
+
 
         return overall_success, processed_data
 

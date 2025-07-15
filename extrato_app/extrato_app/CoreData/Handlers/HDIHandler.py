@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import json
 import re
+import time
 
 class HDIHandler:
     def treat(self, folder_path: str) -> pd.DataFrame:
@@ -31,6 +32,9 @@ class HDIHandler:
             print(f"❌ Erro ao ler config.json: {str(e)}")
             return pd.DataFrame()
 
+        
+        start = time.perf_counter()
+        
         files = [f for f in os.listdir(folder_path) if f.lower().endswith(('.xls', '.xlsx'))]
         if not files:
             print("❌ Nenhum arquivo encontrado para HDI")
@@ -104,6 +108,11 @@ class HDIHandler:
                 print(df.columns)
             else:
                 print(f"⚠️ Menos de duas ocorrências da coluna '{coluna_competencia}' encontradas.")
+
+
+            end = time.perf_counter()
+            print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
+
 
 
             return df

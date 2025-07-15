@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import re
 import getpass
+import time
 
 class EzzeHandler:
 
@@ -79,7 +80,7 @@ class EzzeHandler:
             return pd.DataFrame()
 
     def process(self, df: pd.DataFrame, file_name: str, premio_exec: str, fator_melchiori: float, premio_db=None):
-        
+        start = time.perf_counter()
         print('================================================ started processamento EZZE ================================================')
         fator_melchiori = 0.965
         print(f'Fator Melchiori:{fator_melchiori}')
@@ -115,6 +116,7 @@ class EzzeHandler:
 
         df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
 
+        print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
 
         # df = df[df['cd_apolice'].notna()]
         print('====================================================================== VALIDAÇÃO DENTRO DE EZZE HANDLER ======================================================================')
@@ -129,3 +131,4 @@ class EzzeHandler:
 
         print(df[[coluna, 'aba_origem', 'premio_rec', 'valor_cv', 'valor_vi', 'valor_as']].head())
         print(f"✅ DataFrame salvo em: {output_file}")
+        end = time.perf_counter()

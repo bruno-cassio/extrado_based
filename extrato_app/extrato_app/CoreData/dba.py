@@ -363,12 +363,14 @@ class DBA:
                 if cias_corresp_list == 'Porto':
                     cias_corresp_list = ['Porto Seguro']
                     cia_escolhida = 'Porto Seguro'
-
                 
                 if cias_corresp_list == 'Ezze':
                     cias_corresp_list = ['Ezze Seguros']
                     cia_escolhida = 'Ezze Seguros'
                 
+                if cias_corresp_list == 'Tokio':
+                    cias_corresp_list = ['Tokio Marine']
+                    cia_escolhida = 'Tokio Marine'
                 
                 cursor.execute("SELECT distinct seg_nome_correto from tabela_correcao_seguradora")
                 cias_db = [row[0].strip() for row in cursor.fetchall() if row[0].strip()]

@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import time
 
 class BradescoHandler:
 
@@ -21,10 +22,15 @@ class BradescoHandler:
         print(f"📂 Arquivo selecionado: {file}")
 
         try:
+            start = time.perf_counter()
+            print('lendo 1, em wait ser for aqui....')
             df = pd.read_excel(file_path, sheet_name=0)
+            end = time.perf_counter()
+            print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
             df['origem_arquivo'] = file  
             print(f"✅ DataFrame carregado ({df.shape[0]} linhas)")
             return df
+
         except Exception as e:
             print(f"❌ Erro ao ler {file}: {e}")
             return pd.DataFrame()
