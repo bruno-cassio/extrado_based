@@ -7929,3 +7929,7 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-07-15 17:13:19,785 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
 2025-07-15 17:13:19,786 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 15 CIAs (solicitadas + geradas anteriormente)
 2025-07-15 17:13:20,085 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 11.56 segundos
+2025-07-15 17:17:38,812 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-15 17:17:39,182 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-15 17:22:54,937 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-15 17:22:55,215 - django.request - WARNING - Not Found: /favicon.ico
