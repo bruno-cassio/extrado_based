@@ -206,7 +206,19 @@ class BatchRunner:
                     if success:
                         logs_sucesso.append(f"[SUCESSO] {cia} - Conta Virtual gerada para {competencia_formatada}")
                     else:
-                        logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada}")
+                        try:
+                            from extrato_app.CoreData.consolidador import Consolidador
+                            consolidador = Consolidador()
+                            caixa_valor, caixa_msg = consolidador.cons_caixa_declarado()
+                            
+                            if caixa_valor is None:
+                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: {caixa_msg}")
+                            else:
+                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo desconhecido (mas caixa encontrado: {caixa_valor})")
+
+                        except Exception as e:
+                            logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Caixa não declarado ou Relatório Não disponível")
+
 
                     logger.info(f"Processamento concluído para {cia} com {'sucesso' if success else 'falha'}")
 
