@@ -1,6 +1,6 @@
 {
-  "cia_corresp": "Bradesco",
+  "cia_corresp": "Porto",
   "competencia": "01-2025",
-  "ref_nom": "Razão Social Corretor",
-  "input_history_tables": "cont_prod_bradesco"
+  "ref_nom": "nome_corretor",
+  "input_history_tables": "cont_prod_porto"
 }

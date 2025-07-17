@@ -9465,3 +9465,303 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-07-17 15:07:08,344 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
 2025-07-17 15:34:11,590 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
 2025-07-17 15:34:30,291 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-07-17 15:56:01,541 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-17 15:56:01,542 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-07-17 15:56:01,543 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude', 'Suhai', 'Allianz', 'Junto Seguradora', 'Hdi', 'Porto', 'Yelum', 'Axa', 'Zurich', 'Chubb', 'Tokio', 'Ezze', 'Sompo', 'Mapfre']
+2025-07-17 15:56:01,543 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 15:56:01,548 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,558 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 15:56:01,559 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,563 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 15:56:01,564 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,567 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 15:56:01,567 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,570 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,573 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 15:56:01,573 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,576 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-07-17 15:56:01,577 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,579 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,582 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 15:56:01,582 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,584 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,587 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 15:56:01,588 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,590 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 15:56:01,591 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,593 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 15:56:01,594 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,596 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,599 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 15:56:01,599 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:01,602 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 15:56:01,604 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Allianz', 'Porto', 'Axa', 'Ezze']
+2025-07-17 15:56:01,605 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-07-17 15:56:07,328 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Allianz-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 15:56:07,330 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-07-17 15:56:09,806 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Porto-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 15:56:09,807 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-07-17 15:56:11,777 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com falha
+2025-07-17 15:56:11,779 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-07-17 15:56:13,319 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-07-17 15:56:13,320 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-17 15:56:13,321 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 15:56:13,322 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,325 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,326 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,328 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,331 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,333 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 15:56:13,333 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,335 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 15:56:13,336 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,337 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 15:56:13,338 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,339 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 15:56:13,340 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,341 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-07-17 15:56:13,342 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,343 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 15:56:13,344 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,345 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 15:56:13,345 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,347 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 15:56:13,348 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,349 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 15:56:13,350 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,351 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 15:56:13,351 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 15:56:13,353 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 15:56:13,354 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 15 CIAs (solicitadas + geradas anteriormente)
+2025-07-17 15:56:13,626 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 12.08 segundos
+2025-07-17 16:08:23,168 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-17 16:08:23,168 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-07-17 16:08:23,169 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude', 'Suhai', 'Allianz', 'Junto Seguradora', 'Hdi', 'Porto', 'Yelum', 'Axa', 'Zurich', 'Chubb', 'Tokio', 'Ezze', 'Sompo', 'Mapfre']
+2025-07-17 16:08:23,170 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 16:08:23,174 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,177 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 16:08:23,177 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,179 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 16:08:23,179 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,181 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 16:08:23,181 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,182 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,184 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 16:08:23,184 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,186 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-07-17 16:08:23,187 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,189 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,191 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 16:08:23,191 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,192 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,194 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 16:08:23,194 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,195 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 16:08:23,196 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,197 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 16:08:23,197 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,198 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,199 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 16:08:23,200 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:23,201 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 16:08:23,203 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Allianz', 'Porto', 'Axa', 'Ezze']
+2025-07-17 16:08:23,204 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-07-17 16:08:27,701 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Allianz-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 16:08:27,704 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-07-17 16:08:29,797 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Porto-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 16:08:29,798 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-07-17 16:08:31,377 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com falha
+2025-07-17 16:08:31,378 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-07-17 16:08:32,866 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-07-17 16:08:32,866 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-17 16:08:32,868 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 16:08:32,870 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,873 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,874 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,875 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,877 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,878 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 16:08:32,878 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,879 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 16:08:32,879 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,880 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 16:08:32,881 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,882 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 16:08:32,882 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,883 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-07-17 16:08:32,883 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,884 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 16:08:32,885 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,886 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 16:08:32,886 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,887 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 16:08:32,887 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,889 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 16:08:32,889 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,890 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 16:08:32,890 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:08:32,891 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 16:08:32,892 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 15 CIAs (solicitadas + geradas anteriormente)
+2025-07-17 16:08:33,265 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.10 segundos
+2025-07-17 16:09:19,600 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-07-17 16:09:19,908 - django.request - WARNING - Not Found: /favicon.ico
+2025-07-17 16:09:27,850 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-07-17 16:09:27,850 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 15 CIAs e competência 01-2025
+2025-07-17 16:09:27,851 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude', 'Suhai', 'Allianz', 'Junto Seguradora', 'Hdi', 'Porto', 'Yelum', 'Axa', 'Zurich', 'Chubb', 'Tokio', 'Ezze', 'Sompo', 'Mapfre']
+2025-07-17 16:09:27,852 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 16:09:27,856 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,864 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 16:09:27,864 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,867 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 16:09:27,868 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,871 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 16:09:27,872 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,874 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,877 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 16:09:27,877 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,879 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,881 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,884 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 16:09:27,884 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,886 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,888 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 16:09:27,889 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,892 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 16:09:27,892 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,895 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 16:09:27,895 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,896 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,898 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 16:09:27,899 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:09:27,901 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 16:09:27,903 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Allianz', 'Hdi', 'Porto', 'Axa', 'Ezze']
+2025-07-17 16:09:27,903 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Allianz - 01-2025
+2025-07-17 16:09:33,666 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Allianz-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 16:09:33,669 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-07-17 16:10:21,233 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-07-17 16:10:21,234 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Porto - 01-2025
+2025-07-17 16:10:23,819 - extrato_app.CoreData.batch_runner - ERROR - Erro ao processar Porto-01-2025: arg must be a list, tuple, 1-d array, or Series
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py", line 199, in executar_combinações
+    success, processed_data = importer.execute_pipeline()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py", line 175, in execute_pipeline
+    processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 295, in treat_zero
+    df_filtered = self.convert_df_to_db_schema(df_filtered, column_types)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py", line 96, in convert_df_to_db_schema
+    df[col] = pd.to_numeric(df[col], errors='coerce')
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\tools\numeric.py", line 206, in to_numeric
+    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
+TypeError: arg must be a list, tuple, 1-d array, or Series
+
+2025-07-17 16:10:23,820 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Axa - 01-2025
+2025-07-17 16:10:25,743 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Axa com falha
+2025-07-17 16:10:25,744 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Ezze - 01-2025
+2025-07-17 16:10:27,093 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Ezze com falha
+2025-07-17 16:10:27,094 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-07-17 16:10:27,097 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-07-17 16:10:27,100 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,104 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,108 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-07-17 16:10:27,109 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,111 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,113 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,116 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,118 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-07-17 16:10:27,119 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,121 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-07-17 16:10:27,121 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,123 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 01-2025
+2025-07-17 16:10:27,124 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,126 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Junto Seguradora na competência 01-2025
+2025-07-17 16:10:27,126 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,128 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 01-2025
+2025-07-17 16:10:27,129 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,131 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Zurich na competência 01-2025
+2025-07-17 16:10:27,132 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,134 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 01-2025
+2025-07-17 16:10:27,134 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,137 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-07-17 16:10:27,138 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,140 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 01-2025
+2025-07-17 16:10:27,140 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '01-2025' LIMIT 1;
+2025-07-17 16:10:27,142 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 01-2025
+2025-07-17 16:10:27,144 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 15 CIAs (solicitadas + geradas anteriormente)
+2025-07-17 16:10:27,527 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 59.68 segundos
