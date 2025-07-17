@@ -212,9 +212,9 @@ class BatchRunner:
                             caixa_valor, caixa_msg = consolidador.cons_caixa_declarado()
                             
                             if caixa_valor is None:
-                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: {caixa_msg}")
+                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Caixa nao identificado {caixa_msg}")
                             else:
-                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo desconhecido (mas caixa encontrado: {caixa_valor})")
+                                logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Sem Dados Relatório {caixa_valor})")
 
                         except Exception as e:
                             logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Caixa não declarado ou Relatório Não disponível")

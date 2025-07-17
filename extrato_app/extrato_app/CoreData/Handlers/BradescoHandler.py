@@ -5,6 +5,7 @@ import time
 class BradescoHandler:
 
     def treat(self, folder_path: str) -> pd.DataFrame:
+        
         print(f"📂 Verificando arquivos em: {folder_path}")
         files = [
             f for f in os.listdir(folder_path) 
