@@ -1,6 +1,0 @@
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
-[FALHA CAIXA] Axa - 01-2025: Nenhum valor encontrado para 'valor_liq_declarado' para cia=Axa, competencia=01-2025
