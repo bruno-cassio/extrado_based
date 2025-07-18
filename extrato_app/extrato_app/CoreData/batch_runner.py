@@ -127,7 +127,7 @@ class BatchRunner:
             cias_ja_processadas = self.verificar_geracao_anterior(cias, competencia_formatada)
 
             for cia in cias_ja_processadas:
-                logs_pulados.append(f"[SUCESSO] {cia} - Conta Virtual já gerada para {competencia_formatada}")
+                logs_pulados.append(f"[SUCESSO] {cia} - Conta Virtual gerada para {competencia_formatada}")
 
 
             if set(cias_ja_processadas) == set(cias):
