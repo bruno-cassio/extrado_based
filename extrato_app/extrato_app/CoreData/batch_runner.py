@@ -127,7 +127,7 @@ class BatchRunner:
             cias_ja_processadas = self.verificar_geracao_anterior(cias, competencia_formatada)
 
             for cia in cias_ja_processadas:
-                logs_pulados.append(f"[EXISTENTE] {cia} - Conta Virtual já gerada para {competencia_formatada}")
+                logs_pulados.append(f"[SUCESSO] {cia} - Conta Virtual já gerada para {competencia_formatada}")
 
 
             if set(cias_ja_processadas) == set(cias):
@@ -217,7 +217,7 @@ class BatchRunner:
                                 logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Sem Dados Relatório {caixa_valor})")
 
                         except Exception as e:
-                            logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Caixa não declarado ou Relatório Não disponível")
+                            logs_sucesso.append(f"[FALHA] {cia} - Erro durante geração da Conta Virtual para {competencia_formatada} | Motivo: Caixa não declarado ")
 
 
                     logger.info(f"Processamento concluído para {cia} com {'sucesso' if success else 'falha'}")
