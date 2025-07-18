@@ -44,7 +44,7 @@ class ChubbHandler:
                             )
                             if not df_temp.empty and str(df_temp.iloc[0, 0]).strip() == 'Corretor':
                                 return row
-                        except:
+                        except:\
                             continue
                 return None
 
