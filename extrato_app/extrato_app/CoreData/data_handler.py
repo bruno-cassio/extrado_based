@@ -107,9 +107,9 @@ class DataHandler:
     def read_df(self, root_folder_path: str, cia_escolhida: str) -> pd.DataFrame:
         try:
             handler = self.dispatcher.get(cia_escolhida)
-            print('dispatcher:', self.dispatcher)
-            print(f"🔍 Tratando arquivos da {cia_escolhida}")
-            print(f"🔍 Handler encontrado: {handler is not None}")
+            # print('dispatcher:', self.dispatcher)
+            # print(f"🔍 Tratando arquivos da {cia_escolhida}")
+            # print(f"🔍 Handler encontrado: {handler is not None}")
             if handler:
                 df = handler.treat(root_folder_path)
                 if not isinstance(df, pd.DataFrame):
@@ -163,7 +163,7 @@ class DataHandler:
             print(' ================================ checagem aqui de cia_escolhida:', cia_escolhida)
             latest_file = max(files, key=lambda f: os.path.getmtime(os.path.join(root_folder_path, f)))
             file_path = os.path.join(root_folder_path, latest_file)
-            print(f"📂 Processando arquivo mais recente: {latest_file}")
+            # print(f"📂 Processando arquivo mais recente: {latest_file}")
 
             df = self.read_df(root_folder_path, cia_escolhida)
             print('Primeiras linhas do DataFrame:', df.head())

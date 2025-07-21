@@ -114,8 +114,8 @@ class TratamentoRecalculo:
             print(f'Cálculo de premio para {cia} usando a coluna {coluna} com fator {fator}.')
 
             if coluna in df.columns:
-                print('tTESTE HEREE')
-                print(df.columns)
+                # print('tTESTE HEREE')
+                # print(df.columns)
 
                 # premio_total_relatorio = round(df[coluna].sum() * fator, 2)
 

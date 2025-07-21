@@ -129,6 +129,7 @@ class DBA:
             DatabaseManager.return_connection(conn)
     
     def cons_columns(self, df: pd.DataFrame) -> Tuple[bool, pd.DataFrame, Optional[str], Optional[str], Optional[float]]:
+        print('started cons_columns')
         conn = DatabaseManager.get_connection()
         
         try:
