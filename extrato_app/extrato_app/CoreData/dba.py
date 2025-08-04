@@ -129,12 +129,11 @@ class DBA:
             DatabaseManager.return_connection(conn)
     
     def cons_columns(self, df: pd.DataFrame) -> Tuple[bool, pd.DataFrame, Optional[str], Optional[str], Optional[float]]:
-        print('started cons_columns')
         conn = DatabaseManager.get_connection()
         
         try:
             concatenated_columns = ",".join(df.columns)
-            print(f"🔍 Colunas concatenadas: {concatenated_columns}")
+            # print(f"🔍 Colunas concatenadas: {concatenated_columns}")
             
             if self.cia_corresp in ['Porto']:
                 self.cia_corresp = 'Porto Seguro'

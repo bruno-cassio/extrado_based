@@ -109,6 +109,7 @@ class Consolidador:
                 print("\nConexão encerrada com sucesso.")
 
     def get_tabelas_config(self) -> Dict[str, Any]:
+        
         return self.TABELAS_CONSULTA
 
 def main() -> Optional[float]:

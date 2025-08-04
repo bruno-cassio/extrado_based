@@ -18,6 +18,7 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.http import FileResponse, Http404
 from django.http import JsonResponse
+import time
 
 arquivos_em_memoria = {} 
 
@@ -56,6 +57,7 @@ def iniciar_extracao(request):
 
         try:
             runner = BatchRunner()
+
             resultados = runner.executar_combinações(cias_selected, competencia)
 
             if resultados.get("status") not in ["completed", "success"]:
