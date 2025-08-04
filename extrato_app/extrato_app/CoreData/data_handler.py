@@ -172,6 +172,7 @@ class DataHandler:
             print('check de tempo de execução')
             df.columns = [self.padronizar_nomes(c) for c in df.columns]
             df['origem_arquivo'] = latest_file
+            
             # downloads_dir = str(Path.home() / "Downloads")
             # output_file = os.path.join(downloads_dir, f"{table_name}_SAVED_DF.xlsx")
             # print('ESSE ABRE ANTES DA DEMORA? ')
