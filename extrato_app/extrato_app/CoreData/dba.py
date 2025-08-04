@@ -162,7 +162,7 @@ class DBA:
                 print('resultado:', resultado)
                 
                 if not resultado:
-                    print("⚠️ Nenhum padrão encontrado para esta competência")
+                    print("⚠️ Nenhum padrão encontrado para esta cia")
                     return False, df, None, None, None
                 
                 db_cols, premio = resultado

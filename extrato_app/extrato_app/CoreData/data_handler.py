@@ -198,6 +198,7 @@ class DataHandler:
             
             df.columns = df.columns.str.replace(r'[\r\n]+', ' ', regex=True).str.strip()
             colunas_correspondem, df, ult_premio_valido, premio_exec, fator_hist = self.dba.cons_columns(df)
+            
             if not colunas_correspondem:
                 df, premio_vigente, premio_exec = self.dba.analise_autonoma(
                     df=df,
@@ -208,7 +209,6 @@ class DataHandler:
                 )
 
             premio_rel = Decimal(str(self.tratamento_recalculo.cons_rel(df, cias_corresp, latest_file, table_name, premio_exec)))
-            print('****************passed2****************')
             print('premio_rel:', premio_rel)
             print('premio_db:', premio_db)
             
@@ -239,7 +239,6 @@ class DataHandler:
                 print('NEITHEr')
                 self.tratamento_recalculo.process_recalculo(df, cias_corresp,table_name,premio_exec,fator_melchiori)
             elif cia_escolhida == 'Ezze':
-                print('*********************************************************************************** cia é Ezze ***********************************************************************************')
                 self.tratamento_recalculo.process_recalculo(df, cias_corresp, table_name, premio_exec, fator_melchiori)
             else:
                 self.tratamento_recalculo.process_recalculo(df, cias_corresp, latest_file, table_name, premio_exec=premio_exec, fator_melchiori=float(fator_melchiori), premio_db=premio_db)

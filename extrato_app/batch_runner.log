@@ -328,3 +328,23 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-08-04 09:25:53,070 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
 2025-08-04 09:30:24,704 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
 2025-08-04 09:30:48,357 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\consolidador.py changed, reloading.
+2025-08-04 09:40:22,868 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-04 10:47:43,469 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-04 10:47:48,659 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-04 10:48:06,625 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-04 10:50:26,170 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-04 10:57:44,106 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-04 11:40:56,773 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-04 11:40:56,773 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 04-2025
+2025-08-04 11:40:56,773 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Yelum']
+2025-08-04 11:40:56,774 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-04 11:40:56,775 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '04-2025' LIMIT 1;
+2025-08-04 11:40:56,781 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Yelum']
+2025-08-04 11:40:56,782 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Yelum - 04-2025
+2025-08-04 11:40:58,160 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Yelum com falha
+2025-08-04 11:40:58,160 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 04-2025
+2025-08-04 11:40:58,163 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-04 11:40:58,167 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '04-2025' LIMIT 1;
+2025-08-04 11:40:58,174 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-04 11:40:58,410 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.64 segundos
+2025-08-04 13:31:35,636 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\consolidador.py changed, reloading.
