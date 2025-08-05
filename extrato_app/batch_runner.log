@@ -2596,3 +2596,5 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-08-05 17:01:11,937 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
 2025-08-05 17:01:12,106 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 36.91 segundos
 2025-08-05 17:15:27,948 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-05 17:19:26,670 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-05 17:30:53,664 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
