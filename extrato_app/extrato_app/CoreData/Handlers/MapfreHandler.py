@@ -42,6 +42,8 @@ class MapfreHandler:
                 df['origem_arquivo'] = file  
                 print(f"✅ DataFrame carregado ({df.shape[0]} linhas)")
                 print('=========================== Validação DF abaixo ============================')
+                df = df[df.iloc[:, 0] != 'Gestor/Grupo Corretor']
+                print(df.iloc[:, 0])
                 return df
 
             except Exception as e:

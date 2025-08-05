@@ -84,6 +84,18 @@ class HDIHandler:
             df = df.dropna(axis=1, how='all')
             df['origem_arquivo'] = file
             df['competencia'] = competencia
+            
+            print('============================== pre validação CORRETOR ============================== ')
+            print(df['Descrição Corretor Coligado'].unique())
+            print('=====================================================================================')
+            
+            df = df[~df['Descrição Corretor Coligado'].isin([None, '', 'Total', 'Total Geral']) & df['Descrição Corretor Coligado'].notna()]
+            
+            print('============================== pós validação CORRETOR ============================== ')
+            
+            print(df['Descrição Corretor Coligado'].unique())
+            print('=====================================================================================')
+            
 
             df.columns = [str(col).strip().lower() for col in df.columns]
 
@@ -126,6 +138,10 @@ class HDIHandler:
         coluna = premio_exec if premio_exec in df.columns else 'premio'
         if coluna in df.columns:
             if fator_melchiori is not None:
+                print('==============================================================================')
+                print('checagem de fator melchiori aplicado')
+                print(f"Fator Melchiori: {fator_melchiori}")
+                print('==============================================================================')                
                 df['premio_rec'] = df[coluna] * fator_melchiori
                 df['valor_cv'] = df['premio_rec'] * 0.016
                 df['valor_vi'] = df['premio_rec'] * 0.006

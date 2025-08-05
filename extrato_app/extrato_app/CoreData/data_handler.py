@@ -107,9 +107,7 @@ class DataHandler:
     def read_df(self, root_folder_path: str, cia_escolhida: str) -> pd.DataFrame:
         try:
             handler = self.dispatcher.get(cia_escolhida)
-            # print('dispatcher:', self.dispatcher)
-            # print(f"🔍 Tratando arquivos da {cia_escolhida}")
-            # print(f"🔍 Handler encontrado: {handler is not None}")
+
             if handler:
                 df = handler.treat(root_folder_path)
                 if not isinstance(df, pd.DataFrame):

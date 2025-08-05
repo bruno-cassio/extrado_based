@@ -1,6 +1,6 @@
 {
-  "cia_corresp": "Chubb",
-  "competencia": "03-2025",
-  "ref_nom": "Corretor",
-  "input_history_tables": "cont_prod_chubb"
+  "cia_corresp": "Hdi",
+  "competencia": "01-2025",
+  "ref_nom": "descrição corretor coligado",
+  "input_history_tables": "cont_prod_hdi"
 }

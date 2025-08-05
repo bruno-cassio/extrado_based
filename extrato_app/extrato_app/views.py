@@ -19,6 +19,8 @@ from django.http import HttpResponse
 from django.http import FileResponse, Http404
 from django.http import JsonResponse
 import time
+from django.shortcuts import render
+
 
 arquivos_em_memoria = {} 
 
@@ -103,3 +105,11 @@ def baixar_resumo(request):
         return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=f"{unique_id}.xlsx")
     else:
         raise Http404("Arquivo não encontrado.")
+
+def atualizar_relatorios(request):
+    cias_opt = os.getenv("CIAS_OPT", "")
+    cias_list = [cia.strip() for cia in cias_opt.split(",") if cia.strip()]
+    
+    return render(request, 'atualizar_relatorios.html', {
+        'cias_opt': cias_list
+    })

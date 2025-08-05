@@ -131,6 +131,11 @@ class SompoHandler:
             df['origem_arquivo'] = file
             df['competencia'] = competencia
 
+            print('============================================================')
+            print('VALIDAÇÃO COLUNA RETIDO TEC AQUI')
+            print(df.columns)
+            print('============================================================')
+
             coluna_competencia = 'prêmio retido técnico.1'
             coluna_competencia_normalizada = normaliza(coluna_competencia)
 

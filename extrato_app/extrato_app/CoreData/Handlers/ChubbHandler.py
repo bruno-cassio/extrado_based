@@ -83,13 +83,19 @@ class ChubbHandler:
             if 'Corretor' not in df.columns:
                 print("❌ Coluna 'Corretor' não encontrada")
                 return pd.DataFrame()
-            df = df[df['Corretor'].notna() & 
-                   (df['Corretor'] != 'Total') & 
+            df = df[df['Corretor'].notna() | 
+                   (df['Corretor'] != 'Total') |
+                   (df['Corretor'] != 'Total Geral') |
                    (df['Corretor'] != '')].copy()
+            
+            df = df[~df['Corretor'].isin([None, '', 'Total', 'Total Geral']) & df['Corretor'].notna()]
+
+            
             if df.empty:
                 print("❌ Nenhum dado válido após filtragem")
                 return pd.DataFrame()
             df['origem_arquivo'] = file
+            
             print(f"✅ Tratamento concluído. Shape: {df.shape}")
             
             return df
