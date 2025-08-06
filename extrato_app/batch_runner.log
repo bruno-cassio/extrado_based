@@ -2767,3 +2767,18 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-08-06 10:37:29,133 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
 2025-08-06 10:37:29,134 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
 2025-08-06 10:37:29,398 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 43.89 segundos
+2025-08-06 10:39:18,551 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-06 10:45:32,460 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-06 10:45:32,460 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-06 10:45:32,460 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Hdi']
+2025-08-06 10:45:32,460 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-06 10:45:32,462 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-06 10:45:32,469 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Hdi']
+2025-08-06 10:45:32,469 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-08-06 10:46:15,815 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-08-06 10:46:15,816 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-06 10:46:15,818 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-06 10:46:15,821 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-06 10:46:15,824 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-08-06 10:46:15,825 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-06 10:46:16,073 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 43.61 segundos
