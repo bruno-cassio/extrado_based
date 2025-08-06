@@ -28,6 +28,10 @@ urlpatterns = [
     path('baixar_resumo', views.baixar_resumo, name='baixar_resumo'),
     path('limpar_arquivos', views.limpar_arquivos, name='limpar_arquivos'),
     path('atualizar-relatorios/', views.atualizar_relatorios, name='atualizar_relatorios'),
+    path('atualizar-caixa', views.atualizar_caixa, name='atualizar_caixa'),
+    path('executar-atualizar-caixa', views.executar_atualizar_caixa, name='executar_atualizar_caixa'),
+    path("api/buscar-cias/", views.buscar_cias_api, name="buscar_cias_api"),
+
 
 ]
 

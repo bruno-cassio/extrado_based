@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const ciaItems = document.querySelectorAll('.cia-item');
@@ -5,13 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const ciasSelectedInput = document.getElementById('cias-selected');
     const selectAllBtn = document.getElementById('select-all');
     const deselectAllBtn = document.getElementById('deselect-all');
-    const competenciaInput = document.querySelector('input[name="mes"]');
 
     let selectedCias = [];
 
     function updateSelections() {
-        selectedCount.textContent = selectedCias.length;
-        ciasSelectedInput.value = JSON.stringify(selectedCias);
+        if (selectedCount) selectedCount.textContent = selectedCias.length;
+        if (ciasSelectedInput) ciasSelectedInput.value = JSON.stringify(selectedCias);
         ciaItems.forEach(item => {
             const ciaName = item.dataset.cia;
             item.classList.toggle('selected', selectedCias.includes(ciaName));
@@ -27,22 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    selectAllBtn.addEventListener('click', () => {
-        selectedCias = Array.from(ciaItems).map(item => item.dataset.cia);
-        updateSelections();
+    if (selectAllBtn) {
+        selectAllBtn.addEventListener('click', () => {
+            selectedCias = Array.from(ciaItems).map(item => item.dataset.cia);
+            updateSelections();
+        });
+    }
+
+    if (deselectAllBtn) {
+        deselectAllBtn.addEventListener('click', () => {
+            selectedCias = [];
+            updateSelections();
+        });
+    }
+
+    document.querySelectorAll('input[name="mes"]').forEach((competenciaInput) => {
+        competenciaInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '-' + value.substring(2, 6);
+            }
+            e.target.value = value;
+        });
     });
 
-    deselectAllBtn.addEventListener('click', () => {
-        selectedCias = [];
-        updateSelections();
-    });
-
-    competenciaInput.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 2) {
-            value = value.substring(0, 2) + '-' + value.substring(2, 6);
-        }
-        e.target.value = value;
+    document.querySelectorAll('input[name="valor"]').forEach((input) => {
+        input.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length === 0) {
+                e.target.value = '';
+                return;
+            }
+            let numericValue = parseFloat(value) / 100;
+            e.target.value = numericValue.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            });
+        });
     });
 
     function getCookie(name) {
@@ -143,7 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function submitForm(event) {
         event.preventDefault();
 
-        if (selectedCias.length === 0) {
+        const competenciaInput = event.target.querySelector('input[name="mes"]');
+
+        if (ciaItems.length > 0 && selectedCias.length === 0) {
             showNotification('Por favor, selecione pelo menos uma seguradora!', 'error');
             return;
         }
@@ -181,7 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.querySelector('form').addEventListener('submit', submitForm);
+    const form = document.querySelector('form');
+    if (form) form.addEventListener('submit', submitForm);
+
     updateSelections();
 });
 

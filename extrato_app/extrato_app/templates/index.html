@@ -3,120 +3,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consolidação Conta Virtual | Grupo GC</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consolidação Conta Virtual | Grupo GC</title>
 
-    <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}">
-    
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
 </head>
 <body>
+
+
+  <div class="main-content">
     <header>
-        <div class="header-content">
-            <a href="/">
-                <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="height:1000px;">
-            </a>
-            <div class="header-divider"></div>
-        </div>
+      <div class="header-content">
+        <a href="/">
+          <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
+        </a>
+        <div class="header-divider"></div>
+      </div>
     </header>
 
-    
     <div class="container">
+      
+      
+    <nav class="top-tabs">
+    <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
+        <i class="bi bi-database-fill"></i>
+        Consolidação Conta Virtual
+    </a>
+    <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+        <i class="bi bi-cash-stack"></i>
+        Atualizar Caixa
+    </a>
+    </nav>
+
+      
+      
+      
         <div class="form-card">
-            <h2>
-                <i class="bi bi-database-fill"></i>
-                Consolidação Conta Virtual
-            </h2>
+        <h2>
+          <i class="bi bi-database-fill"></i>
+          Consolidação Conta Virtual
+        </h2>
 
-            <form method="POST" action="">
-                {% csrf_token %}
-                
-                <div class="form-group">
-                    <div class="selection-header">
-                        <label class="form-label">
-                            <i class="bi bi-building-fill"></i>
-                            Selecione as Seguradoras (CIAs):
-                        </label>
-                        <div class="selection-actions">
-                            <span class="selected-count" id="selected-count">0</span>
-                            <button type="button" class="selection-action-btn" id="select-all">
-                                <i class="bi bi-check2-square"></i> Todos
-                            </button>
-                            <button type="button" class="selection-action-btn" id="deselect-all">
-                                <i class="bi bi-x-square"></i> Limpar
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="cias-container">
-                        <div class="cias-grid" id="cias-list">
-                            {% for cia in cias_opt %}
-                            <div class="cia-item" data-cia="{{ cia }}">
-                                <div class="cia-checkbox"></div>
-                                <span class="cia-name">{{ cia }}</span>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    
-                    <input type="hidden" name="cias_selected" id="cias-selected">
-                </div>
+        
+        <form method="POST" action="">
+          {% csrf_token %}
 
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="bi bi-calendar-month"></i>
-                        Digite a Competência (MM-AAAA):
-                    </label>
-                    <div class="competencia-input">
-                        <input type="text" class="form-select" name="mes" required
-                            placeholder="Digite a competência (ex: 01-2025)"
-                            pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
-                            title="Digite no formato MM-AAAA, por exemplo: 01-2025">
-                        <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
-                    </div>
-                    <div class="info-badge">
-                        <i class="bi bi-lightbulb"></i> Exemplo: 05-2024 para maio de 2024
-                    </div>
-                </div>
+          <div class="form-group">
+            <div class="selection-header">
+              <label class="form-label">
+                <i class="bi bi-building-fill"></i>
+                Selecione as Seguradoras (CIAs):
+              </label>
+              <div class="selection-actions">
+                <span class="selected-count" id="selected-count">0</span>
+                <button type="button" class="selection-action-btn" id="select-all">
+                  <i class="bi bi-check2-square"></i> Todos
+                </button>
+                <button type="button" class="selection-action-btn" id="deselect-all">
+                  <i class="bi bi-x-square"></i> Limpar
+                </button>
+              </div>
+            </div>
 
-                <div class="form-group">
-                    <button class="btn-primary" type="submit">
-                        <i class="bi bi-rocket-takeoff-fill"></i>
-                        Iniciar Cálculo de Conta Virtual
-                    </button>
+            <div class="cias-container">
+              <div class="cias-grid" id="cias-list">
+                {% for cia in cias_opt %}
+                <div class="cia-item" data-cia="{{ cia }}">
+                  <div class="cia-checkbox"></div>
+                  <span class="cia-name">{{ cia }}</span>
                 </div>
-            </form>
-        </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <input type="hidden" name="cias_selected" id="cias-selected" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              <i class="bi bi-calendar-month"></i>
+              Digite a Competência (MM-AAAA):
+            </label>
+            <div class="competencia-input">
+              <input
+                type="text"
+                class="form-select"
+                name="mes"
+                required
+                placeholder="Digite a competência (ex: 01-2025)"
+                pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
+                title="Digite no formato MM-AAAA, por exemplo: 01-2025"
+              />
+              <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
+            </div>
+            <div class="info-badge">
+              <i class="bi bi-lightbulb"></i> Exemplo: 05-2024 para maio de 2024
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button class="btn-primary" type="submit">
+              <i class="bi bi-rocket-takeoff-fill"></i>
+              Iniciar Cálculo de Conta Virtual
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <footer>
-        <div class="container">
-            <p>© 2025 Grupo GC - Todos os direitos reservados</p>
-        </div>
+      <div class="container">
+        <p>© 2025 Grupo GC - Todos os direitos reservados</p>
+      </div>
     </footer>
-
-    <div id="notification" class="notification">
-        <i id="notification-icon"></i>
-        <span id="notification-message"></span>
-    </div>
-    
-<div id="download-popup" class="popup-hidden">
-  <div class="popup-content">
-    <div class="spinner"></div>
-    <p>Seu download está sendo preparado, por favor aguarde...</p>
   </div>
-</div>
 
-<script>
+
+  <div id="notification" class="notification">
+    <i id="notification-icon"></i>
+    <span id="notification-message"></span>
+  </div>
+
+
+  <div id="download-popup" class="popup-hidden">
+    <div class="popup-content">
+      <div class="spinner"></div>
+      <p>Seu download está sendo preparado, por favor aguarde...</p>
+    </div>
+  </div>
+
+  <script>
     window.djangoURL = "{% url 'iniciar_extracao' %}";
     window.csrfToken = "{{ csrf_token }}";
-</script>
-<script src="{% static 'extrato_app/js/conta_virtual.js' %}"></script>
-
+  </script>
+  <script src="{% static 'extrato_app/js/conta_virtual.js' %}"></script>
 </body>
 </html>
