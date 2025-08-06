@@ -203,17 +203,33 @@ class TratamentoRecalculo:
             elif cia in ['Hdi']:
                 try:
                     
+                    coluna = 'premio_target'
+                    print(' ================================ validação de colunas previa ao tratamento de exponenciais.================================ ')
+                    print(df.columns)
+                    print(' ================================ validação de colunas previa ao tratamento de exponenciais.================================ ')
+                    
                     print('🧼 Convertendo dados da coluna para Decimal...')
                     df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
 
+                    df = df[df['susep'].notna() & (df['susep'].astype(str).str.strip() != '') & (df['susep'].astype(str).str.lower() != 'nan')]
+
+                    print('validação da remoção de linhas com susep vazia ou inválida:')
+                    print(df.tail())
+
                     print(f"Últimas linhas das colunas '{coluna}' e 'susep':")
-                    print(df[[coluna, 'susep']].tail())
+                    print(df[['descricao_corretor_coligado', coluna, 'susep']].tail())
 
                     premioBASE = df.loc[df['descricao_corretor_coligado'].astype(str).str.strip() != 'Total Geral', coluna].sum()
-                    print(f'📊 Soma da coluna {coluna}: {premioBASE}')
+                    print(f'📊 Soma da coluna para premio base {coluna}: {premioBASE}')
                     print(premioBASE)
 
-                    premio_total_relatorio = round((df[df['descricao_corretor_coligado'].astype(str).str.strip() != 'Total Geral'][coluna].sum() * fator), 2)
+                    filtro_validacao = (
+                    (df['descricao_corretor_coligado'].astype(str).str.strip() != 'Total Geral') &
+                    (df['susep'].notna()) &
+                    (~df['susep'].astype(str).str.lower().str.strip().isin(['', 'nan', 'none']))
+                )
+
+                    premio_total_relatorio = round(df[filtro_validacao][coluna].sum() * fator, 2)
 
                     print(f"-==-=-=-==-=-=-=-=-=--=- Total de 'premio' para {cia}: {premio_total_relatorio} -==-=-=-==-=-=-=-=-=--=- ")
                     self.file_dfs[table_name] = df
