@@ -22,7 +22,7 @@ import time
 from django.shortcuts import render
 from extrato_app.CoreData.dba import DBA
 from django.views.decorators.csrf import csrf_exempt
-
+from extrato_app.CoreData.ds4 import processar_automaticamente
 
 
 arquivos_em_memoria = {} 
@@ -155,6 +155,29 @@ def executar_atualizar_caixa(request):
     return HttpResponse("Método não permitido", status=405)
 
 @csrf_exempt
+def verificar_relatorios_view(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            cias = data.get("cias", [])
+            competencia = data.get("competencia", "")
+
+            # Atualiza config.json ANTES de chamar qualquer coisa
+            for cia in cias:
+                processar_automaticamente(cia, competencia)
+
+            dba = DBA()
+            resultados = []
+            for cia in cias:
+                existe = dba.relatorio_existente_para_competencia(cia, competencia)
+                resultados.append({"cia": cia, "existe": existe})
+
+            return JsonResponse({"status": "success", "dados": resultados})
+        
+        except Exception as e:
+            return JsonResponse({"status": "error", "mensagem": str(e)}, status=500)
+
+@csrf_exempt
 def buscar_cias_api(request):
     if request.method == "POST":
         cia = request.POST.get("cia")
@@ -163,8 +186,9 @@ def buscar_cias_api(request):
         valor_liquido = request.POST.get("valor_liquido")
         forcar_update = request.POST.get("forcar_update", "false") == "true"
 
+        processar_automaticamente(cia, mes)
+
         dba = DBA()
-        dba.cia_corresp = cia
         existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
 
         ja_existe = dba.caixa_declarado_existe(cia, mes)
@@ -194,3 +218,22 @@ def buscar_cias_api(request):
 
     return JsonResponse({"error": "Método não permitido"}, status=405)
 
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            cias = data.get("cias", [])
+            competencia = data.get("competencia", "")
+            dba = DBA()
+
+            resultados = []
+            for cia in cias:
+                existe = dba.relatorio_existente_para_competencia(cia, competencia)
+                resultados.append({
+                    "cia": cia,
+                    "existe": existe
+                })
+
+            return JsonResponse({"status": "success", "dados": resultados})
+
+        except Exception as e:
+            return JsonResponse({"status": "error", "mensagem": str(e)}, status=500)

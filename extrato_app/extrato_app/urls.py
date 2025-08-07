@@ -31,6 +31,8 @@ urlpatterns = [
     path('atualizar-caixa', views.atualizar_caixa, name='atualizar_caixa'),
     path('executar-atualizar-caixa', views.executar_atualizar_caixa, name='executar_atualizar_caixa'),
     path("api/buscar-cias/", views.buscar_cias_api, name="buscar_cias_api"),
+    path("api/verificar-relatorios", views.verificar_relatorios_view, name="verificar_relatorios"),
+
 
 
 ]

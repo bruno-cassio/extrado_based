@@ -51,8 +51,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
       console.log("🔄 Executando atualização de relatórios...");
+
+      const competencia = document.querySelector('input[name="mes"]').value;
+
+      if (!competencia.match(/^(0[1-9]|1[0-2])-[0-9]{4}$/)) {
+        alert("Competência inválida.");
+        return;
+      }
+
+      if (selectedCias.length === 0) {
+        alert("Selecione pelo menos uma CIA.");
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/verificar-relatorios", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": window.csrfToken
+          },
+          body: JSON.stringify({
+            cias: selectedCias,
+            competencia: competencia
+          })
+        });
+
+        const json = await res.json();
+        console.log("🔍 Resultado da verificação:", json);
+
+        if (json.status === "success") {
+          alert("Consulta realizada com sucesso. Ver console para detalhes.");
+        } else {
+          alert("Erro: " + json.mensagem);
+        }
+      } catch (err) {
+        console.error("Erro ao verificar relatórios:", err);
+        alert("Erro ao consultar servidor.");
+      }
     });
   }
 

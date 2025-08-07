@@ -451,8 +451,6 @@ class DBA:
         finally:
             DatabaseManager.return_connection(conn)
 
-
-
     def inserir_ou_atualizar_caixa(self, id_cia, cia, competencia, valor_bruto, valor_liquido, update=False):
         conn = DatabaseManager.get_connection()
         try:
@@ -495,4 +493,32 @@ class DBA:
         finally:
             DatabaseManager.return_connection(conn)
 
+    def relatorio_existente_para_competencia(self, cia_nome: str, competencia: str) -> bool:
+        from dotenv import dotenv_values
+        env_path = os.path.join(os.getcwd(), ".env")
+        env_data = dotenv_values(dotenv_path=env_path)
 
+        cias_list = [cia.strip() for cia in env_data.get("cia_corresp", "").split(",")]
+        tabelas_list = [t.strip() for t in env_data.get("input_history_tables", "").split(",")]
+
+        mapeamento = dict(zip(cias_list, tabelas_list))
+        tabela = mapeamento.get(cia_nome)
+        
+        print(tabela)
+        
+        if not tabela:
+            print(f"❌ Tabela não encontrada para a CIA: {cia_nome}")
+            return False
+
+        query = f"SELECT 1 FROM {tabela} WHERE competencia = %s LIMIT 1"
+        conn = DatabaseManager.get_connection()
+
+        try:
+            with conn.cursor() as cursor:
+                cursor.execute(query, (competencia,))
+                return cursor.fetchone() is not None
+        except Exception as e:
+            print(f"❌ Erro ao consultar tabela {tabela}: {e}")
+            return False
+        finally:
+            DatabaseManager.return_connection(conn)
