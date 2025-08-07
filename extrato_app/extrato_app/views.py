@@ -96,7 +96,6 @@ def iniciar_extracao(request):
 
     return JsonResponse({'status': 'error', 'message': 'Método não permitido'}, status=405)
 
-
 def baixar_resumo(request):
     unique_id = request.GET.get('id')
     if not unique_id:
@@ -117,12 +116,10 @@ def atualizar_relatorios(request):
         'cias_opt': cias_list
     })
     
-
 def atualizar_caixa(request):
     cias_raw = os.getenv("CIAS_OPT", "")
     cias_opt = [cia.strip() for cia in cias_raw.split(",") if cia.strip()]
     return render(request, 'atualizar_caixa.html', {'cias_opt': cias_opt})
-
 
 def executar_atualizar_caixa(request):  
     if request.method == "POST":

@@ -28,15 +28,20 @@
   <div class="container">
 
     <nav class="top-tabs">
-      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
+    <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}">
+        <i class="bi bi-arrow-clockwise"></i>
+        Atualizar Relatórios
+    </a>
+    <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
         <i class="bi bi-database-fill"></i>
         Consolidação Conta Virtual
-      </a>
-      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+    </a>
+    <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
         <i class="bi bi-cash-stack"></i>
         Atualizar Caixa
-      </a>
+    </a>
     </nav>
+
 
     <div class="form-card">
       <h2>

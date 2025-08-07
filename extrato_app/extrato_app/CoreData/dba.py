@@ -73,13 +73,10 @@ class DBA:
 
         
         if cia_escolhida == 'Sompo':
-            # print('cia é SOMPO')
             nomenclaturas = df[ref_nom].astype(str).str.extract(r'\((.*?)\)')[0].dropna().unique().tolist()
            
         else:
             nomenclaturas = df[ref_nom].unique().tolist()
-        
-        # print(f"🔍 Nomenclaturas encontradas na coluna '{ref_nom}': {nomenclaturas}")
         
         conn = DatabaseManager.get_connection()
         try:

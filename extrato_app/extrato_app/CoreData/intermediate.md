@@ -35,3 +35,11 @@ Construção das bases de referencias origens de Arquivos de Leitura corresponde
    -- tabela de logs de cada execução de batch runner ? 
    -- emissão relatório de inconsistencias, consolidando corretoras nao mapeadas e cias sem relatório / valor caixa; 
     --- já existe a função que valida se as  corretoras selecionadas possuem conta virtual gerada, a partir dai alimentar o relatório de inconsistencia. 
+
+    Calculo TOKIO
+
+    calcular o premio base dividindo o valor total com pelo total com% , é o premio base
+    gera premio rec em cima do premio base
+    1 % é CV 
+    e 0,3 % é VI
+
