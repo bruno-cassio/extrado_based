@@ -144,3 +144,171 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-06 17:13:01,098 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-06 17:13:59,767 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-06 17:14:09,758 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:16:29,807 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:19:32,972 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:19:36,434 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:35:18,703 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:38:41,802 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 09:38:57,057 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 09:39:02,975 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 09:45:18,447 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:45:21,323 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:48:34,446 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:50:09,259 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:50:38,706 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:50:44,336 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:52:41,260 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:52:44,890 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:52:46,977 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 09:52:57,516 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 09:53:07,997 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 09:53:41,738 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:18:08,112 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:18:09,709 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:18:45,548 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:19:04,774 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:19:10,196 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:19:27,797 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-07 10:19:27,797 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-07 10:19:27,797 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Hdi']
+2025-08-07 10:19:27,797 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:19:27,799 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:19:27,804 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Hdi']
+2025-08-07 10:19:27,804 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-08-07 10:20:11,440 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-08-07 10:20:11,440 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-07 10:20:11,443 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:20:11,446 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:20:11,449 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-08-07 10:20:11,450 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-07 10:20:11,686 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 43.89 segundos
+2025-08-07 10:25:37,013 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:25:38,783 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:25:39,307 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:25:47,525 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-07 10:25:47,525 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-07 10:25:47,525 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Hdi']
+2025-08-07 10:25:47,526 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:25:47,527 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:25:47,531 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Hdi']
+2025-08-07 10:25:47,531 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-08-07 10:26:30,714 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-08-07 10:26:30,714 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-07 10:26:30,717 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:26:30,721 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:26:30,724 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-08-07 10:26:30,726 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-07 10:26:30,820 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 43.30 segundos
+2025-08-07 10:30:58,969 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:31:00,002 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:31:00,885 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:31:19,864 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:31:26,510 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:31:27,915 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:32:11,955 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:32:16,604 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:33:24,433 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:33:29,801 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:33:32,823 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:33:33,271 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-07 10:33:50,525 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:34:12,787 - django.request - ERROR - Internal Server Error: /api/buscar-cias/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 180, in buscar_cias_api
+    dba.inserir_caixa_declarado(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        id_cia=id_cia,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        valor_liquido=valor_liquido
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: DBA.inserir_caixa_declarado() got an unexpected keyword argument 'valor_bruto'
+2025-08-07 10:34:24,360 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:35:19,874 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:35:56,018 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:35:59,530 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:00,998 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:01,482 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:02,121 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:03,184 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:03,865 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:04,365 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:04,721 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:36:21,097 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-07 10:36:21,097 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-08-07 10:36:21,098 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Hdi']
+2025-08-07 10:36:21,098 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:36:21,099 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:36:21,108 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:36:21,110 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco', 'Hdi']
+2025-08-07 10:36:21,111 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-08-07 10:36:37,217 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-08-07 10:36:37,217 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Hdi - 01-2025
+2025-08-07 10:37:19,445 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Hdi com sucesso
+2025-08-07 10:37:19,445 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-07 10:37:19,448 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-07 10:37:19,451 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:37:19,454 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-07 10:37:19,454 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '01-2025' LIMIT 1;
+2025-08-07 10:37:19,456 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 01-2025
+2025-08-07 10:37:19,457 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 2 CIAs (solicitadas + geradas anteriormente)
+2025-08-07 10:37:19,681 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 58.58 segundos
+2025-08-07 10:40:12,227 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:40:13,267 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:43:26,718 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:43:37,953 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:44:01,611 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:45:13,571 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:45:35,736 - django.request - ERROR - Internal Server Error: /api/buscar-cias/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 180, in buscar_cias_api
+    dba.inserir_caixa_declarado(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        id_cia=id_cia,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        valor_liquido=valor_liquido
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: DBA.inserir_caixa_declarado() got an unexpected keyword argument 'valor_bruto'
+2025-08-07 10:49:05,972 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:49:14,362 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:49:17,143 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:55:38,345 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:56:10,057 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 10:57:03,527 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:57:49,847 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:57:58,617 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 10:58:55,901 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:58:57,492 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 10:59:56,618 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:00:31,039 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:02:25,125 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:03:09,264 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:03:21,777 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:03:32,624 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:03:37,806 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 11:03:38,192 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-07 11:13:30,549 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:13:39,136 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 11:18:40,051 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 11:19:14,464 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 11:19:18,277 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-07 11:47:04,604 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-07 11:47:24,937 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-07 11:47:47,780 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.

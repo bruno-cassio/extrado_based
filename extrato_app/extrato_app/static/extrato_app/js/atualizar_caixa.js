@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.querySelectorAll('input[name="valor"]').forEach((input) => {
+  document.querySelectorAll('input[name="valor_bruto"], input[name="valor_liquido"]').forEach((input) => {
     input.addEventListener('input', function (e) {
       let value = e.target.value.replace(/\D/g, '');
       if (value.length === 0) {
@@ -32,27 +32,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const cia = form.querySelector("select[name='cia']").value;
     const mes = form.querySelector("input[name='mes']").value;
-    const valor = form.querySelector("input[name='valor']").value;
+    const valorBruto = form.querySelector("input[name='valor_bruto']").value;
+    const valorLiquido = form.querySelector("input[name='valor_liquido']").value;
 
     const formData = new FormData();
     formData.append("cia", cia);
     formData.append("mes", mes);
+    formData.append("valor_bruto", valorBruto);
+    formData.append("valor_liquido", valorLiquido);
 
     try {
       const response = await fetch("/api/buscar-cias/", {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const data = await response.json();
 
-      console.log("✅ Cias existentes:", data.existing);
-      console.log("❌ Cias não encontradas:", data.non_existing);
-      console.log("📄 Lista final:", data.lista_cias);
-      console.log("🆔 ID da CIA:", data.id_cia);
-      console.log("💰 Valor digitado:", valor);
+      if (data.status === "existe") {
+        const confirmar = confirm(data.message);
+        if (confirmar) {
+          formData.append("forcar_update", "true");
+          const responseUpdate = await fetch("/api/buscar-cias/", {
+            method: "POST",
+            body: formData,
+          });
 
-    //   form.submit();
+          const dataUpdate = await responseUpdate.json();
+          alert(dataUpdate.message || "Atualizado com sucesso.");
+        } else {
+          alert("Atualização cancelada.");
+        }
+      } else {
+        alert(data.message || "Processado com sucesso.");
+      }
 
     } catch (error) {
       console.error("Erro ao buscar cias:", error);

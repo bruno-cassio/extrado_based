@@ -162,23 +162,38 @@ def buscar_cias_api(request):
     if request.method == "POST":
         cia = request.POST.get("cia")
         mes = request.POST.get("mes")
-
-        config_path = os.path.join(os.getcwd(), "config.json")
-        with open(config_path, "w", encoding="utf-8") as f:
-            json.dump({
-                "cia_corresp": cia,
-                "competencia": mes
-            }, f, indent=2, ensure_ascii=False)
+        valor_bruto = request.POST.get("valor_bruto")
+        valor_liquido = request.POST.get("valor_liquido")
+        forcar_update = request.POST.get("forcar_update", "false") == "true"
 
         dba = DBA()
         dba.cia_corresp = cia
         existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
 
+        ja_existe = dba.caixa_declarado_existe(cia, mes)
+
+        if ja_existe and not forcar_update:
+            return JsonResponse({
+                "status": "existe",
+                "message": "Já existe valor para esta CIA e competência. Deseja atualizar?",
+                "id_cia": id_cia
+            })
+
+        if id_cia:
+            dba.inserir_ou_atualizar_caixa(
+                id_cia=id_cia,
+                cia=cia,
+                competencia=mes,
+                valor_bruto=valor_bruto,
+                valor_liquido=valor_liquido,
+                update=ja_existe
+            )
+
         return JsonResponse({
-            "existing": existing,
-            "non_existing": non_existing,
-            "lista_cias": lista_cias,
+            "status": "ok",
+            "message": "Dados processados com sucesso.",
             "id_cia": id_cia
         })
 
     return JsonResponse({"error": "Método não permitido"}, status=405)
+
