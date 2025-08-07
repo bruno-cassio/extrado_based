@@ -3,136 +3,122 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizar Relatórios | Grupo GC</title>
+  <meta charset="UTF-8">
+  <title>Atualizar Relatórios | Grupo GC</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}">
-    <style>
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #2c3e50;
-            color: white;
-            padding-top: 60px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            display: block;
-            font-weight: 500;
-        }
-
-        .sidebar a:hover {
-            background-color: #34495e;
-        }
-
-        .main-content {
-            margin-left: 270px;
-            padding: 20px;
-        }
-
-        .cia-grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
-
-        .cia-card {
-            background: #f4f4f4;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .cia-card.selected {
-            background: #d1ecf1;
-            font-weight: bold;
-        }
-
-        .btn-update {
-            margin-top: 30px;
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
 </head>
 <body>
 
-<div class="sidebar">
-    <a href="/">Consolidação Conta Virtual</a>
-    <a href="/atualizar-relatorios">Atualizar Relatórios</a>
-</div>
-
 <div class="main-content">
-    <h2><i class="bi bi-arrow-clockwise"></i> Atualizar Relatórios</h2>
+  <header>
+    <div class="header-content">
+      <a href="/">
+        <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
+      </a>
+      <div class="header-divider"></div>
+    </div>
+  </header>
 
-    <form method="POST" action="">
+  <div class="container">
+    <nav class="top-tabs">
+      <a href="/atualizar-relatorios" class="tab-btn {% if '/atualizar-relatorios' in request.path %}active{% endif %}">
+
+        <i class="bi bi-arrow-clockwise"></i>
+        Atualizar Relatórios
+      </a>
+      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}" >
+        <i class="bi bi-database-fill"></i>
+        Consolidação Conta Virtual
+      </a>
+      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+        <i class="bi bi-cash-stack"></i>
+        Atualizar Caixa
+      </a>
+    </nav>
+
+    <div class="form-card">
+      <h2>
+        <i class="bi bi-arrow-clockwise"></i>
+        Atualizar Relatórios
+      </h2>
+
+      <form method="POST" action="">
         {% csrf_token %}
 
         <div class="form-group">
-            <label><i class="bi bi-building-fill"></i> Selecione as Seguradoras:</label>
-            <div class="cia-grid-container">
-                {% for cia in cias_opt %}
-                <div class="cia-card" data-cia="{{ cia }}">
-                    {{ cia }}
-                </div>
-                {% endfor %}
+          <div class="selection-header">
+            <label class="form-label">
+              <i class="bi bi-building-fill"></i>
+              Selecione as Seguradoras (CIAs):
+            </label>
+            <div class="selection-actions">
+              <span class="selected-count" id="selected-count">0</span>
+              <button type="button" class="selection-action-btn" id="select-all">
+                <i class="bi bi-check2-square"></i> Todos
+              </button>
+              <button type="button" class="selection-action-btn" id="deselect-all">
+                <i class="bi bi-x-square"></i> Limpar
+              </button>
             </div>
-            <input type="hidden" name="cias_selected" id="cias-selected">
+          </div>
+
+          <div class="cias-container">
+            <div class="cias-grid" id="cias-list">
+              {% for cia in cias_opt %}
+              <div class="cia-item" data-cia="{{ cia }}">
+                <div class="cia-checkbox"></div>
+                <span class="cia-name">{{ cia }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <input type="hidden" name="cias_selected" id="cias-selected" />
         </div>
 
         <div class="form-group">
-            <label><i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):</label>
-            <input type="text" name="mes" class="form-control" required
-                   placeholder="Ex: 05-2025"
-                   pattern="^(0[1-9]|1[0-2])-[0-9]{4}$">
+          <label class="form-label">
+            <i class="bi bi-calendar-month"></i>
+            Digite a Competência (MM-AAAA):
+          </label>
+          <div class="competencia-input">
+            <input
+              type="text"
+              class="form-select"
+              name="mes"
+              required
+              placeholder="Digite a competência (ex: 01-2025)"
+              pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
+              title="Digite no formato MM-AAAA, por exemplo: 01-2025"
+            />
+            <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
+          </div>
+          <div class="info-badge">
+            <i class="bi bi-lightbulb"></i> Exemplo: 05-2024 para maio de 2024
+          </div>
         </div>
 
-        <button type="submit" class="btn-update">
-            <i class="bi bi-arrow-repeat"></i> Atualizar Relatório
-        </button>
-    </form>
+        <div class="form-group">
+          <button class="btn-primary" type="submit">
+            <i class="bi bi-arrow-repeat"></i>
+            Atualizar Relatórios
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Grupo GC - Todos os direitos reservados</p>
+    </div>
+  </footer>
 </div>
 
-<script>
-    const ciaCards = document.querySelectorAll('.cia-card');
-    const inputCias = document.getElementById('cias-selected');
-    const selected = new Set();
-
-    ciaCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const cia = card.dataset.cia;
-            if (selected.has(cia)) {
-                selected.delete(cia);
-                card.classList.remove('selected');
-            } else {
-                selected.add(cia);
-                card.classList.add('selected');
-            }
-            inputCias.value = JSON.stringify(Array.from(selected));
-        });
-    });
-</script>
+<script src="{% static 'extrato_app/js/atualizar_relatorios.js' %}"></script>
 
 </body>
 </html>
