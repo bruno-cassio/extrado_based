@@ -437,7 +437,6 @@ class DBA:
         
         return success
 
-
     def caixa_declarado_existe(self, cia: str, competencia: str) -> bool:
         conn = DatabaseManager.get_connection()
         try:
@@ -454,7 +453,6 @@ class DBA:
             return False
         finally:
             DatabaseManager.return_connection(conn)
-
 
     def inserir_caixa_declarado(self, id_cia: str, competencia: str, valor_bruto: str, valor_liquido: str, cia: str) -> None:
         conn = DatabaseManager.get_connection()
@@ -480,47 +478,6 @@ class DBA:
             print(f"❌ Erro ao inserir no caixa_declarado: {e}")
         finally:
             DatabaseManager.return_connection(conn)
-
-
-    def inserir_ou_atualizar_caixa(self, id_cia, cia, competencia, valor_bruto, valor_liquido, update=False):
-        conn = DatabaseManager.get_connection()
-        try:
-            valor_bruto_float = float(valor_bruto.replace('.', '').replace(',', '.'))
-            valor_liquido_float = float(valor_liquido.replace('.', '').replace(',', '.'))
-
-            with conn.cursor() as cursor:
-                if update:
-                    query = """
-                        UPDATE caixa_declarado
-                        SET id_seguradora_quiver = %s,
-                            valor_bruto_declarado = %s,
-                            valor_liq_declarado = %s
-                        WHERE cia = %s AND competencia = %s
-                    """
-                    cursor.execute(query, (
-                        id_cia,
-                        valor_bruto_float,
-                        valor_liquido_float,
-                        cia,
-                        competencia
-                    ))
-                else:
-                    query = """
-                        INSERT INTO caixa_declarado (id_seguradora_quiver, cia, competencia, valor_bruto_declarado, valor_liq_declarado)
-                        VALUES (%s, %s, %s, %s, %s)
-                    """
-                    cursor.execute(query, (
-                        id_cia,
-                        cia,
-                        competencia,
-                        valor_bruto_float,
-                        valor_liquido_float
-                    ))
-
-            conn.commit()
-            print("✅ Dados inseridos ou atualizados com sucesso.")
-        except Exception as e:
-            print(f"❌ Erro ao inserir/atualizar caixa_declarado: {e}")
 
     def inserir_ou_atualizar_caixa(self, id_cia, cia, competencia, valor_bruto, valor_liquido, update=False):
         conn = DatabaseManager.get_connection()
