@@ -516,7 +516,13 @@ class DBA:
         try:
             with conn.cursor() as cursor:
                 cursor.execute(query, (competencia,))
-                return cursor.fetchone() is not None
+                resultado = cursor.fetchone()
+                if resultado:
+                    print("✅ Existem dados para essa competência.")
+                    return True
+                else:
+                    print("⚠️ Nenhum dado encontrado para essa competência.")
+                    return False
         except Exception as e:
             print(f"❌ Erro ao consultar tabela {tabela}: {e}")
             return False
