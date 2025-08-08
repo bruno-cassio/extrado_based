@@ -1,5 +1,5 @@
-{% load static %}
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,10 +11,7 @@
   <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
 </head>
 
-<div id="notification" class="notification" style="display: none;"></div>
-
 <body>
-
 <div class="main-content">
   <header>
     <div class="header-content">
@@ -26,102 +23,57 @@
   </header>
 
   <div class="container">
-
     <nav class="top-tabs">
-    <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}">
+      <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}">
         <i class="bi bi-arrow-clockwise"></i>
         Atualizar Relatórios
-    </a>
-    <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
+      </a>
+      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
         <i class="bi bi-database-fill"></i>
         Consolidação Conta Virtual
-    </a>
-    <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+      </a>
+      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
         <i class="bi bi-cash-stack"></i>
         Atualizar Caixa
-    </a>
+      </a>
     </nav>
 
-
     <div class="form-card">
-      <h2>
-        <i class="bi bi-cash-stack"></i>
-        Atualizar Caixa
-      </h2>
-
+      <h2><i class="bi bi-cash-stack"></i> Atualizar Caixa</h2>
       <form method="POST" action="{% url 'executar_atualizar_caixa' %}">
-
         {% csrf_token %}
-
         <div class="form-group">
-          <label class="form-label">
-            <i class="bi bi-building-fill"></i> Selecione a Seguradora (CIA):
-          </label>
-
-        <select name="cia" class="form-select" required>
-        <option value="">Selecione</option>
-        {% for cia in cias_opt %}
-        <option value="{{ cia }}">{{ cia }}</option>
-        {% endfor %}
-        </select>
-
+          <label class="form-label"><i class="bi bi-building-fill"></i> Selecione a Seguradora (CIA):</label>
+          <select name="cia" class="form-select" required>
+            <option value="">Selecione</option>
+            {% for cia in cias_opt %}
+              <option value="{{ cia }}">{{ cia }}</option>
+            {% endfor %}
+          </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label">
-            <i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):
-          </label>
+          <label class="form-label"><i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):</label>
           <div class="competencia-input">
-            
-            <input
-            type="text"
-            name="mes"
-            class="input-text"
-            placeholder="Ex: 01-2025"
-            required
-            pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
-            title="Digite no formato MM-AAAA"
-            />
-
+            <input type="text" name="mes" class="input-text" placeholder="Ex: 01-2025" required pattern="^(0[1-9]|1[0-2])-[0-9]{4}$" title="Digite no formato MM-AAAA" />
             <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
           </div>
         </div>
 
         <div class="form-group">
-        <label class="form-label">
-            <i class="bi bi-currency-dollar"></i> Valor Bruto (R$):
-        </label>
-        <input
-            type="text"
-            name="valor_bruto"
-            class="input-text"
-            placeholder="Ex: 15.000,00"
-            required
-            pattern="^\d{1,3}(\.\d{3})*,\d{2}$"
-            title="Digite um valor no formato 10.000,00"
-        />
+          <label class="form-label"><i class="bi bi-currency-dollar"></i> Valor Bruto (R$):</label>
+          <input type="text" name="valor_bruto" class="input-text" placeholder="Ex: 15.000,00" required pattern="^\d{1,3}(\.\d{3})*,\d{2}$" title="Digite um valor no formato 10.000,00" />
         </div>
 
         <div class="form-group">
-        <label class="form-label">
-            <i class="bi bi-currency-dollar"></i> Valor Líquido (R$):
-        </label>
-        <input
-            type="text"
-            name="valor_liquido"
-            class="input-text"
-            placeholder="Ex: 13.500,00"
-            required
-            pattern="^\d{1,3}(\.\d{3})*,\d{2}$"
-            title="Digite um valor no formato 10.000,00"
-        />
+          <label class="form-label"><i class="bi bi-currency-dollar"></i> Valor Líquido (R$):</label>
+          <input type="text" name="valor_liquido" class="input-text" placeholder="Ex: 13.500,00" required pattern="^\d{1,3}(\.\d{3})*,\d{2}$" title="Digite um valor no formato 10.000,00" />
         </div>
 
-
         <div class="form-group">
-            <button type="submit" class="btn-primary" id="btnAtualizarCaixa">
-                <i class="bi bi-upload"></i> Atualizar Caixa
-            </button>   
+          <button type="submit" class="btn-primary" id="btnAtualizarCaixa">
+            <i class="bi bi-upload"></i> Atualizar Caixa
+          </button>   
         </div>
       </form>
     </div>
@@ -134,8 +86,23 @@
   </footer>
 </div>
 
-<script src="{% static 'extrato_app/js/atualizar_caixa.js' %}"></script>
+<div id="custom-alert" class="custom-alert" style="display: none;">
+  <div class="custom-alert-content" id="custom-alert-content"></div>
+  <button onclick="fecharAlerta()" class="custom-alert-close" title="Fechar">
+    <i class="bi bi-x-circle-fill"></i>
+  </button>
+</div>
 
+<div id="custom-confirm" class="custom-confirm" style="display: none;">
+  <div class="custom-confirm-box">
+    <div class="custom-confirm-content" id="custom-confirm-content"></div>
+    <div class="custom-confirm-buttons">
+      <button id="btnConfirmar" class="btn-confirm">Sim</button>
+      <button id="btnCancelar" class="btn-cancel">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'extrato_app/js/atualizar_caixa.js' %}"></script>
 </body>
 </html>
-

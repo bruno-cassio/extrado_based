@@ -925,3 +925,281 @@ AttributeError: 'DBA' object has no attribute 'import_main'
 2025-08-08 14:36:34,008 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-08 14:38:14,602 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
 2025-08-08 14:38:41,161 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:39:01,386 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:39:36,621 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:39:41,377 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:39:50,259 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:43:09,476 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:43:35,824 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 14:48:00,174 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 14:55:15,537 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:00:36,648 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:01:17,246 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:02:45,549 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:07:08,864 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:07:26,959 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:08:37,338 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:09:04,126 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:09:04,189 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:09:05,593 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:27:31,663 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:27:33,766 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:30:36,967 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:30:40,815 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:31:23,051 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:32:56,484 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:32:57,791 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:34:03,679 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:34:53,294 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:35:44,760 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 15:39:38,704 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:39:38,704 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-08 15:39:38,705 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:39:38,705 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 15:39:38,708 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 15:39:38,717 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:39:38,717 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-08-08 15:39:45,682 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-08 15:39:45,682 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-08 15:39:45,684 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 15:39:45,686 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 15:39:45,687 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-08-08 15:39:45,688 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:39:45,853 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 7.15 segundos
+2025-08-08 15:40:03,143 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:40:03,143 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 02-2025
+2025-08-08 15:40:03,144 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:40:03,144 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 02-2025
+2025-08-08 15:40:03,146 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '02-2025' LIMIT 1;
+2025-08-08 15:40:03,154 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:40:03,155 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 02-2025
+2025-08-08 15:40:07,978 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:40:07,978 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 02-2025
+2025-08-08 15:40:07,980 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 02-2025
+2025-08-08 15:40:07,983 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '02-2025' LIMIT 1;
+2025-08-08 15:40:07,994 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:40:08,063 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.92 segundos
+2025-08-08 15:40:15,006 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:40:15,007 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 03-2025
+2025-08-08 15:40:15,007 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:40:15,007 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-08-08 15:40:15,013 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-08-08 15:40:15,063 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:40:15,073 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 03-2025
+2025-08-08 15:40:19,662 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:40:19,663 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 03-2025
+2025-08-08 15:40:19,664 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-08-08 15:40:19,666 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-08-08 15:40:19,673 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:40:19,722 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.71 segundos
+2025-08-08 15:40:27,014 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:40:27,014 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 04-2025
+2025-08-08 15:40:27,014 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:40:27,014 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-08 15:40:27,016 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '04-2025' LIMIT 1;
+2025-08-08 15:40:27,027 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:40:27,027 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 04-2025
+2025-08-08 15:40:32,889 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:40:32,890 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 04-2025
+2025-08-08 15:40:32,895 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-08 15:40:32,899 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '04-2025' LIMIT 1;
+2025-08-08 15:40:32,911 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:40:32,966 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 5.95 segundos
+2025-08-08 15:40:49,378 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:40:49,380 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 05-2025
+2025-08-08 15:40:49,381 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:40:49,381 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 15:40:49,384 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 15:40:49,393 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:40:49,394 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 05-2025
+2025-08-08 15:40:58,778 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:40:58,778 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 05-2025
+2025-08-08 15:40:58,780 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 15:40:58,783 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 15:40:58,793 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:40:58,847 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 9.47 segundos
+2025-08-08 15:41:06,715 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:41:06,715 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 06-2025
+2025-08-08 15:41:06,715 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:41:06,716 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 06-2025
+2025-08-08 15:41:06,718 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '06-2025' LIMIT 1;
+2025-08-08 15:41:06,746 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:41:06,746 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 06-2025
+2025-08-08 15:41:17,580 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:41:17,580 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 06-2025
+2025-08-08 15:41:17,581 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 06-2025
+2025-08-08 15:41:17,584 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '06-2025' LIMIT 1;
+2025-08-08 15:41:17,591 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:41:17,648 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.93 segundos
+2025-08-08 15:41:24,830 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:41:24,830 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 07-2025
+2025-08-08 15:41:24,830 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:41:24,831 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 07-2025
+2025-08-08 15:41:24,838 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '07-2025' LIMIT 1;
+2025-08-08 15:41:24,851 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:41:24,852 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 07-2025
+2025-08-08 15:41:24,992 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:41:24,993 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 07-2025
+2025-08-08 15:41:24,994 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 07-2025
+2025-08-08 15:41:24,996 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '07-2025' LIMIT 1;
+2025-08-08 15:41:25,001 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:41:25,064 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.23 segundos
+2025-08-08 15:47:18,409 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:47:18,410 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2024
+2025-08-08 15:47:18,410 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:47:18,411 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2024
+2025-08-08 15:47:18,413 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2024' LIMIT 1;
+2025-08-08 15:47:18,428 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:47:18,428 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2024
+2025-08-08 15:47:18,477 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:47:18,477 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2024
+2025-08-08 15:47:18,479 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2024
+2025-08-08 15:47:18,482 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2024' LIMIT 1;
+2025-08-08 15:47:18,487 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:47:18,535 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.12 segundos
+2025-08-08 15:53:03,527 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:53:03,528 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2024
+2025-08-08 15:53:03,528 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:53:03,529 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2024
+2025-08-08 15:53:03,531 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2024' LIMIT 1;
+2025-08-08 15:53:03,544 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:53:03,545 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2024
+2025-08-08 15:53:03,619 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:53:03,619 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2024
+2025-08-08 15:53:03,622 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2024
+2025-08-08 15:53:03,624 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2024' LIMIT 1;
+2025-08-08 15:53:03,637 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:53:03,716 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.19 segundos
+2025-08-08 15:55:12,511 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 15:55:12,511 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 12-2024
+2025-08-08 15:55:12,512 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 15:55:12,513 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 12-2024
+2025-08-08 15:55:12,518 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '12-2024' LIMIT 1;
+2025-08-08 15:55:12,534 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 15:55:12,535 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 12-2024
+2025-08-08 15:55:12,699 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 15:55:12,699 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 12-2024
+2025-08-08 15:55:12,702 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 12-2024
+2025-08-08 15:55:12,705 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '12-2024' LIMIT 1;
+2025-08-08 15:55:12,713 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 15:55:12,762 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 0.25 segundos
+2025-08-08 15:56:55,509 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:03:19,977 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:06:28,990 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:06:37,937 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:06:37,937 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-08 16:06:37,937 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:06:37,937 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 16:06:37,938 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 16:06:37,941 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-08-08 16:06:37,942 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-08 16:06:37,943 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-08 16:06:37,944 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 16:06:37,945 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 16:06:37,947 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-08-08 16:06:37,949 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:06:45,556 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:06:45,557 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 02-2025
+2025-08-08 16:06:45,557 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:06:45,557 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 02-2025
+2025-08-08 16:06:45,559 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '02-2025' LIMIT 1;
+2025-08-08 16:06:45,569 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:06:45,570 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 02-2025
+2025-08-08 16:06:52,298 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-08 16:06:52,298 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 02-2025
+2025-08-08 16:06:52,302 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 02-2025
+2025-08-08 16:06:52,305 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '02-2025' LIMIT 1;
+2025-08-08 16:06:52,309 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 02-2025
+2025-08-08 16:06:52,311 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:06:52,412 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.86 segundos
+2025-08-08 16:06:58,304 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:06:58,305 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 03-2025
+2025-08-08 16:06:58,305 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:06:58,305 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-08-08 16:06:58,307 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-08-08 16:06:58,318 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:06:58,318 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 03-2025
+2025-08-08 16:07:04,593 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-08 16:07:04,594 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 03-2025
+2025-08-08 16:07:04,598 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-08-08 16:07:04,600 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-08-08 16:07:04,607 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 03-2025
+2025-08-08 16:07:04,608 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:07:04,705 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.40 segundos
+2025-08-08 16:07:22,423 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:07:22,424 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 04-2025
+2025-08-08 16:07:22,424 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:07:22,424 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-08 16:07:22,425 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '04-2025' LIMIT 1;
+2025-08-08 16:07:22,439 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:07:22,440 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 04-2025
+2025-08-08 16:07:30,471 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-08 16:07:30,471 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 04-2025
+2025-08-08 16:07:30,472 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 04-2025
+2025-08-08 16:07:30,475 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '04-2025' LIMIT 1;
+2025-08-08 16:07:30,483 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 04-2025
+2025-08-08 16:07:30,484 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:07:30,595 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 8.17 segundos
+2025-08-08 16:07:38,863 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:07:38,864 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 05-2025
+2025-08-08 16:07:38,865 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:07:38,865 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:07:38,866 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:07:38,883 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:07:38,884 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 05-2025
+2025-08-08 16:07:48,669 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 16:07:48,670 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 05-2025
+2025-08-08 16:07:48,671 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:07:48,672 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:07:48,687 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:07:48,740 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 9.88 segundos
+2025-08-08 16:08:14,433 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:08:14,434 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 05-2025
+2025-08-08 16:08:14,434 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:08:14,435 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:08:14,436 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:08:14,457 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:08:14,457 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 05-2025
+2025-08-08 16:08:24,268 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 16:08:24,268 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 05-2025
+2025-08-08 16:08:24,269 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:08:24,273 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:08:24,292 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:08:24,349 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 9.91 segundos
+2025-08-08 16:08:52,160 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-08 16:09:06,042 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:30,522 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:09:30,522 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 05-2025
+2025-08-08 16:09:30,522 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:09:30,522 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:09:30,525 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:09:30,549 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:09:30,549 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 05-2025
+2025-08-08 16:09:40,667 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 16:09:40,667 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 05-2025
+2025-08-08 16:09:40,668 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:09:40,671 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:09:40,691 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:09:40,860 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 10.34 segundos
+2025-08-08 16:09:43,664 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:49,671 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 16:09:49,672 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 05-2025
+2025-08-08 16:09:49,672 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 16:09:49,672 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:09:49,675 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:09:49,694 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 16:09:49,695 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 05-2025
+2025-08-08 16:09:51,621 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:53,325 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:54,414 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:54,541 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-08 16:09:55,392 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:56,875 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:09:57,835 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com falha
+2025-08-08 16:09:57,836 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 05-2025
+2025-08-08 16:09:57,839 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 05-2025
+2025-08-08 16:09:57,842 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '05-2025' LIMIT 1;
+2025-08-08 16:09:57,857 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 16:09:57,921 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 8.25 segundos
+2025-08-08 16:10:02,678 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 16:10:14,276 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json

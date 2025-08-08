@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const btn = document.getElementById("btnAtualizarCaixa");
@@ -27,6 +28,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  function mostrarAlerta(mensagem, tempo = 5000) {
+    const alerta = document.getElementById("custom-alert");
+    const conteudo = document.getElementById("custom-alert-content");
+
+    conteudo.innerHTML = mensagem;
+    alerta.style.display = "flex";
+
+    setTimeout(() => {
+      alerta.style.display = "none";
+    }, tempo);
+  }
+
+  window.fecharAlerta = function () {
+    document.getElementById("custom-alert").style.display = "none";
+  };
+
+  function mostrarConfirmacao(mensagem, aoConfirmar, aoCancelar) {
+    const box = document.getElementById("custom-confirm");
+    const content = document.getElementById("custom-confirm-content");
+    const btnSim = document.getElementById("btnConfirmar");
+    const btnNao = document.getElementById("btnCancelar");
+
+    content.innerHTML = mensagem;
+    box.style.display = "flex";
+
+    btnSim.onclick = () => {
+      box.style.display = "none";
+      if (aoConfirmar) aoConfirmar();
+    };
+
+    btnNao.onclick = () => {
+      box.style.display = "none";
+      if (aoCancelar) aoCancelar();
+    };
+  }
+
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -50,25 +87,24 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = await response.json();
 
       if (data.status === "existe") {
-        const confirmar = confirm(data.message);
-        if (confirmar) {
+        mostrarConfirmacao(data.message, async () => {
           formData.append("forcar_update", "true");
           const responseUpdate = await fetch("/api/buscar-cias/", {
             method: "POST",
             body: formData,
           });
-
           const dataUpdate = await responseUpdate.json();
-          alert(dataUpdate.message || "Atualizado com sucesso.");
-        } else {
-          alert("Atualização cancelada.");
-        }
+          mostrarAlerta(dataUpdate.message || "Atualizado com sucesso.");
+        }, () => {
+          mostrarAlerta("Atualização cancelada.");
+        });
       } else {
-        alert(data.message || "Processado com sucesso.");
+        mostrarAlerta(data.message || "Processado com sucesso.");
       }
 
     } catch (error) {
       console.error("Erro ao buscar cias:", error);
+      mostrarAlerta("Erro de conexão com o servidor.");
     }
   });
 });

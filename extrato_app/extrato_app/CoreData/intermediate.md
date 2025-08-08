@@ -43,3 +43,4 @@ Construção das bases de referencias origens de Arquivos de Leitura corresponde
     1 % é CV 
     e 0,3 % é VI
 
+SWISS - SENHA = SWISS
