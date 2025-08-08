@@ -874,3 +874,22 @@ AttributeError: 'DBA' object has no attribute 'import_main'
 2025-08-08 11:57:37,145 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-08 11:57:46,055 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-08 11:57:48,683 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-08 11:57:52,849 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 11:58:04,020 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 11:58:14,271 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 11:58:18,123 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-08 11:58:22,921 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 15 CIAs disponíveis
+2025-08-08 11:58:22,921 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-08 11:58:22,921 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-08 11:58:22,922 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 11:58:22,925 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 11:58:22,933 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-08 11:58:22,933 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-08-08 11:58:29,609 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-08 11:58:29,609 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-08 11:58:29,610 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-08 11:58:29,611 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-08 11:58:29,613 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-08-08 11:58:29,614 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-08 11:58:29,804 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.88 segundos
+2025-08-08 11:59:54,951 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
