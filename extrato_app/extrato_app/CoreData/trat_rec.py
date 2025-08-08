@@ -4,6 +4,7 @@ import json
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 import pandas as pd
 import datetime
+
 from extrato_app.CoreData.Handlers.BradescoHandler import BradescoHandler
 from extrato_app.CoreData.Handlers.SuhaiHandler import SuhaiHandler
 from extrato_app.CoreData.Handlers.AllianzHandler import AllianzHandler
@@ -24,6 +25,7 @@ from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
 class TratamentoRecalculo:
+
     
     REGRAS_PREMIO = {
         'Bradesco': {'fator': 0.05},
@@ -81,6 +83,7 @@ class TratamentoRecalculo:
         
         self.file_dfs = {}
 
+
     def cons_rel(self, df, cias_corresp_list, file_name, table_name, premio_exec):
         print('cons_rel started')
         
@@ -113,11 +116,19 @@ class TratamentoRecalculo:
             fator = regra['fator']
             print(f'Cálculo de premio para {cia} usando a coluna {coluna} com fator {fator}.')
 
-            # if coluna in df.columns:
-            #     print('TESTE HEREE')
-            #     print(df.columns)
 
-                # premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            if cia in ['Tokio']:
+
+                try:
+
+                    df['premio_base'] = df['total_com'] / df['total_com_pct']
+                    premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
+                    self.file_dfs[table_name] = df
+                    
+                    return premio_total_relatorio
+                except InvalidOperation as e:
+                    print(f"❌ Erro ao converter para Decimal: {e}")
+                    return {}
 
 
             if cia in ['Mapfre']:
@@ -132,17 +143,6 @@ class TratamentoRecalculo:
                     return {}
 
             if cia in ['Sompo']:
-
-                try:
-                    premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-
-                    self.file_dfs[table_name] = df
-                    return premio_total_relatorio
-                except InvalidOperation as e:
-                    print(f"❌ Erro ao converter para Decimal: {e}")
-                    return {}
-
-            if cia in ['Tokio']:
 
                 try:
                     premio_total_relatorio = round(df[coluna].sum() * fator, 2)
@@ -371,8 +371,25 @@ class TratamentoRecalculo:
 
                 print('============================================================================= validação acima erro de agora =============================================================================')
 
+            elif cia == 'Tokio':
+                
+                print('pretreaT')
+                print(df['anomes_referencia'].unique())
+                df['anomes_referencia'] = pd.to_datetime(df['anomes_referencia'], format='%Y%m').dt.strftime('%m-%Y')
+                
+                print('VALIDAÇÃO PASSO INTERMEDIARIO TOKIO ANTES DE EQUIPARAÇÃO')
+                print(df['anomes_referencia'].unique())
+                
+                print(f"Quantidade de linhas antes do filtro: {len(df)}")
+                df = df[df['anomes_referencia'] == competencia_escolhida]
+                print(f"Quantidade de linhas após o filtro: {len(df)}")
+                print(df['anomes_referencia'].unique())
+                print('validação tokio por equiparação')
+                print(df.columns)
+
             print('dispatched bitch:', cia)
             print(f"Processado para cia: {cia}")
+        
         else:
             print(f"⚠️ Companhia {cias_corresp_list} não reconhecida para cálculo de 'premio_rec'.")
 

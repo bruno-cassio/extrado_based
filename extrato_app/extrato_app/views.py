@@ -162,7 +162,6 @@ def verificar_relatorios_view(request):
             cias = data.get("cias", [])
             competencia = data.get("competencia", "")
 
-            # Atualiza config.json ANTES de chamar qualquer coisa
             for cia in cias:
                 processar_automaticamente(cia, competencia)
 

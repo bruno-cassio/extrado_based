@@ -255,10 +255,6 @@ class DataHandler:
         for table_name, data in file_dfs.items():
             print(f"\n📤 Processando tabela: {table_name}")
 
-
-
-
-
             if isinstance(data, dict) and 'df' in data:
                 df = data['df']
             elif isinstance(data, pd.DataFrame):

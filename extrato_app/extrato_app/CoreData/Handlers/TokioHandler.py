@@ -26,21 +26,33 @@ class TokioHandler:
             df = pd.read_excel(file_path, sheet_name='Produção')
             df['origem_arquivo'] = file  
             print(f"✅ DataFrame carregado ({df.shape[0]} linhas)")
+            
+            print('===================================================== VALIDAÇÃO COLUNAS DF EM LEITURA INICIAL =====================================================')
+            print(df.columns)
+            print('===================================================== VALIDAÇÃO COLUNAS DF EM LEITURA INICIAL=====================================================')
+            
+            
+            
+            
             return df
         except Exception as e:
             print(f"❌ Erro ao ler {file}: {e}")
             return pd.DataFrame()
 
     def process(self, df: pd.DataFrame, file_name: str, premio_exec: str, fator_melchiori: float, premio_db=None):
+        
+        print('=================================== validação colunas em inicio de processamento de calculos TOKIO ===================================')
+        print(df.columns)
+        print('=================================== validação colunas em inicio de processamento de calculos TOKIO ===================================')        
+        
         coluna = premio_exec if premio_exec in df.columns else 'premio'
         if coluna in df.columns:
-            fator_melchiori = 0.938500
+            fator_melchiori = 0.9850
             if fator_melchiori is not None:
-                df['premio_rec'] = df[coluna] * fator_melchiori
-                df['valor_cv'] = df['premio_rec'] * 0.04
-                df['valor_as'] = df['premio_rec'] * 0.01 * 0.27868759
-                df['valor_vi'] = df['premio_rec'] * 0.01 * 0.72131241
-                print(df[[coluna, 'premio_rec','valor_cv','valor_as','valor_vi']].head())
+                df['premio_rec'] = df['premio_base'] * fator_melchiori
+                df['valor_cv'] = df['premio_rec'] * 0.01
+                df['valor_vi'] = df['premio_rec'] * 0.003
+                print(df[['total_com_pct','total_com','premio_base', 'premio_rec','valor_cv','valor_vi']].head())
             else:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:

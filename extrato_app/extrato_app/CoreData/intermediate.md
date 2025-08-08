@@ -39,7 +39,7 @@ Construção das bases de referencias origens de Arquivos de Leitura corresponde
     Calculo TOKIO
 
     calcular o premio base dividindo o valor total com pelo total com% , é o premio base
-    gera premio rec em cima do premio base
+    gera premio rec em cima do premio base * 0,9850, 
     1 % é CV 
     e 0,3 % é VI
 
