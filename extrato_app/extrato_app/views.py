@@ -217,22 +217,3 @@ def buscar_cias_api(request):
 
     return JsonResponse({"error": "Método não permitido"}, status=405)
 
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            cias = data.get("cias", [])
-            competencia = data.get("competencia", "")
-            dba = DBA()
-
-            resultados = []
-            for cia in cias:
-                existe = dba.relatorio_existente_para_competencia(cia, competencia)
-                resultados.append({
-                    "cia": cia,
-                    "existe": existe
-                })
-
-            return JsonResponse({"status": "success", "dados": resultados})
-
-        except Exception as e:
-            return JsonResponse({"status": "error", "mensagem": str(e)}, status=500)
