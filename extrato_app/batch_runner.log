@@ -893,3 +893,6 @@ AttributeError: 'DBA' object has no attribute 'import_main'
 2025-08-08 11:58:29,614 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
 2025-08-08 11:58:29,804 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.88 segundos
 2025-08-08 11:59:54,951 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-08 12:00:38,448 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-08 12:00:49,838 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-08 12:06:25,357 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.

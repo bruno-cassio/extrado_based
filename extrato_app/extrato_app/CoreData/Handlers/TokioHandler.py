@@ -27,12 +27,6 @@ class TokioHandler:
             df['origem_arquivo'] = file  
             print(f"✅ DataFrame carregado ({df.shape[0]} linhas)")
             
-            print('===================================================== VALIDAÇÃO COLUNAS DF EM LEITURA INICIAL =====================================================')
-            print(df.columns)
-            print('===================================================== VALIDAÇÃO COLUNAS DF EM LEITURA INICIAL=====================================================')
-            
-            
-            
             
             return df
         except Exception as e:
@@ -41,13 +35,9 @@ class TokioHandler:
 
     def process(self, df: pd.DataFrame, file_name: str, premio_exec: str, fator_melchiori: float, premio_db=None):
         
-        print('=================================== validação colunas em inicio de processamento de calculos TOKIO ===================================')
-        print(df.columns)
-        print('=================================== validação colunas em inicio de processamento de calculos TOKIO ===================================')        
-        
         coluna = premio_exec if premio_exec in df.columns else 'premio'
         if coluna in df.columns:
-            fator_melchiori = 0.9850
+            fator_melchiori = 0.9850 
             if fator_melchiori is not None:
                 df['premio_rec'] = df['premio_base'] * fator_melchiori
                 df['valor_cv'] = df['premio_rec'] * 0.01
