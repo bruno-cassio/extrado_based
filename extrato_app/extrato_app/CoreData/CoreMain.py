@@ -77,6 +77,9 @@ from extrato_app.CoreData.ds4 import parse_meses_opt, escolher_cia_e_atualizar_c
 from pathlib import Path
 import pandas as pd
 import time
+import msoffcrypto
+from io import BytesIO
+
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
@@ -114,7 +117,6 @@ class DataImporter:
             return
         
         mes, ano = obter_mes_ano(competencia_manual) if competencia_manual else obter_mes_ano_from_config()
-
         
         self.root_path = os.path.join(
             ROOT_NUMS,
@@ -197,6 +199,19 @@ class DataImporter:
 
 
         return overall_success, processed_data
+
+
+def ler_excel_com_senha(caminho_arquivo, senha):
+    with open(caminho_arquivo, 'rb') as file:
+        office_file = msoffcrypto.OfficeFile(file)
+        office_file.load_key(password=senha)
+
+        buffer = BytesIO()
+        office_file.decrypt(buffer)
+
+        buffer.seek(0)
+        df = pd.read_excel(buffer)
+        return df
 
 def main(cia_manual: Optional[str] = None, competencia_manual: Optional[str] = None):
     importer = DataImporter(cia_manual, competencia_manual)
