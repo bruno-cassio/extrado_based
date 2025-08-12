@@ -2352,3 +2352,17 @@ LINE 10:                             cont_prod_swiss
 2025-08-12 17:09:37,443 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
 2025-08-12 17:10:00,871 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
 2025-08-12 17:10:06,181 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-12 17:10:51,889 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-12 17:10:51,890 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-12 17:10:51,891 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-12 17:10:51,891 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-12 17:10:51,893 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-12 17:10:51,899 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-12 17:10:51,899 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-12 17:10:53,911 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com sucesso
+2025-08-12 17:10:53,911 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-12 17:10:53,912 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-12 17:10:53,914 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-12 17:10:53,916 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-12 17:10:53,918 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-12 17:10:54,085 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.20 segundos
