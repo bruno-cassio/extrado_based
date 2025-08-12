@@ -128,7 +128,8 @@ def processar_automaticamente(cia: str, competencia: str):
         "Tokio": "Nome do Corretor",
         "Ezze": "nm_corretor",
         "Sompo": 'corretor',
-        "Mapfre": 'Prêmios Emitidos como valores'
+        "Mapfre": 'Prêmios Emitidos como valores',
+        "Swiss": 'Nome Corretor',
     }
 
 
@@ -147,9 +148,10 @@ def processar_automaticamente(cia: str, competencia: str):
         "Tokio": "cont_prod_tokio",
         "Ezze": "cont_prod_ezze",
         "Sompo": "cont_prod_sompo",
-        "Mapfre": "cont_prod_mapfre"
-
+        "Mapfre": "cont_prod_mapfre",
+        "Swiss": "cont_prod_swiss"
     }
+
 
     if cia not in coluna_referencia_map:
         print(f"❌ CIA '{cia}' não está mapeada em coluna_referencia_map")

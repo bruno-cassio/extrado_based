@@ -1,1 +1,0 @@
-[FALHA] Tokio - Erro durante geração da Conta Virtual para 05-2025 | Motivo: Caixa não declarado 

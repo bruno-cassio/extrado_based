@@ -20,6 +20,7 @@ from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
 from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
 from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
 from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
+from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
 
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
@@ -42,7 +43,8 @@ class TratamentoRecalculo:
         'Tokio': {'fator': 1},
         'Ezze': {'fator': 1},
         'Sompo': {'fator': 1},
-        'Mapfre': {'fator': 1}
+        'Mapfre': {'fator': 1},
+        'Swiss': {'fator': 1}
     }
 
     def __init__(self):
@@ -62,6 +64,7 @@ class TratamentoRecalculo:
         self.ezze_handler = EzzeHandler()
         self.sompo_handler = SompoHandler()
         self.mapfre_handler = MapfreHandler()
+        self.swiss_handler = SwissHandler()
 
         self.process_dispatcher = {
             "Bradesco": self.bradesco_handler.process,
@@ -78,9 +81,10 @@ class TratamentoRecalculo:
             "Tokio": self.tokio_handler.process,
             "Ezze": self.ezze_handler.process,
             "Sompo": self.sompo_handler.process,
-            "Mapfre": self.mapfre_handler.process
-                    }
-        
+            "Mapfre": self.mapfre_handler.process,
+            "Swiss": self.swiss_handler.process
+        }
+
         self.file_dfs = {}
 
 
@@ -109,18 +113,33 @@ class TratamentoRecalculo:
         print(competencia)
         print('premio_exec:', premio_exec)
         print(f'Regra para {cia}: {regra}')
-
+        
         #Criar modulo para tratamnto dispatcher de premio relatorio.
         if regra:
             coluna = premio_exec
             fator = regra['fator']
             print(f'Cálculo de premio para {cia} usando a coluna {coluna} com fator {fator}.')
 
+            if cia in ['Swiss']:
+                print('CIA EM PROCESSAMENTO DE CONS REL > SWISS')
+                try:
+                    # coluna = 'soma_de_valor_liquido_da_parcela'
+                    df['premio_base'] = df['soma_de_valor_liquido_da_parcela'] / 1
+                    premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
+                    self.file_dfs[table_name] = df
+                    
+                    print('premio total de SWIIS ->')
+                    print(premio_total_relatorio)
+                    print('====================== acima premio da swiss ======================')
+                    
+                    return premio_total_relatorio
+                except InvalidOperation as e:
+                    print(f"❌ Erro ao converter para Decimal: {e}")
+                    return {}            
 
-            if cia in ['Tokio']:
+            elif cia in ['Tokio']:
 
                 try:
-
                     df['premio_base'] = df['total_com'] / df['total_com_pct']
                     premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
                     self.file_dfs[table_name] = df
@@ -130,19 +149,7 @@ class TratamentoRecalculo:
                     print(f"❌ Erro ao converter para Decimal: {e}")
                     return {}
 
-
-            if cia in ['Mapfre']:
-
-                try:
-                    premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-
-                    self.file_dfs[table_name] = df
-                    return premio_total_relatorio
-                except InvalidOperation as e:
-                    print(f"❌ Erro ao converter para Decimal: {e}")
-                    return {}
-
-            if cia in ['Sompo']:
+            elif cia in ['Mapfre']:
 
                 try:
                     premio_total_relatorio = round(df[coluna].sum() * fator, 2)
@@ -153,7 +160,7 @@ class TratamentoRecalculo:
                     print(f"❌ Erro ao converter para Decimal: {e}")
                     return {}
 
-            if cia in ['Ezze']:
+            elif cia in ['Sompo']:
 
                 try:
                     premio_total_relatorio = round(df[coluna].sum() * fator, 2)
@@ -164,7 +171,18 @@ class TratamentoRecalculo:
                     print(f"❌ Erro ao converter para Decimal: {e}")
                     return {}
 
-            if cia in ['Yelum']:
+            elif cia in ['Ezze']:
+
+                try:
+                    premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+
+                    self.file_dfs[table_name] = df
+                    return premio_total_relatorio
+                except InvalidOperation as e:
+                    print(f"❌ Erro ao converter para Decimal: {e}")
+                    return {}
+
+            elif cia in ['Yelum']:
 
                 try:
                     premio_total_relatorio = round(df[coluna].sum() * fator, 2)

@@ -135,6 +135,9 @@ class DBA:
             if self.cia_corresp in ['Porto']:
                 self.cia_corresp = 'Porto Seguro'
 
+            if self.cia_corresp in ['Swiss']:
+                self.cia_corresp = 'Swiss Re'
+            
             query_padrao = """
             SELECT cols, premio_valido
             FROM padrao_cols
@@ -180,6 +183,8 @@ class DBA:
 
                 db_cols_set = set(db_cols.split(',')) if isinstance(db_cols, str) else set(db_cols)
                 concatenated_set = set(concatenated_columns.split(',')) if isinstance(concatenated_columns, str) else set(concatenated_columns)
+
+
 
                 if db_cols_set == concatenated_set:
                     print("✅ Colunas correspondem ao padrão (independente de ordem)")
@@ -232,6 +237,7 @@ class DBA:
         premio_db: Optional[Union[str, float]] = None,
         cia_escolhida: Optional[str] = None
     ) -> Tuple[pd.DataFrame, str, str]:
+        
         
         print(self.cia_corresp)
         if df.empty or not isinstance(df, pd.DataFrame):
@@ -302,18 +308,28 @@ class DBA:
                 print("ℹ️ Usando fallback (coluna com mais valores únicos)")
         except Exception as e:
             print(f"⚠️ Erro na seleção da coluna: {e}")
+
+            if cia_escolhida == 'Swiss Re':
+                premio_vigente = 'soma_de_valor_liquido_da_parcela'
+                premio_exec = 'soma_de_valor_liquido_da_parcela'
+            
             premio_vigente = max(float_columns, key=lambda col: df[col].nunique())
 
         print('check here cia')
         print(cia_escolhida)
         
+        print('ultima tentativa =========================================')
+        print(cia_escolhida)
+        print('ultima tentativa =========================================')
+                
         premio_exec = premio_vigente
         if cia_escolhida == 'Porto':
             print('premio para porto')
             premio_exec = 'producao_emitida_atual_para_pgto'
         if cia_escolhida == 'Sompo':
             premio_exec = 'premio'
-        
+        if cia_escolhida == 'Swiss Re':
+            premio_exec = 'soma_de_valor_liquido_da_parcela'
 
         print(f"\n🔍 Resultados Finais:")
         print(f"Prêmio vigente: {premio_vigente}")
@@ -357,6 +373,7 @@ class DBA:
 
                 cias_corresp_list = cias_corresp_list[0]
 
+                
                 if cias_corresp_list == 'Porto':
                     cias_corresp_list = ['Porto Seguro']
                     cia_escolhida = 'Porto Seguro'
@@ -369,6 +386,14 @@ class DBA:
                     cias_corresp_list = ['Tokio Marine']
                     cia_escolhida = 'Tokio Marine'
                 
+                if cias_corresp_list == 'Swiss':
+                    cias_corresp_list = ['Swiss Re']
+                    cia_escolhida = 'Swiss Re'
+
+                print('================================== CIAS CORRESP LIST AQUI PARA VALIDAÇÂO ==================================')
+                print(cias_corresp_list)
+                print('================================== CIAS CORRESP LIST AQUI PARA VALIDAÇÂO ==================================')
+
                 cursor.execute("SELECT distinct seg_nome_correto from tabela_correcao_seguradora")
                 cias_db = [row[0].strip() for row in cursor.fetchall() if row[0].strip()]
 

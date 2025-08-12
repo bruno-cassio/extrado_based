@@ -26,6 +26,7 @@ from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
 from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
 from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
 from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
+from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
 
 pd.options.mode.chained_assignment = None
 
@@ -54,7 +55,8 @@ class DataHandler:
             "Tokio": TokioHandler(),
             "Ezze": EzzeHandler(),
             "Sompo": SompoHandler(),
-            "Mapfre": MapfreHandler()
+            "Mapfre": MapfreHandler(),
+            "Swiss": SwissHandler(),
         }
 
     @staticmethod
@@ -139,6 +141,7 @@ class DataHandler:
 
         table_name = None
         for cia, table in zip(cias_corresp, input_tables):
+
             if cia == cia_escolhida:
                 table_name = self.sanitize_table_name(table)
                 break

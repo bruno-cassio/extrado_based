@@ -201,17 +201,6 @@ class DataImporter:
         return overall_success, processed_data
 
 
-def ler_excel_com_senha(caminho_arquivo, senha):
-    with open(caminho_arquivo, 'rb') as file:
-        office_file = msoffcrypto.OfficeFile(file)
-        office_file.load_key(password=senha)
-
-        buffer = BytesIO()
-        office_file.decrypt(buffer)
-
-        buffer.seek(0)
-        df = pd.read_excel(buffer)
-        return df
 
 def main(cia_manual: Optional[str] = None, competencia_manual: Optional[str] = None):
     importer = DataImporter(cia_manual, competencia_manual)
