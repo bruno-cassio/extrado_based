@@ -4,24 +4,7 @@ import json
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 import pandas as pd
 import datetime
-
-from extrato_app.CoreData.Handlers.BradescoHandler import BradescoHandler
-from extrato_app.CoreData.Handlers.SuhaiHandler import SuhaiHandler
-from extrato_app.CoreData.Handlers.AllianzHandler import AllianzHandler
-from extrato_app.CoreData.Handlers.JuntoHandler import JuntoHandler
-from extrato_app.CoreData.Handlers.HDIHandler import HDIHandler
-from extrato_app.CoreData.Handlers.PortoHandler import PortoHandler
-from extrato_app.CoreData.Handlers.BradescoSaudeHandler import BradescoSaudeHandler
-from extrato_app.CoreData.Handlers.YelumHandler import YelumHandler
-from extrato_app.CoreData.Handlers.AxaHandler import AxaHandler
-from extrato_app.CoreData.Handlers.ZurichHandler import ZurichHandler
-from extrato_app.CoreData.Handlers.ChubbHandler import ChubbHandler
-from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
-from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
-from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
-from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
-from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
-
+from extrato_app.CoreData.handlers_registry import CIA_HANDLERS, CIA_PROCESS_DISPATCHER
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
@@ -48,44 +31,9 @@ class TratamentoRecalculo:
     }
 
     def __init__(self):
-        
-        self.bradesco_handler = BradescoHandler()
-        self.suhai_handler = SuhaiHandler()
-        self.allianz_handler = AllianzHandler()
-        self.junto_handler = JuntoHandler()
-        self.hdi_handler = HDIHandler()
-        self.porto_handler = PortoHandler()
-        self.bradesco_saude_handler = BradescoSaudeHandler()
-        self.Yelum_handler = YelumHandler()
-        self.axa_handler = AxaHandler()
-        self.zurich_handler = ZurichHandler()
-        self.chubb_handler = ChubbHandler()
-        self.tokio_handler = TokioHandler()
-        self.ezze_handler = EzzeHandler()
-        self.sompo_handler = SompoHandler()
-        self.mapfre_handler = MapfreHandler()
-        self.swiss_handler = SwissHandler()
-
-        self.process_dispatcher = {
-            "Bradesco": self.bradesco_handler.process,
-            "Suhai": self.suhai_handler.process,
-            "Allianz": self.allianz_handler.process,
-            "Junto Seguradora": self.junto_handler.process,
-            "Hdi": self.hdi_handler.process,
-            "Porto": self.porto_handler.process,
-            "Bradesco Saude": self.bradesco_saude_handler.process,
-            "Yelum": self.Yelum_handler.process,
-            "Axa": self.axa_handler.process,
-            "Zurich": self.zurich_handler.process,
-            "Chubb": self.chubb_handler.process,
-            "Tokio": self.tokio_handler.process,
-            "Ezze": self.ezze_handler.process,
-            "Sompo": self.sompo_handler.process,
-            "Mapfre": self.mapfre_handler.process,
-            "Swiss": self.swiss_handler.process
-        }
-
         self.file_dfs = {}
+        self.process_dispatcher = CIA_PROCESS_DISPATCHER
+        self.handlers = CIA_HANDLERS
 
 
     def cons_rel(self, df, cias_corresp_list, file_name, table_name, premio_exec):
@@ -123,9 +71,7 @@ class TratamentoRecalculo:
             if cia in ['Swiss']:
                 print('CIA EM PROCESSAMENTO DE CONS REL > SWISS')
                 try:
-                    # df['premio_base'] = df['soma_de_valor_liquido_da_parcela'] / 1
                     premio_total_relatorio = round(df['soma_de_valor_liquido_da_parcela'].sum() * fator, 2)
-
                     self.file_dfs[table_name] = df
                     
                     print('premio total de SWIIS ->')
