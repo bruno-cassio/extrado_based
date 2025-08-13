@@ -158,6 +158,10 @@ class DBA:
                 print('query_padrao:', query_padrao)
 
                 cursor.execute(query_padrao, (self.cia_corresp,))
+                
+                print('validação self cia ==============================')
+                print(self.cia_corresp)
+                
                 resultado = cursor.fetchone()
                 print('resultado:', resultado)
                 

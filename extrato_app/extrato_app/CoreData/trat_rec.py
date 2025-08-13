@@ -123,9 +123,9 @@ class TratamentoRecalculo:
             if cia in ['Swiss']:
                 print('CIA EM PROCESSAMENTO DE CONS REL > SWISS')
                 try:
-                    # coluna = 'soma_de_valor_liquido_da_parcela'
-                    df['premio_base'] = df['soma_de_valor_liquido_da_parcela'] / 1
-                    premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
+                    # df['premio_base'] = df['soma_de_valor_liquido_da_parcela'] / 1
+                    premio_total_relatorio = round(df['soma_de_valor_liquido_da_parcela'].sum() * fator, 2)
+
                     self.file_dfs[table_name] = df
                     
                     print('premio total de SWIIS ->')

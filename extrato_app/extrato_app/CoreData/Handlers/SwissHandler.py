@@ -60,11 +60,13 @@ class SwissHandler:
         if coluna in df.columns:
             fator_melchiori = 0.9385
             if fator_melchiori is not None:
-                df['premio_rec'] = df['premio_base'] * fator_melchiori
+
+                df['premio_rec'] = df['soma_de_valor_liquido_da_parcela'] * fator_melchiori
                 df['valor_cv'] = df['premio_rec'] * 0.015
                 df['valor_as'] = df['premio_rec'] * 0.009
                 df['valor_vi'] = df['premio_rec'] * 0.006
-                print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_vi']].head())
+                print(df[['soma_de_valor_liquido_da_parcela','premio_rec', 'valor_cv', 'valor_vi']].head())
+
             else:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:

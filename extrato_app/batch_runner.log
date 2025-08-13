@@ -2367,3 +2367,102 @@ LINE 10:                             cont_prod_swiss
 2025-08-12 17:10:53,918 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
 2025-08-12 17:10:54,085 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.20 segundos
 2025-08-12 17:16:56,214 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:31:47,870 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-13 09:31:57,120 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:31:57,120 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:31:57,120 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:31:57,120 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:31:57,122 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:31:57,130 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:31:57,130 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:32:00,159 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com falha
+2025-08-13 09:32:00,159 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:32:00,165 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:32:00,169 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:32:00,172 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:32:00,379 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 3.26 segundos
+2025-08-13 09:35:40,557 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:35:45,246 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:36:13,677 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:36:13,678 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:36:13,678 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:36:13,678 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:36:13,680 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:36:13,687 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:36:13,688 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:36:15,650 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com sucesso
+2025-08-13 09:36:15,651 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:36:15,652 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:36:15,653 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:36:15,655 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 09:36:15,657 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:36:15,790 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.11 segundos
+2025-08-13 09:40:11,129 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 09:40:40,388 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:40:40,388 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:40:40,388 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:40:40,389 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:40:40,393 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:40:40,401 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:40:40,401 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:40:42,187 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com falha
+2025-08-13 09:40:42,188 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:40:42,190 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:40:42,194 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:40:42,198 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:40:42,360 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.97 segundos
+2025-08-13 09:41:32,026 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-13 09:41:47,450 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:41:47,451 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:41:47,451 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:41:47,452 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:41:47,456 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:41:47,462 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:41:47,462 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:41:49,545 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com falha
+2025-08-13 09:41:49,546 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:41:49,549 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:41:49,553 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:41:49,556 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:41:49,711 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.26 segundos
+2025-08-13 09:48:22,630 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 09:48:47,044 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:48:47,044 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:48:47,045 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:48:47,045 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:48:47,046 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:48:47,053 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:48:47,054 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:48:48,727 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com falha
+2025-08-13 09:48:48,727 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:48:48,729 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:48:48,734 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:48:48,738 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:48:48,902 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.86 segundos
+2025-08-13 09:54:54,804 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 09:55:51,148 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 09:56:07,174 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:13,821 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:18,278 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:21,647 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:25,087 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:29,496 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:56:34,974 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:57:04,156 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:57:07,466 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 09:57:25,546 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-13 09:57:37,057 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 09:57:37,057 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 09:57:37,057 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 09:57:37,058 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:57:37,059 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:57:37,067 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 09:57:37,067 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 09:57:38,634 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com sucesso
+2025-08-13 09:57:38,634 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 09:57:38,636 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 09:57:38,637 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 09:57:38,640 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 09:57:38,642 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 09:57:38,788 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.73 segundos
+2025-08-13 10:08:58,410 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
