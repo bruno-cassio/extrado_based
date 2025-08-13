@@ -47,3 +47,15 @@ class TokioHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        try:
+            df['premio_base'] = df['total_com'] / df['total_com_pct']
+            premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
+            return premio_total_relatorio
+        except ZeroDivisionError:
+            print("❌ Divisão por zero detectada em TokioHandler.")
+            return {}
+        except Exception as e:
+            print(f"❌ Erro ao calcular prêmio da Tokio: {e}")
+            return {}

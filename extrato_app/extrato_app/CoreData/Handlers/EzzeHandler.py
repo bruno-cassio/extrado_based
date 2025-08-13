@@ -132,3 +132,14 @@ class EzzeHandler:
         print(df[[coluna, 'aba_origem', 'premio_rec', 'valor_cv', 'valor_vi', 'valor_as']].head())
         print(f"✅ DataFrame salvo em: {output_file}")
         end = time.perf_counter()
+        
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        
+        try:
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+
+            self.file_dfs[table_name] = df
+            return premio_total_relatorio
+        except Exception as e:
+            print(f"❌ Erro ao converter para Decimal: {e}")
+            return {}

@@ -34,6 +34,6 @@ CIA_HANDLERS = {
     "Swiss": SwissHandler()
 }
 
-CIA_PROCESS_DISPATCHER = {
-    cia: handler.process for cia, handler in CIA_HANDLERS.items()
-}
+# CIA_PROCESS_DISPATCHER = {
+#     cia: handler.process for cia, handler in CIA_HANDLERS.items()
+# }

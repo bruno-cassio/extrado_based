@@ -171,8 +171,6 @@ class SompoHandler:
             print(f"❌ Erro ao processar arquivo: {str(e)}")
             import traceback
 
-
-
     def process(self, df: pd.DataFrame, file_name: str, premio_exec: str, fator_melchiori: float, premio_db=None):
         print(df.shape)
         
@@ -188,3 +186,14 @@ class SompoHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+            
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        try:
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+
+            self.file_dfs[table_name] = df
+            return premio_total_relatorio
+        except Exception as e:
+            print(f"❌ Erro ao converter para Decimal: {e}")
+            return {}
+        

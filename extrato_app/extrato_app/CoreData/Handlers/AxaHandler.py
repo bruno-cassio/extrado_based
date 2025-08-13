@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 
 class AxaHandler:
 
@@ -71,3 +72,28 @@ class AxaHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+
+
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+
+        try:
+            df['pagamento_convertido'] = pd.to_datetime(df['data_pagamento'], dayfirst=True).dt.strftime('%m-%Y')
+            print('Valores únicos em competencia:', df['competencia'].unique())
+            print('Valores únicos em pagamento_convertido:', df['pagamento_convertido'].unique())            
+            df = df[df['pagamento_convertido'] == df['competencia']]
+            
+            print('Valores únicos após filtro:', df['pagamento_convertido'].unique())
+            print('Número de linhas após filtro:', len(df))
+            
+            df.drop(columns=['pagamento_convertido'], inplace=True)
+            
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            self.file_dfs[table_name] = df
+            return premio_total_relatorio
+            
+        except InvalidOperation as e:
+            print(f"❌ Erro ao converter para Decimal: {e}")
+            return {}
+        except Exception as e:
+            print(f"❌ Erro ao processar dados da Axa: {str(e)}")
+            return {}

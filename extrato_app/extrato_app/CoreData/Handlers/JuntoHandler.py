@@ -29,3 +29,14 @@ class JuntoHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+
+
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        df = df[df[coluna].notna()]
+        print(df[coluna].head())
+        premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+        print(f"Total de 'premio' para Junto: {premio_total_relatorio}")
+        self.file_dfs[table_name] = df
+        return premio_total_relatorio
+    
+    

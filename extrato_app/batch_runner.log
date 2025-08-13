@@ -2525,3 +2525,209 @@ LINE 10:                             cont_prod_swiss
 2025-08-13 11:43:33,591 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-13 11:45:51,756 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-13 11:53:46,384 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-08-13 13:29:44,838 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:39:57,182 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:40:04,415 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:40:11,035 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:41:11,443 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 13:41:29,143 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-13 13:41:32,748 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-13 13:43:37,025 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\handlers_registry.py changed, reloading.
+2025-08-13 13:44:51,685 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:45:02,815 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:45:06,659 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 13:45:32,832 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-13 13:47:19,170 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-13 13:49:39,710 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:49:39,712 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 13:49:39,712 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 13:49:39,712 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:49:39,714 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:49:39,726 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 13:49:39,726 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 13:49:42,010 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com sucesso
+2025-08-13 13:49:42,010 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:49:42,011 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:49:42,013 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:49:42,015 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 13:49:42,016 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:49:42,182 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.47 segundos
+2025-08-13 13:50:28,209 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
+2025-08-13 13:50:35,169 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:50:35,170 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-08-13 13:50:35,171 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss', 'Bradesco']
+2025-08-13 13:50:35,171 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:50:35,174 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:50:35,177 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 13:50:35,178 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:50:35,183 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
+2025-08-13 13:50:35,183 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-08-13 13:50:50,310 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com sucesso
+2025-08-13 13:50:50,310 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:50:50,314 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:50:50,317 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:50:50,319 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-13 13:50:50,320 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:50:50,321 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 13:50:50,322 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 2 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:50:50,503 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 15.33 segundos
+2025-08-13 13:50:57,293 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\TokioHandler.py changed, reloading.
+2025-08-13 13:51:01,521 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:51:22,258 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 13:51:42,340 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-13 13:51:55,320 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:51:55,320 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 13:51:55,320 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Swiss']
+2025-08-13 13:51:55,321 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:51:55,322 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:51:55,329 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Swiss']
+2025-08-13 13:51:55,330 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 01-2025
+2025-08-13 13:51:57,057 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com sucesso
+2025-08-13 13:51:57,057 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:51:57,062 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:51:57,067 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:51:57,069 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
+2025-08-13 13:51:57,070 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:51:57,234 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.91 segundos
+2025-08-13 13:52:06,386 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:52:06,386 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 13:52:06,387 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-13 13:52:06,387 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:06,388 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:06,394 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-13 13:52:06,396 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-13 13:52:06,396 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:52:06,398 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:06,399 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:06,402 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-13 13:52:06,403 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:52:13,368 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:52:13,368 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 13:52:13,369 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-13 13:52:13,369 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:13,371 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:13,374 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-13 13:52:13,378 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-13 13:52:13,379 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:52:13,380 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:13,382 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:13,384 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-13 13:52:13,386 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:52:15,484 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:17,468 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:19,472 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:21,474 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:23,484 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:25,481 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:27,473 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:30,128 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:31,896 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:33,477 - django.request - WARNING - Not Found: /media/finished_conta_virtual_012025.txt
+2025-08-13 13:52:37,405 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 13:52:37,405 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 13:52:37,405 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-13 13:52:37,406 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:37,409 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:37,424 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
+2025-08-13 13:52:37,425 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-08-13 13:52:46,987 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com falha
+2025-08-13 13:52:46,988 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 13:52:46,993 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 13:52:46,995 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 13:52:46,998 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 13:52:47,044 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 9.64 segundos
+2025-08-13 13:53:48,622 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-08-13 13:54:03,038 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-08-13 13:59:44,123 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-08-13 14:04:06,230 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-08-13 14:04:26,246 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-08-13 14:13:36,821 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:13:59,081 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:15:54,904 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:16:11,623 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:16:43,664 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:16:46,925 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:17:00,444 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-08-13 14:17:38,795 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoSaudeHandler.py changed, reloading.
+2025-08-13 14:17:57,823 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoSaudeHandler.py changed, reloading.
+2025-08-13 14:19:12,931 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoSaudeHandler.py changed, reloading.
+2025-08-13 14:19:30,889 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:20:29,427 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:20:33,957 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:20:39,211 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:21:40,931 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:21:45,216 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ChubbHandler.py changed, reloading.
+2025-08-13 14:26:35,324 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:26:57,065 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:27:02,644 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:31:37,122 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:32:44,086 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:38:39,841 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:41:49,198 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:43:04,520 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:44:15,005 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\EzzeHandler.py changed, reloading.
+2025-08-13 14:44:37,001 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoSaudeHandler.py changed, reloading.
+2025-08-13 14:44:41,271 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AxaHandler.py changed, reloading.
+2025-08-13 14:47:26,212 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\HDIHandler.py changed, reloading.
+2025-08-13 14:47:35,650 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\HDIHandler.py changed, reloading.
+2025-08-13 14:47:58,011 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\JuntoHandler.py changed, reloading.
+2025-08-13 14:48:04,105 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\JuntoHandler.py changed, reloading.
+2025-08-13 14:48:10,556 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\JuntoHandler.py changed, reloading.
+2025-08-13 14:48:14,249 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\JuntoHandler.py changed, reloading.
+2025-08-13 14:48:22,844 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\MapfreHandler.py changed, reloading.
+2025-08-13 14:51:44,017 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:51:48,914 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\MapfreHandler.py changed, reloading.
+2025-08-13 14:52:47,903 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:54:10,185 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:55:33,844 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:55:41,821 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:55:45,678 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-08-13 14:56:06,670 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SompoHandler.py changed, reloading.
+2025-08-13 14:57:22,621 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SompoHandler.py changed, reloading.
+2025-08-13 14:57:53,307 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-08-13 14:57:57,811 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-08-13 14:58:00,999 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-08-13 14:58:17,418 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-08-13 14:58:21,346 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SuhaiHandler.py changed, reloading.
+2025-08-13 14:58:27,699 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SompoHandler.py changed, reloading.
+2025-08-13 14:58:45,386 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:24,069 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:27,584 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:31,226 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:34,848 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:43,516 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\YelumHandler.py changed, reloading.
+2025-08-13 14:59:52,731 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SompoHandler.py changed, reloading.
+2025-08-13 15:00:24,522 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ZurichHandler.py changed, reloading.
+2025-08-13 15:00:27,532 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ZurichHandler.py changed, reloading.
+2025-08-13 15:03:29,114 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\ZurichHandler.py changed, reloading.
+2025-08-13 15:04:13,457 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 15:04:54,369 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-13 15:05:00,375 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 15:05:00,375 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 15:05:00,375 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-13 15:05:00,376 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 15:05:00,377 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 15:05:00,385 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Bradesco']
+2025-08-13 15:05:00,386 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Bradesco - 01-2025
+2025-08-13 15:05:11,853 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Bradesco com falha
+2025-08-13 15:05:11,854 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 15:05:11,855 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 15:05:11,858 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 15:05:11,861 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 15:05:12,082 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 11.71 segundos
+2025-08-13 15:05:24,811 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-13 15:05:24,811 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-13 15:05:24,812 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Tokio']
+2025-08-13 15:05:24,812 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 15:05:24,812 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 15:05:24,823 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Tokio']
+2025-08-13 15:05:24,823 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Tokio - 01-2025
+2025-08-13 15:05:31,451 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Tokio com sucesso
+2025-08-13 15:05:31,453 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-13 15:05:31,457 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-13 15:05:31,460 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '01-2025' LIMIT 1;
+2025-08-13 15:05:31,468 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 01-2025
+2025-08-13 15:05:31,469 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-13 15:05:31,582 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 6.77 segundos
+2025-08-13 15:06:07,036 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-13 15:07:22,765 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.

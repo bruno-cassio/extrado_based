@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import re
 from unidecode import unidecode
+import datetime
 
 class PortoHandler:
 
@@ -141,3 +142,47 @@ class PortoHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        
+        coluna = coluna.replace(' ', '_')
+        print('============================ checagenzinha aqui ============================')
+        print('PORTO aqui')
+        print(df.columns)
+        print(f"📋 Colunas atuais no df: {df.columns.tolist()}")
+        print(f"🔎 Procurando a coluna: {coluna}")
+        duplicadas = df.columns[df.columns.duplicated()].tolist()
+        if duplicadas:
+            print(f"🚨 Atenção: Colunas duplicadas detectadas: {duplicadas}")
+        
+        df = df[df['nome_corretor'].notna() & (df['nome_corretor'].astype(str).str.strip() != '') & (df['nome_corretor'].astype(str).str.strip() != 'Total')]
+        
+        downloads_dir = os.path.join(os.path.expanduser("~"), "Downloads")
+        if not os.path.exists(downloads_dir):
+            os.makedirs(downloads_dir)
+
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        xls_filename = f"{table_name}_{timestamp}.xlsx"
+        xls_path = os.path.join(downloads_dir, xls_filename)
+
+        df.to_excel(xls_path, index=False)
+        print(f"✅ Arquivo salvo em: {xls_path}")
+        
+        print('prefire')
+        df = df[df[coluna].notna()]
+        print('inside')
+        print(df[coluna].tail())
+        print('inner')
+        
+        premio_total_relatorio = round(
+            (df[
+                (df['nome_corretor'].astype(str).str.strip() != 'Total') &
+                (df['nome_corretor'].astype(str).str.strip() != '')
+            ][coluna].sum() * fator), 2
+        )
+
+        # premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+        print(f"Total de 'premio' para Porto: {premio_total_relatorio}")
+        print('================================================== passed // retornando ==================================================')
+        self.file_dfs[table_name] = df
+        return premio_total_relatorio

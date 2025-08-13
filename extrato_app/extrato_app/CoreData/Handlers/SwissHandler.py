@@ -71,3 +71,16 @@ class SwissHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+            
+            
+            
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        try:
+            premio_total_relatorio = round(df['soma_de_valor_liquido_da_parcela'].sum() * fator, 2)
+            print('premio total de SWISS ->')
+            print(premio_total_relatorio)
+            print('====================== acima premio da swiss ======================')
+            return premio_total_relatorio
+        except Exception as e:
+            print(f"❌ Erro ao calcular prêmio da Swiss: {e}")
+            return {}

@@ -47,10 +47,20 @@ class BradescoSaudeHandler:
                 fator_as = (premio_db - Decimal(str(df['valor_cv'].sum()))) / Decimal(str(df['premio_rec'].sum()))
                 df['valor_as'] = df['premio_rec'].apply(lambda x: Decimal(str(x)) * fator_as)
 
-
-
                 print(df[[coluna, 'premio_rec','valor_cv','valor_as']].head())
             else:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+
+
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        try:
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            self.file_dfs[table_name] = df
+            return premio_total_relatorio
+        except Exception as e:
+            print(f"❌ Erro ao converter para Decimal: {e}")
+            return {}
+
+

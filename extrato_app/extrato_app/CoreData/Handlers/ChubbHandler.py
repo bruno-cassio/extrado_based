@@ -106,7 +106,6 @@ class ChubbHandler:
             traceback.print_exc()
             return pd.DataFrame()
 
-
     def process(self, df: pd.DataFrame, file_name: str, premio_exec: str, fator_melchiori: float, premio_db=None):
         coluna = premio_exec if premio_exec in df.columns else 'premio'
         if coluna in df.columns:
@@ -122,3 +121,22 @@ class ChubbHandler:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
+            
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        
+        try:
+            df = df[df['corretor'].astype(str).str.strip() != 'Total Geral']
+            print('cade a coluna ========== staged')
+            print(df.columns)
+            print('SOMANDO PREMIO CHUBB')
+            print(coluna)
+            print('soma inicial:', df[coluna].sum())
+            
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            self.file_dfs[table_name] = df
+            print(df.tail())
+            return premio_total_relatorio
+        except Exception as e:
+            print(f"❌ Erro ao converter para Decimal: {e}")
+            return {}
+
