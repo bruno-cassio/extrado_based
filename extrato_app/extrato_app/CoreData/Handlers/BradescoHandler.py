@@ -6,7 +6,6 @@ class BradescoHandler:
 
     def treat(self, folder_path: str) -> pd.DataFrame:
         
-        # print(f"📂 Verificando arquivos em: {folder_path}")
         files = [
             f for f in os.listdir(folder_path) 
             if f.lower().endswith(('.xls', '.xlsx')) and 
@@ -17,14 +16,11 @@ class BradescoHandler:
             print("❌ Nenhum arquivo encontrado contendo 'Producao' ou 'Consolidado'")
             return pd.DataFrame()
 
-        # print(f"📂 Arquivos encontrados: {files}")
         file = max(files, key=lambda f: os.path.getmtime(os.path.join(folder_path, f)))
         file_path = os.path.join(folder_path, file)
-        # print(f"📂 Arquivo selecionado: {file}")
 
         try:
             start = time.perf_counter()
-            # print('lendo 1, em wait ser for aqui....')
             df = pd.read_excel(file_path, sheet_name=0)
             end = time.perf_counter()
             print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")

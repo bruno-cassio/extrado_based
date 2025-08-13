@@ -63,10 +63,13 @@ class TratamentoRecalculo:
         print(f'Regra para {cia}: {regra}')
         
         #Criar modulo para tratamnto dispatcher de premio relatorio.
+        #Construir função individualizada em cada handler para calculo de premio do relatório. 
+
         if regra:
             coluna = premio_exec
             fator = regra['fator']
             print(f'Cálculo de premio para {cia} usando a coluna {coluna} com fator {fator}.')
+
 
             if cia in ['Swiss']:
                 print('CIA EM PROCESSAMENTO DE CONS REL > SWISS')
