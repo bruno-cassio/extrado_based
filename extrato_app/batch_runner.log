@@ -2366,3 +2366,4 @@ LINE 10:                             cont_prod_swiss
 2025-08-12 17:10:53,916 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Swiss na competência 01-2025
 2025-08-12 17:10:53,918 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
 2025-08-12 17:10:54,085 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 2.20 segundos
+2025-08-12 17:16:56,214 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\SwissHandler.py changed, reloading.
