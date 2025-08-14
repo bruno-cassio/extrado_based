@@ -71,10 +71,16 @@ class MapfreHandler:
 
     def calcular_premio_relatorio(self, df, coluna, fator, table_name):
         try:
+            if coluna not in df.columns:
+                print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
+                return {}, df
+            df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
             premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            print(f"✅ Cálculo de prêmio realizado: {premio_total_relatorio}")
+            return premio_total_relatorio, df
 
-            self.file_dfs[table_name] = df
-            return premio_total_relatorio
+
         except Exception as e:
-            print(f"❌ Erro ao converter para Decimal: {e}")
-            return {}        
+            print(f"❌ Erro ao calcular prêmio: {e}")
+            return {}, df
+            

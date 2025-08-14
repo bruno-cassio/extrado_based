@@ -60,10 +60,20 @@ class AllianzHandler:
             
     def calcular_premio_relatorio(self, df, coluna, fator, table_name):
         try:
-            premio_total_relatorio = round(df[coluna].sum(), 2)
-            print(f"Total de 'premio' para Allianz: {premio_total_relatorio}")
-            self.file_dfs[table_name] = df
-            return premio_total_relatorio
+            df = df.loc[:, ~df.columns.duplicated(keep='first')]
+
+            if coluna not in df.columns:
+                print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
+                return 0.0, df
+
+            df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
+
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            print(f"✅ Total de 'premio' para Allianz: {premio_total_relatorio}")
+            return premio_total_relatorio, df
+
         except Exception as e:
-            print(f"❌ Erro ao calcular prêmio para Allianz: {e}")
-            return {}
+            print(f"❌ Erro ao calcular prêmio Allianz: {e}")
+            return 0.0, df
+
+

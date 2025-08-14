@@ -89,6 +89,19 @@ class DataHandler:
         return [self.sanitize_table_name(t.strip().lower()) for t in tables_str.split(",") if t.strip()]
 
     def convert_df_to_db_schema(self, df: pd.DataFrame, column_types: Dict[str, str]) -> pd.DataFrame:
+        
+        print('===================== validação de colunas previa a removação de duplicação de colunas aqui ===============================')
+        print(df.columns)
+        print('===================== validação de colunas previa a removação de duplicação de colunas aqui ===============================')
+        
+        
+        df = df.loc[:, ~df.columns.duplicated(keep='first')]
+        
+        print('===================== validação de colunas apos a removação de duplicação de colunas aqui ===============================')
+        print(df.columns)
+        print('===================== validação de colunas apos a removação de duplicação de colunas aqui ===============================')
+        
+        
         for col, dtype in column_types.items():
             if col not in df.columns:
                 continue

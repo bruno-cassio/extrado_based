@@ -78,7 +78,10 @@ class TratamentoRecalculo:
             handler = CIA_HANDLERS.get(cia)
             if handler and hasattr(handler, "calcular_premio_relatorio"):
                 try:
-                    premio_total_relatorio = handler.calcular_premio_relatorio(df, coluna, fator, table_name)
+                    premio_total_relatorio, df = handler.calcular_premio_relatorio(df, coluna, fator, table_name)
+
+                    df = df.loc[:, ~df.columns.duplicated(keep='first')]
+
                     self.file_dfs[table_name] = df
                     return premio_total_relatorio
                 except Exception as e:
@@ -86,6 +89,8 @@ class TratamentoRecalculo:
                     return {}
             else:
                 print(f"⚠️ Handler para {cia} não implementa calcular_premio_relatorio()")
+
+
 
         # if regra:
         #     coluna = premio_exec
