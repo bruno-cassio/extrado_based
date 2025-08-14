@@ -3250,3 +3250,4 @@ TypeError: arg must be a list, tuple, 1-d array, or Series
 2025-08-14 09:27:50,751 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 5.67 segundos
 2025-08-14 09:33:30,444 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
 2025-08-14 09:33:35,214 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-14 09:33:54,243 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
