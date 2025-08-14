@@ -52,28 +52,38 @@ class AllianzHandler:
                 )
                 print("\n💼 Processando Allianz - Amostra dos cálculos:")
                 print(df[['ramo', coluna, 'premio_rec', 'valor_cv', 'valor_vi', 'valor_as']].head())
-                
+
             else:
                 print("⚠️ Fator Melchiori não fornecido para cálculo")
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
             
-    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
-        try:
-            df = df.loc[:, ~df.columns.duplicated(keep='first')]
+    # def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+    #     try:
+            
+    #         print('validação de fatores')
+    #         print(coluna)
+    #         print(f'fator: {fator}')
 
-            if coluna not in df.columns:
-                print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
-                return 0.0, df
+    #         df = df.loc[:, ~df.columns.duplicated(keep='first')]
 
-            df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
+    #         if coluna not in df.columns:
+    #             print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
+    #             return 0.0, df
 
-            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-            print(f"✅ Total de 'premio' para Allianz: {premio_total_relatorio}")
-            return premio_total_relatorio, df
+    #         df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
 
-        except Exception as e:
-            print(f"❌ Erro ao calcular prêmio Allianz: {e}")
-            return 0.0, df
+    #         premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+    #         print(f"✅ Total de 'premio' para Allianz: {premio_total_relatorio}")
+            
+            
+    #         print('validação previa return de calculo de premio')
+
+            
+    #         return premio_total_relatorio, df
+
+    #     except Exception as e:
+    #         print(f"❌ Erro ao calcular prêmio Allianz: {e}")
+    #         return 0.0, df
 
 
