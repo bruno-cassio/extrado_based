@@ -596,3 +596,6 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-08-15 12:02:41,235 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-15 12:03:03,323 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
 2025-08-15 12:03:12,207 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-15 12:04:13,716 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-15 12:04:18,463 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.
+2025-08-15 12:04:21,026 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\trat_rec.py changed, reloading.

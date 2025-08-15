@@ -6,8 +6,6 @@ import pandas as pd
 import datetime
 from extrato_app.CoreData.handlers_registry import CIA_HANDLERS
 
-
-
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
 class TratamentoRecalculo:
@@ -32,12 +30,6 @@ class TratamentoRecalculo:
         'Swiss': {'fator': 1}
     }
 
-    # def __init__(self):
-    #     self.file_dfs = {}
-    #     self.process_dispatcher = CIA_PROCESS_DISPATCHER
-    #     self.handlers = CIA_HANDLERS
-        
-        
     def __init__(self):
 
         self.file_dfs = {}
