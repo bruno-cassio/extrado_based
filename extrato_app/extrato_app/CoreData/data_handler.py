@@ -11,22 +11,27 @@ from extrato_app.CoreData.trat_rec import TratamentoRecalculo
 import json
 from pathlib import Path
 from datetime import datetime
-from extrato_app.CoreData.Handlers.BradescoHandler import BradescoHandler
-from extrato_app.CoreData.Handlers.SuhaiHandler import SuhaiHandler
-from extrato_app.CoreData.Handlers.AllianzHandler import AllianzHandler
-from extrato_app.CoreData.Handlers.JuntoHandler import JuntoHandler
-from extrato_app.CoreData.Handlers.HDIHandler import HDIHandler
-from extrato_app.CoreData.Handlers.PortoHandler import PortoHandler
-from extrato_app.CoreData.Handlers.BradescoSaudeHandler import BradescoSaudeHandler
-from extrato_app.CoreData.Handlers.YelumHandler import YelumHandler
-from extrato_app.CoreData.Handlers.AxaHandler import AxaHandler
-from extrato_app.CoreData.Handlers.ZurichHandler import ZurichHandler
-from extrato_app.CoreData.Handlers.ChubbHandler import ChubbHandler
-from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
-from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
-from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
-from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
-from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
+from extrato_app.CoreData.handlers_registry import CIA_HANDLERS
+
+
+
+
+# from extrato_app.CoreData.Handlers.BradescoHandler import BradescoHandler
+# from extrato_app.CoreData.Handlers.SuhaiHandler import SuhaiHandler
+# from extrato_app.CoreData.Handlers.AllianzHandler import AllianzHandler
+# from extrato_app.CoreData.Handlers.JuntoHandler import JuntoHandler
+# from extrato_app.CoreData.Handlers.HDIHandler import HDIHandler
+# from extrato_app.CoreData.Handlers.PortoHandler import PortoHandler
+# from extrato_app.CoreData.Handlers.BradescoSaudeHandler import BradescoSaudeHandler
+# from extrato_app.CoreData.Handlers.YelumHandler import YelumHandler
+# from extrato_app.CoreData.Handlers.AxaHandler import AxaHandler
+# from extrato_app.CoreData.Handlers.ZurichHandler import ZurichHandler
+# from extrato_app.CoreData.Handlers.ChubbHandler import ChubbHandler
+# from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
+# from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
+# from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
+# from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
+# from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
 
 pd.options.mode.chained_assignment = None
 
@@ -40,24 +45,24 @@ class DataHandler:
         self.consolidador = Consolidador()
         self.tratamento_recalculo = TratamentoRecalculo()
         
-        self.dispatcher = {
-            "Bradesco": BradescoHandler(),
-            "Bradesco Saude": BradescoSaudeHandler(),
-            "Suhai": SuhaiHandler(),
-            "Allianz": AllianzHandler(),
-            "Junto Seguradora": JuntoHandler(),
-            "Hdi": HDIHandler(),
-            "Porto": PortoHandler(),
-            "Yelum": YelumHandler(),
-            "Axa": AxaHandler(),
-            "Zurich": ZurichHandler(),
-            "Chubb": ChubbHandler(),
-            "Tokio": TokioHandler(),
-            "Ezze": EzzeHandler(),
-            "Sompo": SompoHandler(),
-            "Mapfre": MapfreHandler(),
-            "Swiss": SwissHandler(),
-        }
+        # self.dispatcher = {
+        #     "Bradesco": BradescoHandler(),
+        #     "Bradesco Saude": BradescoSaudeHandler(),
+        #     "Suhai": SuhaiHandler(),
+        #     "Allianz": AllianzHandler(),
+        #     "Junto Seguradora": JuntoHandler(),
+        #     "Hdi": HDIHandler(),
+        #     "Porto": PortoHandler(),
+        #     "Yelum": YelumHandler(),
+        #     "Axa": AxaHandler(),
+        #     "Zurich": ZurichHandler(),
+        #     "Chubb": ChubbHandler(),
+        #     "Tokio": TokioHandler(),
+        #     "Ezze": EzzeHandler(),
+        #     "Sompo": SompoHandler(),
+        #     "Mapfre": MapfreHandler(),
+        #     "Swiss": SwissHandler(),
+        # }
 
     @staticmethod
     def sanitize_table_name(table_name: str) -> str:
@@ -121,7 +126,8 @@ class DataHandler:
 
     def read_df(self, root_folder_path: str, cia_escolhida: str) -> pd.DataFrame:
         try:
-            handler = self.dispatcher.get(cia_escolhida)
+            # handler = self.dispatcher.get(cia_escolhida)
+            handler = CIA_HANDLERS.get(cia_escolhida)
 
             if handler:
                 df = handler.treat(root_folder_path)

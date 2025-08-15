@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,100 +8,185 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
+  <style>
+    .form-layout {
+      display: flex;
+      justify-content: center;
+      transition: all 0.4s ease;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .form-col-static {
+      width: 100%;
+      max-width: 500px;
+      transition: all 0.4s ease;
+    }
+    .form-col-dynamic {
+      display: none;
+      flex: 1;
+      gap: 10px;
+      transition: all 0.4s ease;
+    }
+    .form-col-dynamic.active {
+      display: flex;
+      flex-direction: column;
+    }
+    .cia-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .cia-table th,
+    .cia-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    .cia-table input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+    .cia-table th {
+      background-color: #f0f0f0;
+    }
+    @media (max-width: 768px) {
+      .form-layout {
+        flex-direction: column;
+      }
+      .form-col-dynamic {
+        display: block;
+      }
+    }
+  </style>
 </head>
-
 <body>
 <div class="main-content">
   <header>
     <div class="header-content">
-      <a href="/">
-        <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
-      </a>
+      <a href="/"><img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;"></a>
       <div class="header-divider"></div>
     </div>
   </header>
-
   <div class="container">
     <nav class="top-tabs">
-      <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}">
-        <i class="bi bi-arrow-clockwise"></i>
-        Atualizar Relatórios
-      </a>
-      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
-        <i class="bi bi-database-fill"></i>
-        Consolidação Conta Virtual
-      </a>
-      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
-        <i class="bi bi-cash-stack"></i>
-        Atualizar Caixa
-      </a>
+      <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}"><i class="bi bi-arrow-clockwise"></i> Atualizar Relatórios</a>
+      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}"><i class="bi bi-database-fill"></i> Consolidação Conta Virtual</a>
+      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}"><i class="bi bi-cash-stack"></i> Atualizar Caixa</a>
     </nav>
-
     <div class="form-card">
       <h2><i class="bi bi-cash-stack"></i> Atualizar Caixa</h2>
-      <form method="POST" action="{% url 'executar_atualizar_caixa' %}">
-        {% csrf_token %}
-        <div class="form-group">
-          <label class="form-label"><i class="bi bi-building-fill"></i> Selecione a Seguradora (CIA):</label>
-          <select name="cia" class="form-select" required>
-            <option value="">Selecione</option>
-            {% for cia in cias_opt %}
-              <option value="{{ cia }}">{{ cia }}</option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label"><i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):</label>
-          <div class="competencia-input">
-            <input type="text" name="mes" class="input-text" placeholder="Ex: 01-2025" required pattern="^(0[1-9]|1[0-2])-[0-9]{4}$" title="Digite no formato MM-AAAA" />
-            <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
+      <form method="POST" action="{% url 'executar_atualizar_caixa' %}">{% csrf_token %}
+        <div class="form-layout">
+          <div class="form-col-static" id="formColStatic">
+            <div class="form-group">
+              <label class="form-label"><i class="bi bi-building-fill"></i> Selecione as Seguradoras (CIAs):</label>
+              <select name="cias" id="selectCias" class="form-select" multiple required>
+                {% for cia in cias_opt %}<option value="{{ cia }}">{{ cia }}</option>{% endfor %}
+              </select>
+              <small>Segure Ctrl (Windows) ou Cmd (Mac) para selecionar múltiplas seguradoras</small>
+            </div>
+            <div class="form-group">
+              <label class="form-label"><i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):</label>
+              <div class="competencia-input">
+                <input type="text" name="mes" class="input-text" placeholder="Ex: 01-2025" required pattern="^(0[1-9]|1[0-2])-[0-9]{4}$" title="Digite no formato MM-AAAA" />
+                <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
+              </div>
+            </div>
           </div>
+          <div class="form-col-dynamic" id="ciaInputsContainer"></div>
         </div>
-
         <div class="form-group">
-          <label class="form-label"><i class="bi bi-currency-dollar"></i> Valor Bruto (R$):</label>
-          <input type="text" name="valor_bruto" class="input-text" placeholder="Ex: 15.000,00" required pattern="^\d{1,3}(\.\d{3})*,\d{2}$" title="Digite um valor no formato 10.000,00" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label"><i class="bi bi-currency-dollar"></i> Valor Líquido (R$):</label>
-          <input type="text" name="valor_liquido" class="input-text" placeholder="Ex: 13.500,00" required pattern="^\d{1,3}(\.\d{3})*,\d{2}$" title="Digite um valor no formato 10.000,00" />
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn-primary" id="btnAtualizarCaixa">
-            <i class="bi bi-upload"></i> Atualizar Caixa
-          </button>   
+          <button type="submit" class="btn-primary" id="btnAtualizarCaixa"><i class="bi bi-upload"></i> Atualizar Caixa</button>
         </div>
       </form>
     </div>
   </div>
-
   <footer>
-    <div class="container">
-      <p>© 2025 Grupo GC - Todos os direitos reservados</p>
-    </div>
+    <div class="container"><p>© 2025 Grupo GC - Todos os direitos reservados</p></div>
   </footer>
 </div>
 
-<div id="custom-alert" class="custom-alert" style="display: none;">
-  <div class="custom-alert-content" id="custom-alert-content"></div>
-  <button onclick="fecharAlerta()" class="custom-alert-close" title="Fechar">
-    <i class="bi bi-x-circle-fill"></i>
-  </button>
-</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("selectCias");
+  const dynamicContainer = document.getElementById("ciaInputsContainer");
+  const staticCol = document.getElementById("formColStatic");
 
-<div id="custom-confirm" class="custom-confirm" style="display: none;">
-  <div class="custom-confirm-box">
-    <div class="custom-confirm-content" id="custom-confirm-content"></div>
-    <div class="custom-confirm-buttons">
-      <button id="btnConfirmar" class="btn-confirm">Sim</button>
-      <button id="btnCancelar" class="btn-cancel">Cancelar</button>
-    </div>
-  </div>
-</div>
+  function formatarMoeda(input) {
+    input.addEventListener("input", function (e) {
+      let valorOriginal = e.target.value;
+      let limpo = valorOriginal.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+      let numero = parseFloat(limpo);
+      if (isNaN(numero)) {
+        e.target.value = '';
+        return;
+      }
+      e.target.value = numero.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    });
+  }
 
-<script src="{% static 'extrato_app/js/atualizar_caixa.js' %}"></script>
+  select.addEventListener("change", () => {
+    const selected = Array.from(select.selectedOptions).map(opt => opt.value);
+    if (selected.length === 0) {
+      dynamicContainer.classList.remove("active");
+      staticCol.style.maxWidth = "500px";
+      dynamicContainer.innerHTML = "";
+      return;
+    }
+
+    dynamicContainer.classList.add("active");
+    staticCol.style.maxWidth = "350px";
+
+    dynamicContainer.innerHTML = `
+      <table class="cia-table" id="ciaPasteTable">
+        <thead>
+          <tr><th>Seguradora</th><th>Valor Bruto</th><th>Valor Líquido</th></tr>
+        </thead>
+        <tbody>
+          ${selected.map(cia => `
+            <tr>
+              <td>${cia}</td>
+              <td><input type="text" name="valor_bruto_${cia}" class="paste-target" required /></td>
+              <td><input type="text" name="valor_liquido_${cia}" required /></td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>`;
+
+    dynamicContainer.querySelectorAll("input").forEach(formatarMoeda);
+
+    const inputs = Array.from(dynamicContainer.querySelectorAll("tbody input"));
+
+    inputs[0].addEventListener("paste", function (e) {
+      e.preventDefault();
+      const text = e.clipboardData.getData("text/plain");
+      const rows = text.split(/\r?\n/).filter(r => r.trim() !== "");
+
+      let flatValues = [];
+
+      for (const row of rows) {
+        const cols = row.split(/\t/);
+        flatValues.push(...cols);
+      }
+
+      for (let i = 0; i < flatValues.length && i < inputs.length; i++) {
+        let valor = flatValues[i].replace(/R\$/g, '').replace(/\./g, '').replace(',', '.').trim();
+        let num = parseFloat(valor);
+        if (!isNaN(num)) {
+          inputs[i].value = num.toLocaleString("pt-BR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+        }
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

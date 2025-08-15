@@ -1,7 +1,23 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const btn = document.getElementById("btnAtualizarCaixa");
+  const selectCias = document.getElementById("selectCias");
+  const ciaInputsContainer = document.getElementById("ciaInputsContainer");
+
+  function formatarMoeda(input) {
+    input.addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "");
+      if (value.length === 0) {
+        e.target.value = "";
+        return;
+      }
+      let numericValue = parseFloat(value) / 100;
+      e.target.value = numericValue.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    });
+  }
 
   document.querySelectorAll('input[name="mes"]').forEach((competenciaInput) => {
     competenciaInput.addEventListener('input', function (e) {
@@ -13,18 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.querySelectorAll('input[name="valor_bruto"], input[name="valor_liquido"]').forEach((input) => {
-    input.addEventListener('input', function (e) {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length === 0) {
-        e.target.value = '';
-        return;
-      }
-      let numericValue = parseFloat(value) / 100;
-      e.target.value = numericValue.toLocaleString('pt-BR', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      });
+  selectCias.addEventListener("change", function () {
+    ciaInputsContainer.innerHTML = "";
+
+    Array.from(selectCias.selectedOptions).forEach((option) => {
+      const cia = option.value;
+
+      const fieldset = document.createElement("fieldset");
+      fieldset.classList.add("form-group", "cia-input-box");
+
+      fieldset.innerHTML = `
+        <legend>${cia}</legend>
+        <div class="double-input">
+          <input type="text" name="valor_bruto_${cia}" placeholder="Valor Bruto" class="input-text" required />
+          <input type="text" name="valor_liquido_${cia}" placeholder="Valor Líquido" class="input-text" required />
+        </div>
+      `;
+      ciaInputsContainer.appendChild(fieldset);
+
+      const inputs = fieldset.querySelectorAll("input");
+      inputs.forEach(formatarMoeda);
     });
   });
 
@@ -67,16 +91,19 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const cia = form.querySelector("select[name='cia']").value;
-    const mes = form.querySelector("input[name='mes']").value;
-    const valorBruto = form.querySelector("input[name='valor_bruto']").value;
-    const valorLiquido = form.querySelector("input[name='valor_liquido']").value;
+    const competencia = form.querySelector("input[name='mes']").value;
+    const ciasSelecionadas = Array.from(selectCias.selectedOptions).map(opt => opt.value);
 
     const formData = new FormData();
-    formData.append("cia", cia);
-    formData.append("mes", mes);
-    formData.append("valor_bruto", valorBruto);
-    formData.append("valor_liquido", valorLiquido);
+    formData.append("mes", competencia);
+    formData.append("cias", JSON.stringify(ciasSelecionadas));
+
+    ciasSelecionadas.forEach(cia => {
+      const bruto = form.querySelector(`input[name="valor_bruto_${cia}"]`).value;
+      const liquido = form.querySelector(`input[name="valor_liquido_${cia}"]`).value;
+      formData.append(`valor_bruto_${cia}`, bruto);
+      formData.append(`valor_liquido_${cia}`, liquido);
+    });
 
     try {
       const response = await fetch("/api/buscar-cias/", {

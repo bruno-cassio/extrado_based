@@ -557,3 +557,29 @@ class DBA:
             return False
         finally:
             DatabaseManager.return_connection(conn)
+
+    def get_id_cia(self, cia_nome: str) -> Optional[int]:
+        """
+        Retorna o id_seguradora_quiver da cia informada, consultando a tabela_correcao_seguradora.
+        """
+        conn = DatabaseManager.get_connection()
+        try:
+            with conn.cursor() as cursor:
+                query = """
+                    SELECT id_seguradora_quiver
+                    FROM tabela_correcao_seguradora
+                    WHERE seg_nome_correto = %s
+                    LIMIT 1
+                """
+                cursor.execute(query, (cia_nome,))
+                result = cursor.fetchone()
+                if result:
+                    return result[0]
+                else:
+                    print(f"⚠️ ID da seguradora '{cia_nome}' não encontrado.")
+                    return None
+        except Exception as e:
+            print(f"❌ Erro ao buscar ID da seguradora: {e}")
+            return None
+        finally:
+            DatabaseManager.return_connection(conn)

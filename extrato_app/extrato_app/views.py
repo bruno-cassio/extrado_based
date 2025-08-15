@@ -179,41 +179,52 @@ def verificar_relatorios_view(request):
 @csrf_exempt
 def buscar_cias_api(request):
     if request.method == "POST":
-        cia = request.POST.get("cia")
-        mes = request.POST.get("mes")
-        valor_bruto = request.POST.get("valor_bruto")
-        valor_liquido = request.POST.get("valor_liquido")
-        forcar_update = request.POST.get("forcar_update", "false") == "true"
+        try:
+            cias_raw = request.POST.get("cias", "[]")
+            mes = request.POST.get("mes")
+            forcar_update = request.POST.get("forcar_update", "false") == "true"
 
-        processar_automaticamente(cia, mes)
+            cias = json.loads(cias_raw)
+            dba = DBA()
 
-        dba = DBA()
-        existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
+            ja_existem = []
 
-        ja_existe = dba.caixa_declarado_existe(cia, mes)
+            for cia in cias:
+                existe = dba.caixa_declarado_existe(cia, mes)
+                if existe and not forcar_update:
+                    ja_existem.append(cia)
 
-        if ja_existe and not forcar_update:
+            if ja_existem:
+                return JsonResponse({
+                    "status": "existe",
+                    "message": f"Já existe valor para: {', '.join(ja_existem)}. Deseja atualizar?",
+                    "cias_existentes": ja_existem
+                })
+
+            for cia in cias:
+                id_cia = dba.get_id_cia(cia)
+                if not id_cia:
+                    continue
+
+                valor_bruto = request.POST.get(f"valor_bruto_{cia}", "0").replace(".", "").replace(",", ".")
+                valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0").replace(".", "").replace(",", ".")
+
+                dba.inserir_ou_atualizar_caixa(
+                    id_cia=id_cia,
+                    cia=cia,
+                    competencia=mes,
+                    valor_bruto=valor_bruto,
+                    valor_liquido=valor_liquido,
+                    update=True 
+                )
+
             return JsonResponse({
-                "status": "existe",
-                "message": "Já existe valor para esta CIA e competência. Deseja atualizar?",
-                "id_cia": id_cia
+                "status": "ok",
+                "message": "Todos os dados foram processados com sucesso."
             })
 
-        if id_cia:
-            dba.inserir_ou_atualizar_caixa(
-                id_cia=id_cia,
-                cia=cia,
-                competencia=mes,
-                valor_bruto=valor_bruto,
-                valor_liquido=valor_liquido,
-                update=ja_existe
-            )
-
-        return JsonResponse({
-            "status": "ok",
-            "message": "Dados processados com sucesso.",
-            "id_cia": id_cia
-        })
+        except Exception as e:
+            return JsonResponse({"status": "error", "message": str(e)})
 
     return JsonResponse({"error": "Método não permitido"}, status=405)
 
