@@ -184,9 +184,8 @@ class HDIHandler:
             premio_total_relatorio = round(df[filtro_validacao][coluna].sum() * fator, 2)
 
             print(f"-==-=-=-==-=-=-=-=-=--=- Total de 'premio' para HDI: {premio_total_relatorio} -==-=-=-==-=-=-=-=-=--=- ")
-            self.file_dfs[table_name] = df
             print('✅ Cálculo realizado com sucesso.')
-            return premio_total_relatorio
+            return premio_total_relatorio, df
 
         except Exception as e:
             print(f"❌ Erro ao converter para Decimal: {e}")

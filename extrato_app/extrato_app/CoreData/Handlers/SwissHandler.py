@@ -80,7 +80,7 @@ class SwissHandler:
             print('premio total de SWISS ->')
             print(premio_total_relatorio)
             print('====================== acima premio da swiss ======================')
-            return premio_total_relatorio
+            return premio_total_relatorio,df
         except Exception as e:
             print(f"❌ Erro ao calcular prêmio da Swiss: {e}")
             return {}

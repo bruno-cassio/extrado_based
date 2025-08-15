@@ -52,7 +52,7 @@ class TokioHandler:
         try:
             df['premio_base'] = df['total_com'] / df['total_com_pct']
             premio_total_relatorio = round(df['premio_base'].sum() * fator, 2)
-            return premio_total_relatorio
+            return premio_total_relatorio,df
         except ZeroDivisionError:
             print("❌ Divisão por zero detectada em TokioHandler.")
             return {}

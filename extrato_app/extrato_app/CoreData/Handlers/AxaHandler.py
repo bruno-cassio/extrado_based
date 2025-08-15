@@ -88,8 +88,7 @@ class AxaHandler:
             df.drop(columns=['pagamento_convertido'], inplace=True)
             
             premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-            self.file_dfs[table_name] = df
-            return premio_total_relatorio
+            return premio_total_relatorio, df
             
         except InvalidOperation as e:
             print(f"❌ Erro ao converter para Decimal: {e}")

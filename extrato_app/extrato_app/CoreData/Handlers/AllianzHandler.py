@@ -58,32 +58,32 @@ class AllianzHandler:
         else:
             print(f"⚠️ Coluna '{coluna}' não encontrada no arquivo {file_name}.")
             
-    # def calcular_premio_relatorio(self, df, coluna, fator, table_name):
-    #     try:
+    def calcular_premio_relatorio(self, df, coluna, fator, table_name):
+        try:
             
-    #         print('validação de fatores')
-    #         print(coluna)
-    #         print(f'fator: {fator}')
+            print('validação de fatores')
+            print(coluna)
+            print(f'fator: {fator}')
 
-    #         df = df.loc[:, ~df.columns.duplicated(keep='first')]
+            df = df.loc[:, ~df.columns.duplicated(keep='first')]
 
-    #         if coluna not in df.columns:
-    #             print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
-    #             return 0.0, df
+            if coluna not in df.columns:
+                print(f"⚠️ Coluna '{coluna}' não encontrada no DataFrame.")
+                return 0.0, df
 
-    #         df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
+            df[coluna] = pd.to_numeric(df[coluna], errors='coerce').fillna(0)
 
-    #         premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-    #         print(f"✅ Total de 'premio' para Allianz: {premio_total_relatorio}")
+            premio_total_relatorio = round(df[coluna].sum() * fator, 2)
+            print(f"✅ Total de 'premio' para Allianz: {premio_total_relatorio}")
             
             
-    #         print('validação previa return de calculo de premio')
+            print('validação previa return de calculo de premio')
 
             
-    #         return premio_total_relatorio, df
+            return premio_total_relatorio, df
 
-    #     except Exception as e:
-    #         print(f"❌ Erro ao calcular prêmio Allianz: {e}")
-    #         return 0.0, df
+        except Exception as e:
+            print(f"❌ Erro ao calcular prêmio Allianz: {e}")
+            return 0.0, df
 
 

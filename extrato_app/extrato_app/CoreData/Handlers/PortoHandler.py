@@ -184,5 +184,4 @@ class PortoHandler:
         # premio_total_relatorio = round(df[coluna].sum() * fator, 2)
         print(f"Total de 'premio' para Porto: {premio_total_relatorio}")
         print('================================================== passed // retornando ==================================================')
-        self.file_dfs[table_name] = df
-        return premio_total_relatorio
+        return premio_total_relatorio, df

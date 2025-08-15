@@ -36,7 +36,6 @@ class JuntoHandler:
         print(df[coluna].head())
         premio_total_relatorio = round(df[coluna].sum() * fator, 2)
         print(f"Total de 'premio' para Junto: {premio_total_relatorio}")
-        self.file_dfs[table_name] = df
-        return premio_total_relatorio
+        return premio_total_relatorio, df
     
     

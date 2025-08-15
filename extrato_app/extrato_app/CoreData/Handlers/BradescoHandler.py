@@ -50,8 +50,8 @@ class BradescoHandler:
     def calcular_premio_relatorio(self, df, coluna, fator, table_name):
         try:
             premio_total_relatorio = round(df[coluna].sum() * fator, 2)
-            self.file_dfs[table_name] = df
-            return premio_total_relatorio
+            # self.file_dfs[table_name] = df
+            return premio_total_relatorio, df
         except Exception as e:
             print(f"❌ Erro ao converter para Decimal: {e}")
             return {}
