@@ -640,3 +640,111 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(template_name, chain=chain)
 django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
 2025-08-15 17:10:58,500 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 10:59:18,459 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:04:26,292 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:05:21,300 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:27:35,793 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:27:39,066 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:30:30,541 - django.request - ERROR - Internal Server Error: /executar-atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 147, in executar_atualizar_caixa
+    return render(request, 'extrato_app/caixa_resultado.html', {
+        'existing': existing,
+    ...<3 lines>...
+        'mes': mes,
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-18 11:44:25,148 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 11:44:31,453 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 13:51:43,232 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 14:53:05,255 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 14:59:09,578 - django.request - ERROR - Internal Server Error: /executar-atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 147, in executar_atualizar_caixa
+    return render(request, 'extrato_app/caixa_resultado.html', {
+        'existing': existing,
+    ...<3 lines>...
+        'mes': mes,
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-18 14:59:17,196 - django.request - ERROR - Internal Server Error: /executar-atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 147, in executar_atualizar_caixa
+    return render(request, 'extrato_app/caixa_resultado.html', {
+        'existing': existing,
+    ...<3 lines>...
+        'mes': mes,
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-18 14:59:20,220 - django.request - WARNING - Method Not Allowed: /executar-atualizar-caixa
+2025-08-18 14:59:29,719 - django.request - ERROR - Internal Server Error: /executar-atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 147, in executar_atualizar_caixa
+    return render(request, 'extrato_app/caixa_resultado.html', {
+        'existing': existing,
+    ...<3 lines>...
+        'mes': mes,
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-18 14:59:29,858 - django.request - WARNING - Method Not Allowed: /executar-atualizar-caixa
+2025-08-18 15:03:45,103 - django.request - ERROR - Internal Server Error: /executar-atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 147, in executar_atualizar_caixa
+    return render(request, 'extrato_app/caixa_resultado.html', {
+        'existing': existing,
+    ...<3 lines>...
+        'mes': mes,
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-18 15:06:28,568 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-18 15:32:49,177 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.

@@ -8,57 +8,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
+
   <style>
-    .form-layout {
-      display: flex;
-      justify-content: center;
-      transition: all 0.4s ease;
-      gap: 40px;
-      align-items: flex-start;
+    /* === Estilos APENAS do modal. A lista usa o conta_virtual.css. === */
+    .modal-backdrop {
+      display:none; position: fixed; inset:0; background: rgba(0,0,0,.5);
+      align-items: center; justify-content: center; padding: 16px; z-index: 9999;
     }
-    .form-col-static {
-      width: 100%;
-      max-width: 500px;
-      transition: all 0.4s ease;
+    .modal-backdrop.open { display:flex; }
+    .modal {
+      width: 100%; max-width: 820px; background: #fff; color:#222; border-radius: 16px; overflow:hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      animation: modalIn .16s ease-out;
     }
-    .form-col-dynamic {
-      display: none;
-      flex: 1;
-      gap: 10px;
-      transition: all 0.4s ease;
+    @keyframes modalIn { from{ transform: translateY(12px); opacity:0 } to{ transform: translateY(0); opacity:1 } }
+    .modal-header {
+      padding: 16px 18px; background: #f6f7fb; display:flex; align-items:center; justify-content:space-between;
+      border-bottom: 1px solid #e6e7ee;
     }
-    .form-col-dynamic.active {
-      display: flex;
-      flex-direction: column;
+    .modal-title { font-size: 1.1rem; font-weight: 700; display:flex; align-items:center; gap:8px; }
+    .modal-body { padding: 16px 18px; max-height: 70vh; overflow:auto; }
+    .modal-footer { padding: 14px 18px; display:flex; gap:10px; justify-content:flex-end; border-top:1px solid #e6e7ee; background:#fafbfe; }
+    .close-btn { background: transparent; border:none; font-size: 1.4rem; cursor:pointer; color:#444; }
+    .field-row {
+      display:grid; grid-template-columns: 1fr 180px 180px; gap:12px; align-items:center;
+      border:1px solid #e7e9f1; border-radius:12px; padding:10px 12px; background:#fff; margin-bottom:10px;
     }
-    .cia-table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: rgba(255, 255, 255, 0.1);
+    .modal-section-title { font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+    .input-text, .form-select { width: 100%; }
+    .btn-secondary {
+      background: #eef1f6; border:1px solid #d7dce5; padding:10px 14px; border-radius:10px; cursor:pointer;
     }
-    .cia-table th,
-    .cia-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }
-    .cia-table input {
-      width: 100%;
-      border: none;
-      background: transparent;
-      outline: none;
-    }
-    .cia-table th {
-      background-color: #f0f0f0;
-    }
-    @media (max-width: 768px) {
-      .form-layout {
-        flex-direction: column;
-      }
-      .form-col-dynamic {
-        display: block;
-      }
-    }
+    .info-badge { margin-top:6px; display:flex; align-items:center; gap:6px; font-size:.9rem; opacity:.85; }
   </style>
 </head>
 <body>
@@ -69,124 +50,259 @@
       <div class="header-divider"></div>
     </div>
   </header>
+
   <div class="container">
     <nav class="top-tabs">
       <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}"><i class="bi bi-arrow-clockwise"></i> Atualizar Relatórios</a>
       <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}"><i class="bi bi-database-fill"></i> Consolidação Conta Virtual</a>
       <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}"><i class="bi bi-cash-stack"></i> Atualizar Caixa</a>
     </nav>
+
     <div class="form-card">
       <h2><i class="bi bi-cash-stack"></i> Atualizar Caixa</h2>
-      <form method="POST" action="{% url 'executar_atualizar_caixa' %}">{% csrf_token %}
-        <div class="form-layout">
-          <div class="form-col-static" id="formColStatic">
-            <div class="form-group">
-              <label class="form-label"><i class="bi bi-building-fill"></i> Selecione as Seguradoras (CIAs):</label>
-              <select name="cias" id="selectCias" class="form-select" multiple required>
-                {% for cia in cias_opt %}<option value="{{ cia }}">{{ cia }}</option>{% endfor %}
-              </select>
-              <small>Segure Ctrl (Windows) ou Cmd (Mac) para selecionar múltiplas seguradoras</small>
-            </div>
-            <div class="form-group">
-              <label class="form-label"><i class="bi bi-calendar-month"></i> Digite a Competência (MM-AAAA):</label>
-              <div class="competencia-input">
-                <input type="text" name="mes" class="input-text" placeholder="Ex: 01-2025" required pattern="^(0[1-9]|1[0-2])-[0-9]{4}$" title="Digite no formato MM-AAAA" />
-                <i class="bi bi-info-circle" title="Formato: MM-AAAA"></i>
-              </div>
+
+      <form method="POST" action="{% url 'executar_atualizar_caixa' %}" id="formAtualizarCaixa">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <div class="selection-header">
+            <label class="form-label">
+              <i class="bi bi-building-fill"></i>
+              Selecione as Seguradoras:
+            </label>
+            <div class="selection-actions">
+              <span class="selected-count" id="selected-count">0</span>
+              <button type="button" class="selection-action-btn" id="select-all">
+                <i class="bi bi-check2-square"></i> Todos
+              </button>
+              <button type="button" class="selection-action-btn" id="deselect-all">
+                <i class="bi bi-x-square"></i> Limpar
+              </button>
             </div>
           </div>
-          <div class="form-col-dynamic" id="ciaInputsContainer"></div>
+
+          <div class="cias-container">
+            <div class="cias-grid" id="cias-list">
+              {% for cia in cias_opt %}
+              <div class="cia-item" data-cia="{{ cia }}">
+                <div class="cia-checkbox"></div>
+                <span class="cia-name">{{ cia }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <input type="hidden" name="cias_selected" id="cias-selected" />
         </div>
+
         <div class="form-group">
-          <button type="submit" class="btn-primary" id="btnAtualizarCaixa"><i class="bi bi-upload"></i> Atualizar Caixa</button>
+          <button type="button" class="btn-primary" id="btnProsseguir">
+            <i class="bi bi-arrow-right-circle"></i> Prosseguir
+          </button>
         </div>
       </form>
     </div>
   </div>
+
   <footer>
     <div class="container"><p>© 2025 Grupo GC - Todos os direitos reservados</p></div>
   </footer>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const select = document.getElementById("selectCias");
-  const dynamicContainer = document.getElementById("ciaInputsContainer");
-  const staticCol = document.getElementById("formColStatic");
+<!-- ========= MODAL ========= -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitulo">
+        <i class="bi bi-pencil-square"></i> Informe os valores para as CIAs selecionadas
+      </div>
+      <button class="close-btn" id="modalClose" type="button" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">
+          <i class="bi bi-calendar-month"></i>
+          Digite a Competência:
+        </label>
+        <input
+          type="text"
+          class="form-select"
+          name="mes"
+          id="inputCompetencia"
+          form="formAtualizarCaixa"
+          required
+          placeholder=""
+          inputmode="numeric"
+          maxlength="7"
+          pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
+          title="Digite no formato MM-AAAA (ex.: 01-2025)"
+        />
+        <div class="info-badge">
+          <i class="bi bi-lightbulb"></i> Exemplo: 05-2024 para maio de 2024
+        </div>
+      </div>
 
-  function formatarMoeda(input) {
-    input.addEventListener("input", function (e) {
-      let valorOriginal = e.target.value;
-      let limpo = valorOriginal.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
-      let numero = parseFloat(limpo);
-      if (isNaN(numero)) {
-        e.target.value = '';
-        return;
-      }
-      e.target.value = numero.toLocaleString("pt-BR", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      });
+      <div class="modal-section-title">
+        <i class="bi bi-bank"></i> Valores por Seguradora
+      </div>
+      <div id="modalCamposCias"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="modalCancelar" type="button">Cancelar</button>
+      <button class="btn-primary" id="modalAtualizar" type="button">
+        <i class="bi bi-upload"></i> Atualizar Caixa
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ========= /MODAL ========= -->
+
+<script>
+(function() {
+  const list = document.getElementById('cias-list');
+  const selectedCount = document.getElementById('selected-count');
+  const hiddenSelected = document.getElementById('cias-selected');
+  const btnSelectAll = document.getElementById('select-all');
+  const btnDeselectAll = document.getElementById('deselect-all');
+  const btnProsseguir = document.getElementById('btnProsseguir');
+
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const modalCancelar = document.getElementById('modalCancelar');
+  const modalAtualizar = document.getElementById('modalAtualizar');
+  const modalCamposCias = document.getElementById('modalCamposCias');
+  const inputCompetencia = document.getElementById('inputCompetencia');
+
+  const form = document.getElementById('formAtualizarCaixa');
+
+  // === Máscara MM-AAAA mínima: só insere "-" após 2 dígitos ===
+  (function attachMaskMMYYYY() {
+    const el = document.getElementById('inputCompetencia');
+    if (!el) return;
+
+    function formatValueKeepCaret(e) {
+      const input = e.target;
+      const digitsBefore = input.value.slice(0, input.selectionStart).replace(/\D/g, '').length;
+
+      let digits = input.value.replace(/\D/g, '').slice(0, 6);
+
+      const newVal = digits.length <= 2 ? digits : digits.slice(0, 2) + '-' + digits.slice(2);
+      input.value = newVal;
+
+      const newPos = digitsBefore <= 2 ? digitsBefore : digitsBefore + 1;
+      input.setSelectionRange(newPos, newPos);
+    }
+
+    el.addEventListener('input', formatValueKeepCaret);
+
+    el.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const txt = (e.clipboardData || window.clipboardData).getData('text');
+      const digits = txt.replace(/\D/g, '').slice(0, 6);
+      el.value = digits.length <= 2 ? digits : digits.slice(0, 2) + '-' + digits.slice(2);
+      el.setSelectionRange(el.value.length, el.value.length);
     });
+  })();
+
+  function toggleItem(el) {
+    el.classList.toggle('selected');
+    updateSelected();
   }
 
-  select.addEventListener("change", () => {
-    const selected = Array.from(select.selectedOptions).map(opt => opt.value);
+  function updateSelected() {
+    const active = [...list.querySelectorAll('.cia-item.selected')].map(n => n.dataset.cia);
+    selectedCount.textContent = active.length;
+    hiddenSelected.value = JSON.stringify(active);
+  }
+
+  btnSelectAll.addEventListener('click', () => {
+    list.querySelectorAll('.cia-item').forEach(el => el.classList.add('selected'));
+    updateSelected();
+  });
+
+  btnDeselectAll.addEventListener('click', () => {
+    list.querySelectorAll('.cia-item').forEach(el => el.classList.remove('selected'));
+    updateSelected();
+  });
+
+  list.addEventListener('click', (e) => {
+    const item = e.target.closest('.cia-item');
+    if (item) toggleItem(item);
+  });
+
+  btnProsseguir.addEventListener('click', () => {
+    const selected = JSON.parse(hiddenSelected.value || '[]');
     if (selected.length === 0) {
-      dynamicContainer.classList.remove("active");
-      staticCol.style.maxWidth = "500px";
-      dynamicContainer.innerHTML = "";
+      alert('Selecione ao menos uma seguradora (CIA).');
       return;
     }
 
-    dynamicContainer.classList.add("active");
-    staticCol.style.maxWidth = "350px";
-
-    dynamicContainer.innerHTML = `
-      <table class="cia-table" id="ciaPasteTable">
-        <thead>
-          <tr><th>Seguradora</th><th>Valor Bruto</th><th>Valor Líquido</th></tr>
-        </thead>
-        <tbody>
-          ${selected.map(cia => `
-            <tr>
-              <td>${cia}</td>
-              <td><input type="text" name="valor_bruto_${cia}" class="paste-target" required /></td>
-              <td><input type="text" name="valor_liquido_${cia}" required /></td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>`;
-
-    dynamicContainer.querySelectorAll("input").forEach(formatarMoeda);
-
-    const inputs = Array.from(dynamicContainer.querySelectorAll("tbody input"));
-
-    inputs[0].addEventListener("paste", function (e) {
-      e.preventDefault();
-      const text = e.clipboardData.getData("text/plain");
-      const rows = text.split(/\r?\n/).filter(r => r.trim() !== "");
-
-      let flatValues = [];
-
-      for (const row of rows) {
-        const cols = row.split(/\t/);
-        flatValues.push(...cols);
-      }
-
-      for (let i = 0; i < flatValues.length && i < inputs.length; i++) {
-        let valor = flatValues[i].replace(/R\$/g, '').replace(/\./g, '').replace(',', '.').trim();
-        let num = parseFloat(valor);
-        if (!isNaN(num)) {
-          inputs[i].value = num.toLocaleString("pt-BR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-          });
-        }
-      }
+    modalCamposCias.innerHTML = '';
+    selected.forEach(cia => {
+      const row = document.createElement('div');
+      row.className = 'field-row';
+      row.innerHTML = `
+        <div><strong>${cia}</strong></div>
+        <div>
+          <label style="display:block;font-size:.85rem;margin-bottom:4px;">Valor Bruto</label>
+          <input type="text" class="input-text moeda" name="valor_bruto_${cia}" form="formAtualizarCaixa" placeholder="0,00" required />
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;margin-bottom:4px;">Valor Líquido</label>
+          <input type="text" class="input-text moeda" name="valor_liquido_${cia}" form="formAtualizarCaixa" placeholder="0,00" required />
+        </div>
+      `;
+      modalCamposCias.appendChild(row);
     });
+
+    modalCamposCias.querySelectorAll('input.moeda').forEach(input => {
+      input.addEventListener('input', (e) => {
+        let txt = e.target.value.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+        const num = parseFloat(txt);
+        if (isNaN(num)) { e.target.value = ''; return; }
+        e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      });
+      input.addEventListener('paste', (e) => {
+        const focused = e.target;
+        const inputs = [...modalCamposCias.querySelectorAll('input.moeda')];
+        const startIndex = inputs.indexOf(focused);
+        const text = e.clipboardData.getData('text/plain');
+        const rows = text.split(/\r?\n/).filter(r => r.trim() !== '');
+        if (rows.length <= 1 && !rows[0].includes('\t')) return;
+        e.preventDefault();
+        const flat = [];
+        for (const r of rows) { flat.push(...r.split('\t')); }
+        for (let i = 0; i < flat.length && (startIndex + i) < inputs.length; i++) {
+          const raw = flat[i].replace(/R\$/g, '').replace(/\./g, '').replace(',', '.').trim();
+          const v = parseFloat(raw);
+          if (!isNaN(v)) {
+            inputs[startIndex + i].value = v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          }
+        }
+      });
+    });
+
+    modalBackdrop.classList.add('open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    inputCompetencia.focus();
   });
-});
+
+  function closeModal() {
+    modalBackdrop.classList.remove('open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+  }
+  modalClose.addEventListener('click', closeModal);
+  modalCancelar.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+
+  modalAtualizar.addEventListener('click', () => {
+    if (form.reportValidity()) {
+      form.requestSubmit();
+    }
+  });
+})();
 </script>
 </body>
 </html>
