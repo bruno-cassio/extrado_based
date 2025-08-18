@@ -639,3 +639,4 @@ Traceback (most recent call last):
   File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
     raise TemplateDoesNotExist(template_name, chain=chain)
 django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.html
+2025-08-15 17:10:58,500 - django.request - WARNING - Not Found: /favicon.ico
