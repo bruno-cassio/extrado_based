@@ -770,3 +770,4 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-18 15:40:42,423 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-18 15:42:00,882 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
 2025-08-18 15:43:59,653 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-18 15:50:15,246 - django.request - WARNING - Not Found: /favicon.ico
