@@ -121,38 +121,106 @@ def atualizar_caixa(request):
     cias_opt = [cia.strip() for cia in cias_raw.split(",") if cia.strip()]
     return render(request, 'atualizar_caixa.html', {'cias_opt': cias_opt})
 
-def executar_atualizar_caixa(request):  
-    if request.method == "POST":
-        cia = request.POST.get("cia")
-        mes = request.POST.get("mes")
-        valor = request.POST.get("valor")
+# def executar_atualizar_caixa(request):  
+#     if request.method == "POST":
+#         cia = request.POST.get("cia")
+#         mes = request.POST.get("mes")
+#         valor = request.POST.get("valor")
 
-        config_path = os.path.join(os.getcwd(), "config.json")
-        with open(config_path, "w", encoding="utf-8") as f:
-            json.dump({
-                "cia_corresp": cia,
-                "competencia": mes
-            }, f, indent=2, ensure_ascii=False)
+#         config_path = os.path.join(os.getcwd(), "config.json")
+#         with open(config_path, "w", encoding="utf-8") as f:
+#             json.dump({
+#                 "cia_corresp": cia,
+#                 "competencia": mes
+#             }, f, indent=2, ensure_ascii=False)
+
+#         dba = DBA()
+#         dba.cia_corresp = cia
+#         existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
+
+#         print("✅ Cias existentes:", existing)
+#         print("❌ Cias não encontradas:", non_existing)
+#         print("📄 Lista final de cias:", lista_cias)
+#         print("🆔 ID da CIA:", id_cia)
+#         print("💰 Valor a atualizar:", valor)
+
+#         return render(request, 'extrato_app/caixa_resultado.html', {
+#             'existing': existing,
+#             'non_existing': non_existing,
+#             'id_cia': id_cia,
+#             'valor': valor,
+#             'mes': mes,
+#         })
+
+#     return HttpResponse("Método não permitido", status=405)
+
+def executar_atualizar_caixa(request):
+    if request.method != "POST":
+        return JsonResponse({"status": "error", "message": "Método não permitido"}, status=405)
+
+    try:
+        mes = (request.POST.get("mes") or "").strip()
+        if not mes:
+            return JsonResponse({"status": "error", "message": "Informe a competência (MM-AAAA)."}, status=400)
+
+        cias_selected_raw = request.POST.get("cias_selected", "").strip()
+        if cias_selected_raw:
+            try:
+                cias = json.loads(cias_selected_raw)
+            except json.JSONDecodeError:
+                return JsonResponse({"status": "error", "message": "Formato inválido em 'cias_selected'."}, status=400)
+
+            if not isinstance(cias, list) or not cias:
+                return JsonResponse({"status": "error", "message": "Selecione ao menos uma CIA."}, status=400)
+
+            dba = DBA()
+            processed, not_found = [], []
+
+            for cia in cias:
+                id_cia = dba.get_id_cia(cia)
+                if not id_cia:
+                    not_found.append(cia)
+                    continue
+
+                vb_raw = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
+                vl_raw = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
+
+                dba.inserir_ou_atualizar_caixa(
+                    id_cia=id_cia,
+                    cia=cia,
+                    competencia=mes,
+                    valor_bruto=vb_raw,
+                    valor_liquido=vl_raw,
+                    update=True
+                )
+                processed.append({"cia": cia, "id_cia": id_cia, "valor_bruto": vb_raw, "valor_liquido": vl_raw})
+
+            msg = f"{len(processed)} CIAs atualizadas para {mes}."
+            if not_found:
+                msg += f" Não encontradas: {', '.join(not_found)}."
+            return JsonResponse({"status": "success", "message": msg, "processed": processed, "not_found": not_found})
+
+        cia = (request.POST.get("cia") or "").strip()
+        valor = (request.POST.get("valor") or "").strip()
+        if not cia or not valor:
+            return JsonResponse({"status": "error", "message": "Informe 'cia' e 'valor' ou use o modal com múltiplas CIAs."}, status=400)
 
         dba = DBA()
-        dba.cia_corresp = cia
-        existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
+        id_cia = dba.get_id_cia(cia)
+        if not id_cia:
+            return JsonResponse({"status": "error", "message": f"CIA '{cia}' não encontrada."}, status=404)
 
-        print("✅ Cias existentes:", existing)
-        print("❌ Cias não encontradas:", non_existing)
-        print("📄 Lista final de cias:", lista_cias)
-        print("🆔 ID da CIA:", id_cia)
-        print("💰 Valor a atualizar:", valor)
+        valor_norm = valor.replace(".", "").replace(",", ".")
+        dba.inserir_ou_atualizar_caixa(
+            id_cia=id_cia, cia=cia, competencia=mes,
+            valor_bruto=valor_norm, valor_liquido=valor_norm, update=True
+        )
+        return JsonResponse({"status": "success", "message": f"Atualizado {cia} para {mes}."})
 
-        return render(request, 'extrato_app/caixa_resultado.html', {
-            'existing': existing,
-            'non_existing': non_existing,
-            'id_cia': id_cia,
-            'valor': valor,
-            'mes': mes,
-        })
+    except Exception as e:
+        return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
-    return HttpResponse("Método não permitido", status=405)
+
 
 @csrf_exempt
 def verificar_relatorios_view(request):

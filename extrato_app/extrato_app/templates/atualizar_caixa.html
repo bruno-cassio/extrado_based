@@ -40,6 +40,46 @@
       background: #eef1f6; border:1px solid #d7dce5; padding:10px 14px; border-radius:10px; cursor:pointer;
     }
     .info-badge { margin-top:6px; display:flex; align-items:center; gap:6px; font-size:.9rem; opacity:.85; }
+
+    .toast-backdrop {
+      display:none; position:fixed; inset:0; z-index:10000;
+      background: rgba(0,0,0,.45);
+      align-items:center; justify-content:center; padding:16px;
+    }
+    .toast-backdrop.open { display:flex; }
+    .toast-card {
+      width: min(520px, 92vw);
+      background:#fff; color:#222; border-radius:16px; padding:20px 20px 16px;
+      box-shadow: 0 14px 44px rgba(0,0,0,.22);
+      text-align:center; animation: toastIn .18s ease-out;
+    }
+    @keyframes toastIn { from { transform: translateY(8px); opacity:0 } to { transform: translateY(0); opacity:1 } }
+    .toast-icon { display:none; margin: 4px auto 10px; }
+    .toast-icon svg { width:86px; height:86px; display:block; margin:0 auto; }
+    .toast-actions { margin-top: 10px; display:flex; justify-content:center; }
+
+    .checkmark__circle {
+      stroke:#22C55E; stroke-width:3; stroke-miterlimit:10; stroke-dasharray: 166; stroke-dashoffset: 166;
+      animation: stroke 0.6s cubic-bezier(.65,.0,.45,1) forwards;
+    }
+    .checkmark__check {
+      transform-origin: 50% 50%;
+      stroke:#22C55E; stroke-width:4; stroke-linecap:round; stroke-linejoin:round;
+      stroke-dasharray: 48; stroke-dashoffset: 48;
+      animation: stroke 0.4s 0.4s cubic-bezier(.65,.0,.45,1) forwards;
+    }
+    @keyframes stroke { to { stroke-dashoffset: 0; } }
+
+    .cross__circle {
+      stroke:#EF4444; stroke-width:3; stroke-dasharray:166; stroke-dashoffset:166;
+      animation: stroke 0.6s cubic-bezier(.65,.0,.45,1) forwards;
+    }
+    .cross__line {
+      stroke:#EF4444; stroke-width:4; stroke-linecap:round;
+      stroke-dasharray:28; stroke-dashoffset:28;
+    }
+    .cross__line--left { animation: stroke 0.35s 0.45s cubic-bezier(.65,.0,.45,1) forwards; }
+    .cross__line--right { animation: stroke 0.35s 0.6s  cubic-bezier(.65,.0,.45,1) forwards; }
   </style>
 </head>
 <body>
@@ -131,7 +171,7 @@
           id="inputCompetencia"
           form="formAtualizarCaixa"
           required
-          placeholder=""
+          placeholder="MM-AAAA"
           inputmode="numeric"
           maxlength="7"
           pattern="^(0[1-9]|1[0-2])-[0-9]{4}$"
@@ -157,6 +197,31 @@
 </div>
 <!-- ========= /MODAL ========= -->
 
+<!-- ========= POPUP RESULTADO ========= -->
+<div id="resultToast" class="toast-backdrop" aria-hidden="true">
+  <div class="toast-card">
+    <div class="toast-icon success" id="toastIconSuccess" aria-hidden="true">
+      <svg class="checkmark" viewBox="0 0 52 52">
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark__check" fill="none" d="M14 27l7 7 16-16"/>
+      </svg>
+    </div>
+    <div class="toast-icon error" id="toastIconError" aria-hidden="true">
+      <svg class="cross" viewBox="0 0 52 52">
+        <circle class="cross__circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="cross__line cross__line--left" fill="none" d="M16 16 36 36"/>
+        <path class="cross__line cross__line--right" fill="none" d="M36 16 16 36"/>
+      </svg>
+    </div>
+    <h3 id="toastTitle">Sucesso!</h3>
+    <p id="toastMsg"></p>
+    <div class="toast-actions">
+      <button class="btn-primary" id="toastClose" type="button">OK</button>
+    </div>
+  </div>
+</div>
+<!-- ========= /POPUP RESULTADO ========= -->
+
 <script>
 (function() {
   const list = document.getElementById('cias-list');
@@ -175,7 +240,6 @@
 
   const form = document.getElementById('formAtualizarCaixa');
 
-  // === Máscara MM-AAAA mínima: só insere "-" após 2 dígitos ===
   (function attachMaskMMYYYY() {
     const el = document.getElementById('inputCompetencia');
     if (!el) return;
@@ -297,9 +361,64 @@
     if (e.target === modalBackdrop) closeModal();
   });
 
-  modalAtualizar.addEventListener('click', () => {
-    if (form.reportValidity()) {
-      form.requestSubmit();
+  const toastEl = document.getElementById('resultToast');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastMsg = document.getElementById('toastMsg');
+  const toastIconSuccess = document.getElementById('toastIconSuccess');
+  const toastIconError = document.getElementById('toastIconError');
+  const toastClose = document.getElementById('toastClose');
+
+  function showToast(type, message) {
+    toastIconSuccess.style.display = type === 'success' ? 'block' : 'none';
+    toastIconError.style.display   = type === 'error'   ? 'block' : 'none';
+    toastTitle.textContent = type === 'success' ? 'Sucesso!' : 'Ops...';
+    toastMsg.textContent = message || '';
+    toastEl.classList.add('open');
+    toastEl.setAttribute('aria-hidden', 'false');
+  }
+  function hideToast() {
+    toastEl.classList.remove('open');
+    toastEl.setAttribute('aria-hidden', 'true');
+  }
+  toastClose.addEventListener('click', hideToast);
+  toastEl.addEventListener('click', (e) => { if (e.target === toastEl) hideToast(); });
+
+  modalAtualizar.addEventListener('click', async () => {
+    if (!form.reportValidity()) return;
+
+    const url = form.getAttribute('action');
+    const fd = new FormData(form);
+    const csrftoken = document.querySelector('input[name=csrfmiddlewaretoken]').value;
+
+    const originalText = modalAtualizar.innerHTML;
+    modalAtualizar.disabled = true;
+    modalAtualizar.innerHTML = '<i class="bi bi-arrow-repeat"></i> Atualizando...';
+
+    try {
+      const resp = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRFToken': csrftoken
+        },
+        body: fd
+      });
+      const data = await resp.json().catch(() => null);
+
+      closeModal();
+
+      if (resp.ok && data && data.status === 'success') {
+        showToast('success', data.message || 'Atualizado com sucesso!');
+      } else {
+        const msg = (data && data.message) ? data.message : 'Falha ao atualizar.';
+        showToast('error', msg);
+      }
+    } catch (err) {
+      closeModal();
+      showToast('error', err?.message || 'Erro inesperado.');
+    } finally {
+      modalAtualizar.disabled = false;
+      modalAtualizar.innerHTML = originalText;
     }
   });
 })();
