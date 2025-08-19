@@ -8,6 +8,7 @@ from psycopg2.extras import execute_batch
 import numpy as np
 from typing import Dict, Tuple, Optional, List, Any, Union
 import  json
+from decimal import Decimal
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 
@@ -481,6 +482,19 @@ class DBA:
             DatabaseManager.return_connection(conn)
 
     def inserir_ou_atualizar_caixa(self, id_cia, cia, competencia, valor_bruto, valor_liquido, update=False):
+        
+        aliases = {
+            'Porto': 'Porto Seguro',
+            'Ezze': 'Ezze Seguros',
+            'Tokio': 'Tokio Marine',
+            'Swiss': 'Swiss Re',
+            'Junto': 'Junto Seguradora',
+            'Bradesco Saude': 'Bradesco Saúde'
+        }
+
+        if cia in aliases:
+            cia = aliases[cia]        
+        
         conn = DatabaseManager.get_connection()
         try:
             valor_bruto_float = float(valor_bruto.replace('.', '').replace(',', '.'))
@@ -562,6 +576,19 @@ class DBA:
         """
         Retorna o id_seguradora_quiver da cia informada, consultando a tabela_correcao_seguradora.
         """
+
+        aliases = {
+            'Porto': 'Porto Seguro',
+            'Ezze': 'Ezze Seguros',
+            'Tokio': 'Tokio Marine',
+            'Swiss': 'Swiss Re',
+            'Junto': 'Junto Seguradora',
+            'Bradesco Saude': 'Bradesco Saúde'
+        }
+
+        if cia_nome in aliases:
+            cia_nome = aliases[cia_nome]
+        
         conn = DatabaseManager.get_connection()
         try:
             with conn.cursor() as cursor:
@@ -581,5 +608,37 @@ class DBA:
         except Exception as e:
             print(f"❌ Erro ao buscar ID da seguradora: {e}")
             return None
+        finally:
+            DatabaseManager.return_connection(conn)
+
+    def consultar_caixa_por_competencia(self, competencia: str) -> List[Dict]:
+        """
+        Retorna registros de caixa_declarado para a competência informada (MM-AAAA).
+        Campos: cia, valor_bruto_declarado, valor_liq_declarado, competencia.
+        """
+        conn = DatabaseManager.get_connection()
+        try:
+            with conn.cursor() as cursor:
+                query = """
+                    SELECT cia, valor_bruto_declarado, valor_liq_declarado, competencia
+                    FROM caixa_declarado
+                    WHERE competencia = %s
+                    ORDER BY cia
+                """
+                cursor.execute(query, (competencia,))
+                rows = cursor.fetchall() or []
+
+            out = []
+            for cia, bruto, liq, comp in rows:
+                out.append({
+                    "cia": cia,
+                    "valor_bruto_declarado": float(bruto) if isinstance(bruto, (Decimal, float, int)) else bruto,
+                    "valor_liq_declarado": float(liq) if isinstance(liq, (Decimal, float, int)) else liq,
+                    "competencia": comp,
+                })
+            return out
+        except Exception as e:
+            print(f"❌ Erro ao consultar caixa_declarado: {e}")
+            return []
         finally:
             DatabaseManager.return_connection(conn)

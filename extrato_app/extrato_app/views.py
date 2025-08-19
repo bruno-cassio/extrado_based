@@ -1,6 +1,7 @@
 import os
 import json
 import threading
+from urllib import request
 from django.shortcuts import render
 from django.http import JsonResponse
 from extrato_app.CoreData.batch_runner import BatchRunner
@@ -274,8 +275,14 @@ def buscar_cias_api(request):
             id_cia = dba.get_id_cia(cia)
             if not id_cia:
                 continue
-            valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
-            valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
+            # valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
+            # valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
+            
+            
+            valor_bruto = request.POST.get(f"valor_bruto_{cia}", "0")
+            valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0")
+            
+            
             dba.inserir_ou_atualizar_caixa(
                 id_cia=id_cia,
                 cia=cia,
@@ -299,8 +306,13 @@ def buscar_cias_api(request):
                 id_cia = dba.get_id_cia(cia)
                 if not id_cia:
                     continue
-                valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
-                valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
+                
+                # valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
+                # valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
+                
+                valor_bruto = request.POST.get(f"valor_bruto_{cia}", "0")
+                valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0")                
+                
                 dba.inserir_ou_atualizar_caixa(
                     id_cia=id_cia,
                     cia=cia,
@@ -312,7 +324,7 @@ def buscar_cias_api(request):
 
         return JsonResponse({
             "status": "ok",
-            "message": "Processo concluído.",
+            "message": "Dados atualizados.",
             "cias_inseridas": cias_inseridas,
             "cias_atualizadas": ja_existem if forcar_update else []
         })
@@ -320,3 +332,19 @@ def buscar_cias_api(request):
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
+@csrf_exempt
+def consultar_caixa_api(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Método não permitido"}, status=405)
+
+    try:
+        mes = (request.POST.get("mes") or "").strip()
+        if not mes:
+            return JsonResponse({"status": "error", "message": "Informe a competência (MM-AAAA)."}, status=400)
+
+        dba = DBA()
+        dados = dba.consultar_caixa_por_competencia(mes)
+
+        return JsonResponse({"status": "ok", "dados": dados})
+    except Exception as e:
+        return JsonResponse({"status": "error", "message": str(e)}, status=500)
