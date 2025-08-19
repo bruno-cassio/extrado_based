@@ -800,3 +800,8 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-19 10:04:43,077 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-19 10:04:43,792 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-19 10:06:45,238 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-19 10:07:07,864 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-19 10:07:08,948 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-19 10:07:09,113 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-19 10:33:55,296 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-19 10:34:35,448 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
