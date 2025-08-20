@@ -465,6 +465,20 @@ class DBA:
         return success
 
     def caixa_declarado_existe(self, cia: str, competencia: str) -> bool:
+
+        aliases = {
+            'Porto': 'Porto Seguro',
+            'Ezze': 'Ezze Seguros',
+            'Tokio': 'Tokio Marine',
+            'Swiss': 'Swiss Re',
+            'Junto': 'Junto Seguradora',
+            'Bradesco Saude': 'Bradesco Saúde'
+        }
+
+        if cia in aliases:
+            cia = aliases[cia]                
+        
+        
         conn = DatabaseManager.get_connection()
         try:
             with conn.cursor() as cursor:
