@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const modalCamposCias = document.getElementById('modalCamposCias');
   const inputCompetencia = document.getElementById('inputCompetencia');
 
-  // ===== NOVO Modal Consultar
+  // ===== Modal Consultar
   const btnOpenConsulta = document.getElementById('btnOpenConsulta');
   const consultaBackdrop = document.getElementById('consultaBackdrop');
   const consultaClose = document.getElementById('consultaClose');
