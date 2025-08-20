@@ -10,7 +10,8 @@ from typing import Dict, Tuple, Optional, List, Any, Union
 import  json
 from decimal import Decimal
 import logging
-
+import json
+from django.conf import settings
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 logger = logging.getLogger(__name__)
@@ -434,7 +435,6 @@ class DBA:
         cursor = None
         success = False
         
-
         try:
             cursor = conn.cursor()
             df_filled = df_filtered.replace([pd.NA, pd.NaT, np.nan], None)
@@ -670,8 +670,7 @@ class DBA:
         Retorna o ID (string) ou None em caso de erro.
         Também imprime no console o payload salvo (debug).
         """
-        import json
-        from django.conf import settings
+
 
         if not user_name:
             user_name = "bruno.cassio"
