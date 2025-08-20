@@ -24,6 +24,8 @@ from django.shortcuts import render
 from extrato_app.CoreData.dba import DBA
 from django.views.decorators.csrf import csrf_exempt
 from extrato_app.CoreData.ds4 import processar_automaticamente
+import uuid
+
 
 
 arquivos_em_memoria = {} 
@@ -253,6 +255,9 @@ def buscar_cias_api(request):
         mes = request.POST.get("mes")
         forcar_update = request.POST.get("forcar_update", "false") == "true"
 
+        audit_event_id = request.POST.get("audit_event_id") or str(uuid.uuid4())
+        user_name = "bruno.cassio"
+
         cias = json.loads(cias_raw) if isinstance(cias_raw, str) else cias_raw
         if not isinstance(cias, list) or not cias:
             return JsonResponse({"status": "error", "message": "Selecione ao menos uma CIA."}, status=400)
@@ -269,20 +274,32 @@ def buscar_cias_api(request):
             else:
                 nao_existem.append(cia)
 
+        try:
+            dba.registrar_auditoria(
+                payload={
+                    "event": "caixa.precheck",
+                    "event_id": audit_event_id,
+                    "user": user_name,
+                    "mes": mes,
+                    "cias": cias,
+                    "resultado": {"ja_existem": ja_existem, "nao_existem": nao_existem}
+                },
+                summary=f"[precheck] user={user_name} mes={mes} ja_existem={len(ja_existem)} nao_existem={len(nao_existem)}"
+            )
+        except Exception as _:
+            pass
+
         cias_inseridas = []
+        insercoes_payload = []
 
         for cia in nao_existem:
             id_cia = dba.get_id_cia(cia)
             if not id_cia:
                 continue
-            # valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
-            # valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
-            
-            
+
             valor_bruto = request.POST.get(f"valor_bruto_{cia}", "0")
             valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0")
-            
-            
+
             dba.inserir_ou_atualizar_caixa(
                 id_cia=id_cia,
                 cia=cia,
@@ -292,6 +309,29 @@ def buscar_cias_api(request):
                 update=False
             )
             cias_inseridas.append(cia)
+            insercoes_payload.append({
+                "cia": cia,
+                "competencia": mes,
+                "novos_valores": {
+                    "valor_bruto": valor_bruto,
+                    "valor_liquido": valor_liquido
+                }
+            })
+
+        if insercoes_payload:
+            try:
+                dba.registrar_auditoria(
+                    payload={
+                        "event": "caixa.insert",
+                        "event_id": audit_event_id,
+                        "user": user_name,
+                        "mes": mes,
+                        "insercoes": insercoes_payload
+                    },
+                    summary=f"[insert] user={user_name} mes={mes} inseridas={len(insercoes_payload)}"
+                )
+            except Exception as _:
+                pass
 
         if ja_existem and not forcar_update:
             return JsonResponse({
@@ -302,17 +342,17 @@ def buscar_cias_api(request):
             })
 
         if ja_existem and forcar_update:
+            changes = []
             for cia in ja_existem:
                 id_cia = dba.get_id_cia(cia)
                 if not id_cia:
                     continue
-                
-                # valor_bruto = (request.POST.get(f"valor_bruto_{cia}", "0") or "").replace(".", "").replace(",", ".")
-                # valor_liquido = (request.POST.get(f"valor_liquido_{cia}", "0") or "").replace(".", "").replace(",", ".")
-                
+
+                antes = dba.obter_caixa_declarado(cia, mes)
+
                 valor_bruto = request.POST.get(f"valor_bruto_{cia}", "0")
-                valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0")                
-                
+                valor_liquido = request.POST.get(f"valor_liquido_{cia}", "0")
+
                 dba.inserir_ou_atualizar_caixa(
                     id_cia=id_cia,
                     cia=cia,
@@ -321,6 +361,32 @@ def buscar_cias_api(request):
                     valor_liquido=valor_liquido,
                     update=True
                 )
+
+                changes.append({
+                    "cia": cia,
+                    "antes": antes,
+                    "depois": {
+                        "id_seguradora_quiver": id_cia,
+                        "cia": cia,
+                        "competencia": mes,
+                        "valor_bruto_declarado": valor_bruto,
+                        "valor_liq_declarado": valor_liquido
+                    }
+                })
+
+            try:
+                dba.registrar_auditoria(
+                    payload={
+                        "event": "caixa.update",
+                        "event_id": audit_event_id,
+                        "user": user_name,
+                        "mes": mes,
+                        "changes": changes
+                    },
+                    summary=f"[update] user={user_name} mes={mes} atualizadas={len(changes)}"
+                )
+            except Exception as _:
+                pass
 
         return JsonResponse({
             "status": "ok",
@@ -345,6 +411,21 @@ def consultar_caixa_api(request):
         dba = DBA()
         dados = dba.consultar_caixa_por_competencia(mes)
 
+        try:
+            dba.registrar_auditoria(
+                payload={
+                    "event": "caixa.consulta",
+                    "event_id": str(uuid.uuid4()),
+                    "user": "bruno.cassio",
+                    "mes": mes,
+                    "result_count": len(dados or [])
+                },
+                summary=f"[consulta] user=bruno.cassio mes={mes} rows={len(dados or [])}"
+            )
+        except Exception as _:
+            pass
+
         return JsonResponse({"status": "ok", "dados": dados})
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
+    

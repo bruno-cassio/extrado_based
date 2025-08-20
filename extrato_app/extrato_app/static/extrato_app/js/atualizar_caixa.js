@@ -1,3 +1,11 @@
+let AUDIT_EVENT_ID = null;
+function ensureAuditEventId() {
+  if (!AUDIT_EVENT_ID) {
+    AUDIT_EVENT_ID = (crypto?.randomUUID?.() || Math.random().toString(36).slice(2));
+  }
+  return AUDIT_EVENT_ID;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const list = document.getElementById('cias-list');
   const selectedCount = document.getElementById('selected-count');
@@ -342,6 +350,11 @@ document.addEventListener('DOMContentLoaded', function () {
     fd.set('cias', JSON.stringify(selected));
     if (forcarUpdate) fd.set('forcar_update', 'true');
 
+    // >>> auditoria: correlaciona pré-check e confirmação
+    const eventId = ensureAuditEventId();
+    fd.set('audit_event_id', eventId);
+    console.debug('[AUDIT] event_id=', eventId, 'forcar_update=', !!forcarUpdate);
+
     const csrftoken = document.querySelector('input[name=csrfmiddlewaretoken]')?.value || '';
 
     const originalText = modalAtualizar.innerHTML;
@@ -361,8 +374,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (resp.ok && data){
         if (data.status === 'ok'){
           showToast('success', data.message || 'Processo concluído.');
+          // terminou o fluxo -> libera novo event_id para próxima rodada
+          AUDIT_EVENT_ID = null;
         } else if (data.status === 'existe'){
           openConfirm(data.cias_existentes || [], data.cias_inseridas || []);
+          // mantém o mesmo event_id até a confirmação
         } else {
           showToast('error', data.message || 'Falha ao processar.');
         }

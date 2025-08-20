@@ -9,8 +9,11 @@ import numpy as np
 from typing import Dict, Tuple, Optional, List, Any, Union
 import  json
 from decimal import Decimal
+import logging
+
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
+logger = logging.getLogger(__name__)
 
 class DBA:
     
@@ -478,7 +481,6 @@ class DBA:
         if cia in aliases:
             cia = aliases[cia]                
         
-        
         conn = DatabaseManager.get_connection()
         try:
             with conn.cursor() as cursor:
@@ -656,3 +658,102 @@ class DBA:
             return []
         finally:
             DatabaseManager.return_connection(conn)
+
+    def registrar_auditoria(
+        self,
+        payload: dict,
+        summary: str = "",
+        user_name: str | None = None
+    ) -> str | None:
+        """
+        Insere um registro de auditoria na extrato_audit.
+        Retorna o ID (string) ou None em caso de erro.
+        Também imprime no console o payload salvo (debug).
+        """
+        import json
+        from django.conf import settings
+
+        if not user_name:
+            user_name = "bruno.cassio"
+
+        payload_json = json.dumps(payload, ensure_ascii=False)
+
+        if getattr(settings, "DEBUG", True):
+            print("🧾 AUDIT ► preparando insert")
+            print(f"   user: {user_name}")
+            print(f"   summary: {summary}")
+            print(f"   payload: {payload_json}")
+
+        conn = DatabaseManager.get_connection()
+        try:
+            with conn.cursor() as cursor:
+                cursor.execute(
+                    """
+                    INSERT INTO extrato_audit (user_name, payload, summary_text)
+                    VALUES (%s, %s::jsonb, %s)
+                    RETURNING id
+                    """,
+                    (user_name, payload_json, summary)
+                )
+                audit_id = cursor.fetchone()[0]
+                conn.commit()
+
+
+            if getattr(settings, "DEBUG", True):
+                print(f"✅ AUDIT ► salvo id={audit_id}")
+
+            logger.info(
+                "AUDIT saved",
+                extra={"audit_id": str(audit_id), "user_name": user_name, "summary": summary}
+            )
+            return str(audit_id)
+        except Exception as e:
+            print(f"❌ Erro ao registrar auditoria: {e}")
+            logger.exception("Erro ao registrar auditoria")
+            return None
+        finally:
+            DatabaseManager.return_connection(conn)
+
+
+    def obter_caixa_declarado(self, cia: str, competencia: str) -> dict | None:
+        """
+        Retorna o registro atual de caixa_declarado para (cia, competencia),
+        já com normalização de aliases.
+        """
+        aliases = {
+            'Porto': 'Porto Seguro',
+            'Ezze': 'Ezze Seguros',
+            'Tokio': 'Tokio Marine',
+            'Swiss': 'Swiss Re',
+            'Junto': 'Junto Seguradora',
+            'Bradesco Saude': 'Bradesco Saúde'
+        }
+        if cia in aliases:
+            cia = aliases[cia]
+
+        conn = DatabaseManager.get_connection()
+        try:
+            with conn.cursor() as cursor:
+                cursor.execute("""
+                    SELECT id_seguradora_quiver, cia, valor_bruto_declarado, valor_liq_declarado, competencia
+                    FROM caixa_declarado
+                    WHERE cia = %s AND competencia = %s
+                    LIMIT 1
+                """, (cia, competencia))
+                row = cursor.fetchone()
+                if not row:
+                    return None
+                id_cia, cia_nome, bruto, liq, comp = row
+                return {
+                    "id_seguradora_quiver": id_cia,
+                    "cia": cia_nome,
+                    "valor_bruto_declarado": float(bruto) if bruto is not None else None,
+                    "valor_liq_declarado": float(liq) if liq is not None else None,
+                    "competencia": comp
+                }
+        except Exception as e:
+            print(f"❌ Erro ao obter caixa_declarado (antes do update): {e}")
+            return None
+        finally:
+            DatabaseManager.return_connection(conn)
+            
