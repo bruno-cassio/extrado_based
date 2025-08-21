@@ -1073,3 +1073,4 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-21 11:54:36,198 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 16 CIAs (solicitadas + geradas anteriormente)
 2025-08-21 11:54:36,585 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 4.37 segundos
 2025-08-21 13:48:28,528 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-08-21 13:48:54,165 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
