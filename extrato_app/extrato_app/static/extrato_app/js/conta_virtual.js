@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // showNotification('Iniciando extração, aguarde...', 'loading');
-        // showDownloadPopup();
+        showDownloadPopup();
 
         try {
             const formData = new FormData(event.target);
