@@ -124,39 +124,6 @@ def atualizar_caixa(request):
     cias_opt = [cia.strip() for cia in cias_raw.split(",") if cia.strip()]
     return render(request, 'atualizar_caixa.html', {'cias_opt': cias_opt})
 
-# def executar_atualizar_caixa(request):  
-#     if request.method == "POST":
-#         cia = request.POST.get("cia")
-#         mes = request.POST.get("mes")
-#         valor = request.POST.get("valor")
-
-#         config_path = os.path.join(os.getcwd(), "config.json")
-#         with open(config_path, "w", encoding="utf-8") as f:
-#             json.dump({
-#                 "cia_corresp": cia,
-#                 "competencia": mes
-#             }, f, indent=2, ensure_ascii=False)
-
-#         dba = DBA()
-#         dba.cia_corresp = cia
-#         existing, non_existing, lista_cias, id_cia = dba.get_and_compare_cias()
-
-#         print("✅ Cias existentes:", existing)
-#         print("❌ Cias não encontradas:", non_existing)
-#         print("📄 Lista final de cias:", lista_cias)
-#         print("🆔 ID da CIA:", id_cia)
-#         print("💰 Valor a atualizar:", valor)
-
-#         return render(request, 'extrato_app/caixa_resultado.html', {
-#             'existing': existing,
-#             'non_existing': non_existing,
-#             'id_cia': id_cia,
-#             'valor': valor,
-#             'mes': mes,
-#         })
-
-#     return HttpResponse("Método não permitido", status=405)
-
 def executar_atualizar_caixa(request):
     if request.method != "POST":
         return JsonResponse({"status": "error", "message": "Método não permitido"}, status=405)
