@@ -296,7 +296,6 @@ class DataHandler:
             df = df.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
             # print(df[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
 
-
             df['id_seguradora_quiver'] = id_cia
             df.columns = [col.lower() for col in df.columns]
             

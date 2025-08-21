@@ -27,7 +27,6 @@ from extrato_app.CoreData.ds4 import processar_automaticamente
 import uuid
 
 
-
 arquivos_em_memoria = {} 
 
 def index(request):
@@ -66,7 +65,7 @@ def iniciar_extracao(request):
         try:
             runner = BatchRunner()
 
-            resultados = runner.executar_combinações(cias_selected, competencia)
+            resultados = runner.executar_combinacoes(cias_selected, competencia)
 
             if resultados.get("status") not in ["completed", "success"]:
                 return JsonResponse({
@@ -395,4 +394,3 @@ def consultar_caixa_api(request):
         return JsonResponse({"status": "ok", "dados": dados})
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
-    

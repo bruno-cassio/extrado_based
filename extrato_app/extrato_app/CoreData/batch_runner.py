@@ -101,7 +101,7 @@ class BatchRunner:
         finally:
             DatabaseManager.return_connection(conn)
 
-    def executar_combinações(self, cias: list, competencia_str: str) -> dict:
+    def executar_combinacoes(self, cias: list, competencia_str: str) -> dict:
         """
         Executa o processamento para as combinações de CIA e competência
         
@@ -128,7 +128,6 @@ class BatchRunner:
 
             for cia in cias_ja_processadas:
                 logs_pulados.append(f"[SUCESSO] {cia} - Conta Virtual gerada para {competencia_formatada}")
-
 
             if set(cias_ja_processadas) == set(cias):
                 logger.info("Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.")

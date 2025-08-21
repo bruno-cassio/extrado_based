@@ -455,7 +455,6 @@ class DBA:
             print(f"✅ {len(df_filled)} linhas importadas em {table_name}")
             success = True
 
-            
         except Exception as e:
             conn.rollback()
             print(f"❌ Erro na importação de {table_name}: {e}")

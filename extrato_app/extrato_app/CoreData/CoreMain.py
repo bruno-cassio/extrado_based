@@ -137,7 +137,6 @@ class DataImporter:
         print('Iniciando importação principal...')
         overall_success = True
         
-
         for table_name, data in processed_data.items():
             print(f"📊 Importando {table_name}...")
             conn = DatabaseManager.get_connection()
@@ -191,7 +190,6 @@ class DataImporter:
                 print("\n⚠️ Importação concluída com erros")
             if not export_success:
                 print("\n⚠️ Exportação para Excel concluída com erros")
-
 
 
         end = time.perf_counter()

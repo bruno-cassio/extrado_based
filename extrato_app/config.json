@@ -1,4 +1,6 @@
 {
-  "cia_corresp": null,
-  "competencia": "10-2025"
+  "cia_corresp": "Ezze",
+  "competencia": "01-2025",
+  "ref_nom": "nm_corretor",
+  "input_history_tables": "cont_prod_ezze"
 }
