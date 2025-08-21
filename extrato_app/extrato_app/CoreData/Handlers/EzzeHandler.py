@@ -116,7 +116,7 @@ class EzzeHandler:
 
         df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
 
-        print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
+        # print(f"⏱️ Tempo de leitura otimizada: {end - start:.2f}s")
 
         # df = df[df['cd_apolice'].notna()]
         print('====================================================================== VALIDAÇÃO DENTRO DE EZZE HANDLER ======================================================================')
@@ -131,7 +131,7 @@ class EzzeHandler:
 
         print(df[[coluna, 'aba_origem', 'premio_rec', 'valor_cv', 'valor_vi', 'valor_as']].head())
         print(f"✅ DataFrame salvo em: {output_file}")
-        end = time.perf_counter()
+        # end = time.perf_counter()
         
     def calcular_premio_relatorio(self, df, coluna, fator, table_name):
         
