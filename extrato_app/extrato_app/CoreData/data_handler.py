@@ -14,25 +14,6 @@ from datetime import datetime
 from extrato_app.CoreData.handlers_registry import CIA_HANDLERS
 
 
-
-
-# from extrato_app.CoreData.Handlers.BradescoHandler import BradescoHandler
-# from extrato_app.CoreData.Handlers.SuhaiHandler import SuhaiHandler
-# from extrato_app.CoreData.Handlers.AllianzHandler import AllianzHandler
-# from extrato_app.CoreData.Handlers.JuntoHandler import JuntoHandler
-# from extrato_app.CoreData.Handlers.HDIHandler import HDIHandler
-# from extrato_app.CoreData.Handlers.PortoHandler import PortoHandler
-# from extrato_app.CoreData.Handlers.BradescoSaudeHandler import BradescoSaudeHandler
-# from extrato_app.CoreData.Handlers.YelumHandler import YelumHandler
-# from extrato_app.CoreData.Handlers.AxaHandler import AxaHandler
-# from extrato_app.CoreData.Handlers.ZurichHandler import ZurichHandler
-# from extrato_app.CoreData.Handlers.ChubbHandler import ChubbHandler
-# from extrato_app.CoreData.Handlers.TokioHandler import TokioHandler
-# from extrato_app.CoreData.Handlers.EzzeHandler import EzzeHandler
-# from extrato_app.CoreData.Handlers.SompoHandler import SompoHandler
-# from extrato_app.CoreData.Handlers.MapfreHandler import MapfreHandler
-# from extrato_app.CoreData.Handlers.SwissHandler import SwissHandler
-
 pd.options.mode.chained_assignment = None
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
@@ -340,7 +321,6 @@ class DataHandler:
 
         return processed_dfs
     
-    
     def cons_div(self, df):
         print('validando as colunas para consolidação divisional...')
         print(df.columns)
@@ -371,27 +351,14 @@ class DataHandler:
         for table_name, data in processed_data.items():
             try:
                 df = data['df'].copy()
-                # df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
+
                 print("========================= validação pre export. =========================")
                 print(df.head())
 
-                # if df.empty:
-                #     print(f"⚠️ DataFrame vazio para {table_name}, ignorando...")
-                #     continue
-                    
-                # file_name = f"{table_name}.xlsx"
-                # file_path = os.path.join(output_folder, file_name)
-                
-                # with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
-                #     df.to_excel(writer, index=False, sheet_name='dados')
-                #     df_cons = self.cons_div(df)
-                #     if df_cons is not None:
-                #         df_cons.to_excel(writer, index=False, sheet_name='consolidado_div')
-                # print(f"✅ {table_name} exportado ({len(df)} linhas) -> {file_path}")
-                
             except Exception as e:
                 print(f"❌ Erro ao exportar {table_name}: {str(e)}")
                 overall_success = False
         
         return overall_success
+
     
