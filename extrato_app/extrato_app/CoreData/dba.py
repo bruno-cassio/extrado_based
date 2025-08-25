@@ -431,40 +431,83 @@ class DBA:
         finally:
             DatabaseManager.return_connection(conn)
 
-    def import_main(self, conn,df_filtered, table_name, ordered_cols, ordered_cols_escaped):
+    def import_main(self, conn, df_filtered, table_name, ordered_cols, ordered_cols_escaped):
         cursor = None
         success = False
-        
+
         try:
             cursor = conn.cursor()
+
             df_filled = df_filtered.replace([pd.NA, pd.NaT, np.nan], None)
-            competencia = df_filled['competencia'].iloc[0] if 'competencia' in df_filled.columns else self.competencia
-            
+            competencia = (
+                df_filled['competencia'].iloc[0]
+                if 'competencia' in df_filled.columns and df_filled['competencia'].notna().any()
+                else self.competencia
+            )
+
+            lock_key = f"{table_name}:{competencia}"
+            cursor.execute("SELECT pg_advisory_xact_lock(hashtext(%s)::bigint);", (lock_key,))
+
+            schema, tbl = ('public', table_name)
+            if '.' in table_name:
+                schema, tbl = table_name.split('.', 1)
+
+            cursor.execute("""
+                SELECT 1
+                FROM information_schema.columns
+                WHERE table_schema = %s
+                AND table_name   = %s
+                AND column_name  = 'version_id';
+            """, (schema, tbl))
+            has_version_id = cursor.fetchone() is not None
+
+            next_version_id = None
+            if has_version_id:
+                cursor.execute(
+                    f"SELECT COALESCE(MAX(version_id), 0) + 1 FROM {table_name} WHERE competencia = %s;",
+                    (competencia,)
+                )
+                next_version_id = cursor.fetchone()[0] or 1
+
+                if 'version_id' not in df_filled.columns:
+                    df_filled['version_id'] = int(next_version_id)
+                else:
+                    df_filled['version_id'] = int(next_version_id)
+
+                if 'version_id' not in ordered_cols:
+                    ordered_cols = list(ordered_cols) + ['version_id']
+                if 'version_id' not in ordered_cols_escaped:
+                    ordered_cols_escaped = list(ordered_cols_escaped) + ['version_id']
+
             for col in df_filled.columns:
                 if pd.api.types.is_datetime64_any_dtype(df_filled[col]):
                     df_filled[col] = pd.to_datetime(df_filled[col], errors='coerce').replace({pd.NaT: None})
-            
+
+            df_filled = df_filled.reindex(columns=ordered_cols)
+
             sql = f"INSERT INTO {table_name} ({','.join(ordered_cols_escaped)}) VALUES ({','.join(['%s']*len(ordered_cols))})"
             print(sql)
-            
+
+            from tqdm import tqdm
             with tqdm(total=len(df_filled), desc=f"Importando {table_name}") as pbar:
                 execute_batch(cursor, sql, [tuple(x) for x in df_filled.values], page_size=1000)
                 pbar.update(len(df_filled))
-            
+
             conn.commit()
-            print(f"✅ {len(df_filled)} linhas importadas em {table_name}")
+            print(f"✅ {len(df_filled)} linhas importadas em {table_name} (version_id={next_version_id if has_version_id else 'N/A'})")
             success = True
 
         except Exception as e:
             conn.rollback()
             print(f"❌ Erro na importação de {table_name}: {e}")
             success = False
-            
+
         finally:
             if cursor:
                 cursor.close()
-        
+
         return success
+
 
     def caixa_declarado_existe(self, cia: str, competencia: str) -> bool:
 
