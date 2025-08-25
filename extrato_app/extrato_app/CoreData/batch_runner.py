@@ -179,7 +179,6 @@ class BatchRunner:
             cias = [cia for cia in cias if cia not in cias_ja_processadas]
             logger.info(f" CIAs que ainda serão processadas: {cias}")
             
-            
             resultados = {}
             df_resumos = []
 

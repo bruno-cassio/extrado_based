@@ -394,3 +394,4 @@ def consultar_caixa_api(request):
         return JsonResponse({"status": "ok", "dados": dados})
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
+
