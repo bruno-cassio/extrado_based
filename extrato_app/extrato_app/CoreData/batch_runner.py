@@ -293,6 +293,8 @@ class BatchRunner:
         """
         Consulta o resumo final dos dados processados.
         Agora também inclui CIAs que já têm Conta Virtual gerada previamente.
+        Passa a considerar apenas a maior `version_id` por (CIA x competência),
+        quando a coluna existir na tabela de destino.
         """
 
         logger.info(f"Iniciando geração de resumo final para competência {competencia}")
@@ -301,10 +303,12 @@ class BatchRunner:
         tabela_list = os.getenv("input_history_tables", "").split(",")
         cia_list = os.getenv("cia_corresp", "").split(",")
 
-        mapeamento = dict(zip([cia.strip() for cia in cia_list], [tabela.strip() for tabela in tabela_list]))
+        mapeamento = dict(
+            zip([cia.strip() for cia in cia_list], [tabela.strip() for tabela in tabela_list])
+        )
 
+        # CIAs solicitadas + CIAs que já possuem CV gerada na competência
         cias_existentes = self.verificar_geracao_anterior(cias, competencia)
-
         todas_cias = list(set(cias + cias_existentes))
 
         logger.info(f"Consultando resumo para {len(todas_cias)} CIAs (solicitadas + geradas anteriormente)")
@@ -324,24 +328,61 @@ class BatchRunner:
                         logger.warning(f"Cia '{cia}' não encontrada no mapeamento, pulando...")
                         continue
 
-                    query = f"""
-                        SELECT 
-                            id_seguradora_quiver::int4,
-                            nome_unidade,
-                            COALESCE(SUM(premio_rec), 0)::float8 AS total_premio_rec,
-                            COALESCE(SUM(valor_cv), 0)::float8 AS total_cv,
-                            COALESCE(SUM(valor_vi), 0)::float8 AS total_vi,
-                            COALESCE(SUM(valor_as), 0)::float8 AS total_as
-                        FROM 
-                            {tabela}
-                        WHERE 
-                            competencia = %s
-                        GROUP BY 
-                            id_seguradora_quiver, nome_unidade;
+                    # Detecta schema e nome da tabela para a checagem no information_schema
+                    schema = "public"
+                    table_name = tabela
+                    if "." in tabela:
+                        schema, table_name = tabela.split(".", 1)
+
+                    # Verifica se a coluna version_id existe
+                    check_sql = """
+                        SELECT COUNT(*) 
+                        FROM information_schema.columns
+                        WHERE table_schema = %s
+                        AND table_name   = %s
+                        AND column_name  = 'version_id';
                     """
+                    cursor.execute(check_sql, (schema, table_name))
+                    has_version_id = cursor.fetchone()[0] > 0
+
+                    if has_version_id:
+                        query = f"""
+                            WITH latest AS (
+                                SELECT MAX(version_id) AS max_version
+                                FROM {tabela}
+                                WHERE competencia = %s
+                            )
+                            SELECT 
+                                id_seguradora_quiver::int4,
+                                nome_unidade,
+                                COALESCE(SUM(premio_rec), 0)::float8 AS total_premio_rec,
+                                COALESCE(SUM(valor_cv), 0)::float8    AS total_cv,
+                                COALESCE(SUM(valor_vi), 0)::float8    AS total_vi,
+                                COALESCE(SUM(valor_as), 0)::float8    AS total_as
+                            FROM {tabela}
+                            WHERE competencia = %s
+                            AND version_id = (SELECT max_version FROM latest)
+                            GROUP BY id_seguradora_quiver, nome_unidade;
+                        """
+                        params = (competencia, competencia)
+                    else:
+                        # Fallback para tabelas antigas sem version_id
+                        query = f"""
+                            SELECT 
+                                id_seguradora_quiver::int4,
+                                nome_unidade,
+                                COALESCE(SUM(premio_rec), 0)::float8 AS total_premio_rec,
+                                COALESCE(SUM(valor_cv), 0)::float8    AS total_cv,
+                                COALESCE(SUM(valor_vi), 0)::float8    AS total_vi,
+                                COALESCE(SUM(valor_as), 0)::float8    AS total_as
+                            FROM {tabela}
+                            WHERE competencia = %s
+                            GROUP BY id_seguradora_quiver, nome_unidade;
+                        """
+                        params = (competencia,)
 
                     try:
-                        cursor.execute(query, (competencia,))
+                        cursor.execute(query, params)
                         resultados = cursor.fetchall()
 
                         for row in resultados:
@@ -352,7 +393,7 @@ class BatchRunner:
                                 "total_premio_rec": float(row[2]),
                                 "total_cv": float(row[3]),
                                 "total_vi": float(row[4]),
-                                "total_as": float(row[5])
+                                "total_as": float(row[5]),
                             })
 
                     except Exception as e:
@@ -373,3 +414,4 @@ class BatchRunner:
 
         finally:
             DatabaseManager.return_connection(conn)
+
