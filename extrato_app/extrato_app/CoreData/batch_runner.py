@@ -328,13 +328,11 @@ class BatchRunner:
                         logger.warning(f"Cia '{cia}' não encontrada no mapeamento, pulando...")
                         continue
 
-                    # Detecta schema e nome da tabela para a checagem no information_schema
                     schema = "public"
                     table_name = tabela
                     if "." in tabela:
                         schema, table_name = tabela.split(".", 1)
 
-                    # Verifica se a coluna version_id existe
                     check_sql = """
                         SELECT COUNT(*) 
                         FROM information_schema.columns
