@@ -3737,3 +3737,5 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-26 11:38:04,640 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-26 11:38:04,640 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=74 • Atualizar Relatórios • Hdi • 01-2025 • v1
 2025-08-26 11:40:36,519 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 12:06:01,735 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 13:12:18,671 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
