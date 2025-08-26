@@ -10,6 +10,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
+
+
+<style>
+  .toast-backdrop{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.45);align-items:center;justify-content:center;padding:16px}
+  .toast-backdrop.open{display:flex}
+  .toast-card{width:min(520px,92vw);background:#fff;color:#222;border-radius:16px;padding:20px 20px 16px;box-shadow:0 14px 44px rgba(0,0,0,.22);text-align:center;animation:toastIn .18s ease-out}
+  @keyframes toastIn{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .toast-icon{display:none;margin:4px auto 10px}
+  .toast-icon svg{width:86px;height:86px;display:block;margin:0 auto}
+  .toast-actions{margin-top:10px;display:flex;justify-content:center}
+  .checkmark__circle{stroke:#22C55E;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:166;stroke-dashoffset:166;animation:stroke .6s cubic-bezier(.65,0,.45,1) forwards}
+  .checkmark__check{transform-origin:50% 50%;stroke:#22C55E;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:48;stroke-dashoffset:48;animation:stroke .4s .4s cubic-bezier(.65,0,.45,1) forwards}
+  @keyframes stroke{to{stroke-dashoffset:0}}
+  .cross__circle{stroke:#EF4444;stroke-width:3;stroke-dasharray:166;stroke-dashoffset:166;animation:stroke .6s cubic-bezier(.65,0,.45,1) forwards}
+  .cross__line{stroke:#EF4444;stroke-width:4;stroke-linecap:round;stroke-dasharray:28;stroke-dashoffset:28}
+  .cross__line--left{animation:stroke .35s .45s cubic-bezier(.65,0,.45,1) forwards}
+  .cross__line--right{animation:stroke .35s .6s cubic-bezier(.65,0,.45,1) forwards}
+</style>
+
+
+
 </head>
 <body>
 
@@ -26,11 +47,10 @@
   <div class="container">
     <nav class="top-tabs">
       <a href="/atualizar-relatorios" class="tab-btn {% if '/atualizar-relatorios' in request.path %}active{% endif %}">
-
         <i class="bi bi-arrow-clockwise"></i>
         Atualizar Relatórios
       </a>
-      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}" >
+      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
         <i class="bi bi-database-fill"></i>
         Consolidação Conta Virtual
       </a>
@@ -117,6 +137,53 @@
       <p>© 2025 Grupo GC - Todos os direitos reservados</p>
     </div>
   </footer>
+</div>
+
+
+<div id="notification" class="notification popup-hidden" aria-live="polite" aria-atomic="true">
+  <i id="notification-icon"></i>
+  <span id="notification-message"></span>
+</div>
+
+
+<div id="download-popup" class="popup popup-hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-content">
+    <div class="spinner"></div>
+    <p id="popup-title">Processando atualização dos relatórios... aguarde.</p>
+  </div>
+</div>
+
+
+<script>
+  (function () {
+    const csrfInput = document.querySelector('input[name="csrfmiddlewaretoken"]');
+    if (csrfInput) {
+      window.csrfToken = csrfInput.value;
+    }
+  })();
+</script>
+
+<div id="resultToast" class="toast-backdrop" aria-hidden="true">
+  <div class="toast-card">
+    <div class="toast-icon success" id="toastIconSuccess" aria-hidden="true">
+      <svg class="checkmark" viewBox="0 0 52 52">
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark__check" fill="none" d="M14 27l7 7 16-16"/>
+      </svg>
+    </div>
+    <div class="toast-icon error" id="toastIconError" aria-hidden="true">
+      <svg class="cross" viewBox="0 0 52 52">
+        <circle class="cross__circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="cross__line cross__line--left" fill="none" d="M16 16 36 36"/>
+        <path class="cross__line cross__line--right" fill="none" d="M36 16 16 36"/>
+      </svg>
+    </div>
+    <h3 id="toastTitle">Sucesso!</h3>
+    <p id="toastMsg"></p>
+    <div class="toast-actions">
+      <button class="btn-primary" id="toastClose" type="button">OK</button>
+    </div>
+  </div>
 </div>
 
 <script src="{% static 'extrato_app/js/atualizar_relatorios.js' %}"></script>

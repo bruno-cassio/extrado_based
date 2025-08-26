@@ -33,9 +33,7 @@ urlpatterns = [
     path("api/buscar-cias/", views.buscar_cias_api, name="buscar_cias_api"),
     path("api/verificar-relatorios", views.verificar_relatorios_view, name="verificar_relatorios"),
     path("consultar-caixa", views.consultar_caixa_api, name="consultar_caixa_api"),
-
-
-
+    path('api/atualizar-relatorios', views.api_atualizar_relatorios, name='api_atualizar_relatorios')
 ]
 
 if settings.DEBUG:

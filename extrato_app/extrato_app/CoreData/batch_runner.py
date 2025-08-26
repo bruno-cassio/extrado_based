@@ -20,6 +20,7 @@ from io import BytesIO
 from django.http import HttpResponse
 from django.core.cache import cache
 from django.conf import settings
+from .dba import DBA, DatabaseManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -413,3 +414,117 @@ class BatchRunner:
         finally:
             DatabaseManager.return_connection(conn)
 
+    def _map_cia_to_table(self):
+        load_dotenv()
+        tabela_list = os.getenv("input_history_tables", "").split(",")
+        cia_list = os.getenv("cia_corresp", "").split(",")
+        return dict(zip([c.strip() for c in cia_list], [t.strip() for t in tabela_list]))
+
+    def _has_column(self, conn, tabela, col_name="version_id"):
+        schema, tbl = ("public", tabela)
+        if "." in tabela:
+            schema, tbl = tabela.split(".", 1)
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT 1 FROM information_schema.columns
+                WHERE table_schema=%s AND table_name=%s AND column_name=%s
+            """, (schema, tbl, col_name))
+            return cur.fetchone() is not None
+
+    def _max_version_for(self, conn, tabela, competencia):
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT COALESCE(MAX(version_id), 0) FROM {tabela} WHERE competencia=%s", (competencia,))
+            v = cur.fetchone()[0]
+            return int(v or 0)
+
+    def executar_atualizacao_relatorios(self, cias: list, competencia_str: str,
+                                        user_name: str = "bruno.cassio",
+                                        audit_event_id: str | None = None) -> dict:
+        """
+        Reprocessa SEMPRE as CIAs, inserindo nova versão (version_id = MAX+1) e NÃO gera resumo.
+        Também registra auditoria em extrato_audit por CIA/competência.
+        """
+        logs = []
+        resultados = {}
+
+        mes, ano = self.validar_competencia(competencia_str)
+        competencia_formatada = f"{mes:02d}-{ano}"
+        logger.info(f"[Atualizar Relatórios] CIAs={cias} | competência={competencia_formatada}")
+
+        mapeamento = self._map_cia_to_table()
+        dba = DBA()
+
+        conn = DatabaseManager.get_connection()
+        if not conn:
+            return {'status': 'error', 'mensagem': 'Conexão com o banco indisponível'}
+
+        try:
+            for cia in cias:
+                chave = f"{cia}_{competencia_formatada}"
+                tabela = mapeamento.get(cia)
+                try:
+                    atualizar_config("cia_corresp", cia)
+                    atualizar_config("competencia", competencia_formatada)
+                    processar_automaticamente(cia, competencia_formatada)
+
+                    importer = DataImporter(cia_manual=cia, competencia_manual=competencia_formatada)
+                    success, processed_data = importer.execute_pipeline()
+
+                    new_version = None
+                    if tabela and self._has_column(conn, tabela, "version_id"):
+                        new_version = self._max_version_for(conn, tabela, competencia_formatada)
+
+                    payload = {
+                        "action": "atualizar_relatorios",
+                        "audit_event_id": audit_event_id,
+                        "cia": cia,
+                        "competencia": competencia_formatada,
+                        "tabela": tabela,
+                        "version_id": new_version,
+                        "rows_imported": (processed_data or {}).get("rows"),
+                        "status": "success" if success else "error",
+                    }
+                    resumo = f"Atualizar Relatórios • {cia} • {competencia_formatada}" + (f" • v{new_version}" if new_version else "")
+
+                    try:
+                        audit_id = dba.registrar_auditoria(payload=payload, summary=resumo, user_name=user_name)
+                        logger.info(f"[AUDIT] extrato_audit.id={audit_id} • {resumo}")
+                    except Exception as e:
+                        logger.warning(f"[AUDIT][FALHA] {cia} • {competencia_formatada}: {e}")
+
+                    resultados[chave] = {'success': bool(success), 'version_id': new_version}
+                    logs.append(f"[{'IMPORTADO' if success else 'FALHA'}] {cia} - {competencia_formatada} (v{new_version})")
+
+                except Exception as e:
+                    logger.exception(f"[ERRO] {cia} - {competencia_formatada}: {e}")
+                    try:
+                        dba.registrar_auditoria(
+                            payload={
+                                "action": "atualizar_relatorios",
+                                "audit_event_id": audit_event_id,
+                                "cia": cia,
+                                "competencia": competencia_formatada,
+                                "tabela": tabela,
+                                "version_id": None,
+                                "status": "error",
+                                "error": str(e),
+                            },
+                            summary=f"Atualizar Relatórios • {cia} • {competencia_formatada} • ERRO",
+                            user_name=user_name,
+                        )
+                    except Exception:
+                        pass
+                    resultados[chave] = {'success': False, 'error': str(e)}
+                    logs.append(f"[ERRO] {cia} - {competencia_formatada}: {e}")
+
+            status = 'success' if all(v.get('success') for v in resultados.values()) else ('partial' if any(v.get('success') for v in resultados.values()) else 'error')
+            return {
+                'status': status,
+                'mensagem': 'Atualização concluída (sem gerar resumo).',
+                'resultados': resultados,
+                'log': logs,
+            }
+        finally:
+            DatabaseManager.return_connection(conn)
+            
+            

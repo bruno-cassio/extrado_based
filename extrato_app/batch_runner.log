@@ -3563,3 +3563,177 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-25 17:17:17,765 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
 2025-08-25 17:24:34,208 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
 2025-08-25 17:25:27,581 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-26 09:11:39,620 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-26 09:19:36,902 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-26 09:19:54,468 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 09:19:54,469 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-26 09:19:54,469 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-26 09:19:54,469 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 09:19:54,471 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 09:19:54,480 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 09:19:54,482 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 09:19:54,482 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 09:19:54,483 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 09:19:54,485 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 09:19:54,487 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 09:19:54,488 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 09:27:50,929 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\dba.py changed, reloading.
+2025-08-26 09:54:50,698 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 09:54:54,564 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 09:55:19,770 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 09:55:54,849 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:55:58,578 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:56:08,358 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:56:16,020 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:56:44,662 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:56:47,463 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 09:58:42,983 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-08-26 09:58:46,050 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 09:58:50,024 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 09:58:59,232 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 09:59:15,004 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 09:59:15,004 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-26 09:59:15,005 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-26 09:59:15,006 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 09:59:15,012 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 09:59:15,020 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 09:59:15,021 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 09:59:15,022 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 09:59:15,023 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 09:59:15,024 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 09:59:15,027 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 09:59:15,029 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 09:59:47,929 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 10:00:28,425 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 10:00:34,948 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:00:58,482 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:00:58,483 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 10:00:59,535 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:00:59,535 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 10:28:05,479 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:28:59,762 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:29:11,626 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:29:17,073 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:29:17,074 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-26 10:29:17,074 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-26 10:29:17,074 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:29:17,077 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:29:17,082 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:29:17,083 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 10:29:17,084 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 10:29:17,085 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:29:17,088 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:29:17,091 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:29:17,093 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 10:30:19,496 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:30:19,496 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 10:31:54,239 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 10:32:27,304 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 10:33:36,514 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 10:33:46,591 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 10:34:28,252 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:34:30,931 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 10:34:35,234 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 10:35:14,297 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:36:46,244 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:36:46,244 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-26 10:36:46,244 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-26 10:36:46,244 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:36:46,246 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:36:46,252 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:36:46,254 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 10:36:46,254 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 10:36:46,257 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:36:46,260 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:36:46,263 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:36:46,264 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 10:37:12,735 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:37:12,736 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 10:38:13,554 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:38:13,554 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-08-26 10:38:13,555 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-08-26 10:38:13,555 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:38:13,559 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:38:13,562 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:38:13,564 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 10:38:13,564 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 10:38:13,566 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:38:13,568 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:38:13,571 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:38:13,573 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 10:39:12,970 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:39:12,971 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 2 CIAs e competência 01-2025
+2025-08-26 10:39:12,971 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude']
+2025-08-26 10:39:12,971 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:39:12,974 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:39:12,977 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:39:12,977 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:39:12,981 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-08-26 10:39:12,983 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-08-26 10:39:12,983 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-08-26 10:39:12,986 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-08-26 10:39:12,990 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:39:12,993 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-08-26 10:39:12,993 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '01-2025' LIMIT 1;
+2025-08-26 10:39:12,995 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 01-2025
+2025-08-26 10:39:12,997 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 2 CIAs (solicitadas + geradas anteriormente)
+2025-08-26 10:42:09,791 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 10:53:39,038 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:53:52,824 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:53:52,887 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 10:54:05,506 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 10:54:05,506 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 10:56:16,387 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 11:00:38,818 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 11:00:51,954 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:11:30,751 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:11:30,752 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 11:14:33,592 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:14:33,592 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 11:21:31,499 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 11:21:42,781 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 11:23:24,604 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 11:23:29,590 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 11:23:57,388 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 11:24:04,445 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 11:24:17,548 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.
+2025-08-26 11:25:55,344 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-26 11:26:04,298 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 11:26:52,904 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 11:26:58,051 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:26:58,051 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 11:27:11,917 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:27:11,918 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=63 • Atualizar Relatórios • Bradesco • 01-2025 • v2
+2025-08-26 11:27:53,012 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:27:53,013 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco', 'Bradesco Saude'] | competência=01-2025
+2025-08-26 11:28:05,777 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:28:05,778 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=64 • Atualizar Relatórios • Bradesco • 01-2025 • v3
+2025-08-26 11:28:06,340 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:28:06,340 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=65 • Atualizar Relatórios • Bradesco Saude • 01-2025
+2025-08-26 11:28:28,497 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:28:28,497 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco', 'Bradesco Saude'] | competência=01-2025
+2025-08-26 11:28:41,674 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:28:41,675 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=66 • Atualizar Relatórios • Bradesco • 01-2025 • v4
+2025-08-26 11:28:42,218 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:28:42,230 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=67 • Atualizar Relatórios • Bradesco Saude • 01-2025
+2025-08-26 11:35:27,585 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:35:27,585 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco Saude', 'Bradesco'] | competência=01-2025
+2025-08-26 11:35:28,158 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:35:28,159 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=68 • Atualizar Relatórios • Bradesco Saude • 01-2025 • v1
+2025-08-26 11:35:41,146 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:35:41,147 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=69 • Atualizar Relatórios • Bradesco • 01-2025 • v5
+2025-08-26 11:36:09,047 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:36:09,047 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco Saude', 'Bradesco'] | competência=01-2025
+2025-08-26 11:36:09,671 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:36:09,672 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=70 • Atualizar Relatórios • Bradesco Saude • 01-2025 • v2
+2025-08-26 11:36:24,122 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:36:24,122 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=71 • Atualizar Relatórios • Bradesco • 01-2025 • v6
+2025-08-26 11:37:11,088 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 11:37:11,088 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco Saude', 'Bradesco', 'Hdi'] | competência=01-2025
+2025-08-26 11:37:11,730 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:37:11,731 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=72 • Atualizar Relatórios • Bradesco Saude • 01-2025 • v3
+2025-08-26 11:37:25,967 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:37:25,967 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=73 • Atualizar Relatórios • Bradesco • 01-2025 • v7
+2025-08-26 11:38:04,640 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 11:38:04,640 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=74 • Atualizar Relatórios • Hdi • 01-2025 • v1
+2025-08-26 11:40:36,519 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\batch_runner.py changed, reloading.

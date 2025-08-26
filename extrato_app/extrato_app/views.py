@@ -25,6 +25,7 @@ from extrato_app.CoreData.dba import DBA
 from django.views.decorators.csrf import csrf_exempt
 from extrato_app.CoreData.ds4 import processar_automaticamente
 import uuid
+from dotenv import dotenv_values
 
 
 arquivos_em_memoria = {} 
@@ -111,12 +112,11 @@ def baixar_resumo(request):
         raise Http404("Arquivo não encontrado.")
 
 def atualizar_relatorios(request):
-    cias_opt = os.getenv("CIAS_OPT", "")
-    cias_list = [cia.strip() for cia in cias_opt.split(",") if cia.strip()]
-    
-    return render(request, 'atualizar_relatorios.html', {
-        'cias_opt': cias_list
-    })
+    env = dotenv_values()
+    cias_opt_raw = env.get("CIAS_OPT", "")
+    cias_opt = [c.strip() for c in cias_opt_raw.split(",") if c.strip()]
+    return render(request, "atualizar_relatorios.html", {"cias_opt": cias_opt})
+
     
 def atualizar_caixa(request):
     cias_raw = os.getenv("CIAS_OPT", "")
@@ -395,3 +395,27 @@ def consultar_caixa_api(request):
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
+@csrf_exempt
+def api_atualizar_relatorios(request):
+    if request.method != 'POST':
+        return JsonResponse({'status': 'error', 'mensagem': 'Método não permitido'}, status=405)
+    try:
+        payload = json.loads(request.body.decode('utf-8'))
+        cias = payload.get('cias', [])
+        competencia = payload.get('competencia')
+        audit_event_id = payload.get('audit_event_id')
+
+        if not cias or not competencia:
+            return JsonResponse({'status': 'error', 'mensagem': 'Campos obrigatórios ausentes'}, status=400)
+
+        user_name = getattr(request.user, "username", None) or "bruno.cassio"
+
+        runner = BatchRunner()
+        result = runner.executar_atualizacao_relatorios(
+            cias, competencia,
+            user_name=user_name,
+            audit_event_id=audit_event_id
+        )
+        return JsonResponse(result, status=200)
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'mensagem': str(e)}, status=500)
