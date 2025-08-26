@@ -3811,3 +3811,7 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/caixa_resultado.htm
 2025-08-26 15:47:00,124 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-26 15:49:09,083 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-26 16:01:29,572 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-26 16:37:52,244 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-26 16:37:52,245 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-26 16:38:08,376 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-26 16:38:08,376 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=102 • Atualizar Relatórios • Bradesco • 01-2025 • v10
