@@ -1,36 +1,23 @@
-import os
-import json
-import threading
-from urllib import request
-from django.shortcuts import render
-from django.http import JsonResponse
-from extrato_app.CoreData.batch_runner import BatchRunner
-from pprint import pprint
-from django.http import HttpResponse
-from extrato_app.CoreData.batch_runner import BatchRunner
+import os, json, uuid, threading, time
+from datetime import timedelta
+
 from django.conf import settings
-from django.http import JsonResponse
-import pandas as pd
-import threading
-from django.conf import settings
-from extrato_app.CoreData.batch_runner import BatchRunner
-from django.core.cache import cache
-from io import BytesIO
-from django.http import HttpResponse
-from django.http import FileResponse, Http404
-from django.http import JsonResponse
-import time
-from django.shortcuts import render
-from extrato_app.CoreData.dba import DBA
-from django.views.decorators.csrf import csrf_exempt
-from extrato_app.CoreData.ds4 import processar_automaticamente
-import uuid
-from dotenv import dotenv_values
 from django.shortcuts import render, redirect
-from extrato_app.CoreData.dba import DBA, DatabaseManager
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_protect
+from django.urls import reverse
+from django.http import (
+    JsonResponse, HttpResponse, FileResponse, Http404, HttpResponseNotAllowed
+)
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from django.views.decorators.http import require_POST, require_http_methods
+from django.utils import timezone
 from django.contrib.auth.hashers import check_password, make_password
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
+from dotenv import dotenv_values
+from extrato_app.CoreData.dba import DBA, audit_event
+from extrato_app.CoreData.grande_conn import DatabaseManager
+from extrato_app.CoreData.batch_runner import BatchRunner
+from extrato_app.CoreData.ds4 import processar_automaticamente
 
 
 arquivos_em_memoria = {} 
@@ -429,199 +416,369 @@ def login_page(request):
         return redirect("/")
     return render(request, "login.html")
 
-@require_POST
-@csrf_protect
-def auth_login(request):
-    """
-    Processa o login:
-      - busca usuário por username (case-insensitive)
-      - compara hash de senha (PBKDF2 do Django)
-      - atualiza last_login_at e zera failed_attempts em caso de sucesso
-      - grava auditoria em extrato_audit
-      - cria sessão (request.session['user_*'])
-    """
-    dba = DBA()
+def auth_logout(request):
+    # limpa sessão e redireciona para login
+    request.session.flush()
+    return redirect("/login")
+
+RESET_TTL_MIN = 30
+
+def _mask_email(s: str) -> str:
+    if not s: return ""
     try:
-        data = json.loads(request.body.decode("utf-8"))
-        username = (data.get("username") or "").strip()
-        password = data.get("password") or ""
-        audit_event_id = data.get("audit_event_id")
+        name, dom = s.split("@", 1)
+        if not name: return "***@" + dom
+        return name[0] + "***@" + dom
+    except Exception:
+        return s
 
-        if not username or not password:
-            return JsonResponse({"status": "error", "mensagem": "Informe usuário e senha."}, status=400)
+def _get_user_by_token(token):
+    conn = DatabaseManager.get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, username, email, reset_expires_at
+                  FROM public.app_users
+                 WHERE reset_token = %s
+                 LIMIT 1
+            """, (str(token),))
+            row = cur.fetchone()
+            if not row:
+                return None
+            uid, username, email, exp = row
+            if not exp or exp < now():
+                return None
+            return {"id": uid, "username": username, "email": email, "expires": exp}
+    finally:
+        DatabaseManager.return_connection(conn)
 
-        conn = DatabaseManager.get_connection()
-        if not conn:
-            return JsonResponse({"status": "error", "mensagem": "Banco indisponível."}, status=503)
 
+def reset_password_page(request, token):
+    """Exibe o formulário de nova senha (se token válido)."""
+    user = _get_user_by_token(token)
+    if not user:
+        return render(request, "reset_invalid.html", status=400)
+    return render(request, "reset_password.html", {"token": token})
+        
+def _client_meta(request):
+    ip = (request.META.get('HTTP_X_FORWARDED_FOR') or '').split(',')[0].strip() or request.META.get('REMOTE_ADDR')
+    ua = request.META.get('HTTP_USER_AGENT', '')
+    return ip, ua
+
+def _mask_email(email: str) -> str:
+    if not email or '@' not in email:
+        return email or ''
+    name, dom = email.split('@', 1)
+    masked = (name[0] + "***") if name else "***"
+    return f"{masked}@{dom}"
+
+@require_POST
+def auth_login(request):
+    try:
+        data = request.JSON if hasattr(request, "JSON") else None
+    except Exception:
+        data = None
+    if not data:
+        import json
         try:
-            with conn.cursor() as cur:
-                cur.execute("""
-                    SELECT id, username, email, full_name, password_hash, is_active, failed_attempts
-                    FROM public.app_users
-                    WHERE LOWER(username) = LOWER(%s)
-                    LIMIT 1
-                """, (username,))
-                row = cur.fetchone()
+            data = json.loads(request.body.decode('utf-8'))
+        except Exception:
+            data = {}
 
-                if not row or not row[5]:
-                    # auditoria de tentativa inválida
-                    dba.registrar_auditoria(
-                        payload={
-                            "action": "user_login",
-                            "audit_event_id": audit_event_id,
-                            "user_name_attempt": username,
-                            "status": "error",
-                            "reason": "user_not_found_or_inactive",
-                            "ip": request.META.get("REMOTE_ADDR"),
-                            "ua": request.META.get("HTTP_USER_AGENT"),
-                        },
-                        summary=f"Login • {username} • ERRO (user not found or inactive)",
-                        user_name=username or "anon",
-                    )
-                    return JsonResponse({"status": "error", "mensagem": "Credenciais inválidas."}, status=401)
+    username = (data.get("username") or "").strip()
+    password = data.get("password") or ""
+    audit_event_id = data.get("audit_event_id")
 
-                user_id, db_username, email, full_name, pwd_hash, is_active, failed_attempts = row
+    if not username or not password:
+        return JsonResponse({"status": "error", "mensagem": "Informe usuário e senha."}, status=400)
 
-                if not check_password(password, pwd_hash):
-                    # incrementa failed_attempts
-                    cur.execute("""
-                        UPDATE public.app_users
-                           SET failed_attempts = COALESCE(failed_attempts,0) + 1,
-                               updated_at = NOW()
-                         WHERE id = %s
-                    """, (user_id,))
-                    conn.commit()
+    ip, ua = _client_meta(request)
 
-                    dba.registrar_auditoria(
-                        payload={
-                            "action": "user_login",
-                            "audit_event_id": audit_event_id,
-                            "user_id": user_id,
-                            "user_name": db_username,
-                            "status": "error",
-                            "reason": "invalid_password",
-                            "ip": request.META.get("REMOTE_ADDR"),
-                            "ua": request.META.get("HTTP_USER_AGENT"),
-                        },
-                        summary=f"Login • {db_username} • ERRO (invalid password)",
-                        user_name=db_username,
-                    )
-                    return JsonResponse({"status": "error", "mensagem": "Usuário ou senha inválidos."}, status=401)
+    conn = DatabaseManager.get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, username, password_hash, is_active
+                  FROM public.app_users
+                 WHERE LOWER(username) = LOWER(%s)
+                 LIMIT 1
+            """, (username,))
+            row = cur.fetchone()
 
-                # sucesso: atualiza last_login, zera failed_attempts
+            if not row:
+                audit_event(
+                    action="user_login",
+                    user_name=username,
+                    status="error",
+                    audit_event_id=audit_event_id,
+                    reason="user_not_found",
+                    ip=ip, ua=ua
+                )
+                return JsonResponse({"status": "error", "mensagem": "Usuário ou senha inválidos."}, status=401)
+
+            user_id, user_login, pwd_hash, is_active = row
+
+            if not is_active:
+                audit_event(
+                    action="user_login",
+                    user_name=user_login,
+                    status="error",
+                    audit_event_id=audit_event_id,
+                    reason="inactive_user",
+                    user_id=user_id, ip=ip, ua=ua
+                )
+                return JsonResponse({"status": "error", "mensagem": "Usuário inativo."}, status=403)
+
+            if not check_password(password, pwd_hash):
                 cur.execute("""
                     UPDATE public.app_users
-                       SET last_login_at = NOW(),
-                           failed_attempts = 0,
+                       SET failed_attempts = COALESCE(failed_attempts, 0) + 1,
                            updated_at = NOW()
                      WHERE id = %s
                 """, (user_id,))
                 conn.commit()
 
-            request.session["user_id"] = user_id
-            request.session["user_name"] = db_username
-            request.session["full_name"] = full_name
-            request.session.set_expiry(60 * 60 * 8)
+                audit_event(
+                    action="user_login",
+                    user_name=user_login,
+                    status="error",
+                    audit_event_id=audit_event_id,
+                    reason="invalid_password",
+                    user_id=user_id, ip=ip, ua=ua
+                )
+                return JsonResponse({"status": "error", "mensagem": "Usuário ou senha inválidos."}, status=401)
 
-            dba.registrar_auditoria(
-                payload={
-                    "action": "user_login",
-                    "audit_event_id": audit_event_id,
-                    "user_id": user_id,
-                    "user_name": db_username,
-                    "status": "success",
-                    "ip": request.META.get("REMOTE_ADDR"),
-                    "ua": request.META.get("HTTP_USER_AGENT"),
-                },
-                summary=f"Login • {db_username} • SUCESSO",
-                user_name=db_username,
-            )
-
-            return JsonResponse({"status": "ok", "redirect": "/"}, status=200)
-        finally:
-            DatabaseManager.return_connection(conn)
-
-    except Exception as e:
-        dba.registrar_auditoria(
-            payload={
-                "action": "user_login",
-                "status": "error",
-                "error": str(e),
-            },
-            summary="Login • EXCEPTION",
-            user_name="system",
-        )
-        return JsonResponse({"status": "error", "mensagem": "Erro inesperado."}, status=500)
-
-@require_POST
-@csrf_protect
-def auth_request_reset(request):
-    """
-    Recebe e-mail, gera reset_token + reset_expires_at (~2h),
-    registra auditoria. (Envio de e-mail fica a seu critério.)
-    """
-    dba = DBA()
-    try:
-        data = json.loads(request.body.decode("utf-8"))
-        email = (data.get("email") or "").strip()
-        audit_event_id = data.get("audit_event_id")
-
-        if not email:
-            return JsonResponse({"status": "error", "mensagem": "Informe o e-mail."}, status=400)
-
-        conn = DatabaseManager.get_connection()
-        if not conn:
-            return JsonResponse({"status": "error", "mensagem": "Banco indisponível."}, status=503)
-
-        try:
-            token = str(uuid.uuid4())
-            expires = timezone.now() + timedelta(hours=2)
-            updated = 0
-
-            with conn.cursor() as cur:
-                cur.execute("""
-                    UPDATE public.app_users
-                       SET reset_token = %s,
-                           reset_expires_at = %s,
-                           updated_at = NOW()
-                     WHERE LOWER(email) = LOWER(%s)
-                     RETURNING id, username
-                """, (token, expires, email))
-                row = cur.fetchone()
-                if row:
-                    updated = 1
-                    user_id, username = row
-
+            cur.execute("""
+                UPDATE public.app_users
+                   SET failed_attempts = 0,
+                       last_login_at = NOW(),
+                       updated_at = NOW()
+                 WHERE id = %s
+            """, (user_id,))
             conn.commit()
 
-            # auditoria (não revele se o e-mail existe)
-            dba.registrar_auditoria(
-                payload={
-                    "action": "user_reset_request",
-                    "audit_event_id": audit_event_id,
-                    "email": email,
-                    "updated": bool(updated),
-                    "status": "success" if updated else "noop",
-                },
-                summary=f"Reset Request • {email} • {'ENVIADO' if updated else 'NOOP'}",
-                user_name=email,
-            )
+        audit_event(
+            action="user_login",
+            user_name=user_login,
+            status="success",
+            audit_event_id=audit_event_id,
+            user_id=user_id, ip=ip, ua=ua
+        )
 
-            # resposta neutra (evita enumeração)
-            return JsonResponse({"status": "ok"}, status=200)
-        finally:
-            DatabaseManager.return_connection(conn)
+        resp = JsonResponse({"status": "ok", "redirect": "/"})
+        resp.set_cookie("auth_user", user_login, httponly=True, samesite="Lax")
+        return resp
 
     except Exception as e:
-        dba.registrar_auditoria(
-            payload={"action": "user_reset_request", "status": "error", "error": str(e)},
-            summary="Reset Request • EXCEPTION",
-            user_name="system",
+        audit_event(
+            action="user_login",
+            user_name=username,
+            status="error",
+            audit_event_id=audit_event_id,
+            reason="internal_error",
+            error=str(e)
         )
-        return JsonResponse({"status": "error", "mensagem": "Erro inesperado."}, status=500)
+        return JsonResponse({"status": "error", "mensagem": "Erro interno."}, status=500)
+    finally:
+        DatabaseManager.return_connection(conn)
 
-def auth_logout(request):
-    # limpa sessão e redireciona para login
-    request.session.flush()
-    return redirect("/login")
+@require_POST
+def auth_request_reset(request):
+
+    try:
+        data = json.loads(request.body.decode("utf-8"))
+    except Exception:
+        data = {}
+
+    email = (data.get("email") or "").strip()
+    audit_event_id = data.get("audit_event_id")
+    ip, ua = _client_meta(request)
+
+    if not email:
+        return JsonResponse({"status": "error", "mensagem": "Informe o e-mail."}, status=400)
+
+    conn = DatabaseManager.get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, username, email, is_active
+                  FROM public.app_users
+                 WHERE LOWER(email) = LOWER(%s) OR LOWER(username) = LOWER(%s)
+                 LIMIT 1
+            """, (email, email))
+            row = cur.fetchone()
+
+            if not row:
+                audit_event(
+                    action="password_reset_request",
+                    user_name="unknown",
+                    status="error",
+                    audit_event_id=audit_event_id,
+                    email_masked=_mask_email(email),
+                    reason="user_not_found",
+                    ip=ip, ua=ua
+                )
+                return JsonResponse({"status": "ok"})
+
+            user_id, user_login, user_email, is_active = row
+            if not is_active:
+                audit_event(
+                    action="password_reset_request",
+                    user_name=user_login,
+                    status="error",
+                    audit_event_id=audit_event_id,
+                    user_id=user_id,
+                    email_masked=_mask_email(user_email),
+                    reason="inactive_user",
+                    ip=ip, ua=ua
+                )
+                return JsonResponse({"status": "ok"})
+
+            token = uuid.uuid4()
+            expires = timezone.now() + timedelta(hours=2)
+
+            cur.execute("""
+                UPDATE public.app_users
+                   SET reset_token = %s,
+                       reset_expires_at = %s,
+                       updated_at = NOW()
+                 WHERE id = %s
+            """, (str(token), expires, user_id))
+            conn.commit()
+
+        reset_link = request.build_absolute_uri(f"/auth/reset/{token}")
+
+        subject = "Redefinição de senha - Extrato App"
+        body = (
+            f"Olá {user_login},\n\n"
+            f"Recebemos uma solicitação de redefinição de senha.\n"
+            f"Use o link abaixo (válido por 2 horas):\n{reset_link}\n\n"
+            f"Se não foi você, ignore este e-mail."
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [user_email],
+            fail_silently=False,
+        )
+
+        audit_event(
+            action="password_reset_request",
+            user_name=user_login,
+            status="success",
+            audit_event_id=audit_event_id,
+            user_id=user_id,
+            email_masked=_mask_email(user_email),
+            expires_at=expires.isoformat(),
+            ip=ip, ua=ua
+        )
+        return JsonResponse({"status": "ok"})
+    except Exception as e:
+        audit_event(
+            action="password_reset_request",
+            user_name=email,
+            status="error",
+            audit_event_id=audit_event_id,
+            reason="internal_error",
+            error=str(e),
+            ip=ip, ua=ua
+        )
+        return JsonResponse({"status": "error", "mensagem": "Erro ao processar a solicitação."}, status=500)
+    finally:
+        DatabaseManager.return_connection(conn)
+
+
+def auth_reset_confirm(request, token: uuid.UUID):
+    """
+    GET: mostra formulário
+    POST: salva nova senha
+    """
+    if request.method == "GET":
+        return render(request, "auth_reset_confirm.html", {"token": str(token)})
+
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["GET", "POST"])
+
+    new_password = (request.POST.get("new_password") or "").strip()
+    confirm_password = (request.POST.get("confirm_password") or "").strip()
+    ip, ua = _client_meta(request)
+
+    if not new_password or new_password != confirm_password:
+        return render(
+            request,
+            "auth_reset_confirm.html",
+            {"token": str(token), "error": "Senha e confirmação não conferem."},
+            status=400
+        )
+
+    conn = DatabaseManager.get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, username, reset_expires_at
+                  FROM public.app_users
+                 WHERE reset_token = %s
+                 LIMIT 1
+            """, (str(token),))
+            row = cur.fetchone()
+
+            if not row:
+                audit_event(
+                    action="password_reset_apply",
+                    user_name="unknown",
+                    status="error",
+                    reason="invalid_token",
+                    token=str(token),
+                    ip=ip, ua=ua
+                )
+                return render(request, "auth_reset_confirm.html", {"error": "Token inválido ou expirado."}, status=400)
+
+            user_id, user_login, expires_at = row
+            if not expires_at or timezone.now() > expires_at:
+                audit_event(
+                    action="password_reset_apply",
+                    user_name=user_login,
+                    status="error",
+                    user_id=user_id,
+                    reason="expired_token",
+                    token=str(token),
+                    ip=ip, ua=ua
+                )
+                return render(request, "auth_reset_confirm.html", {"error": "Token expirado."}, status=400)
+
+            # troca a senha
+            pwd_hash = make_password(new_password)
+            cur.execute("""
+                UPDATE public.app_users
+                   SET password_hash = %s,
+                       reset_token = NULL,
+                       reset_expires_at = NULL,
+                       updated_at = NOW()
+                 WHERE id = %s
+            """, (pwd_hash, user_id))
+            conn.commit()
+
+        audit_event(
+            action="password_reset_apply",
+            user_name=user_login,
+            status="success",
+            user_id=user_id,
+            ip=ip, ua=ua
+        )
+
+        return redirect("/login")
+    except Exception as e:
+        audit_event(
+            action="password_reset_apply",
+            user_name="unknown",
+            status="error",
+            reason="internal_error",
+            error=str(e),
+            token=str(token),
+            ip=ip, ua=ua
+        )
+        return render(request, "auth_reset_confirm.html", {"error": "Erro interno."}, status=500)
+    finally:
+        DatabaseManager.return_connection(conn)

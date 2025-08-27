@@ -20,11 +20,16 @@ from . import views
 from .views import index
 from django.conf import settings
 from django.conf.urls.static import static
-from extrato_app.views import login_page, auth_login, auth_request_reset, auth_logout
+from extrato_app.views import login_page, auth_login, auth_request_reset, auth_logout, reset_password_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # pages index e login
     path('', index, name='index'),
+    path("login", login_page, name="login_page"),
+
+    # APIs/ações interrmediárias -
     path('iniciar-extracao/', views.iniciar_extracao, name='iniciar_extracao'),
     path('baixar_resumo', views.baixar_resumo, name='baixar_resumo'),
     path('limpar_arquivos', views.limpar_arquivos, name='limpar_arquivos'),
@@ -35,10 +40,12 @@ urlpatterns = [
     path("api/verificar-relatorios", views.verificar_relatorios_view, name="verificar_relatorios"),
     path("consultar-caixa", views.consultar_caixa_api, name="consultar_caixa_api"),
     path('api/atualizar-relatorios', views.api_atualizar_relatorios, name='api_atualizar_relatorios'),
-    path("login", login_page, name="login_page"),
-    path("auth/login", auth_login, name="auth_login"),
-    path("auth/request-reset", auth_request_reset, name="auth_request_reset"),
-    path("logout", auth_logout, name="auth_logout"),
+
+    # auth
+    path("auth/login", views.auth_login, name="auth_login"),
+    path("auth/request-reset", views.auth_request_reset, name="auth_request_reset"),
+    path("auth/reset/<uuid:token>", views.auth_reset_confirm, name="auth_reset_confirm"),
+    path("logout", views.auth_logout, name="auth_logout"),
 ]
 
 if settings.DEBUG:

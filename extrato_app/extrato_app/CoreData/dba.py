@@ -12,6 +12,9 @@ from decimal import Decimal
 import logging
 import json
 from django.conf import settings
+import uuid
+
+
 
 load_dotenv(dotenv_path=os.path.join(os.getcwd(), '.env'))
 logger = logging.getLogger(__name__)
@@ -508,7 +511,6 @@ class DBA:
 
         return success
 
-
     def caixa_declarado_existe(self, cia: str, competencia: str) -> bool:
 
         aliases = {
@@ -755,7 +757,6 @@ class DBA:
         finally:
             DatabaseManager.return_connection(conn)
 
-
     def obter_caixa_declarado(self, cia: str, competencia: str) -> dict | None:
         """
         Retorna o registro atual de caixa_declarado para (cia, competencia),
@@ -798,3 +799,31 @@ class DBA:
         finally:
             DatabaseManager.return_connection(conn)
             
+def audit_event(
+    action: str,
+    user_name: str = "system",
+    status: str = "success",
+    summary: str | None = None,
+    audit_event_id: str | None = None,
+    **extra
+) -> str | None:
+    """
+    Atalho para registrar auditoria na extrato_audit.
+    Monta o payload padrão e delega a chamada para DBA().registrar_auditoria(...).
+    Retorna o ID da auditoria (str) ou None.
+    """
+    payload = {
+        "action": action,
+        "status": status,
+        "audit_event_id": audit_event_id or str(uuid.uuid4())
+    }
+    if extra:
+        payload.update(extra)
+
+    _summary = summary or f"{action.replace('_', ' ').title()} • {user_name} • {status.upper()}"
+    try:
+        dba = DBA()
+        return dba.registrar_auditoria(payload=payload, summary=_summary, user_name=user_name)
+    except Exception:
+        logging.getLogger(__name__).exception("Falha ao registrar auditoria")
+        return None

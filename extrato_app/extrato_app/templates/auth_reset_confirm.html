@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Redefinir senha | Grupo GC</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="{% static 'extrato_app/css/conta_virtual.css' %}" />
+
+  <style>
+    .reset-wrapper{display:flex;align-items:center;justify-content:center;min-height:60vh}
+    .reset-card{max-width:520px;margin:0 auto}
+    .form-error{margin-top:8px;color:#EF4444;font-size:.95rem}
+    .form-success{margin-top:8px;color:#16A34A;font-size:.95rem}
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <div class="header-content">
+        <a href="/"><img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;"></a>
+        <div class="header-divider"></div>
+      </div>
+    </header>
+
+    <div class="container reset-wrapper">
+      <div class="form-card reset-card">
+        <h2><i class="bi bi-shield-lock"></i> Definir nova senha</h2>
+
+        {% if error %}
+          <div class="form-error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post" action="">
+          {% csrf_token %}
+          <input type="hidden" name="token" value="{{ token }}">
+          <div class="form-group">
+            <label class="form-label"><i class="bi bi-key-fill"></i> Nova senha</label>
+            <input type="password" class="form-select" name="new_password" id="new_password" placeholder="••••••••" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><i class="bi bi-key"></i> Confirmar nova senha</label>
+            <input type="password" class="form-select" name="confirm_password" id="confirm_password" placeholder="••••••••" required>
+          </div>
+
+          <div class="form-group">
+            <button class="btn-primary" type="submit">
+              <i class="bi bi-check2-circle"></i> Salvar nova senha
+            </button>
+          </div>
+
+          <div class="info-badge">
+            <i class="bi bi-info-circle"></i> O link expira em 2 horas.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container"><p>© 2025 Grupo GC - Todos os direitos reservados</p></div>
+    </footer>
+  </div>
+</body>
+</html>
