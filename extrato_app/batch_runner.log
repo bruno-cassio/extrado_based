@@ -4587,3 +4587,32 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-27 16:56:09,169 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 16:57:52,834 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-27 16:58:07,836 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:02:50,966 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:05,208 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:05,210 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:07,744 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:07,745 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:17,542 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:17,544 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:22,431 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:22,432 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:27,766 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:27,766 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:31,667 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:31,668 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:45,021 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:45,022 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:03:58,996 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:03:58,996 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:04:06,018 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:04:06,020 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:04:22,670 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:04:41,882 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:04:48,329 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:04:48,330 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:04:59,398 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:04:59,398 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:05:04,001 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 17:05:14,993 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:05:26,868 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:05:26,869 - django.request - WARNING - Unauthorized: /auth/login
