@@ -421,3 +421,24 @@ document.addEventListener('DOMContentLoaded', function () {
     await postCaixa(true);
   });
 });
+
+  function handleLogoutClick(btn, evt){
+    evt?.preventDefault?.();
+    if (!btn || btn.dataset.busy === '1') return;
+    btn.dataset.busy = '1';
+    btn.disabled = true;
+    btn.innerHTML = '<i class="bi bi-box-arrow-right"></i> Saindo...';
+    window.location.href = '/logout';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnLogout = document.getElementById('btnLogout');
+    if (btnLogout) {
+      btnLogout.addEventListener('click', (e) => handleLogoutClick(btnLogout, e));
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target?.closest?.('#btnLogout');
+    if (btn) handleLogoutClick(btn, e);
+  });

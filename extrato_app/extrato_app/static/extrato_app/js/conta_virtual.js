@@ -219,3 +219,12 @@ function hideDownloadPopup() {
     const popup = document.getElementById('download-popup');
     popup.classList.add('popup-hidden');
 }
+
+// === Logout ===
+const btnLogout = document.getElementById('btnLogout');
+btnLogout?.addEventListener('click', (e) => {
+  e.preventDefault();
+  btnLogout.disabled = true;
+  btnLogout.innerHTML = '<i class="bi bi-box-arrow-right"></i> Saindo...';
+  window.location.href = '/logout'; 
+});

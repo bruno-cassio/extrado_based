@@ -29,20 +29,25 @@
   .cross__line--right{animation:stroke .35s .6s cubic-bezier(.65,0,.45,1) forwards}
 </style>
 
-
-
 </head>
 <body>
 
 <div class="main-content">
+
+  
   <header>
     <div class="header-content">
       <a href="/">
         <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
       </a>
       <div class="header-divider"></div>
+
+      <button type="button" id="btnLogout" class="btn-logout btn-logout--in-header" title="Sair da conta">
+        <i class="bi bi-box-arrow-right"></i> Sair
+      </button>
     </div>
   </header>
+
 
   <div class="container">
     <nav class="top-tabs">

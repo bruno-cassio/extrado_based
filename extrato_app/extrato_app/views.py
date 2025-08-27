@@ -26,6 +26,11 @@ from django.views.decorators.csrf import csrf_exempt
 from extrato_app.CoreData.ds4 import processar_automaticamente
 import uuid
 from dotenv import dotenv_values
+from django.shortcuts import render, redirect
+from extrato_app.CoreData.dba import DBA, DatabaseManager
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.hashers import check_password, make_password
 
 
 arquivos_em_memoria = {} 
@@ -116,7 +121,6 @@ def atualizar_relatorios(request):
     cias_opt_raw = env.get("CIAS_OPT", "")
     cias_opt = [c.strip() for c in cias_opt_raw.split(",") if c.strip()]
     return render(request, "atualizar_relatorios.html", {"cias_opt": cias_opt})
-
     
 def atualizar_caixa(request):
     cias_raw = os.getenv("CIAS_OPT", "")
@@ -419,3 +423,205 @@ def api_atualizar_relatorios(request):
         return JsonResponse(result, status=200)
     except Exception as e:
         return JsonResponse({'status': 'error', 'mensagem': str(e)}, status=500)
+    
+def login_page(request):
+    if request.session.get("user_id"):
+        return redirect("/")
+    return render(request, "login.html")
+
+@require_POST
+@csrf_protect
+def auth_login(request):
+    """
+    Processa o login:
+      - busca usuário por username (case-insensitive)
+      - compara hash de senha (PBKDF2 do Django)
+      - atualiza last_login_at e zera failed_attempts em caso de sucesso
+      - grava auditoria em extrato_audit
+      - cria sessão (request.session['user_*'])
+    """
+    dba = DBA()
+    try:
+        data = json.loads(request.body.decode("utf-8"))
+        username = (data.get("username") or "").strip()
+        password = data.get("password") or ""
+        audit_event_id = data.get("audit_event_id")
+
+        if not username or not password:
+            return JsonResponse({"status": "error", "mensagem": "Informe usuário e senha."}, status=400)
+
+        conn = DatabaseManager.get_connection()
+        if not conn:
+            return JsonResponse({"status": "error", "mensagem": "Banco indisponível."}, status=503)
+
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    SELECT id, username, email, full_name, password_hash, is_active, failed_attempts
+                    FROM public.app_users
+                    WHERE LOWER(username) = LOWER(%s)
+                    LIMIT 1
+                """, (username,))
+                row = cur.fetchone()
+
+                if not row or not row[5]:
+                    # auditoria de tentativa inválida
+                    dba.registrar_auditoria(
+                        payload={
+                            "action": "user_login",
+                            "audit_event_id": audit_event_id,
+                            "user_name_attempt": username,
+                            "status": "error",
+                            "reason": "user_not_found_or_inactive",
+                            "ip": request.META.get("REMOTE_ADDR"),
+                            "ua": request.META.get("HTTP_USER_AGENT"),
+                        },
+                        summary=f"Login • {username} • ERRO (user not found or inactive)",
+                        user_name=username or "anon",
+                    )
+                    return JsonResponse({"status": "error", "mensagem": "Credenciais inválidas."}, status=401)
+
+                user_id, db_username, email, full_name, pwd_hash, is_active, failed_attempts = row
+
+                if not check_password(password, pwd_hash):
+                    # incrementa failed_attempts
+                    cur.execute("""
+                        UPDATE public.app_users
+                           SET failed_attempts = COALESCE(failed_attempts,0) + 1,
+                               updated_at = NOW()
+                         WHERE id = %s
+                    """, (user_id,))
+                    conn.commit()
+
+                    dba.registrar_auditoria(
+                        payload={
+                            "action": "user_login",
+                            "audit_event_id": audit_event_id,
+                            "user_id": user_id,
+                            "user_name": db_username,
+                            "status": "error",
+                            "reason": "invalid_password",
+                            "ip": request.META.get("REMOTE_ADDR"),
+                            "ua": request.META.get("HTTP_USER_AGENT"),
+                        },
+                        summary=f"Login • {db_username} • ERRO (invalid password)",
+                        user_name=db_username,
+                    )
+                    return JsonResponse({"status": "error", "mensagem": "Usuário ou senha inválidos."}, status=401)
+
+                # sucesso: atualiza last_login, zera failed_attempts
+                cur.execute("""
+                    UPDATE public.app_users
+                       SET last_login_at = NOW(),
+                           failed_attempts = 0,
+                           updated_at = NOW()
+                     WHERE id = %s
+                """, (user_id,))
+                conn.commit()
+
+            request.session["user_id"] = user_id
+            request.session["user_name"] = db_username
+            request.session["full_name"] = full_name
+            request.session.set_expiry(60 * 60 * 8)
+
+            dba.registrar_auditoria(
+                payload={
+                    "action": "user_login",
+                    "audit_event_id": audit_event_id,
+                    "user_id": user_id,
+                    "user_name": db_username,
+                    "status": "success",
+                    "ip": request.META.get("REMOTE_ADDR"),
+                    "ua": request.META.get("HTTP_USER_AGENT"),
+                },
+                summary=f"Login • {db_username} • SUCESSO",
+                user_name=db_username,
+            )
+
+            return JsonResponse({"status": "ok", "redirect": "/"}, status=200)
+        finally:
+            DatabaseManager.return_connection(conn)
+
+    except Exception as e:
+        dba.registrar_auditoria(
+            payload={
+                "action": "user_login",
+                "status": "error",
+                "error": str(e),
+            },
+            summary="Login • EXCEPTION",
+            user_name="system",
+        )
+        return JsonResponse({"status": "error", "mensagem": "Erro inesperado."}, status=500)
+
+@require_POST
+@csrf_protect
+def auth_request_reset(request):
+    """
+    Recebe e-mail, gera reset_token + reset_expires_at (~2h),
+    registra auditoria. (Envio de e-mail fica a seu critério.)
+    """
+    dba = DBA()
+    try:
+        data = json.loads(request.body.decode("utf-8"))
+        email = (data.get("email") or "").strip()
+        audit_event_id = data.get("audit_event_id")
+
+        if not email:
+            return JsonResponse({"status": "error", "mensagem": "Informe o e-mail."}, status=400)
+
+        conn = DatabaseManager.get_connection()
+        if not conn:
+            return JsonResponse({"status": "error", "mensagem": "Banco indisponível."}, status=503)
+
+        try:
+            token = str(uuid.uuid4())
+            expires = timezone.now() + timedelta(hours=2)
+            updated = 0
+
+            with conn.cursor() as cur:
+                cur.execute("""
+                    UPDATE public.app_users
+                       SET reset_token = %s,
+                           reset_expires_at = %s,
+                           updated_at = NOW()
+                     WHERE LOWER(email) = LOWER(%s)
+                     RETURNING id, username
+                """, (token, expires, email))
+                row = cur.fetchone()
+                if row:
+                    updated = 1
+                    user_id, username = row
+
+            conn.commit()
+
+            # auditoria (não revele se o e-mail existe)
+            dba.registrar_auditoria(
+                payload={
+                    "action": "user_reset_request",
+                    "audit_event_id": audit_event_id,
+                    "email": email,
+                    "updated": bool(updated),
+                    "status": "success" if updated else "noop",
+                },
+                summary=f"Reset Request • {email} • {'ENVIADO' if updated else 'NOOP'}",
+                user_name=email,
+            )
+
+            # resposta neutra (evita enumeração)
+            return JsonResponse({"status": "ok"}, status=200)
+        finally:
+            DatabaseManager.return_connection(conn)
+
+    except Exception as e:
+        dba.registrar_auditoria(
+            payload={"action": "user_reset_request", "status": "error", "error": str(e)},
+            summary="Reset Request • EXCEPTION",
+            user_name="system",
+        )
+        return JsonResponse({"status": "error", "mensagem": "Erro inesperado."}, status=500)
+
+def auth_logout(request):
+    # limpa sessão e redireciona para login
+    request.session.flush()
+    return redirect("/login")

@@ -20,6 +20,7 @@ from . import views
 from .views import index
 from django.conf import settings
 from django.conf.urls.static import static
+from extrato_app.views import login_page, auth_login, auth_request_reset, auth_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,7 +34,11 @@ urlpatterns = [
     path("api/buscar-cias/", views.buscar_cias_api, name="buscar_cias_api"),
     path("api/verificar-relatorios", views.verificar_relatorios_view, name="verificar_relatorios"),
     path("consultar-caixa", views.consultar_caixa_api, name="consultar_caixa_api"),
-    path('api/atualizar-relatorios', views.api_atualizar_relatorios, name='api_atualizar_relatorios')
+    path('api/atualizar-relatorios', views.api_atualizar_relatorios, name='api_atualizar_relatorios'),
+    path("login", login_page, name="login_page"),
+    path("auth/login", auth_login, name="auth_login"),
+    path("auth/request-reset", auth_request_reset, name="auth_request_reset"),
+    path("logout", auth_logout, name="auth_logout"),
 ]
 
 if settings.DEBUG:

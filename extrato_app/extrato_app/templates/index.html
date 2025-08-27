@@ -16,32 +16,38 @@
 
 
   <div class="main-content">
+
     <header>
       <div class="header-content">
         <a href="/">
           <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
         </a>
         <div class="header-divider"></div>
+
+        <button type="button" id="btnLogout" class="btn-logout btn-logout--in-header" title="Sair da conta">
+          <i class="bi bi-box-arrow-right"></i> Sair
+        </button>
       </div>
     </header>
 
+
     <div class="container">
       
-      
-    <nav class="top-tabs">
-    <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}">
-        <i class="bi bi-arrow-clockwise"></i>
-        Atualizar Relatórios
-    </a>
-    <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
-        <i class="bi bi-database-fill"></i>
-        Consolidação Conta Virtual
-    </a>
-    <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
-        <i class="bi bi-cash-stack"></i>
-        Atualizar Caixa
-    </a>
-    </nav>
+
+    <div class="topbar">
+      <nav class="top-tabs">
+        <a href="/atualizar-relatorios" class="tab-btn {% if '/atualizar-relatorios' in request.path %}active{% endif %}">
+          <i class="bi bi-arrow-clockwise"></i> Atualizar Relatórios
+        </a>
+        <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
+          <i class="bi bi-database-fill"></i> Consolidação Conta Virtual
+        </a>
+        <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+          <i class="bi bi-cash-stack"></i> Atualizar Caixa
+        </a>
+      </nav>
+
+    </div>
 
         <div class="form-card">
         <h2>
