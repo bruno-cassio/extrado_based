@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try{
       showPopup("Autenticando... aguarde.");
-      showNotification("Validando credenciais...", "loading");
+    //   showNotification("Validando credenciais...", "loading");
 
       const auditEventId = ensureAuditEventId();
       const resp = await fetch("/auth/login", {
