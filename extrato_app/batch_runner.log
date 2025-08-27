@@ -4585,3 +4585,5 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-27 16:53:05,227 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 16:55:53,225 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-27 16:56:09,169 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 16:57:52,834 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 16:58:07,836 - extrato_app.CoreData.dba - INFO - AUDIT saved
