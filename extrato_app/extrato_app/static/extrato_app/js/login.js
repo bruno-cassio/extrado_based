@@ -7,6 +7,11 @@ function ensureAuditEventId(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // URLs vindas do HTML (data-*)
+  const loginUrl  = document.body.getAttribute("data-login-url")  || "/auth/login";
+  const resetUrl  = document.body.getAttribute("data-reset-url")  || "/auth/request-reset";
+
+  // Elements
   const form = document.getElementById("formLogin");
   const btnSubmit = document.getElementById("btnSubmit");
   const btnForgot = document.getElementById("btnForgot");
@@ -15,19 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const togglePass = document.getElementById("togglePass");
 
   const errBox = document.getElementById("loginError");
-  const showInlineError = (msg) => {
-    if (!errBox) return;
-    errBox.textContent = msg || "Usuário ou senha inválidos.";
-    errBox.classList.add("show");
-  };
-  const clearInlineError = () => {
-    if (!errBox) return;
-    errBox.textContent = "";
-    errBox.classList.remove("show");
-  };
 
   const downloadPopup = document.getElementById("download-popup");
   const popupTitle = document.getElementById("popup-title");
+
   const notification = document.getElementById("notification");
   const notifIcon = document.getElementById("notification-icon");
   const notifMsg = document.getElementById("notification-message");
@@ -47,6 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const csrf = window.csrfToken || (document.cookie.split("; ").find(x=>x.startsWith("csrftoken="))?.split("=")[1] || "");
 
+  // Helpers
+  const showInlineError = (msg) => {
+    if (!errBox) return;
+    errBox.textContent = msg || "Usuário ou senha inválidos.";
+    errBox.classList.add("show");
+  };
+  const clearInlineError = () => {
+    if (!errBox) return;
+    errBox.textContent = "";
+    errBox.classList.remove("show");
+  };
+
   function showPopup(msg){
     if(popupTitle) popupTitle.textContent = msg || "Processando...";
     downloadPopup?.classList.remove("popup-hidden");
@@ -54,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function hidePopup(){
     downloadPopup?.classList.add("popup-hidden");
   }
+
   function showNotification(message, type="info"){
     if(!notification||!notifIcon||!notifMsg) return;
     notification.className="notification"; notifIcon.className=""; notifIcon.innerHTML="";
@@ -66,13 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
     notification.classList.add("show");
     if(type!=="loading") setTimeout(()=>notification.classList.remove("show"), 5000);
   }
+
   function showToast(type,message){
     if(!toastEl) return;
     toastIconSuccess.style.display = (type==="success") ? "block" : "none";
     toastIconError.style.display   = (type==="error") ? "block" : "none";
     toastTitle.textContent = (type==="success") ? "Sucesso!" : "Ops...";
     toastMsg.textContent = message || "";
-    toastEl.classList.add("open"); toastEl.setAttribute("aria-hidden","false");
+    toastEl.classList.add("open");
+    toastEl.setAttribute("aria-hidden","false");
   }
   function hideToast(){
     toastEl?.classList.remove("open");
@@ -81,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toastClose?.addEventListener("click", hideToast);
   toastEl?.addEventListener("click",(e)=>{ if(e.target===toastEl) hideToast(); });
 
-  // ---------- Mostrar/ocultar senha ----------
+  // Mostrar/ocultar senha
   togglePass?.addEventListener("click", ()=>{
     if(password.type==="password"){
       password.type="text";
@@ -92,40 +103,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-
-  // ---------- Esqueci minha senha ----------
-  function openForgot(){ forgotBackdrop.classList.add("open"); forgotBackdrop.setAttribute("aria-hidden","false"); forgotEmail?.focus(); }
-  function closeForgot(){ forgotBackdrop.classList.remove("open"); forgotBackdrop.setAttribute("aria-hidden","true"); }
+  // Modal "Esqueci minha senha"
+  function openForgot(){
+    forgotBackdrop.classList.add("open");
+    forgotBackdrop.setAttribute("aria-hidden","false");
+    setTimeout(()=>forgotEmail?.focus(), 50);
+  }
+  function closeForgot(){
+    forgotBackdrop.classList.remove("open");
+    forgotBackdrop.setAttribute("aria-hidden","true");
+  }
   btnForgot?.addEventListener("click", openForgot);
   forgotClose?.addEventListener("click", closeForgot);
   forgotCancel?.addEventListener("click", closeForgot);
   forgotBackdrop?.addEventListener("click",(e)=>{ if(e.target===forgotBackdrop) closeForgot(); });
+  document.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && forgotBackdrop.classList.contains("open")) closeForgot(); });
 
+  // Enviar reset de senha === considerando que o abençoado do usuario possui registro em app users
   forgotSend?.addEventListener("click", async ()=>{
     const email = (forgotEmail?.value || "").trim();
     if(!email){ forgotEmail?.reportValidity(); return; }
     try{
-      showPopup("Enviando instruções...");
-      const resp = await fetch("/auth/request-reset", {
+      forgotSend.disabled = true;
+      showPopup("Enviando instruções de redefinição...");
+      const resp = await fetch(resetUrl, {
         method:"POST",
         headers:{ "Content-Type":"application/json", "X-CSRFToken": csrf },
         body: JSON.stringify({ email, audit_event_id: ensureAuditEventId() })
       });
+      let data = {};
+      try{ data = await resp.json(); } catch(_){}
+
       hidePopup();
-      const data = await resp.json().catch(()=>({}));
-      if(resp.ok && data?.status==="ok"){
-        closeForgot();
-        showToast("success","Enviamos um link para o seu e-mail.");
-      }else{
-        showToast("error", data?.mensagem || "Não foi possível enviar o e-mail de reset.");
+      closeForgot();
+
+      if(resp.ok && (data?.status==="ok" || data?.success === true)){
+        showToast("success","Enviamos o link de redefinição para seu email.");
+      } else {
+        showToast("error", data?.mensagem || data?.message || "Não foi possível enviar o e-mail de reset.");
       }
     }catch(err){
       hidePopup();
       showToast("error","Erro ao contatar o servidor.");
+      console.error("Forgot ► erro:", err);
+    }finally{
+      forgotSend.disabled = false;
     }
   });
 
+  // Form login
   if (form) {
     form.action = 'javascript:void(0)';
     form.setAttribute('novalidate','true');
@@ -142,12 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
       btnSubmit.setAttribute("aria-disabled", String(!enabled));
     }
   }
-
   username?.addEventListener("input", updateSubmitState);
   password?.addEventListener("input", updateSubmitState);
   username?.addEventListener("paste", () => setTimeout(updateSubmitState, 0));
   password?.addEventListener("paste", () => setTimeout(updateSubmitState, 0));
-
   updateSubmitState();
 
   async function doLogin(){
@@ -155,15 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
       showNotification("Informe usuário e senha.", "error");
       return;
     }
-
     clearInlineError();
 
     try{
       showPopup("Autenticando... aguarde.");
-    //   showNotification("Validando credenciais...", "loading");
-
       const auditEventId = ensureAuditEventId();
-      const resp = await fetch("/auth/login", {
+      const resp = await fetch(loginUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-CSRFToken": csrf },
         body: JSON.stringify({
@@ -179,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hidePopup();
       notification?.classList.remove("show");
 
-      if(resp.ok && data?.status==="ok"){
+      if(resp.ok && (data?.status==="ok" || data?.success === true)){
         showToast("success","Login realizado com sucesso.");
         AUDIT_EVENT_ID = null;
         setTimeout(()=>{ window.location.href = data?.redirect || "/"; }, 900);
@@ -202,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btnSubmit?.addEventListener("click", (e)=>{ e.preventDefault(); e.stopPropagation(); doLogin(); return false; });
-
   [username, password].forEach(el => {
     el?.addEventListener("keydown", (e)=>{
       if (e.key === "Enter") {

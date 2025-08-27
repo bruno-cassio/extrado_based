@@ -14,71 +14,124 @@
     .login-card{max-width:520px;margin:0 auto}
     .input-wrap{position:relative}
     .toggle-pass{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:transparent;border:none;cursor:pointer;color:#666}
+
+    /* === Camadas para garantir loader/ toast acima do modal === */
     .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);align-items:center;justify-content:center;padding:16px;z-index:9999}
     .modal-backdrop.open{display:flex}
+    #download-popup{z-index:10000;}   /* loader */
+    #resultToast{z-index:10001;}      /* toast */
+
     .modal{width:min(520px,92vw);background:#fff;color:#222;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.18)}
     .modal-header{padding:14px 16px;background:#f6f7fb;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e6e7ee}
     .modal-title{font-weight:800}
     .modal-body{padding:16px}
     .modal-footer{padding:12px 16px;border-top:1px solid #e6e7ee;display:flex;gap:8px;justify-content:flex-end;background:#fafbfe}
     .close-btn{background:transparent;border:none;font-size:1.4rem;cursor:pointer;color:#444}
-    .form-error{
-  margin-top: 6px;
-  color: #EF4444;
-  display: none;
-  font-size: .95rem;
-}
-    .form-error.show{ display:block; }
-  </style>
 
+    .form-error{margin-top:6px;color:#EF4444;display:none;font-size:.95rem}
+    .form-error.show{display:block}
+
+    /* toggles visuais globais já existentes no projeto (no entanto, sem interdependencia) */
+    .popup-hidden{display:none !important;}
+    .toast-backdrop{display:none;position:fixed;inset:0;align-items:center;justify-content:center}
+    .toast-backdrop.open{display:flex}
+    .btn-primary[disabled]{opacity:.7;cursor:not-allowed}
+
+
+
+    /* ==== OVERRIDES do toast/check ==== */
+    #resultToast.toast-backdrop{
+    position: fixed !important;
+    inset: 0 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px !important;
+    background: rgba(0,0,0,.35) !important;
+    z-index: 99999 !important;
+    }
+
+    #resultToast.open{ 
+    display: flex !important; 
+    }
+
+    #resultToast .toast-card{
+    width: min(520px, 92vw) !important;
+    background: #fff !important;
+    color: #111 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25) !important;
+    padding: 20px 18px !important;
+    text-align: center !important;
+    position: relative !important;
+    }
+
+    #resultToast .toast-actions .btn-primary{
+    min-width: 140px;
+    }
+
+    #resultToast .toast-icon svg {
+    width: 72px; height: 72px; display: block; margin: 0 auto 10px;
+    }
+    #resultToast .checkmark__circle,
+    #resultToast .cross__circle { stroke: #4ade80; stroke-width: 3; }
+    #resultToast .cross__circle { stroke: #f87171; }
+    #resultToast .checkmark__check { stroke: #4ade80; stroke-width: 4; }
+    #resultToast .cross__line { stroke: #f87171; stroke-width: 4; }
+
+
+</style>
 </head>
-<body>
-  <div class="main-content">
 
-    
+<body
+  data-login-url="{% url 'auth_login' %}"
+  data-reset-url="{% url 'auth_request_reset' %}"
+>
+  <div class="main-content">
     <header>
       <div class="header-content">
-        <a href="/"><img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;"></a>
+        <a href="/">
+          <img src="{% static 'extrato_app/GRUPOGC_RGB_LOGOTIPO_OFFWHITE.png' %}" alt="IMAGEM LOGO" style="max-height:75px;">
+        </a>
         <div class="header-divider"></div>
       </div>
     </header>
 
     <div class="container login-wrapper">
-    <div class="form-card login-card">
+      <div class="form-card login-card">
         <h2><i class="bi bi-box-arrow-in-right"></i> Acessar</h2>
 
         <form id="formLogin" method="POST" action="{% url 'auth_login' %}" onsubmit="return false;">
-        {% csrf_token %}
+          {% csrf_token %}
 
-        <div class="form-group">
+          <div class="form-group">
             <label class="form-label"><i class="bi bi-person-fill"></i> Usuário (e-mail ou login)</label>
             <input type="text" class="form-select" name="username" id="username" placeholder="seu.email@empresa.com" required />
-        </div>
+          </div>
 
-        <div class="form-group">
+          <div class="form-group">
             <label class="form-label"><i class="bi bi-shield-lock-fill"></i> Senha</label>
             <div class="input-wrap">
-            <input type="password" class="form-select" name="password" id="password" placeholder="••••••••" required />
-            <button type="button" class="toggle-pass" id="togglePass" aria-label="Mostrar/ocultar senha">
+              <input type="password" class="form-select" name="password" id="password" placeholder="••••••••" required />
+              <button type="button" class="toggle-pass" id="togglePass" aria-label="Mostrar/ocultar senha">
                 <i class="bi bi-eye-slash"></i>
-            </button>
+              </button>
             </div>
+
             <div class="info-badge" style="cursor:pointer" id="btnForgot">
-            <i class="bi bi-question-circle"></i> Esqueci minha senha
+              <i class="bi bi-question-circle"></i> Esqueci minha senha
             </div>
-        </div>
+          </div>
 
-        <div id="loginError" class="form-error" aria-live="polite"></div>
+          <div id="loginError" class="form-error" aria-live="polite"></div>
 
-        <div class="form-group">
-             
+          <div class="form-group">
             <button class="btn-primary" type="button" id="btnSubmit" disabled aria-disabled="true">
-            <i class="bi bi-arrow-right-circle"></i> Prosseguir
+              <i class="bi bi-arrow-right-circle"></i> Prosseguir
             </button>
-
-        </div>
+          </div>
         </form>
-    </div>
+      </div>
     </div>
 
     <footer>
@@ -86,10 +139,12 @@
     </footer>
   </div>
 
-  <!-- Toast / Notificação -->
-  <div id="notification" class="notification popup-hidden" aria-live="polite"><i id="notification-icon"></i><span id="notification-message"></span></div>
+  <!-- Toast / Notificação pequena -->
+  <div id="notification" class="notification popup-hidden" aria-live="polite">
+    <i id="notification-icon"></i><span id="notification-message"></span>
+  </div>
 
-  <!-- Popup de processamento -->
+  <!-- Popup de processamento (loader) -->
   <div id="download-popup" class="popup popup-hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
     <div class="popup-content">
       <div class="spinner"></div>
@@ -97,7 +152,7 @@
     </div>
   </div>
 
-  <!-- Popup de resultado (check animado) -->
+  <!-- Toast de resultado (check animado) -->
   <div id="resultToast" class="toast-backdrop" aria-hidden="true">
     <div class="toast-card">
       <div class="toast-icon success" id="toastIconSuccess" aria-hidden="true">
@@ -115,7 +170,9 @@
       </div>
       <h3 id="toastTitle">Sucesso!</h3>
       <p id="toastMsg"></p>
-      <div class="toast-actions"><button class="btn-primary" id="toastClose" type="button">OK</button></div>
+      <div class="toast-actions">
+        <button class="btn-primary" id="toastClose" type="button">OK</button>
+      </div>
     </div>
   </div>
 
@@ -135,14 +192,20 @@
       </div>
       <div class="modal-footer">
         <button class="btn-secondary" id="forgotCancel" type="button">Cancelar</button>
-        <button class="btn-primary" id="forgotSend" type="button"><i class="bi bi-send"></i> Enviar</button>
+        <button class="btn-primary" id="forgotSend" type="button">
+          <i class="bi bi-send"></i> Enviar
+        </button>
       </div>
     </div>
   </div>
 
   <script>
-    (function(){const t=document.querySelector('input[name="csrfmiddlewaretoken"]');if(t)window.csrfToken=t.value;})();
+    (function(){
+      const t=document.querySelector('input[name="csrfmiddlewaretoken"]');
+      if(t) window.csrfToken=t.value;
+    })();
   </script>
+
   <script src="{% static 'extrato_app/js/login.js' %}"></script>
 </body>
 </html>
