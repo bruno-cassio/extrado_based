@@ -4090,3 +4090,19 @@ django.db.utils.OperationalError: no such table: django_session
 2025-08-27 11:31:21,533 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-27 11:35:12,494 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-27 11:35:15,041 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 11:39:07,115 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 11:39:07,116 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 11:39:23,588 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 11:46:16,353 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 11:54:05,142 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 11:54:15,260 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 11:54:29,802 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 11:54:36,557 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 11:54:46,854 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 11:58:18,666 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 12:05:00,912 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 12:05:23,880 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 12:06:23,115 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 12:08:01,019 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 12:08:18,096 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 12:09:17,189 - extrato_app.CoreData.dba - INFO - AUDIT saved
