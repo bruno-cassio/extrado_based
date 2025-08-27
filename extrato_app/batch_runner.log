@@ -4616,3 +4616,6 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-27 17:05:14,993 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 17:05:26,868 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 17:05:26,869 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:07:40,313 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 17:07:40,314 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 17:07:45,218 - extrato_app.CoreData.dba - INFO - AUDIT saved
