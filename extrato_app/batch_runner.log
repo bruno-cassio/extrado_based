@@ -4114,3 +4114,9 @@ django.db.utils.OperationalError: no such table: django_session
 2025-08-27 13:42:49,589 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 13:43:04,103 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-27 13:43:15,714 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 13:43:28,956 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-27 13:43:31,477 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 13:43:37,120 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 13:43:43,138 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-27 13:43:43,139 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-27 13:43:53,845 - extrato_app.CoreData.dba - INFO - AUDIT saved
