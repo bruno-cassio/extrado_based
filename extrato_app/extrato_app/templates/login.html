@@ -15,11 +15,11 @@
     .input-wrap{position:relative}
     .toggle-pass{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:transparent;border:none;cursor:pointer;color:#666}
 
-    /* === Camadas para garantir loader/ toast acima do modal === */
+    /* === Camadas para garantir loader/ toast acima do modal, parando de esconder o negocio === */
     .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);align-items:center;justify-content:center;padding:16px;z-index:9999}
     .modal-backdrop.open{display:flex}
-    #download-popup{z-index:10000;}   /* loader */
-    #resultToast{z-index:10001;}      /* toast */
+    #download-popup{z-index:10000;}
+    #resultToast{z-index:10001;}
 
     .modal{width:min(520px,92vw);background:#fff;color:#222;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.18)}
     .modal-header{padding:14px 16px;background:#f6f7fb;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e6e7ee}
@@ -79,6 +79,21 @@
     #resultToast .checkmark__check { stroke: #4ade80; stroke-width: 4; }
     #resultToast .cross__line { stroke: #f87171; stroke-width: 4; }
 
+
+    .login-card input.form-select,
+    .login-card input[type="text"].form-select,
+    .login-card input[type="password"].form-select,
+    .login-card input[type="email"].form-select {
+    background-image: none !important;   
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    padding-right: 40px !important;      
+    }
+
+    .login-card input.form-select::after,
+    .login-card input.form-select::before {
+    content: none !important;
+    }
 
 </style>
 </head>
@@ -195,7 +210,7 @@
         <button class="btn-secondary" id="forgotCancel" type="button">Cancelar</button>
         <button class="btn-primary" id="forgotSend" type="button">
           <i class="bi bi-send"></i> Enviar
-        </button>
+        </button>   
       </div>
     </div>
   </div>

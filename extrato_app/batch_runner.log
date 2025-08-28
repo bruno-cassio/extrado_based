@@ -4619,3 +4619,26 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-27 17:07:40,313 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-27 17:07:40,314 - django.request - WARNING - Unauthorized: /auth/login
 2025-08-27 17:07:45,218 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:11:11,723 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:16:38,507 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 09:16:44,093 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 09:16:48,368 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:17:01,515 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:19:51,257 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:22:20,571 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 09:22:43,513 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:24:51,374 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:41:09,839 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
+2025-08-28 09:41:23,401 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:43:31,315 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:44:03,126 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:44:52,316 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:46:11,636 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:46:31,907 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:46:38,216 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:48:30,750 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:50:18,324 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 09:54:19,537 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:55:24,419 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:55:59,453 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 09:56:24,216 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.

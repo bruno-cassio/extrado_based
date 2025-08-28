@@ -1,5 +1,6 @@
 import os, json, uuid, threading, time
 from datetime import timedelta
+from functools import wraps
 
 from django.conf import settings
 from django.shortcuts import render, redirect
@@ -20,16 +21,55 @@ from extrato_app.CoreData.batch_runner import BatchRunner
 from extrato_app.CoreData.ds4 import processar_automaticamente
 
 
+def _load_user(username: str):
+    if not username:
+        return None
+    conn = DatabaseManager.get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, username, email, is_active
+                  FROM public.app_users
+                 WHERE LOWER(username)=LOWER(%s)
+                 LIMIT 1
+            """, (username,))
+            row = cur.fetchone()
+            if not row or not row[3]:
+                return None
+            return {"id": row[0], "username": row[1], "email": row[2]}
+    finally:
+        DatabaseManager.return_connection(conn)
+
+def login_required_view(view=None, *, allow_json=False):
+    """
+    Exige cookie 'auth_user' válido nas views protegidas.
+    Se allow_json=True, retorna 401 JSON; senão, redireciona para LOGIN_URL com ?next=.
+    """
+    def decorator(fn):
+        @wraps(fn)
+        def _wrapped(request, *args, **kwargs):
+            user_login = request.COOKIES.get("auth_user")
+            user = _load_user(user_login)
+            if not user:
+                if allow_json or request.headers.get("Accept","").startswith("application/json"):
+                    return JsonResponse({"status":"unauthorized","message":"Faça login."}, status=401)
+                login_url = getattr(settings, "LOGIN_URL", "/login")
+                return redirect(f"{login_url}?next={request.get_full_path()}")
+            request.app_user = user
+            return fn(request, *args, **kwargs)
+        return _wrapped
+    return decorator(view) if view else decorator
+
+
 arquivos_em_memoria = {} 
 
+@login_required_view
 def index(request):
     cias_opt = os.getenv("CIAS_OPT", "")
     cias_list = [cia.strip() for cia in cias_opt.split(",") if cia.strip()]
-    
-    return render(request, 'index.html', {
-        'cias_opt': cias_list
-    })
+    return render(request, 'index.html', {'cias_opt': cias_list})
 
+@login_required_view(allow_json=True)
 def limpar_arquivos(request):
     if request.method == "POST":
         media_dir = settings.MEDIA_ROOT
@@ -44,6 +84,7 @@ def limpar_arquivos(request):
     else:
         return JsonResponse({'erro': 'Método não permitido'}, status=405)
 
+@login_required_view(allow_json=True)
 def iniciar_extracao(request):
     if request.method == 'POST':
         cias_selected = json.loads(request.POST.get('cias_selected', '[]'))
@@ -91,6 +132,7 @@ def iniciar_extracao(request):
 
     return JsonResponse({'status': 'error', 'message': 'Método não permitido'}, status=405)
 
+@login_required_view
 def baixar_resumo(request):
     unique_id = request.GET.get('id')
     if not unique_id:
@@ -103,17 +145,20 @@ def baixar_resumo(request):
     else:
         raise Http404("Arquivo não encontrado.")
 
+@login_required_view
 def atualizar_relatorios(request):
     env = dotenv_values()
     cias_opt_raw = env.get("CIAS_OPT", "")
     cias_opt = [c.strip() for c in cias_opt_raw.split(",") if c.strip()]
     return render(request, "atualizar_relatorios.html", {"cias_opt": cias_opt})
-    
+
+@login_required_view
 def atualizar_caixa(request):
     cias_raw = os.getenv("CIAS_OPT", "")
     cias_opt = [cia.strip() for cia in cias_raw.split(",") if cia.strip()]
     return render(request, 'atualizar_caixa.html', {'cias_opt': cias_opt})
 
+@login_required_view(allow_json=True)
 def executar_atualizar_caixa(request):
     if request.method != "POST":
         return JsonResponse({"status": "error", "message": "Método não permitido"}, status=405)
@@ -181,6 +226,7 @@ def executar_atualizar_caixa(request):
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
 @csrf_exempt
+@login_required_view(allow_json=True)
 def verificar_relatorios_view(request):
     if request.method == 'POST':
         try:
@@ -201,8 +247,10 @@ def verificar_relatorios_view(request):
         
         except Exception as e:
             return JsonResponse({"status": "error", "mensagem": str(e)}, status=500)
+    return JsonResponse({"status": "error", "mensagem": "Método não permitido"}, status=405)
 
 @csrf_exempt
+@login_required_view(allow_json=True)
 def buscar_cias_api(request):
     if request.method != "POST":
         return JsonResponse({"error": "Método não permitido"}, status=405)
@@ -356,6 +404,7 @@ def buscar_cias_api(request):
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
 @csrf_exempt
+@login_required_view(allow_json=True)
 def consultar_caixa_api(request):
     if request.method != "POST":
         return JsonResponse({"error": "Método não permitido"}, status=405)
@@ -387,6 +436,7 @@ def consultar_caixa_api(request):
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
 
 @csrf_exempt
+@login_required_view(allow_json=True)
 def api_atualizar_relatorios(request):
     if request.method != 'POST':
         return JsonResponse({'status': 'error', 'mensagem': 'Método não permitido'}, status=405)
@@ -411,26 +461,32 @@ def api_atualizar_relatorios(request):
     except Exception as e:
         return JsonResponse({'status': 'error', 'mensagem': str(e)}, status=500)
     
+
+# ============ (sem login required) ============
 def login_page(request):
     if request.session.get("user_id"):
         return redirect("/")
     return render(request, "login.html")
 
 def auth_logout(request):
-    # limpa sessão e redireciona para login
     request.session.flush()
-    return redirect("/login")
+    resp = redirect("/login")
+    resp.delete_cookie("auth_user", path="/", samesite="Lax")
+    return resp
 
 RESET_TTL_MIN = 30
 
-def _mask_email(s: str) -> str:
-    if not s: return ""
-    try:
-        name, dom = s.split("@", 1)
-        if not name: return "***@" + dom
-        return name[0] + "***@" + dom
-    except Exception:
-        return s
+def _client_meta(request):
+    ip = (request.META.get('HTTP_X_FORWARDED_FOR') or '').split(',')[0].strip() or request.META.get('REMOTE_ADDR')
+    ua = request.META.get('HTTP_USER_AGENT', '')
+    return ip, ua
+
+def _mask_email(email: str) -> str:
+    if not email or '@' not in email:
+        return email or ''
+    name, dom = email.split('@', 1)
+    masked = (name[0] + "***") if name else "***"
+    return f"{masked}@{dom}"
 
 def _get_user_by_token(token):
     conn = DatabaseManager.get_connection()
@@ -446,12 +502,11 @@ def _get_user_by_token(token):
             if not row:
                 return None
             uid, username, email, exp = row
-            if not exp or exp < now():
+            if not exp or exp < timezone.now():
                 return None
             return {"id": uid, "username": username, "email": email, "expires": exp}
     finally:
         DatabaseManager.return_connection(conn)
-
 
 def reset_password_page(request, token):
     """Exibe o formulário de nova senha (se token válido)."""
@@ -459,18 +514,6 @@ def reset_password_page(request, token):
     if not user:
         return render(request, "reset_invalid.html", status=400)
     return render(request, "reset_password.html", {"token": token})
-        
-def _client_meta(request):
-    ip = (request.META.get('HTTP_X_FORWARDED_FOR') or '').split(',')[0].strip() or request.META.get('REMOTE_ADDR')
-    ua = request.META.get('HTTP_USER_AGENT', '')
-    return ip, ua
-
-def _mask_email(email: str) -> str:
-    if not email or '@' not in email:
-        return email or ''
-    name, dom = email.split('@', 1)
-    masked = (name[0] + "***") if name else "***"
-    return f"{masked}@{dom}"
 
 @require_POST
 def auth_login(request):
@@ -584,7 +627,6 @@ def auth_login(request):
 
 @require_POST
 def auth_request_reset(request):
-
     try:
         data = json.loads(request.body.decode("utf-8"))
     except Exception:
@@ -689,7 +731,6 @@ def auth_request_reset(request):
     finally:
         DatabaseManager.return_connection(conn)
 
-
 def auth_reset_confirm(request, token: uuid.UUID):
     """
     GET: mostra formulário
@@ -748,7 +789,6 @@ def auth_reset_confirm(request, token: uuid.UUID):
                 )
                 return render(request, "auth_reset_confirm.html", {"error": "Token expirado."}, status=400)
 
-            # troca a senha
             pwd_hash = make_password(new_password)
             cur.execute("""
                 UPDATE public.app_users
