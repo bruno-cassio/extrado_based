@@ -4711,3 +4711,14 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-28 13:50:31,636 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-08-28 13:50:31,788 - django.request - WARNING - Not Found: /favicon.ico
 2025-08-28 13:50:32,832 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:40,542 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:51:33,036 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:51:34,704 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:52:27,238 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:52:34,397 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:53:26,797 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:53:34,041 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 13:54:03,159 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:54:07,447 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:54:12,631 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:54:14,033 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
