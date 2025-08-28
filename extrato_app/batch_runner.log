@@ -4642,3 +4642,72 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-28 09:55:24,419 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-28 09:55:59,453 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-28 09:56:24,216 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 09:57:10,685 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 10:02:20,357 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 10:53:35,006 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 10:53:35,037 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 10:55:22,612 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 11:19:09,769 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:19:17,655 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:23:57,196 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:26:04,883 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-28 11:31:39,613 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:33:13,766 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:03,518 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:24,222 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:24,223 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-28 11:38:26,218 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:26,219 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-28 11:38:32,523 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:32,523 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-28 11:38:37,993 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:38:47,634 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:39:28,696 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:41:25,548 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:41:46,776 - django.request - WARNING - Bad Request: /auth/reset/74b1c2bc-ca4f-4fe2-8ebe-269902c35a57
+2025-08-28 11:42:00,343 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:42:32,763 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:42:49,222 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:43:21,939 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:43:21,941 - django.request - WARNING - Bad Request: /auth/reset/f22054e0-f83b-4e2b-ac74-d64fde896734
+2025-08-28 11:44:27,966 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 11:44:27,966 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-28 11:44:35,554 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 12:00:17,171 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 12:00:25,379 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 12:00:30,490 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 12:00:42,377 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 13:16:48,144 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 13:16:51,214 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 13:35:20,881 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 13:38:05,816 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:06,067 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 13:38:07,236 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:16,084 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:19,056 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:32,050 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:34,068 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:36,035 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:38:49,209 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:39:51,171 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-28 13:41:43,002 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:41:44,895 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:41:45,667 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:44:47,456 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:46:09,985 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:46:11,485 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:46:18,230 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:46:19,211 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:47:20,238 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:47:21,902 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:47:38,669 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:48:55,504 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:48:56,654 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:49:32,851 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:49:44,472 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:28,275 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:29,403 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:30,140 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:31,636 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-08-28 13:50:31,788 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-28 13:50:32,832 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json

@@ -19,6 +19,7 @@ from extrato_app.CoreData.dba import DBA, audit_event
 from extrato_app.CoreData.grande_conn import DatabaseManager
 from extrato_app.CoreData.batch_runner import BatchRunner
 from extrato_app.CoreData.ds4 import processar_automaticamente
+from django.core import signing
 
 
 def _load_user(username: str):
@@ -59,7 +60,6 @@ def login_required_view(view=None, *, allow_json=False):
             return fn(request, *args, **kwargs)
         return _wrapped
     return decorator(view) if view else decorator
-
 
 arquivos_em_memoria = {} 
 
@@ -461,7 +461,6 @@ def api_atualizar_relatorios(request):
     except Exception as e:
         return JsonResponse({'status': 'error', 'mensagem': str(e)}, status=500)
     
-
 # ============ (sem login required) ============
 def login_page(request):
     if request.session.get("user_id"):
@@ -822,3 +821,4 @@ def auth_reset_confirm(request, token: uuid.UUID):
         return render(request, "auth_reset_confirm.html", {"error": "Erro interno."}, status=500)
     finally:
         DatabaseManager.return_connection(conn)
+

@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const forgotSend = document.getElementById("forgotSend");
   const forgotEmail = document.getElementById("forgotEmail");
 
+  const rememberMe = document.getElementById("rememberMe");
+
   const csrf = window.csrfToken || (document.cookie.split("; ").find(x=>x.startsWith("csrftoken="))?.split("=")[1] || "");
+
+
 
   // Helpers
   const showInlineError = (msg) => {
@@ -119,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   forgotBackdrop?.addEventListener("click",(e)=>{ if(e.target===forgotBackdrop) closeForgot(); });
   document.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && forgotBackdrop.classList.contains("open")) closeForgot(); });
 
-  // Enviar reset de senha === considerando que o abençoado do usuario possui registro em app users
+  // Enviar reset de senha === considerando registro na benção de app users
   forgotSend?.addEventListener("click", async ()=>{
     const email = (forgotEmail?.value || "").trim();
     if(!email){ forgotEmail?.reportValidity(); return; }
@@ -180,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     clearInlineError();
+
 
     try{
       showPopup("Autenticando... aguarde.");
