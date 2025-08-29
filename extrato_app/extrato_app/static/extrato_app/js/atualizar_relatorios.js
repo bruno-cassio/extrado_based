@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         setLoadingState(true);
         showDownloadPopup();
-        showNotification("Atualizando relatórios, aguarde…", "loading");
+        // showNotification("Atualizando relatórios, aguarde…", "loading");
 
         const auditEventId = ensureAuditEventId();
         console.debug("[AUDIT] atualizar_relatorios • event_id=", auditEventId, "cias=", selectedCias, "competencia=", competencia);

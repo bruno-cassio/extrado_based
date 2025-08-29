@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
   }
 
-  // Consultar (não fecha o modal; mostra tabela + console)
+  // Consultar (não fecha o modal; mostra tabela + console /// feedback pra checar essa parada instakill)
   consultaExecutar?.addEventListener('click', async () => {
     const competencia = (inputCompetenciaConsulta?.value || '').trim();
     if (!competencia || !inputCompetenciaConsulta.checkValidity()) {

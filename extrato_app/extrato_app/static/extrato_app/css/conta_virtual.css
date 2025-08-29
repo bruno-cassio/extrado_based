@@ -760,3 +760,37 @@ footer{
 
 footer p{ margin: 0; line-height: 1.2; }
 footer .subline{ margin-top: 2px; opacity: .9; }
+
+
+.table-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.consulta-table{
+  width: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.consulta-table thead th{
+  background: var(--primary, #0b3ea6);
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 14px;
+  font-weight: 800;
+
+}
+.consulta-table thead th:first-child{ border-top-left-radius: 12px; }
+.consulta-table thead th:last-child { border-top-right-radius: 12px; }
+
+.consulta-table th,
+.consulta-table td{
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px 12px;
+}
+
+.consulta-table tbody tr:nth-child(even){ background: #f8fafc; }
+.consulta-table tbody td{ border-top: 1px solid #eef2f7; }
