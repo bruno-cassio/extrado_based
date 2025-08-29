@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadPopup = document.getElementById("download-popup");
   const popupTitle = document.getElementById("popup-title");
 
-  const notification = document.getElementById("notification");
+  const notification = document.getElementById("notification"); 
   const notifIcon = document.getElementById("notification-icon");
   const notifMsg = document.getElementById("notification-message");
 

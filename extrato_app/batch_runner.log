@@ -5499,3 +5499,9 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-29 13:45:21,971 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-29 13:49:01,846 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-08-29 13:49:21,381 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 13:53:40,841 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 13:53:48,522 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 13:53:54,486 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 13:54:01,035 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 14:05:39,725 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-08-29 14:06:16,300 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
