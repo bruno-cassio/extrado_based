@@ -5506,3 +5506,230 @@ django.template.exceptions.TemplateDoesNotExist: auth_reset_confirm.html
 2025-08-29 14:05:39,725 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
 2025-08-29 14:06:16,300 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\settings.py changed, reloading.
 2025-08-29 14:15:53,191 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:13:06,244 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:13:06,248 - django.request - ERROR - Internal Server Error: /auth/login
+2025-08-29 16:13:14,944 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:16:31,174 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:16:43,391 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-29 16:17:11,448 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:18:06,444 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:20:16,785 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:20:16,787 - django.request - WARNING - Unauthorized: /auth/login
+2025-08-29 16:20:20,669 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:22:10,539 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:22:10,573 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:22:22,718 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:22:48,724 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:22:48,785 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:01,098 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:01,126 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:11,559 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:12,008 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:25,695 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:23:26,022 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:24:13,064 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:24:13,107 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:25:25,782 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:25:26,011 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:25:30,668 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:25:31,296 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:25:47,549 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:26:32,677 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:30:12,830 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-08-29 16:30:12,832 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-08-29 16:30:41,980 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-08-29 16:30:41,980 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=426 • Atualizar Relatórios • Bradesco • 01-2025 • v7
+2025-08-29 17:10:15,225 - django.request - ERROR - Internal Server Error: /atualizar-caixa
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 53, in _wrapped
+    user = _load_user(user_login)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 31, in _load_user
+    cur.execute("""
+    ~~~~~~~~~~~^^^^
+        SELECT id, username, email, is_active
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+         LIMIT 1
+         ^^^^^^^
+    """, (username,))
+    ^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-08-29 17:10:15,449 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-04 09:11:55,871 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-04 09:12:07,680 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-04 09:37:29,978 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 09:42:17,861 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-04 10:47:18,503 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-04 11:00:15,020 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 14:03:46,933 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-04 14:52:25,936 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 15:25:05,296 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 15:43:50,472 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 16:07:30,646 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 16:14:38,784 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 17:15:35,511 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-04 17:29:14,716 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:19:50,715 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:36:47,063 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:37:06,403 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:37:21,499 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:37:35,860 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:37:38,893 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:37:53,086 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:38:31,993 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-05 10:41:16,731 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:41:42,248 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:41:46,289 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:42:06,935 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:43:07,544 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:45:16,913 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 10:46:06,424 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 10:46:06,426 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 10:46:33,814 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 10:46:33,815 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=428 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-05 10:51:58,413 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:52:34,477 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:54:40,607 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:56:12,253 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 10:56:12,254 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 10:56:36,644 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 10:56:36,645 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=429 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-05 10:57:04,174 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:57:29,689 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:57:49,760 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:58:11,813 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 10:58:11,813 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 10:58:35,821 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 10:58:35,822 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=430 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-05 10:59:11,770 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:59:47,938 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:59:50,655 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 10:59:53,181 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:00:07,265 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:00:23,120 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:00:23,120 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 11:00:48,063 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 11:00:48,064 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=431 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-05 11:02:53,589 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:02:56,777 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:03:07,862 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:03:11,739 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:03:11,739 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-09-05 11:03:26,282 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 11:03:26,283 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=432 • Atualizar Relatórios • Bradesco • 01-2025 • v8
+2025-09-05 11:34:32,842 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:35:07,845 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:35:49,390 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:36:25,364 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:36:45,182 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:36:55,097 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:36:55,098 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-09-05 11:37:12,860 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 11:37:12,861 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=433 • Atualizar Relatórios • Bradesco • 01-2025 • v9
+2025-09-05 11:41:22,453 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:41:43,403 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:41:47,056 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:42:41,092 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:42:46,379 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:42:50,440 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:42:50,441 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-09-05 11:43:05,713 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 11:43:05,714 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=434 • Atualizar Relatórios • Bradesco • 01-2025 • v10
+2025-09-05 11:43:40,484 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:43:46,008 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 11:43:58,081 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:43:58,081 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 01-2025
+2025-09-05 11:43:58,082 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-09-05 11:43:58,082 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-09-05 11:43:58,084 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-09-05 11:43:58,088 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-09-05 11:43:58,090 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-09-05 11:43:58,090 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 01-2025
+2025-09-05 11:43:58,092 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 01-2025
+2025-09-05 11:43:58,093 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '01-2025' LIMIT 1;
+2025-09-05 11:43:58,096 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 01-2025
+2025-09-05 11:43:58,097 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-09-05 11:46:38,213 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:46:50,375 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 11:46:50,376 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-09-05 11:47:07,719 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 11:47:07,720 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=435 • Atualizar Relatórios • Bradesco • 01-2025 • v11
+2025-09-05 11:50:38,215 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:50:46,916 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:52:24,968 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 11:52:33,602 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-05 13:59:16,538 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 13:59:29,148 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:00:09,688 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:00:44,843 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:00:53,112 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:00:56,974 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:01:00,316 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:01:09,931 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 14:01:18,107 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 14:01:18,107 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=01-2025
+2025-09-05 14:01:36,594 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 14:01:36,595 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=436 • Atualizar Relatórios • Bradesco • 01-2025 • v12
+2025-09-05 14:02:31,944 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:02:43,726 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:02:47,730 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:02:52,077 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 14:03:04,707 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 14:03:04,708 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 14:03:30,550 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 14:03:30,551 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=437 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-05 14:04:19,800 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 14:04:31,346 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-05 14:04:44,114 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 14:04:44,114 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 14:05:09,590 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 14:05:09,590 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=438 • Atualizar Relatórios • Bradesco • 03-2025 • v2
+2025-09-05 14:49:03,084 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 15:15:07,728 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 15:15:19,632 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 15:51:39,575 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 15:57:57,716 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:00:35,428 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:01:01,632 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:01:10,346 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:01:13,929 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:01:43,154 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 16:01:43,155 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 16:02:07,286 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 16:02:07,286 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=439 • Atualizar Relatórios • Bradesco • 03-2025 • v3
+2025-09-05 16:06:14,666 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:06:22,519 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:06:38,895 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 16:06:38,896 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 16:07:01,262 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 16:07:01,263 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=440 • Atualizar Relatórios • Bradesco • 03-2025 • v4
+2025-09-05 16:08:02,772 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:08:12,602 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:08:26,159 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 16:08:26,160 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 16:08:51,025 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 16:08:51,025 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=441 • Atualizar Relatórios • Bradesco • 03-2025 • v5
+2025-09-05 16:12:54,215 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:18:08,939 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:18:13,096 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-05 16:20:44,775 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:26:39,166 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:32:15,099 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:32:23,569 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:36:39,645 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:36:48,106 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:36:53,834 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-05 16:36:53,835 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-05 16:37:17,457 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-05 16:37:17,457 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=442 • Atualizar Relatórios • Bradesco • 03-2025 • v6
+2025-09-05 16:41:21,337 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 16:53:30,767 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 17:07:59,458 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-05 17:14:09,076 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.

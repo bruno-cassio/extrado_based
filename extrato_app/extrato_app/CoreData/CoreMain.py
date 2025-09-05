@@ -175,6 +175,20 @@ class DataImporter:
         print("\n⚙️ Processando dados...")
         processed_data = self.data_handler.treat_zero(file_dfs, id_cia)
 
+        print('============================================================================================')
+        # === Leitura adicional de incentivo, validação inicial de adpatação no fluxo (opt-in por CIA) ===
+        incentivo_df = self.data_handler.read_incentivo_via_dispatcher(self.cia_escolhida)
+        if not incentivo_df.empty:
+            print(f"📈 Incentivo detectado: {self.cia_escolhida} | linhas={len(incentivo_df)}")
+        else:
+            print("ℹ️ Nenhum incentivo adicional lido para esta CIA.")
+
+        print('============================================================================================')
+
+
+
+        #Validar aqui a inserção de leitura, tratammento, recalculo de valores incentivo //
+
         print("\n🚀 Iniciando importação...")
         import_success = self.import_data_to_db(processed_data, id_cia)
 
@@ -197,8 +211,6 @@ class DataImporter:
 
 
         return overall_success, processed_data
-
-
 
 def main(cia_manual: Optional[str] = None, competencia_manual: Optional[str] = None):
     importer = DataImporter(cia_manual, competencia_manual)

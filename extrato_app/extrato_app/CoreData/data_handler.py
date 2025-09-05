@@ -174,17 +174,6 @@ class DataHandler:
             df.columns = [self.padronizar_nomes(c) for c in df.columns]
             df['origem_arquivo'] = latest_file
             
-            # downloads_dir = str(Path.home() / "Downloads")
-            # output_file = os.path.join(downloads_dir, f"{table_name}_SAVED_DF.xlsx")
-            # print('ESSE ABRE ANTES DA DEMORA? ')
-            # try:
-            #     df.to_excel(output_file, index=False)
-            #     print(f"✅ DataFrame salvo em: {output_file}")
-            # except Exception as e:
-            #     print(f"❌ Erro ao salvar o DataFrame: {e}")
-
-            print('save ignorado')
-
             premio_db = Decimal(str(self.consolidador.cons_caixa_declarado()))
 
             if cia_escolhida == "Junto Seguradora" and df.shape[1] > 1:
@@ -270,7 +259,6 @@ class DataHandler:
                 print('=================================== validação inicial para EZZE em TREAT ZERO ===================================')
                 print(df.columns)
                 df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
-                
             
             print(df.head())
 
@@ -296,28 +284,6 @@ class DataHandler:
                 'ordered_cols': [col for col in db_columns if col in df_filtered.columns],
                 'ordered_cols_escaped': [f'"{col}"' for col in db_columns if col in df_filtered.columns]
             }
-
-            # if id_cia == '556':
-            #     print('======================================================= EZZE =======================================================')
-            #     df_filtered = df_filtered.rename(columns={'cv': 'premio_rec', 'vi': 'valor_cv', 'as': 'valor_as'})
-            #     print(df_filtered[['premio_base', 'premio_rec', 'valor_cv', 'valor_as']])
-            #     print('******************************************************* TENTATIVA DE TRATAMENTO SOBRE EZZE *******************************************************')
-
-
-
-            #     print('======================================================= EZZE =======================================================')
-                # df = df[df['cd_apolice'].astype(str).str.lower().str.strip().replace('nan', pd.NA).notna()]
-                # print('******************************************************* TENTATIVA DE TRATAMENTO SOBRE EZZE *******************************************************')
-
-        # downloads_dir = str(Path.home() / "Downloads")
-        # for table_name, data in processed_dfs.items():
-        #     df_to_save = data['df']
-        #     file_path = os.path.join(downloads_dir, f"{table_name}.xlsx")
-        #     try:
-        #         df_to_save.to_excel(file_path, index=False)
-        #         print(f"✅ DataFrame salvo em: {file_path}")
-        #     except Exception as e:
-        #         print(f"❌ Erro ao salvar {table_name}: {e}")
 
         return processed_dfs
     
@@ -361,4 +327,31 @@ class DataHandler:
         
         return overall_success
 
-    
+
+
+    def read_incentivo_via_dispatcher(self, cia_escolhida: str) -> pd.DataFrame:
+        """
+        Usa o dispatcher (CIA_HANDLERS) para chamar, se existir, a leitura de incentivo
+        especifica da CIA (ex.: BradescoHandler.read_incentivo).
+        """
+        try:
+            handler = CIA_HANDLERS.get(cia_escolhida)
+            if not handler:
+                print(f"⚠️ Sem handler para {cia_escolhida}; pulando leitura de incentivo.")
+                return pd.DataFrame()
+            if hasattr(handler, "read_incentivo") and callable(handler.read_incentivo):
+                print(f"🔎 Lendo incentivo via handler de {cia_escolhida}...")
+                inc_df = handler.read_incentivo()
+                if isinstance(inc_df, pd.DataFrame) and not inc_df.empty:
+                    inc_df.columns = [self.padronizar_nomes(c) for c in inc_df.columns]
+                    return inc_df
+                print("⚠️ Incentivo retornou vazio.")
+                return pd.DataFrame()
+            else:
+                print(f"ℹ️ Handler de {cia_escolhida} não implementa read_incentivo().")
+                return pd.DataFrame()
+        except Exception as e:
+            print(f"❌ Erro ao ler incentivo via dispatcher: {e}")
+            return pd.DataFrame()
+        
+        
