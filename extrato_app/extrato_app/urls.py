@@ -25,7 +25,7 @@ from extrato_app.views import login_page, auth_login, auth_request_reset, auth_l
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # pages index e login
+    # index e login
     path('', index, name='index'),
     path("login", login_page, name="login_page"),
 
@@ -40,6 +40,8 @@ urlpatterns = [
     path("api/verificar-relatorios", views.verificar_relatorios_view, name="verificar_relatorios"),
     path("consultar-caixa", views.consultar_caixa_api, name="consultar_caixa_api"),
     path('api/atualizar-relatorios', views.api_atualizar_relatorios, name='api_atualizar_relatorios'),
+    path("incentivo/", views.incentivo_page, name="incentivo_page"),
+    path("incentivo/run/", views.incentivo_run, name="incentivo_run"),
 
     # auth
     path("auth/login", views.auth_login, name="auth_login"),

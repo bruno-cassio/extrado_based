@@ -5734,3 +5734,350 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-09-05 17:07:59,458 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
 2025-09-05 17:14:09,076 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
 2025-09-05 17:28:37,023 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-08 09:20:47,556 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 09:40:09,472 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 09:52:01,998 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:52:15,203 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:53:21,461 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:53:24,831 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:53:32,800 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:53:50,283 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:54:27,569 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:54:34,493 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:54:47,984 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:54:52,850 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:54:55,557 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:55:03,635 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:55:15,707 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:55:26,917 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:55:32,019 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 09:56:27,618 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 827, in incentivo_page
+    return render(request, "extrato_app/incentivo_calculo.html", {
+        "cias": ["Bradesco", "Porto", "Allianz", "Tokio", "Hdi", "Suhai"],
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 09:56:32,704 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:57:07,521 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 827, in incentivo_page
+    return render(request, "extrato_app/incentivo_calculo.html", {
+        "cias": ["Bradesco", "Porto", "Allianz", "Tokio", "Hdi", "Suhai"],
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 09:57:07,733 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 09:57:10,249 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 827, in incentivo_page
+    return render(request, "extrato_app/incentivo_calculo.html", {
+        "cias": ["Bradesco", "Porto", "Allianz", "Tokio", "Hdi", "Suhai"],
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 09:57:27,919 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:57:47,664 - django.request - WARNING - Not Found: /incentivo_calculo
+2025-09-08 09:57:51,780 - django.request - WARNING - Not Found: /incentivo_calculo/
+2025-09-08 09:58:02,958 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 09:58:07,792 - django.request - WARNING - Not Found: /incentivo_calculo/
+2025-09-08 09:58:07,825 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 09:58:08,136 - django.request - WARNING - Not Found: /incentivo_calculo/
+2025-09-08 09:59:44,791 - django.request - WARNING - Not Found: /incentivo_page
+2025-09-08 10:04:53,799 - django.request - WARNING - Not Found: /incentivo_page
+2025-09-08 10:04:53,816 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:04:54,126 - django.request - WARNING - Not Found: /incentivo_page
+2025-09-08 10:05:07,404 - django.request - WARNING - Not Found: /incentivo_page
+2025-09-08 10:05:07,421 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:37:13,943 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 827, in incentivo_page
+    return render(request, "extrato_app/incentivo_calculo.html", {
+        "cias": ["Bradesco", "Porto", "Allianz", "Tokio", "Hdi", "Suhai"],
+    })
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:42:12,802 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 10:42:37,605 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 10:42:49,698 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(
+        request,
+    ...<10 lines>...
+        },
+    )
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:42:58,816 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 10:43:00,317 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(
+        request,
+    ...<10 lines>...
+        },
+    )
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:43:01,935 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(
+        request,
+    ...<10 lines>...
+        },
+    )
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:43:01,953 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:43:09,224 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(
+        request,
+    ...<10 lines>...
+        },
+    )
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:43:09,250 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:43:09,454 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(
+        request,
+    ...<10 lines>...
+        },
+    )
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 10:43:33,009 - django.request - WARNING - Not Found: /incentivo_calculo
+2025-09-08 10:45:58,083 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 10:46:07,567 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 10:46:12,496 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-08 10:46:25,168 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 10:46:32,220 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 10:46:35,527 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:47:36,378 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:47:38,285 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:52:56,399 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:53:41,206 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 10:53:41,247 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:13:54,911 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 54, in _wrapped
+    user = _load_user(user_login)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 32, in _load_user
+    cur.execute("""
+    ~~~~~~~~~~~^^^^
+        SELECT id, username, email, is_active
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+         LIMIT 1
+         ^^^^^^^
+    """, (username,))
+    ^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-09-08 11:19:17,824 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:19:17,825 - django.request - WARNING - Unauthorized: /auth/login
+2025-09-08 11:19:22,231 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:20:32,723 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:20:59,101 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:21:44,015 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 11:21:44,016 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 11:22:05,497 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:22:05,497 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=446 • Atualizar Relatórios • Bradesco • 03-2025 • v4
+2025-09-08 11:23:14,793 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:24:19,248 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:25:29,616 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:25:54,667 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:26:05,617 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:26:43,338 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:26:52,336 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:26:52,337 - django.request - WARNING - Unauthorized: /auth/login
+2025-09-08 11:26:59,636 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:28:16,192 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:28:29,319 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:28:37,503 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:34:10,557 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 11:34:10,557 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 11:34:32,235 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 11:34:32,235 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=456 • Atualizar Relatórios • Bradesco • 03-2025 • v6
+2025-09-08 11:41:18,015 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:41:45,657 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:42:39,521 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:42:55,886 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:43:00,754 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:43:19,155 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:43:55,234 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:44:14,657 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:44:26,797 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 11:58:25,532 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:58:37,045 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 11:59:28,937 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 12:00:47,685 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 12:00:47,686 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 12:01:10,751 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 12:01:10,751 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=457 • Atualizar Relatórios • Bradesco • 03-2025 • v7
+2025-09-08 12:01:17,456 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 12:01:33,515 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 13:13:28,914 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 13:18:33,993 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 13:29:57,406 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 13:31:44,674 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 13:32:37,382 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 13:35:14,189 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 13:46:51,220 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 13:48:00,558 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 13:50:42,693 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:01:44,014 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:01:55,364 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:07:29,867 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:07:32,437 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:13:38,597 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:29:53,148 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:31:16,343 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:31:30,391 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:31:39,244 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:31:48,872 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 14:34:08,338 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 14:34:08,339 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 14:34:28,199 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 14:34:28,200 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=463 • Atualizar Relatórios • Bradesco • 03-2025 • v1
+2025-09-08 14:35:26,408 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:35:33,255 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:35:35,330 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 61, in _wrapped
+    return fn(request, *args, **kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 832, in incentivo_page
+    return render(request, "extrato_app/incentivo_calculo.html", {"cias": cias})
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.html
+2025-09-08 14:35:35,440 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:36:30,155 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:36:32,563 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:36:36,114 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:36:57,196 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:37:02,571 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:38:07,163 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:40:53,502 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:43:51,798 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-08 14:43:56,161 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:44:11,809 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 14:44:11,810 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 14:44:32,896 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 14:44:32,896 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=464 • Atualizar Relatórios • Bradesco • 03-2025 • v2
+2025-09-08 14:44:40,337 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:44:46,206 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 14:44:46,207 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 14:44:51,232 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:44:58,124 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 14:44:58,132 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 14:45:12,404 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 14:45:12,410 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=465 • Atualizar Relatórios • Bradesco • 03-2025 • v3
+2025-09-08 14:45:23,806 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 14:45:23,806 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=466 • Atualizar Relatórios • Bradesco • 03-2025 • v4
+2025-09-08 14:45:42,051 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:52:51,786 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 14:52:55,419 - django.request - WARNING - Not Found: /incentivo_calculo
+2025-09-08 14:52:58,527 - django.request - WARNING - Not Found: /favicon.ico

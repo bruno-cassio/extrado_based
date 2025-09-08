@@ -84,9 +84,23 @@
 
   <div class="container">
     <nav class="top-tabs">
-      <a href="/atualizar-relatorios" class="tab-btn {% if request.path == '/atualizar-relatorios' %}active{% endif %}"><i class="bi bi-arrow-clockwise"></i> Atualizar Relatórios</a>
-      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}"><i class="bi bi-database-fill"></i> Consolidação Conta Virtual</a>
-      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}"><i class="bi bi-cash-stack"></i> Atualizar Caixa</a>
+
+      <a href="/atualizar-relatorios" class="tab-btn {% if '/atualizar-relatorios' in request.path %}active{% endif %}">
+        <i class="bi bi-arrow-clockwise"></i>
+        Atualizar Relatórios
+      </a>
+      <a href="/" class="tab-btn {% if request.path == '/' %}active{% endif %}">
+        <i class="bi bi-database-fill"></i>
+        Consolidação Conta Virtual
+      </a>
+      <a href="/atualizar-caixa" class="tab-btn {% if request.path == '/atualizar-caixa' %}active{% endif %}">
+        <i class="bi bi-cash-stack"></i>
+        Atualizar Caixa
+      </a>
+      <a href="/incentivo/" class="tab-btn {% if '/incentivo' in request.path %}active{% endif %}">
+        <i class="bi bi-lightning-charge-fill"></i>
+        Cálculo de Incentivo
+      </a>      
     </nav>
 
     <div class="form-card">

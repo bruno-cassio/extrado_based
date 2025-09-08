@@ -20,6 +20,7 @@ from extrato_app.CoreData.grande_conn import DatabaseManager
 from extrato_app.CoreData.batch_runner import BatchRunner
 from extrato_app.CoreData.ds4 import processar_automaticamente
 from django.core import signing
+from extrato_app.CoreData.CoreMain import DataImporter
 
 
 def _load_user(username: str):
@@ -822,3 +823,44 @@ def auth_reset_confirm(request, token: uuid.UUID):
     finally:
         DatabaseManager.return_connection(conn)
 
+@login_required_view
+
+def incentivo_page(request):
+    env = dotenv_values()
+    cias_raw = env.get("CIAS_OPT", "")
+    cias = [c.strip() for c in cias_raw.split(",") if c.strip()]
+    return render(request, "incentivo_calculo.html", {"cias_opt": cias})
+
+
+# ⬇️ Mantem o run protegido e com JSON em caso de não autenticado
+@require_POST
+@login_required_view(allow_json=True)
+def incentivo_run(request):
+    """
+    Aceita múltiplas CIAs: body JSON {"cias_selected": ["Bradesco",...], "competencia": "MM-AAAA"}
+    Roda o DataImporter por CIA.
+    """
+    try:
+      data = json.loads(request.body.decode("utf-8"))
+    except Exception:
+      data = {}
+
+    cias_selected = data.get("cias_selected") or []
+    competencia = (data.get("competencia") or "").strip()
+
+    if (not isinstance(cias_selected, list)) or (len(cias_selected) == 0) or not competencia:
+        return JsonResponse({"ok": False, "msg": "Informe ao menos uma CIA e a competência (MM-AAAA)."}, status=400)
+
+    results = {}
+    processed = []
+    for cia in cias_selected:
+        try:
+            importer = DataImporter(cia_manual=cia, competencia_manual=competencia)
+            ok, payload = importer.execute_pipeline()
+            results[cia] = {"success": bool(ok), "version_id": payload.get("version_id") if (ok and isinstance(payload, dict)) else None}
+            processed.append(cia)
+        except Exception as e:
+            results[cia] = {"success": False, "error": str(e)}
+
+    ok_any = any(v.get("success") for v in results.values())
+    return JsonResponse({"ok": ok_any, "processed": processed, "results": results}, status=200)
