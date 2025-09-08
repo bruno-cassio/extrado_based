@@ -6095,3 +6095,25 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.h
 2025-09-08 15:33:59,759 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-08 15:33:59,760 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=472 • Atualizar Relatórios • Allianz • 03-2025 • v2
 2025-09-08 15:38:42,088 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:42:42,716 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:42:45,912 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:44:07,555 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:44:17,337 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:44:32,654 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 15:44:32,654 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 15:44:56,708 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:44:56,709 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=473 • Atualizar Relatórios • Bradesco • 03-2025 • v6
+2025-09-08 15:45:38,720 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 15:45:38,720 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 15:46:01,687 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:46:01,687 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=474 • Atualizar Relatórios • Bradesco • 03-2025 • v7
+2025-09-08 15:48:54,570 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 15:48:54,571 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco Saude'] | competência=03-2025
+2025-09-08 15:48:55,426 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:48:55,427 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=475 • Atualizar Relatórios • Bradesco Saude • 03-2025 • v3
+2025-09-08 15:49:02,788 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 15:49:02,788 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-08 15:49:26,497 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:49:26,498 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=476 • Atualizar Relatórios • Bradesco • 03-2025 • v8
+2025-09-08 15:51:42,302 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 16:04:40,896 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
