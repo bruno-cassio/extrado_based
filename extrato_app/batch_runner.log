@@ -6081,3 +6081,17 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.h
 2025-09-08 14:52:51,786 - django.request - WARNING - Not Found: /favicon.ico
 2025-09-08 14:52:55,419 - django.request - WARNING - Not Found: /incentivo_calculo
 2025-09-08 14:52:58,527 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:28:55,095 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 15:29:02,308 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:29:11,196 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:33:30,824 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-08 15:33:30,825 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco', 'Bradesco Saude', 'Suhai', 'Allianz'] | competência=03-2025
+2025-09-08 15:33:54,142 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:33:54,142 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=469 • Atualizar Relatórios • Bradesco • 03-2025 • v5
+2025-09-08 15:33:54,897 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:33:54,898 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=470 • Atualizar Relatórios • Bradesco Saude • 03-2025 • v2
+2025-09-08 15:33:55,747 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:33:55,748 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=471 • Atualizar Relatórios • Suhai • 03-2025 • v2
+2025-09-08 15:33:59,759 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-08 15:33:59,760 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=472 • Atualizar Relatórios • Allianz • 03-2025 • v2
+2025-09-08 15:38:42,088 - django.request - WARNING - Not Found: /favicon.ico

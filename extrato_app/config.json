@@ -1,6 +1,6 @@
 {
-  "cia_corresp": "Bradesco",
+  "cia_corresp": "Allianz",
   "competencia": "03-2025",
-  "ref_nom": "Razão Social Corretor",
-  "input_history_tables": "cont_prod_bradesco"
+  "ref_nom": "CORRETOR",
+  "input_history_tables": "cont_prod_allianz"
 }
