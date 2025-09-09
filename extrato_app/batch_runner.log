@@ -6117,3 +6117,103 @@ django.template.exceptions.TemplateDoesNotExist: extrato_app/incentivo_calculo.h
 2025-09-08 15:49:26,498 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=476 • Atualizar Relatórios • Bradesco • 03-2025 • v8
 2025-09-08 15:51:42,302 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-08 16:04:40,896 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-08 17:21:53,814 - django.request - ERROR - Internal Server Error: /incentivo/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 54, in _wrapped
+    user = _load_user(user_login)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 32, in _load_user
+    cur.execute("""
+    ~~~~~~~~~~~^^^^
+        SELECT id, username, email, is_active
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+         LIMIT 1
+         ^^^^^^^
+    """, (username,))
+    ^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-09-08 17:21:53,879 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:21:55,849 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:21:57,810 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:28:40,004 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 09:25:27,271 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 09:26:18,940 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 09:27:06,904 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 09:27:58,336 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-09 09:27:58,340 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-09 09:28:20,329 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 09:28:20,330 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=481 • Atualizar Relatórios • Bradesco • 03-2025 • v9
+2025-09-09 09:34:53,456 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 09:53:15,139 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\CoreMain.py changed, reloading.
+2025-09-09 10:24:34,856 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:24:57,297 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:25:05,955 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:25:45,192 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:25:52,399 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:26:08,634 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:28:06,109 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-09 10:36:10,833 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-09 10:36:22,826 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-09 10:36:45,936 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 10:37:25,599 - django.request - ERROR - Internal Server Error: /incentivo/run
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/incentivo/run/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-09-09 10:37:44,817 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-09 10:44:04,154 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 10:44:13,768 - django.request - ERROR - Internal Server Error: /incentivo/run
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/incentivo/run/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-09-09 10:48:59,157 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:49:30,066 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:49:34,245 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:49:54,460 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 10:55:09,575 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 10:55:16,228 - django.request - ERROR - Internal Server Error: /incentivo/run
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/incentivo/run/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-09-09 10:56:35,956 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 10:57:25,191 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\urls.py changed, reloading.
+2025-09-09 10:57:37,090 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-09 10:57:52,676 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-09 11:08:10,871 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py changed, reloading.
+2025-09-09 11:09:09,653 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.

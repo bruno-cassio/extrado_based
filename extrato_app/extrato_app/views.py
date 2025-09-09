@@ -21,6 +21,7 @@ from extrato_app.CoreData.batch_runner import BatchRunner
 from extrato_app.CoreData.ds4 import processar_automaticamente
 from django.core import signing
 from extrato_app.CoreData.CoreMain import DataImporter
+from extrato_app.CoreData.IncentivoMain import IncentivoImporter
 
 
 def _load_user(username: str):
@@ -838,26 +839,34 @@ def incentivo_page(request):
 def incentivo_run(request):
     """
     Aceita múltiplas CIAs: body JSON {"cias_selected": ["Bradesco",...], "competencia": "MM-AAAA"}
-    Roda o DataImporter por CIA.
+    Roda o IncentivoImporter por CIA.
     """
     try:
-      data = json.loads(request.body.decode("utf-8"))
+        data = json.loads(request.body.decode("utf-8"))
     except Exception:
-      data = {}
+        data = {}
 
     cias_selected = data.get("cias_selected") or []
     competencia = (data.get("competencia") or "").strip()
 
     if (not isinstance(cias_selected, list)) or (len(cias_selected) == 0) or not competencia:
-        return JsonResponse({"ok": False, "msg": "Informe ao menos uma CIA e a competência (MM-AAAA)."}, status=400)
+        return JsonResponse(
+            {"ok": False, "msg": "Informe ao menos uma CIA e a competência (MM-AAAA)."},
+            status=400
+        )
 
     results = {}
     processed = []
     for cia in cias_selected:
         try:
-            importer = DataImporter(cia_manual=cia, competencia_manual=competencia)
+            importer = IncentivoImporter(cia_manual=cia, competencia_manual=competencia)
             ok, payload = importer.execute_pipeline()
-            results[cia] = {"success": bool(ok), "version_id": payload.get("version_id") if (ok and isinstance(payload, dict)) else None}
+
+            results[cia] = {
+                "success": bool(ok),
+                "rows": payload.get("rows") if (ok and isinstance(payload, dict)) else 0,
+                "msg": payload.get("msg") if isinstance(payload, dict) else ""
+            }
             processed.append(cia)
         except Exception as e:
             results[cia] = {"success": False, "error": str(e)}

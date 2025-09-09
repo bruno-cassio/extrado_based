@@ -127,12 +127,13 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const competencia = document.querySelector('input[name="mes"]').value;
+      const cias_selected = selectedCias;
 
       if (!/^(0[1-9]|1[0-2])-[0-9]{4}$/.test(competencia)) {
         showNotification("Formato de competência inválido! Use MM-AAAA.", "error");
         return;
       }
-      if (selectedCias.length === 0) {
+      if (cias_selected.length === 0) {
         showNotification("Selecione pelo menos uma CIA.", "error");
         return;
       }
@@ -140,49 +141,46 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         setLoadingState(true);
         showDownloadPopup();
-        // showNotification("Atualizando relatórios, aguarde…", "loading");
 
         const auditEventId = ensureAuditEventId();
-        console.debug("[AUDIT] atualizar_relatorios • event_id=", auditEventId, "cias=", selectedCias, "competencia=", competencia);
+        console.debug("[INCENTIVO] Enviando:", { cias_selected, competencia, auditEventId });
 
-        const res = await fetch("/api/atualizar-relatorios", {
+        const res = await fetch("/incentivo/run/", {
           method: "POST",
           headers: { "Content-Type": "application/json", "X-CSRFToken": csrfToken },
-          body: JSON.stringify({ cias: selectedCias, competencia, audit_event_id: auditEventId })
+          body: JSON.stringify({ cias_selected, competencia, audit_event_id: auditEventId })
         });
 
-        const json = await res.json();
+
+        const text = await res.text();
+        let json;
+        try {
+          json = JSON.parse(text);
+        } catch (e) {
+          console.error("❌ Não consegui parsear resposta:", text);
+          showToast('error', "Resposta inesperada do servidor.");
+          return;
+        }
 
         hideDownloadPopup();
         setLoadingState(false);
 
-        if (res.ok && (json.status === "success" || json.status === "partial")) {
-          const total = json.resultados ? Object.keys(json.resultados).length : selectedCias.length;
-          const okCount = json.resultados ? Object.values(json.resultados).filter(r => r && r.success).length : total;
-
-          notification?.classList.remove('show');
-
-          const suffix = json.resultados
-            ? Object.entries(json.resultados).map(([k,v]) => v?.version_id ? `${k} (v${v.version_id})` : k).join(', ')
-            : null;
-
-          showToast('success', `Atualização concluída (${okCount}/${total})${suffix ? ` • ${suffix}` : ''}.`);
-          console.table(json.resultados || {});
-
-          AUDIT_EVENT_ID = null;
+        if (json.ok) {
+          showToast("success", `Cálculo concluído (${json.processed.length} CIAs)`);
+          console.table(json.results || {});
         } else {
-          const msg = (json && json.mensagem) ? json.mensagem : "Erro ao atualizar relatórios.";
-          showToast('error', msg);
-          console.error("❌ Atualizar Relatórios - erro:", json);
+          showToast("error", json.msg || "Erro no cálculo.");
+          console.error("❌ Incentivo - erro:", json);
         }
       } catch (err) {
         hideDownloadPopup();
         setLoadingState(false);
-        console.error("Erro ao atualizar relatórios:", err);
+        console.error("Erro ao chamar incentivo_run:", err);
         showToast('error', 'Erro ao conectar com o servidor.');
       }
     });
   }
+
 
 });
 
