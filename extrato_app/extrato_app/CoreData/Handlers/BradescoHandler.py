@@ -67,7 +67,7 @@ class BradescoHandler:
     def read_incentivo(self) -> pd.DataFrame:
         """
         Lê o arquivo de incentivo da Bradesco a partir do root dinâmico (ROOT_NUMS/ano/Controle de produção/mes - NOME/Bradesco),
-        detecta dinamicamente a linha do cabeçalho, enriquece com unidade e devolve um DF CONSOLIDADO por nome_unidade
+        detecta dinamicamente a linha do cabeçalho, enriquece com unidade e devolve  DF CONSOLIDADO por nome_unidade
         (mantendo a coluna de valor original como string com vírgulas; a soma converte temporariamente).
         """
         ROOT_NUMS = os.getenv("ROOT_NUMS", "")
@@ -120,14 +120,16 @@ class BradescoHandler:
             s = s.replace('ç','c')
             return s
 
-        padrao = "apuracao consolidada"
+        padroes = ["apuracao consolidada", "cesp"]
         candidatos = [
             f for f in os.listdir(pasta)
             if f.lower().endswith(('.xls', '.xlsx'))
-            and padrao in _norm(f)
+            and any(p in _norm(f) for p in padroes)
         ]
+
         if not candidatos:
-            print(f"❌ Nenhum arquivo contendo 'APURAÇÃO CONSOLIDADA' encontrado em: {pasta}")
+            print(f"❌ Nenhum arquivo de incentivo encontrado em: {pasta} "
+                f"(esperado conter {' ou '.join(padroes).upper()})")
             return pd.DataFrame()
 
         nome_arquivo = max(candidatos, key=lambda f: os.path.getmtime(os.path.join(pasta, f)))
@@ -248,5 +250,5 @@ class BradescoHandler:
             print(f"❌ Erro ao ler incentivo Bradesco: {e}")
             return pd.DataFrame()
         
-        
+
         
