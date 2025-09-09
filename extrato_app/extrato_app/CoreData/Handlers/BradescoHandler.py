@@ -5,8 +5,8 @@ import msoffcrypto
 from io import BytesIO
 import re
 import json
-from extrato_app.CoreData.dba import DBA
 from extrato_app.CoreData.ds4 import parse_meses_opt, obter_mes_ano
+from extrato_app.CoreData.dba import DBA
 
 
 class BradescoHandler:
@@ -238,11 +238,15 @@ class BradescoHandler:
                 )
                 df_grp['tipo_fonte'] = 'incentivo'
                 df_grp['origem_arquivo'] = nome_arquivo
+                df_grp = df_grp.rename(columns={'valor_a_pagar_total': 'valor_incentivo'})
+                df_grp['cia'] = 'Bradesco'
 
                 df_incentivo = df_grp
 
-                print("✅ Consolidado por nome_unidade (preview):")
-                print(df_incentivo[['nome_unidade', 'valor_a_pagar_total']].head())
+                # print('tratamento INNER BDC concluido, validação de colunas totais abaixo:')
+                # print(df_incentivo.columns.tolist())
+                # print("✅ Consolidado por nome_unidade (preview):")
+                # print(df_incentivo[['nome_unidade', 'valor_incentivo']].head())
 
                 return df_incentivo
 
