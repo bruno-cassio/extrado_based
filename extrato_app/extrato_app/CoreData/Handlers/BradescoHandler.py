@@ -150,10 +150,21 @@ class BradescoHandler:
             return melhor_idx if melhor_score >= 3 else None
 
         def _to_float_ptbr(x):
+            """
+            Converte string em formato brasileiro para float.
+            """
             try:
-                return float(str(x).replace('.', '').replace(',', '.'))
+                s = str(x).strip()
+                if not s:
+                    return 0.0
+                s = re.sub(r'[^0-9,.-]', '', s)
+                s = re.sub(r'(?<=\d)\.(?=\d{3}(,|$))', '', s)
+                s = s.replace(',', '.')
+
+                return float(s)
             except Exception:
                 return 0.0
+
 
         try:
             with open(file_path, "rb") as f:

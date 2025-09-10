@@ -39,6 +39,7 @@ class IncentivoImporter:
         )
 
     def _convert_df_to_schema(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Força o DataFrame para os tipos esperados pela tabela incentivo_geral"""
         df_conv = df.copy()
 
         expected_cols = [
@@ -51,11 +52,8 @@ class IncentivoImporter:
 
         df_conv["nome_unidade"] = df_conv["nome_unidade"].astype(str)
 
-        for col in ["id_unidade", "id_cor_cliente"]:
-            df_conv[col] = pd.to_numeric(df_conv[col], errors="coerce").astype("Int64")
-            df_conv[col] = df_conv[col].apply(
-                lambda x: x if (x is not None and pd.notna(x) and -2147483648 <= int(x) <= 2147483647) else None
-            )
+        df_conv["id_unidade"] = pd.to_numeric(df_conv["id_unidade"], errors="coerce").astype("Int64")
+        df_conv["id_cor_cliente"] = pd.to_numeric(df_conv["id_cor_cliente"], errors="coerce").astype("Int64")
 
         df_conv["competencia"] = df_conv["competencia"].astype(str)
         df_conv["valor_incentivo"] = pd.to_numeric(df_conv["valor_incentivo"], errors="coerce")
@@ -63,10 +61,7 @@ class IncentivoImporter:
         df_conv["origem_arquivo"] = df_conv["origem_arquivo"].astype(str)
         df_conv["cia"] = df_conv["cia"].astype(str)
 
-        df_conv = df_conv.where(pd.notnull(df_conv), None)
-
-        return df_conv
-
+        return df_conv.where(pd.notnull(df_conv), None)
 
     def _import_to_db(self, df: pd.DataFrame):
         conn = self._create_connection()
@@ -77,11 +72,7 @@ class IncentivoImporter:
                 "valor_incentivo", "tipo_fonte", "origem_arquivo", "cia"
             ]
 
-            values = (
-                df_conv[cols]
-                .applymap(lambda x: None if pd.isna(x) else x)
-                .values.tolist()
-            )
+            values = df_conv[cols].astype(object).where(pd.notnull(df_conv[cols]), None).values.tolist()
 
             with conn.cursor() as cur:
                 execute_values(
@@ -93,7 +84,6 @@ class IncentivoImporter:
             print(f"💾 {len(values)} registros importados em {self.TABLE_NAME}")
         finally:
             conn.close()
-
 
     def execute_pipeline(self):
         try:

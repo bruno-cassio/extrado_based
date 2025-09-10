@@ -6449,3 +6449,72 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2025-09-09 17:26:35,284 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-09 17:27:00,990 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
 2025-09-09 17:30:09,948 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 09:55:52,014 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 09:58:41,648 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 09:58:41,793 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 09:58:42,057 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 09:58:50,600 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 10:06:29,547 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 10:26:09,498 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 10:26:24,701 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 10:26:30,648 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:26:30,940 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 10:26:31,510 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:26:43,943 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 10:32:19,219 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:38:56,020 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:39:33,340 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:39:56,891 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:40:02,016 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:40:02,466 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:40:02,662 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 10:40:21,674 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 10:41:11,673 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:42:52,796 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:43:15,352 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:44:49,477 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:44:56,363 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:45:01,173 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:45:04,169 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:45:06,762 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:45:41,547 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:45:41,555 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:45:48,590 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:45:49,051 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 10:45:53,166 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 10:46:36,844 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:47:24,751 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:48:12,594 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:49:57,976 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:50:01,713 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:50:21,576 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:50:21,867 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 10:50:21,973 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:50:23,799 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:50:28,308 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:50:28,738 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 10:50:28,931 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 10:50:38,426 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 10:51:25,081 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:51:56,707 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:52:04,908 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:52:47,908 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:54:27,755 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:58:40,599 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 10:59:04,172 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
+2025-09-10 11:17:39,089 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 11:17:39,455 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 11:17:39,573 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 11:17:40,324 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 11:17:44,025 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 11:21:10,335 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 11:45:13,294 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 12:06:09,639 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 12:09:29,762 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 12:09:30,154 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 12:09:30,416 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 12:09:32,162 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 12:09:36,337 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 12:09:38,982 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-09-10 12:09:45,126 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 12:10:24,322 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
