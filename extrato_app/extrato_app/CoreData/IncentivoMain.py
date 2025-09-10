@@ -40,7 +40,9 @@ class IncentivoImporter:
 
     def _get_next_version_id(self, conn) -> int:
         
-        """Consulta o maior version_id existente para cia+competencia e retorna o próximo"""
+        """
+        Consulta o maior version_id existente para cia+competencia e retorna o próximo
+        """
         
         query = f"""
             SELECT COALESCE(MAX(version_id), 0)
@@ -53,7 +55,9 @@ class IncentivoImporter:
         return max_version + 1
 
     def _convert_df_to_schema(self, df: pd.DataFrame, version_id: int) -> pd.DataFrame:
-        """Força o DataFrame para os tipos esperados e adiciona version_id"""
+        """
+        Força o DataFrame para os tipos esperados e adiciona version_id
+        """
         df_conv = df.copy()
 
         expected_cols = [
