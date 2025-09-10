@@ -12,7 +12,7 @@ class IncentivoImporter:
     """
     Orquestrador dedicado ao fluxo de Incentivo.
     Executa leitura via dispatcher para a CIA e competência informadas,
-    aplica enriquecimento de unidades e insere dados na tabela incentivo_geral.
+    aplica enriquecimento de unidades, gera version_id e insere dados na tabela incentivo_geral.
     """
 
     TABLE_NAME = "incentivo_geral"
@@ -38,40 +38,57 @@ class IncentivoImporter:
             password=os.getenv("DB_PASSWORD"),
         )
 
-    def _convert_df_to_schema(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Força o DataFrame para os tipos esperados pela tabela incentivo_geral"""
+    def _get_next_version_id(self, conn) -> int:
+        
+        """Consulta o maior version_id existente para cia+competencia e retorna o próximo"""
+        
+        query = f"""
+            SELECT COALESCE(MAX(version_id), 0)
+            FROM {self.TABLE_NAME}
+            WHERE cia = %s AND competencia = %s
+        """
+        with conn.cursor() as cur:
+            cur.execute(query, (self.cia_escolhida, self.competencia))
+            max_version = cur.fetchone()[0] or 0
+        return max_version + 1
+
+    def _convert_df_to_schema(self, df: pd.DataFrame, version_id: int) -> pd.DataFrame:
+        """Força o DataFrame para os tipos esperados e adiciona version_id"""
         df_conv = df.copy()
 
         expected_cols = [
             "nome_unidade", "id_unidade", "id_cor_cliente", "competencia",
-            "valor_incentivo", "tipo_fonte", "origem_arquivo", "cia"
+            "valor_incentivo", "tipo_fonte", "origem_arquivo", "cia", "version_id"
         ]
         for col in expected_cols:
             if col not in df_conv.columns:
                 df_conv[col] = None
 
         df_conv["nome_unidade"] = df_conv["nome_unidade"].astype(str)
-
         df_conv["id_unidade"] = pd.to_numeric(df_conv["id_unidade"], errors="coerce").astype("Int64")
         df_conv["id_cor_cliente"] = pd.to_numeric(df_conv["id_cor_cliente"], errors="coerce").astype("Int64")
-
-        df_conv["competencia"] = df_conv["competencia"].astype(str)
+        df_conv["competencia"] = str(self.competencia)
+        df_conv["cia"] = str(self.cia_escolhida)
         df_conv["valor_incentivo"] = pd.to_numeric(df_conv["valor_incentivo"], errors="coerce")
         df_conv["tipo_fonte"] = df_conv["tipo_fonte"].astype(str)
         df_conv["origem_arquivo"] = df_conv["origem_arquivo"].astype(str)
-        df_conv["cia"] = df_conv["cia"].astype(str)
+
+        df_conv["version_id"] = int(version_id)
 
         return df_conv.where(pd.notnull(df_conv), None)
 
     def _import_to_db(self, df: pd.DataFrame):
         conn = self._create_connection()
         try:
-            df_conv = self._convert_df_to_schema(df)
+            version_id = self._get_next_version_id(conn)
+            print(f"🆕 Próximo version_id definido: {version_id}")
+
+            df_conv = self._convert_df_to_schema(df, version_id)
+
             cols = [
                 "nome_unidade", "id_unidade", "id_cor_cliente", "competencia",
-                "valor_incentivo", "tipo_fonte", "origem_arquivo", "cia"
+                "valor_incentivo", "tipo_fonte", "origem_arquivo", "cia", "version_id"
             ]
-
             values = df_conv[cols].astype(object).where(pd.notnull(df_conv[cols]), None).values.tolist()
 
             with conn.cursor() as cur:
@@ -81,7 +98,7 @@ class IncentivoImporter:
                     values,
                 )
             conn.commit()
-            print(f"💾 {len(values)} registros importados em {self.TABLE_NAME}")
+            print(f"💾 {len(values)} registros importados em {self.TABLE_NAME} (version_id={version_id})")
         finally:
             conn.close()
 

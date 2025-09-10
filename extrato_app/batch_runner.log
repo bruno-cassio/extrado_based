@@ -6518,3 +6518,197 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2025-09-10 12:09:38,982 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2025-09-10 12:09:45,126 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-10 12:10:24,322 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 13:36:17,098 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 13:36:21,494 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 13:38:15,714 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 13:38:28,438 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 13:44:47,398 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 13:55:52,955 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:08:02,386 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:08:13,332 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:08:21,293 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:08:24,175 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:09:04,871 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:10:00,909 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:10:15,040 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:10:48,085 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:12:00,592 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:12:05,511 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 14:12:06,838 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:12:09,367 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 14:12:15,890 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:13:06,806 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:13:27,221 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:13:48,856 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:15:28,802 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:15:35,565 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:15:46,664 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:22:01,535 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:25:56,601 - django.request - ERROR - Internal Server Error: /incentivo/run/
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 55, in _wrapped
+    user = _load_user(user_login)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 33, in _load_user
+    cur.execute("""
+    ~~~~~~~~~~~^^^^
+        SELECT id, username, email, is_active
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+         LIMIT 1
+         ^^^^^^^
+    """, (username,))
+    ^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-09-10 14:26:15,459 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-10 14:26:21,756 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:24,126 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:26,975 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:29,660 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:31,948 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:34,176 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:37,108 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:42,711 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:44,558 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:26:50,280 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:30:21,046 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:30:23,101 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:34:02,738 - django.request - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\bruno.cassio\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 55, in _wrapped
+    user = _load_user(user_login)
+  File "C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\views.py", line 33, in _load_user
+    cur.execute("""
+    ~~~~~~~~~~~^^^^
+        SELECT id, username, email, is_active
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+         LIMIT 1
+         ^^^^^^^
+    """, (username,))
+    ^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-09-10 14:34:21,769 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:34:43,398 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-10 14:34:43,399 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 03-2025
+2025-09-10 14:34:43,399 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-09-10 14:34:43,399 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 14:34:43,401 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 14:34:43,406 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 14:34:43,408 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-09-10 14:34:43,408 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 03-2025
+2025-09-10 14:34:43,411 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 14:34:43,414 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 14:34:43,417 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 14:34:43,418 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-09-10 14:34:53,313 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-10 14:34:53,314 - extrato_app.CoreData.batch_runner - INFO - [Atualizar Relatórios] CIAs=['Bradesco'] | competência=03-2025
+2025-09-10 14:35:17,750 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:35:17,751 - extrato_app.CoreData.batch_runner - INFO - [AUDIT] extrato_audit.id=548 • Atualizar Relatórios • Bradesco • 03-2025 • v10
+2025-09-10 14:35:31,915 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-10 14:37:06,942 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:42:40,686 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:44:46,350 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 14:58:00,815 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 15:01:33,121 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-10 15:01:33,122 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 1 CIAs e competência 03-2025
+2025-09-10 15:01:33,122 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco']
+2025-09-10 15:01:33,122 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 15:01:33,123 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:33,129 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 15:01:33,131 - extrato_app.CoreData.batch_runner - INFO - Todas as CIAs informadas já possuem conta virtual gerada para essa competência. Gerando resumo mesmo assim.
+2025-09-10 15:01:33,131 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 03-2025
+2025-09-10 15:01:33,134 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 15:01:33,135 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:33,137 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 15:01:33,138 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 1 CIAs (solicitadas + geradas anteriormente)
+2025-09-10 15:01:42,979 - extrato_app.CoreData.batch_runner - INFO - BatchRunner inicializado com 16 CIAs disponíveis
+2025-09-10 15:01:42,979 - extrato_app.CoreData.batch_runner - INFO - Iniciando processamento para 16 CIAs e competência 03-2025
+2025-09-10 15:01:42,979 - extrato_app.CoreData.batch_runner - INFO - CIAs selecionadas: ['Bradesco', 'Bradesco Saude', 'Suhai', 'Allianz', 'Junto Seguradora', 'Hdi', 'Porto', 'Yelum', 'Axa', 'Zurich', 'Chubb', 'Tokio', 'Ezze', 'Sompo', 'Mapfre', 'Swiss']
+2025-09-10 15:01:42,980 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 15:01:42,981 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:42,983 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 15:01:42,984 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:42,987 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 03-2025
+2025-09-10 15:01:42,987 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:42,992 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 03-2025
+2025-09-10 15:01:42,992 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:42,995 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Allianz na competência 03-2025
+2025-09-10 15:01:42,996 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:42,998 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,001 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 03-2025
+2025-09-10 15:01:43,002 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,004 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Porto na competência 03-2025
+2025-09-10 15:01:43,005 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,007 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 03-2025
+2025-09-10 15:01:43,007 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,016 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Axa na competência 03-2025
+2025-09-10 15:01:43,016 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,020 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,023 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 03-2025
+2025-09-10 15:01:43,023 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,034 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 03-2025
+2025-09-10 15:01:43,035 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,038 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Ezze na competência 03-2025
+2025-09-10 15:01:43,038 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,040 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 03-2025
+2025-09-10 15:01:43,041 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,045 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 03-2025
+2025-09-10 15:01:43,045 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,049 - extrato_app.CoreData.batch_runner - INFO -  CIAs que ainda serão processadas: ['Junto Seguradora', 'Zurich', 'Swiss']
+2025-09-10 15:01:43,049 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Junto Seguradora - 03-2025
+2025-09-10 15:01:43,094 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Junto Seguradora com falha
+2025-09-10 15:01:43,094 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Zurich - 03-2025
+2025-09-10 15:01:43,321 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Zurich com falha
+2025-09-10 15:01:43,321 - extrato_app.CoreData.batch_runner - INFO - Processando CIA: Swiss - 03-2025
+2025-09-10 15:01:43,378 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído para Swiss com falha
+2025-09-10 15:01:43,378 - extrato_app.CoreData.batch_runner - INFO - Iniciando geração de resumo final para competência 03-2025
+2025-09-10 15:01:43,381 - extrato_app.CoreData.batch_runner - INFO - Verificando se já existe geração para as CIAs na competência 03-2025
+2025-09-10 15:01:43,384 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_junto WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,387 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_zurich WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,389 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_swiss WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,390 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bare WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,391 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco na competência 03-2025
+2025-09-10 15:01:43,392 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_bdc_saude WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,394 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Bradesco Saude na competência 03-2025
+2025-09-10 15:01:43,394 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_suhai WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,396 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Suhai na competência 03-2025
+2025-09-10 15:01:43,396 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_allianz WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,398 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Allianz na competência 03-2025
+2025-09-10 15:01:43,398 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_hdi WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,399 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Hdi na competência 03-2025
+2025-09-10 15:01:43,399 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_porto WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,400 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Porto na competência 03-2025
+2025-09-10 15:01:43,400 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_yelum WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,401 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Yelum na competência 03-2025
+2025-09-10 15:01:43,402 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_axa WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,404 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Axa na competência 03-2025
+2025-09-10 15:01:43,404 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_chubb WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,405 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Chubb na competência 03-2025
+2025-09-10 15:01:43,405 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_tokio WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,410 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Tokio na competência 03-2025
+2025-09-10 15:01:43,410 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_ezze WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,412 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Ezze na competência 03-2025
+2025-09-10 15:01:43,412 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_sompo WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,413 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Sompo na competência 03-2025
+2025-09-10 15:01:43,413 - extrato_app.CoreData.batch_runner - INFO - Executando query: SELECT 1 FROM cont_prod_mapfre WHERE competencia = '03-2025' LIMIT 1;
+2025-09-10 15:01:43,414 - extrato_app.CoreData.batch_runner - WARNING -  Já foi gerado Conta Virtual para Mapfre na competência 03-2025
+2025-09-10 15:01:43,416 - extrato_app.CoreData.batch_runner - INFO - Consultando resumo para 16 CIAs (solicitadas + geradas anteriormente)
+2025-09-10 15:01:44,140 - extrato_app.CoreData.batch_runner - INFO - Processamento concluído em 1.16 segundos
+2025-09-10 15:05:09,079 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-10 15:32:50,584 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
