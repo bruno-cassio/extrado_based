@@ -7026,3 +7026,4 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-09-12 16:23:02,409 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-12 16:23:03,552 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-12 16:27:38,017 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-12 16:37:47,678 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\BradescoHandler.py changed, reloading.
