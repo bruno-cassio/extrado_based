@@ -146,3 +146,5 @@ class IncentivoImporter:
             tb = traceback.format_exc()
             print(f"❌ Erro no IncentivoImporter: {e}\n{tb}")
             return False, {"msg": f"Erro no incentivo: {e}", "rows": 0}
+
+

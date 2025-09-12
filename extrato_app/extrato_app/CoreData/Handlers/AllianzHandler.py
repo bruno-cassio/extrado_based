@@ -160,11 +160,9 @@ class AllianzHandler:
             abas = excel_obj.sheet_names
             print(f"📑 Abas disponíveis: {abas}")
 
-
-            aba_alvo = next((s for s in abas if "aberto corretor ajustado" in _norm(s)), None)
+            aba_alvo = next((s for s in abas if "aberto corretor - ajustado" in _norm(s)), None)
             if not aba_alvo:
                 aba_alvo = next((s for s in abas if "aberto corretor" in _norm(s)), None)
-
 
             print(f"📑 Aba selecionada: {aba_alvo}")
 
@@ -190,7 +188,7 @@ class AllianzHandler:
                 (~df['susep filho'].astype(str).str.lower().isin(['nan', 'none']))
             ]
 
-            adicional_cols = [col for col in df.columns if 'adicional' in col]
+            adicional_cols = [col for col in df.columns if 'adicional' in col and col != 'total adicional']
             if adicional_cols:
                 df['incentivo'] = df[adicional_cols].sum(axis=1, skipna=True)
             else:

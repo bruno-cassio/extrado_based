@@ -8,7 +8,6 @@ import json
 from extrato_app.CoreData.ds4 import parse_meses_opt, obter_mes_ano
 from extrato_app.CoreData.dba import DBA
 
-
 class BradescoHandler:
 
     def treat(self, folder_path: str) -> pd.DataFrame:
