@@ -7035,3 +7035,8 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-09-12 16:45:12,259 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-12 16:45:46,925 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-12 16:45:47,622 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-12 16:55:25,233 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-12 17:02:40,893 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-12 17:02:51,697 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-12 17:02:58,577 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-12 17:03:44,379 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.

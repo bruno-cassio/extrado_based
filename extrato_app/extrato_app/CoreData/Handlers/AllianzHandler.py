@@ -91,7 +91,7 @@ class AllianzHandler:
             print(f"❌ Erro ao calcular prêmio Allianz: {e}")
             return 0.0, df
 
-    def read_incentivo(self) -> pd.DataFrame:
+    def read_incentivo(self) -> pd.DataFrame: 
         """
         Lê o arquivo de incentivo da Allianz a partir do root dinâmico
         (ROOT_NUMS/ano/Controle de produção/mes - NOME/Allianz),
@@ -176,6 +176,7 @@ class AllianzHandler:
             if header_idx is None:
                 print("❌ Não foi possível localizar linha de cabeçalho (coluna A vazia)")
                 return pd.DataFrame()
+
 
             print(f"📌 Cabeçalho identificado na linha {header_idx}")
             df = pd.read_excel(file_path, sheet_name=aba_alvo, header=header_idx, engine=engine)
