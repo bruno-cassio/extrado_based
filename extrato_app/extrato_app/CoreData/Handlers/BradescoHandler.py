@@ -165,7 +165,6 @@ class BradescoHandler:
             except Exception:
                 return 0.0
 
-
         try:
             with open(file_path, "rb") as f:
                 office = msoffcrypto.OfficeFile(f)
