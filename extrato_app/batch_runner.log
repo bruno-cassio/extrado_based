@@ -7040,3 +7040,4 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-09-12 17:02:51,697 - django.request - WARNING - Not Found: /favicon.ico
 2025-09-12 17:02:58,577 - extrato_app.CoreData.dba - INFO - AUDIT saved
 2025-09-12 17:03:44,379 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-12 17:13:19,607 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
