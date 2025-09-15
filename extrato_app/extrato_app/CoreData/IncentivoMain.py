@@ -148,3 +148,4 @@ class IncentivoImporter:
             return False, {"msg": f"Erro no incentivo: {e}", "rows": 0}
 
 
+
