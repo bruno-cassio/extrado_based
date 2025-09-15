@@ -2,10 +2,84 @@ import traceback
 import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
-from extrato_app.CoreData.data_handler import DataHandler
+
 from extrato_app.CoreData.ds4 import processar_automaticamente
 from extrato_app.CoreData.dba import DBA
-import os
+import os, json, re
+
+
+def norm_str(s: str) -> str:
+    return (s or "").lower()\
+        .replace("á","a").replace("ã","a").replace("â","a").replace("à","a")\
+        .replace("é","e").replace("ê","e").replace("è","e")\
+        .replace("í","i").replace("ì","i")\
+        .replace("ó","o").replace("õ","o").replace("ô","o").replace("ò","o")\
+        .replace("ú","u").replace("ù","u").replace("û","u")\
+        .replace("ç","c")
+
+def montar_pasta_incentivo(cia: str, competencia: str) -> str | None:
+    ROOT_NUMS = os.getenv("ROOT_NUMS", "")
+    if not ROOT_NUMS:
+        print("🚨 ROOT_NUMS não definido no .env")
+        return None
+
+    from extrato_app.CoreData.ds4 import obter_mes_ano, parse_meses_opt
+    try:
+        mes, ano = obter_mes_ano(competencia)
+    except Exception:
+        print(f"🚨 Competencia inválida: {competencia}")
+        return None
+
+    MESES_PT = parse_meses_opt(os.getenv("MESES_OPT", ""))
+    nome_mes = MESES_PT.get(mes)
+    if not nome_mes:
+        print(f"🚨 Nome do mês não encontrado em MESES_OPT para mes={mes}")
+        return None
+
+    pasta = os.path.join(ROOT_NUMS, str(ano), "Controle de produção", f"{mes} - {nome_mes}", cia)
+    if not os.path.isdir(pasta):
+        print(f"❌ Pasta do incentivo não encontrada: {pasta}")
+        return None
+
+    return pasta
+
+def encontrar_arquivo(pasta: str, padroes: list[str]) -> str | None:
+    candidatos = [
+        f for f in os.listdir(pasta)
+        if f.lower().endswith(('.xls', '.xlsx'))
+        and any(norm_str(p) in norm_str(f) for p in padroes)
+        and not f.startswith("~$")
+    ]
+    if not candidatos:
+        print(f"❌ Nenhum arquivo encontrado em: {pasta} (esperado conter {padroes})")
+        return None
+    return max(candidatos, key=lambda f: os.path.getmtime(os.path.join(pasta, f)))
+
+def get_ref_nom(df: pd.DataFrame, candidatos: list[str]) -> tuple[pd.DataFrame, str]:
+    """
+    Retorna a coluna de referência de unidade (ref_nom) e o DataFrame atualizado.
+    """
+    ref_nom = None
+    try:
+        with open(os.path.join(os.getcwd(), "config.json"), "r", encoding="utf-8") as cf:
+            ref_nom = json.load(cf).get("ref_nom")
+    except Exception:
+        pass
+
+    if ref_nom and ref_nom not in df.columns:
+        for c in candidatos:
+            if c in df.columns:
+                df[ref_nom] = df[c]
+                print(f"ℹ️ ref_nom='{ref_nom}' ausente; usando '{c}' como origem.")
+                break
+    elif not ref_nom:
+        for c in candidatos:
+            if c in df.columns:
+                df[f"{c}_ref"] = df[c]
+                ref_nom = f"{c}_ref"
+                print(f"ℹ️ config sem ref_nom; usando '{c}' como referência provisória.")
+                break
+    return df, ref_nom
 
 
 class IncentivoImporter:
@@ -18,6 +92,8 @@ class IncentivoImporter:
     TABLE_NAME = "incentivo_geral"
 
     def __init__(self, cia_manual: str, competencia_manual: str, user_name: str = "system"):
+        from extrato_app.CoreData.data_handler import DataHandler  
+
         self.cia_escolhida = cia_manual
         self.competencia = competencia_manual
         self.user_name = user_name
@@ -39,11 +115,6 @@ class IncentivoImporter:
         )
 
     def _get_next_version_id(self, conn) -> int:
-        
-        """
-        Consulta o maior version_id existente para cia+competencia e retorna o próximo
-        """
-        
         query = f"""
             SELECT COALESCE(MAX(version_id), 0)
             FROM {self.TABLE_NAME}
@@ -55,9 +126,6 @@ class IncentivoImporter:
         return max_version + 1
 
     def _convert_df_to_schema(self, df: pd.DataFrame, version_id: int) -> pd.DataFrame:
-        """
-        Força o DataFrame para os tipos esperados e adiciona version_id
-        """
         df_conv = df.copy()
 
         expected_cols = [
@@ -110,14 +178,13 @@ class IncentivoImporter:
         try:
             print(f"▶️ Iniciando IncentivoImporter para {self.cia_escolhida} ({self.competencia})")
 
-            df_incentivo = self.data_handler.read_incentivo_via_dispatcher(self.cia_escolhida)
+            df_incentivo = self.data_handler.read_incentivo_via_dispatcher(self.cia_escolhida, self.competencia)
 
             if df_incentivo is None or df_incentivo.empty:
                 msg = f"Nenhum dado de incentivo encontrado para {self.cia_escolhida} {self.competencia}"
                 print(f"⚠️ {msg}")
                 return False, {"msg": msg, "rows": 0}
 
-            # Auditoria
             try:
                 self.dba.registrar_auditoria(
                     payload={
@@ -133,7 +200,6 @@ class IncentivoImporter:
             except Exception as e:
                 print(f"⚠️ Falha ao registrar auditoria do incentivo: {e}")
 
-            # Importação
             try:
                 self._import_to_db(df_incentivo)
             except Exception as e:
@@ -146,6 +212,3 @@ class IncentivoImporter:
             tb = traceback.format_exc()
             print(f"❌ Erro no IncentivoImporter: {e}\n{tb}")
             return False, {"msg": f"Erro no incentivo: {e}", "rows": 0}
-
-
-
