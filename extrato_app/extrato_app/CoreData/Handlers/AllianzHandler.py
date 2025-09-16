@@ -172,3 +172,4 @@ class AllianzHandler:
         except Exception as e:
             print(f"❌ Erro ao ler incentivo Allianz: {e}")
             return pd.DataFrame()
+        

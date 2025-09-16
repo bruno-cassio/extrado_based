@@ -7240,3 +7240,30 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 2025-09-15 17:09:26,654 - django.request - WARNING - Not Found: /favicon.ico
 2025-09-15 17:11:23,612 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
 2025-09-15 17:17:33,426 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:26:43,194 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:26:54,016 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-16 09:30:50,081 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-09-16 09:31:18,043 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-09-16 09:31:24,575 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\PortoHandler.py changed, reloading.
+2025-09-16 09:39:49,678 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:40:03,489 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:40:40,383 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:41:31,693 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:41:58,285 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:42:13,885 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:42:18,069 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:42:23,144 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-16 09:42:30,103 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-16 09:42:52,720 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-16 09:42:56,801 - extrato_app.CoreData.dba - INFO - AUDIT saved
+2025-09-16 09:43:06,216 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:43:16,516 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:43:21,462 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\data_handler.py changed, reloading.
+2025-09-16 09:44:12,303 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-16 09:44:28,120 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-16 09:44:38,047 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\IncentivoMain.py changed, reloading.
+2025-09-16 09:44:52,371 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-16 09:45:33,827 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-16 09:46:07,498 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-16 09:46:47,792 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.
+2025-09-16 09:47:57,995 - django.utils.autoreload - INFO - C:\Users\bruno.cassio\Documents\GitHub\extrado_based\extrado_based\extrato_app\extrato_app\CoreData\Handlers\AllianzHandler.py changed, reloading.

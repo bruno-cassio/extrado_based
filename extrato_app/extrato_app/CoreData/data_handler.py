@@ -327,21 +327,20 @@ class DataHandler:
         
         return overall_success
 
-
-
-    def read_incentivo_via_dispatcher(self, cia_escolhida: str) -> pd.DataFrame:
+    def read_incentivo_via_dispatcher(self, cia_escolhida: str, competencia: str) -> pd.DataFrame:
         """
-        Usa o dispatcher (CIA_HANDLERS) para chamar, se existir, a leitura de incentivo
-        especifica da CIA (ex.: BradescoHandler.read_incentivo).
+        Usa o registry (CIA_HANDLERS) para chamar, se existir, a leitura de incentivo
+        específica da CIA (ex.: PortoHandler.read_incentivo).
         """
         try:
             handler = CIA_HANDLERS.get(cia_escolhida)
             if not handler:
                 print(f"⚠️ Sem handler para {cia_escolhida}; pulando leitura de incentivo.")
                 return pd.DataFrame()
+
             if hasattr(handler, "read_incentivo") and callable(handler.read_incentivo):
                 print(f"🔎 Lendo incentivo via handler de {cia_escolhida}...")
-                inc_df = handler.read_incentivo()
+                inc_df = handler.read_incentivo(competencia)
                 if isinstance(inc_df, pd.DataFrame) and not inc_df.empty:
                     inc_df.columns = [self.padronizar_nomes(c) for c in inc_df.columns]
                     return inc_df
@@ -353,5 +352,4 @@ class DataHandler:
         except Exception as e:
             print(f"❌ Erro ao ler incentivo via dispatcher: {e}")
             return pd.DataFrame()
-        
-        
+
