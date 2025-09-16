@@ -14,9 +14,6 @@ from extrato_app.CoreData.IncentivoMain import (
 )
 from extrato_app.CoreData.dba import DBA
 
-
-
-
 class AllianzHandler:
 
     def treat(self, folder_path: str) -> pd.DataFrame:
@@ -173,3 +170,4 @@ class AllianzHandler:
             print(f"❌ Erro ao ler incentivo Allianz: {e}")
             return pd.DataFrame()
         
+
